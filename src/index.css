@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+:root {
+  --darkColor: 210, 29%, 13%;
+  --lightColor:192, 15%, 94%;
+  --jFont:Verdana, Tahoma, sans-serif;;
+  --mainFont:'Courier New', Courier, monospace;
+  --secondFond:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:var(--mainFont);
+  background-color: hsl(var(--darkColor));
+
+}
+
+h1{
+  font-size: 6rem;
+  background-color: hsl(var(--lightColor));
+  color: hsl(var(--darkColor));
+}
+
+.sF {
+  background-color: hsl(var(--darkColor));
+  color: hsl(var(--lightColor));
+}
