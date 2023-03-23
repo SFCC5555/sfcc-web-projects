@@ -1,15 +1,13 @@
 //import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import { NavBar } from './components/NavBar.js';
 
 function App() {
   return (
       <React.Fragment>
-
-        <h1>Hello world</h1>
-        <h1 className='mF'>Hello world</h1>
-        <h1 className='sF'>Hello world</h1>
-
+        <NavBar />
+        <h1 className='lightMode'>SFCC</h1>
       </React.Fragment>
   );
 }

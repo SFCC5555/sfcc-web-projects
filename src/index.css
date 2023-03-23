@@ -17,22 +17,34 @@ html{
 }
 
 body {
-
   display: flex;
   align-items: center;
   justify-content: center;
   font-family:var(--mainFont);
   background-color: hsl(var(--darkColor));
+  padding: 50px 0px;
 
 }
 
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1{
-  font-size: 6rem;
+  font-size: 10rem;
+  font-family: var(--mainFont);
+}
+
+.lightMode {
   background-color: hsl(var(--lightColor));
   color: hsl(var(--darkColor));
 }
 
-.sF {
+.darkMode {
   background-color: hsl(var(--darkColor));
   color: hsl(var(--lightColor));
 }
+
