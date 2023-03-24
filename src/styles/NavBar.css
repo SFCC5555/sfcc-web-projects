@@ -13,14 +13,17 @@
     gap: 5px;
 }
 
-.burgerIcon {
-    width: 31px;
-    height: 40px;
+span {
     display: inline-block;
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
 
+}
+
+.burgerIcon {
+    width: 31px;
+    height: 40px;
 }
 
 .burgerIconLight {
@@ -33,16 +36,35 @@
     transition-duration: 1s;
 }
 
-.sfccPicture {
+.sIcon {
+    width: 31px;
+    height: 40px;
+}
+
+.sIconLight {
+    background-image: url('../assets/icons/sIconMobile.png');
+}
+
+.sIconLight:hover {
+    background-image: url('../assets/icons/burgerIconMobile.png');
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+.picture {
     width: 40px;
     height: 40px;
-    display: inline-block;
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-image: url('../assets/images/sfccPictureBW.jpg');
     border-radius: 50%;
+}
+
+.sfccPictureBW {
+    background-image: url('../assets/images/sfccPictureBW.jpg');
     border: 2px solid hsl(var(--darkColor));
+}
+
+.sfccPicture {
+    background-image: url('../assets/images/sfccPicture.jpg');
+    border: 2px solid hsl(var(--darkColor),0%);
 }
 
 .aboutMe {
@@ -53,9 +75,15 @@
     cursor: pointer;
 }
 
-.aboutMe:hover .sfccPicture {
-    border: 2px solid hsl(var(--darkColor),25%);
+.aboutMe:hover .sfccPictureBW {
+    border: 2px solid hsl(var(--darkColor),0%);
     background-image: url('../assets/images/sfccPicture.jpg');
+    transition-duration: 1.5s;
+}
+
+.aboutMe:hover .sfccPicture {
+    border: 2px solid hsl(var(--darkColor));
+    background-image: url('../assets/images/sfccPictureBW.jpg');
     transition-duration: 1.5s;
 }
 
@@ -78,6 +106,15 @@
         background-image: url('../assets/icons/sIcon.png');
     }
     
+    .sIconLight {
+        background-image: url('../assets/icons/sIcon.png');
+    }
+    
+    .sIconLight:hover {
+        background-image: url('../assets/icons/burgerIcon.png');
+    }
+
+
     .aboutMe {
         flex-direction: row-reverse;
         font-size: 1.3rem;

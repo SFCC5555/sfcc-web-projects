@@ -99,6 +99,7 @@ h1{
   transition-duration: 1s;
 }
 
+
 @media screen and (min-width: 900px) {
   body {
     padding: 100px 0px;

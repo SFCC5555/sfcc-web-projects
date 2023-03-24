@@ -13,7 +13,14 @@
 
 .menu div {
     cursor: pointer;
+    margin-right: 60px;
 
+}
+
+.menu .closeIcon {
+    position: absolute;
+    top: 15px;
+    right: -45px;
 }
 
 .inactive {
@@ -27,5 +34,14 @@
         height: auto;
         font-size: 1.3rem;
         gap: 25px;
+    }
+
+    .menu div {
+        margin-right: 0px;
+    
+    }
+
+    .menu .closeIcon {
+        display: none;
     }
 }
