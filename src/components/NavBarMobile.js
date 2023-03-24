@@ -6,6 +6,7 @@ function NavBarMobile() {
             <span className="burgerIcon burgerIconLight"></span>
             <div className='sFernando'>ING. S. FERNANDO CARRASCO</div>
             <div className='aboutMe'><span className="sfccPicture"></span>ABOUT ME</div>
+            <div className='aboutMe'><span className="sfccPictureTiny"></span>ABOUT ME</div>
         </nav>
     )
 };
