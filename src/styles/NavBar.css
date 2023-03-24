@@ -61,7 +61,7 @@
 
 .aboutMe:hover {
     
-    & .sfccPicture {
+    .sfccPicture {
         border: 2px solid hsl(var(--darkColor),25%);
         background-image: url('../assets/images/sfccPicture.jpg');
         transition-duration: 1.5s;

@@ -8,7 +8,7 @@ function App() {
       <React.Fragment>
         <NavBar />
         <h1 className='lightMode'>SFCz</h1>
-        <img src={require('./assets/icons/sIcon.png')} />
+        <img alt='verga' src={require('./assets/icons/sIcon.png')} />
       </React.Fragment>
   );
 }
