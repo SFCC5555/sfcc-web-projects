@@ -30,18 +30,7 @@
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-image: url('../assets/images/sfccPicture.png');
-    border-radius: 50%;
-}
-
-.sfccPictureTiny {
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-image: url('../assets/images/sfccPictureTnySmallTny.jpg');
+    background-image: url('../assets/images/sfccPicture.jpg');
     border-radius: 50%;
 }
 
