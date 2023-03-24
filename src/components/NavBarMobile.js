@@ -4,8 +4,8 @@ function NavBarMobile() {
     return (
         <nav className="navBarMobile">
             <span className="burgerIcon burgerIconLight"></span>
-            <div>ING. S. FERNANDO CARRASCO</div>
-            <div>ABOUT ME <span className="sfccPicture"></span></div>
+            <div className='sFernando'>ING. S. FERNANDO CARRASCO</div>
+            <div className='aboutMe'><span className="sfccPicture"></span>ABOUT ME</div>
         </nav>
     )
 };
