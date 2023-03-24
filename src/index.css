@@ -1,3 +1,4 @@
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -11,9 +12,9 @@ html{
 :root {
   --darkColor: 213, 17%, 12%;
   --lightColor:192, 15%, 94%;
-  --jFont:Verdana, Tahoma, sans-serif;;
-  --mainFont:'Courier New', Courier, monospace;
-  --secondFond:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --jFont:Verdana, Tahoma, sans-serif;
+  --mainFont:'Linkin';
+  --secondFond:'Linkin';
 }
 
 body {

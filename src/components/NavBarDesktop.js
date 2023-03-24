@@ -4,7 +4,7 @@ function NavBarDesktop() {
     return (
         <nav className="navBarDesktop">
             <span className="burgerIcon"></span>
-            <div>ING. S. FERNANDO CARRASCO Desktop</div>
+            <div>ING. S. FERNANDO CARRASCO </div>
             <div>ABOUT ME <span className="sfccPicture"></span></div>
         </nav>
     )
