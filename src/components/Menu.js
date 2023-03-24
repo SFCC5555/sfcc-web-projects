@@ -1,13 +1,15 @@
 import '../styles/Menu.css';
 
 
-function Menu({ sectionsList, active, controlFunction }) {
+function Menu({ sectionsList, active, controlFunction, mode }) {
+
+    let lowerCaseMode=mode.toLowerCase();
 
     return (
-        <section className={active?'menu lightModeComponent':'menu lightModeComponent inactive'}>
-            <div onClick={controlFunction} className='closeIcon lightModeElement'>X</div>
+        <section className={active?`menu ${lowerCaseMode}ModeComponent`:`menu ${lowerCaseMode}ModeComponent inactive`}>
+            <div onClick={controlFunction} className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
             {
-                sectionsList.map(section=>(<div className='lightModeElement' key={section}>{section}</div>))
+                sectionsList.map(section=>(<div className={`${lowerCaseMode}ModeElement`} key={section}>{section}</div>))
             }
 
 

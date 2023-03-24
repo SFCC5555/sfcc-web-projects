@@ -20,7 +20,7 @@ function App() {
 
   return (
       <React.Fragment>
-        <NavBar sectionsList={sectionsList}/>
+        <NavBar sectionsList={sectionsList} mode={mode}/>
         <img alt='sfcc Icon' className='sfccIcon' src={require(`./assets/icons/sfccIcon${mode}.png`)} />
         <DarkModeButton controlFunction={controlDarkMode} mode={mode}/>
       </React.Fragment>

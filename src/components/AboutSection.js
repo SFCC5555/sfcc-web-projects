@@ -1,12 +1,14 @@
 import '../styles/AboutSection.css';
 
 
-function AboutSection({ active, controlFunction}) {
+function AboutSection({ active, controlFunction, mode}) {
+
+    let lowerCaseMode=mode.toLowerCase();
 
     return (
-        <section className={active?'aboutSection lightModeComponent':'aboutSection lightModeComponent inactive'}>
+        <section className={active?`aboutSection ${lowerCaseMode}ModeComponent`:`aboutSection ${lowerCaseMode}ModeComponent inactive`}>
 
-            <button onClick={controlFunction} className='closeIcon lightModeElement'>X</button>
+            <div onClick={controlFunction} className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
             <h2>blablabla</h2>
             <p>blablablablabla</p>
 

@@ -5,7 +5,8 @@
     width: 100%;
     justify-content: space-between;
     font-weight: bold;
-    border-bottom: 2px solid hsl(var(--darkColor),50%);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
     position: fixed;
     top: 0px;
     padding: 0px 15px;
@@ -28,7 +29,11 @@ span {
 }
 
 .burgerIconLight {
-    background-image: url('../assets/icons/burgerIconMobile.png');
+    background-image: url('../assets/icons/burgerIconMobileLight.png');
+}
+
+.burgerIconDark {
+    background-image: url('../assets/icons/burgerIconMobileDark.png');
 }
 
 .sIcon {
@@ -38,7 +43,11 @@ span {
 }
 
 .sIconLight {
-    background-image: url('../assets/icons/sIconMobile.png');
+    background-image: url('../assets/icons/sIconMobileLight.png');
+}
+
+.sIconDark {
+    background-image: url('../assets/icons/sIconMobileDark.png');
 }
 
 
@@ -55,7 +64,7 @@ span {
 
 .sfccPicture {
     background-image: url('../assets/images/sfccPicture.jpg');
-    border: 2px solid hsl(var(--darkColor),0%);
+    border: 2px solid hsl(var(--lightColor));
 }
 
 .aboutMe {
@@ -78,20 +87,39 @@ span {
     }
 
     .burgerIconLight {
-        background-image: url('../assets/icons/burgerIcon.png');
+        background-image: url('../assets/icons/burgerIconLight.png');
     }
     
     .burgerIconLight:hover {
-        background-image: url('../assets/icons/sIcon.png');
+        background-image: url('../assets/icons/sIconLight.png');
         transition-duration: 1s;
     }
     
     .sIconLight {
-        background-image: url('../assets/icons/sIcon.png');
+        background-image: url('../assets/icons/sIconLight.png');
     }
     
     .sIconLight:hover {
-        background-image: url('../assets/icons/burgerIcon.png');
+        background-image: url('../assets/icons/burgerIconLight.png');
+        transition-duration: 1s;
+    }
+
+
+    .burgerIconDark {
+        background-image: url('../assets/icons/burgerIconDark.png');
+    }
+    
+    .burgerIconDark:hover {
+        background-image: url('../assets/icons/sIconDark.png');
+        transition-duration: 1s;
+    }
+    
+    .sIconDark {
+        background-image: url('../assets/icons/sIconDark.png');
+    }
+    
+    .sIconDark:hover {
+        background-image: url('../assets/icons/burgerIconDark.png');
         transition-duration: 1s;
     }
 
@@ -103,7 +131,7 @@ span {
     }
     
     .aboutMe:hover .sfccPictureBW {
-        border: 2px solid hsl(var(--darkColor),0%);
+        border: 2px solid hsl(var(--lightColor));
         background-image: url('../assets/images/sfccPicture.jpg');
         transition-duration: 1.5s;
     }
@@ -121,7 +149,5 @@ span {
         left: 50%;
         translate: -50%;
     }
-
-
-    
+  
 }
