@@ -20,10 +20,6 @@
     .darkModeButtonLight {
       animation: darkModeButtonLight-spin infinite 10s linear;
     }
-
-    .darkModeButtonLight:active {
-        animation: darkModeButtonLightActive-spin 1 1000ms linear;
-    }
 }
   
 @keyframes darkModeButtonLight-spin {
@@ -35,26 +31,11 @@
     }
 }
 
-@keyframes darkModeButtonLightActive-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(-360deg);
-    }
-}
-
-
-
-
 @media (prefers-reduced-motion: no-preference) {
     .darkModeButtonDark {
       animation: darkModeButtonDark-spin infinite 10s linear;
     }
 
-    .darkModeButtonDark:active {
-        animation: darkModeButtonDarktActive-spin 1 1000ms linear;
-    }
 }
   
 @keyframes darkModeButtonDark-spin {
@@ -66,48 +47,38 @@
     }
 }
 
-@keyframes darkModeButtonDarkActive-spin {
-    from {
-      transform: rotate(0deg);
+
+@media screen and (min-width: 900px) {
+
+    @media (prefers-reduced-motion: no-preference) {
+
+        .darkModeButtonLight:hover {
+            animation: darkModeButtonLightHover-spin 1 300ms linear;
+        }
     }
-    to {
-      transform: rotate(360deg);
+
+    @keyframes darkModeButtonLightHover-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
     }
-}
 
+    @media (prefers-reduced-motion: no-preference) {
 
-
-
-@media (prefers-reduced-motion: no-preference) {
-
-    .darkModeButtonLight:hover {
-        animation: darkModeButtonLightHover-spin 1 300ms linear;
+        .darkModeButtonDark:hover {
+            animation: darkModeButtonDarkHover-spin 1 300ms linear;
+        }
     }
-}
 
-@keyframes darkModeButtonLightHover-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-
-
-@media (prefers-reduced-motion: no-preference) {
-
-    .darkModeButtonDark:hover {
-        animation: darkModeButtonDarkHover-spin 1 300ms linear;
-    }
-}
-
-@keyframes darkModeButtonDarkHover-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
+    @keyframes darkModeButtonDarkHover-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(-360deg);
+        }
     }
 }
