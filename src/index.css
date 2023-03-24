@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: 'Linkin';
+  src: url(./assets/fonts/linkin.ttf);
+}
 *{
   box-sizing: border-box;
   margin: 0;

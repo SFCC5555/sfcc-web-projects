@@ -7,7 +7,7 @@ function App() {
   return (
       <React.Fragment>
         <NavBar />
-        <h1 className='lightMode'>SFCC</h1>
+        <h1 className='lightMode'>SFCX</h1>
       </React.Fragment>
   );
 }
