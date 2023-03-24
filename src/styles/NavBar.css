@@ -24,11 +24,11 @@
 }
 
 .burgerIconLight {
-    background-image: url('../assets/icons/burgerIcon.png');
+    background-image: url('../assets/icons/burgerIconMobile.png');
 }
 
 .burgerIconLight:hover {
-    background-image: url('../assets/icons/sIcon.png');
+    background-image: url('../assets/icons/sIconMobile.png');
     cursor: pointer;
     transition-duration: 1s;
 }
@@ -69,6 +69,14 @@
         font-size: 2.5rem;
         gap: 10px;
     }
+
+    .burgerIconLight {
+        background-image: url('../assets/icons/burgerIcon.png');
+    }
+    
+    .burgerIconLight:hover {
+        background-image: url('../assets/icons/sIcon.png');
+    }
     
     .aboutMe {
         flex-direction: row-reverse;
@@ -81,5 +89,7 @@
         left: 50%;
         translate: -50%;
     }
+
+
     
 }
