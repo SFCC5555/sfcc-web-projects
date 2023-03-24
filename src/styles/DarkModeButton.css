@@ -10,16 +10,16 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .darkModeButtonLight {
-      animation: darkModeButtonLight-spin infinite 10s linear;
+    .darkModeButton {
+      animation: darkModeButton-spin infinite 10s linear;
     }
 
-    .darkModeButtonLight:hover {
-        animation: darkModeButtonLightHover-spin 1 300ms linear;
+    .darkModeButton:active {
+        animation: darkModeButtonFocus-spin 1 300ms linear;
     }
 }
   
-@keyframes darkModeButtonLight-spin {
+@keyframes darkModeButton-spin {
     from {
       transform: rotate(0deg);
     }
@@ -28,7 +28,7 @@
     }
 }
 
-@keyframes darkModeButtonLightHover-spin {
+@keyframes darkModeButtonFocus-spin {
     from {
       transform: rotate(0deg);
     }
@@ -37,30 +37,22 @@
     }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .darkModeButtonDark {
-      animation: darkModeButtonDark-spin infinite 10s linear;
+
+@media screen and (min-width: 900px) {
+
+    @media (prefers-reduced-motion: no-preference) {
+
+        .darkModeButton:hover {
+            animation: darkModeButtonHover-spin 1 300ms linear;
+        }
     }
 
-    .darkModeButtonDark:hover {
-        animation: darkModeButtonDarkHover-spin 1 300ms linear;
-    }
-}
-  
-@keyframes darkModeButtonDark-spin {
-    from {
-      transform: rotate(180deg);
-    }
-    to {
-      transform: rotate(540deg);
-    }
-}
-
-@keyframes darkModeButtonDarkHover-spin {
-    from {
-      transform: rotate(180deg);
-    }
-    to {
-      transform: rotate(-90deg);
+    @keyframes darkModeButtonHover-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(-360deg);
+        }
     }
 }
