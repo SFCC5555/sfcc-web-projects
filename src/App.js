@@ -7,7 +7,7 @@ function App() {
   return (
       <React.Fragment>
         <NavBar />
-        <h1 className='lightMode'>SFCx</h1>
+        <h1 className='lightMode'>SFCz</h1>
         <img src={require('./assets/icons/sIcon.png')} />
       </React.Fragment>
   );
