@@ -1,9 +1,10 @@
 import '../styles/Menu.css';
 
 
-function Menu({ sectionsList }) {
+function Menu({ sectionsList, active }) {
+
     return (
-        <section className='menu lightModeComponent'>
+        <section className={active?'menu lightModeComponent':'menu lightModeComponent inactive'}>
 
             {
                 sectionsList.map(section=>(<div className='lightModeElement' key={section}>{section}</div>))
