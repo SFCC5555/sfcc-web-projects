@@ -29,7 +29,7 @@ html{
   --lightColor:192, 15%, 94%;
   --jFont:'LinkinPark';
   --mainFont:'BankGothicBold';
-  --secondFond:'Linkin';
+  --secondFont:'Linkin';
 }
 
 body {
@@ -37,7 +37,6 @@ body {
   align-items: center;
   justify-content: center;
   font-family:var(--mainFont);
-  background-color: hsl(var(--darkColor));
   padding: 50px 0px;
 
 }
@@ -56,11 +55,46 @@ h1{
 
 .lightMode {
   background-color: hsl(var(--lightColor));
-  color: hsl(var(--darkColor));
 }
 
 .darkMode {
   background-color: hsl(var(--darkColor));
+}
+
+.lightModeComponent {
+  background-color: hsl(var(--lightColor));
+  color: hsl(var(--darkColor));
+}
+
+.darkModeComponent {
+  background-color: hsl(var(--darkColor));
   color: hsl(var(--lightColor));
 }
 
+.lightModeComponent:hover {
+  background-color: hsl(var(--darkColor),75%);
+  transition-duration:60s;
+}
+
+.darkModeComponent:hover {
+  background-color: hsl(var(--lightColor),75%);
+  transition-duration:60s;
+}
+
+.lightModeElement {
+  color: hsl(var(--darkColor));
+}
+
+.darkModeElement {
+  color: hsl(var(--lightColor));
+}
+
+.lightModeElement:hover {
+  color: hsl(var(--darkColor),75%);
+  transition-duration: 1s;
+}
+
+.darkModeElement:hover {
+  color: hsl(var(--lightColor),75%);
+  transition-duration: 1s;
+}

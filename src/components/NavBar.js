@@ -1,15 +1,13 @@
-import React from "react";
-import { NavBarMobile } from "./NavBarMobile";
-import { NavBarDesktop } from "./NavBarDesktop";
 import '../styles/NavBar.css';
 
 
 function NavBar() {
     return (
-        <React.Fragment>
-            <NavBarMobile />
-            <NavBarDesktop />
-        </React.Fragment>
+        <nav className="navBar lightModeComponent">
+            <span className="burgerIcon burgerIconLight"></span>
+            <a href='' className='sFernando lightModeElement'>ING. S. FERNANDO CARRASCO</a>
+            <div className='aboutMe lightModeElement'><span className="sfccPicture"></span>ABOUT ME</div>
+        </nav>
 
     )
 };
