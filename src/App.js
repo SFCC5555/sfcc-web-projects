@@ -7,7 +7,7 @@ function App() {
   return (
       <React.Fragment>
         <NavBar />
-        <img alt='sfcc Icon' src={require('./assets/icons/sfccIcon.png')} />
+        <img alt='sfcc Icon' className='sfccIcon' src={require('./assets/icons/sfccIcon.png')} />
       </React.Fragment>
   );
 }

@@ -1,1 +1,11 @@
+.sfccIcon {
+    width: 60%;
+    cursor: crosshair;
+}
+
+@media screen and (min-width: 900px) {
+    .sfccIcon {
+        width: 30%;
+    }
+}
 
