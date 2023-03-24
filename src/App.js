@@ -4,9 +4,10 @@ import React from 'react';
 import { NavBar } from './components/NavBar.js';
 
 function App() {
+  const sectionsList=['WEB PROJECTS','CERTIFICATIONS','CODE NETWORKS','CONTACT','BUY ME A COFFEE']
   return (
       <React.Fragment>
-        <NavBar />
+        <NavBar sectionsList={sectionsList}/>
         <img alt='sfcc Icon' className='sfccIcon' src={require('./assets/icons/sfccIcon.png')} />
       </React.Fragment>
   );

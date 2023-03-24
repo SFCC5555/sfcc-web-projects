@@ -90,11 +90,17 @@ h1{
 }
 
 .lightModeElement:hover {
-  color: hsl(var(--darkColor),75%);
+  color: hsl(var(--darkColor),50%);
   transition-duration: 1s;
 }
 
 .darkModeElement:hover {
-  color: hsl(var(--lightColor),75%);
+  color: hsl(var(--lightColor),50%);
   transition-duration: 1s;
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    padding: 100px 0px;
+  }
 }

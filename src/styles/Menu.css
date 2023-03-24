@@ -1,0 +1,27 @@
+.menu{
+    position: fixed;
+    top: 58px;
+    padding: 40px 15px;
+    border: 2px solid hsl(var(--darkColor),50%);
+    left: 0px;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 40px;
+}
+
+.menu div {
+    cursor: pointer;
+
+}
+
+@media screen and (min-width: 900px) {
+    .menu {
+        flex-direction: row;
+        padding: 10px 20px;
+        height: auto;
+        font-size: 1.3rem;
+        gap: 25px;
+    }
+}
