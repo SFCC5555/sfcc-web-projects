@@ -45,12 +45,6 @@
     border: 2px solid hsl(var(--darkColor));
 }
 
-.sfccPicture:hover {
-    border: 2px solid hsl(var(--darkColor),25%);
-    background-image: url('../assets/images/sfccPicture.jpg');
-    transition-duration: 1.5s;
-}
-
 .aboutMe {
     display: flex;
     flex-direction: column;
@@ -59,13 +53,10 @@
     cursor: pointer;
 }
 
-.aboutMe:hover {
-    
-    & .sfccPicture {
-        border: 2px solid hsl(var(--darkColor),25%);
-        background-image: url('../assets/images/sfccPicture.jpg');
-        transition-duration: 1.5s;
-    }
+.aboutMe:hover .sfccPicture {
+    border: 2px solid hsl(var(--darkColor),25%);
+    background-image: url('../assets/images/sfccPicture.jpg');
+    transition-duration: 1.5s;
 }
 
 .sFernando {
