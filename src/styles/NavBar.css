@@ -24,32 +24,23 @@ span {
 .burgerIcon {
     width: 31px;
     height: 40px;
+    cursor: pointer;
 }
 
 .burgerIconLight {
     background-image: url('../assets/icons/burgerIconMobile.png');
 }
 
-.burgerIconLight:hover {
-    background-image: url('../assets/icons/sIconMobile.png');
-    cursor: pointer;
-    transition-duration: 1s;
-}
-
 .sIcon {
     width: 31px;
     height: 40px;
+    cursor: pointer;
 }
 
 .sIconLight {
     background-image: url('../assets/icons/sIconMobile.png');
 }
 
-.sIconLight:hover {
-    background-image: url('../assets/icons/burgerIconMobile.png');
-    cursor: pointer;
-    transition-duration: 1s;
-}
 
 .picture {
     width: 40px;
@@ -75,18 +66,6 @@ span {
     cursor: pointer;
 }
 
-.aboutMe:hover .sfccPictureBW {
-    border: 2px solid hsl(var(--darkColor),0%);
-    background-image: url('../assets/images/sfccPicture.jpg');
-    transition-duration: 1.5s;
-}
-
-.aboutMe:hover .sfccPicture {
-    border: 2px solid hsl(var(--darkColor));
-    background-image: url('../assets/images/sfccPictureBW.jpg');
-    transition-duration: 1.5s;
-}
-
 .sFernando {
     text-decoration: none;
 }
@@ -104,6 +83,7 @@ span {
     
     .burgerIconLight:hover {
         background-image: url('../assets/icons/sIcon.png');
+        transition-duration: 1s;
     }
     
     .sIconLight {
@@ -112,6 +92,7 @@ span {
     
     .sIconLight:hover {
         background-image: url('../assets/icons/burgerIcon.png');
+        transition-duration: 1s;
     }
 
 
@@ -121,6 +102,20 @@ span {
         gap:5px
     }
     
+    .aboutMe:hover .sfccPictureBW {
+        border: 2px solid hsl(var(--darkColor),0%);
+        background-image: url('../assets/images/sfccPicture.jpg');
+        transition-duration: 1.5s;
+    }
+    
+    .aboutMe:hover .sfccPicture {
+        border: 2px solid hsl(var(--darkColor));
+        background-image: url('../assets/images/sfccPictureBW.jpg');
+        transition-duration: 1.5s;
+    }
+
+
+
     .sFernando {
         position: absolute;
         left: 50%;
