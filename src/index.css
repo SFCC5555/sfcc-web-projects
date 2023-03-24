@@ -53,12 +53,12 @@ h1{
   font-family: var(--mainFont);
 }
 
-.lightMode {
-  background-color: hsl(var(--lightColor));
-}
-
 .darkMode {
   background-color: hsl(var(--darkColor));
+}
+
+.lightMode {
+  background-color: hsl(var(--lightColor));
 }
 
 .lightModeComponent {
