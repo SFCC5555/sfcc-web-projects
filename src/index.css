@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Linkin';
-  src: url(./assets/fonts/linkin.ttf);
+  src: url('./assets/fonts/linkin.ttf');
 }
 *{
   box-sizing: border-box;
@@ -16,7 +16,7 @@ html{
   --darkColor: 213, 17%, 12%;
   --lightColor:192, 15%, 94%;
   --jFont:Verdana, Tahoma, sans-serif;
-  --mainFont:'Linkin';
+  --mainFont:'BankGothic';
   --secondFond:'Linkin';
 }
 
