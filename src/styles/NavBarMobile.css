@@ -19,7 +19,7 @@
 }
 
 .burgerIconLight:hover {
-    background-image: url('../assets/icons/favicon.png');
+    background-image: url('../assets/icons/sIcon.png');
     cursor: pointer;
 }
 
