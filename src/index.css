@@ -1,7 +1,19 @@
 @font-face {
+  font-family: 'LinkinPark';
+  src: url('./assets/fonts/LinkinPark.ttf');
+}
+
+@font-face {
   font-family: 'Linkin';
   src: url('./assets/fonts/linkin.ttf');
 }
+
+@font-face {
+  font-family: 'BankGothicBold';
+  src: url('./assets/fonts/BankGothicBold.ttf');
+}
+
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -15,8 +27,8 @@ html{
 :root {
   --darkColor: 213, 17%, 12%;
   --lightColor:192, 15%, 94%;
-  --jFont:Verdana, Tahoma, sans-serif;
-  --mainFont:'BankGothic';
+  --jFont:'LinkinPark';
+  --mainFont:'BankGothicBold';
   --secondFond:'Linkin';
 }
 
