@@ -1,0 +1,36 @@
+.skillContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+}
+
+.skillIcon {
+    animation-name: skillIconAnimation;
+    animation-duration: 1.5s;
+    cursor: crosshair;
+}
+
+@keyframes skillIconAnimation {
+
+    0%{opacity: 0%; width: 20px;}
+    100%{opacity: 100%; width: 30px;}
+    
+}
+
+.skillIcon:hover {
+    background-image: url('../assets/icons/htmlIconColor.png');
+    transition-duration: 2s;
+}
+
+.HtmlIconLight {
+    width: 30px;
+    height: 34.8px;
+    background-image: url('../assets/icons/htmlIconLight.png');
+}
+
+.HtmlIconDark {
+    width: 50px;
+    height: 58px;
+    background-image: url('../assets/icons/htmlIconDark.png');
+}
