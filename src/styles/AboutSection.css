@@ -4,7 +4,7 @@
     position: fixed;
     top: 58px;
     padding: 60px 30px;
-    padding-bottom: 150px;
+    padding-bottom: 300px;
     border-style:solid;
     border-width: 2px;
     right: 0px;
@@ -22,8 +22,8 @@
 }
 
 @keyframes aboutAnimation {
-    0%{width: 30%;padding: 60px 0px;padding-bottom: 150px;letter-spacing: -10px;}
-    100%{width: 100%;padding: 60px 30px;padding-bottom: 150px;letter-spacing: 0px;}
+    0%{width: 30%;padding: 60px 0px;padding-bottom: 300px;letter-spacing: -10px;}
+    100%{width: 100%;padding: 60px 30px;padding-bottom: 300px;letter-spacing: 0px;}
 
 }
 
@@ -77,13 +77,13 @@
     .aboutSection {
         width: 40%;
         animation-name: aboutAnimation;
-        padding-bottom: 300px;
+        padding-bottom: 150px;
         animation-duration: 1s;
     }
     
     @keyframes aboutAnimation {
-        0%{width: 15%;padding: 60px 0px;padding-bottom: 300px;letter-spacing: -10px;}
-        100%{width: 40%;padding: 60px 30px;padding-bottom: 300px;letter-spacing: 0px;}
+        0%{width: 15%;padding: 60px 0px;padding-bottom: 150px;letter-spacing: -10px;}
+        100%{width: 40%;padding: 60px 30px;padding-bottom: 150px;letter-spacing: 0px;}
     
     }
 }
