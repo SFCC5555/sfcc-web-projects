@@ -5,18 +5,26 @@ import { NavBar } from './components/NavBar.js';
 import { DarkModeButton } from './components/DarkModeButton';
 import { useState } from 'react';
 
+const body = document.querySelector('body');
+
+let storageMode = localStorage.getItem('mode');
+
+storageMode = storageMode!=='null'?storageMode:'Light';
+
+storageMode==='Light'?body.classList.add('lightMode'):body.classList.remove('lightMode');
+
+
 function App() {
   const sectionsList = ['WEB PROJECTS','CERTIFICATIONS','CODE NETWORKS','CONTACT','BUY ME A COFFEE'];
 
-  const body = document.querySelector('body')
-
-  let [mode,setMode] = useState('Light');
+  let [mode,setMode] = useState(storageMode);
   
   function controlDarkMode() {
     mode==='Light'?setMode('Dark'):setMode('Light');
     body.classList.toggle('lightMode');
   }
 
+  localStorage.setItem('mode',mode);
 
   return (
       <React.Fragment>
