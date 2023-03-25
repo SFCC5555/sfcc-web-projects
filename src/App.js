@@ -7,9 +7,7 @@ import { useState } from 'react';
 
 const body = document.querySelector('body');
 
-let storageMode = localStorage.getItem('mode');
-
-storageMode!=='null'?storageMode=storageMode:storageMode='Light';
+let storageMode = localStorage.getItem('mode')?localStorage.getItem('mode'):'Light';
 
 storageMode==='Light'?body.classList.add('lightMode'):body.classList.remove('lightMode');
 
