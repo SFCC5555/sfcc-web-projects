@@ -68,3 +68,40 @@
     height: 34.8px;
     background-image: url('../assets/icons/javaScriptIconDark.png');
 }
+
+.ReactIconLight:hover,.ReactIconDark:hover {
+    background-image: url('../assets/icons/reactIconColor.png');
+    transition-duration: 1.5s;
+    animation: reactIcon-spin infinite 25s linear;
+}
+
+@keyframes reactIcon-spin {
+
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+.ReactIconLight {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/reactIconLight.png');
+}
+
+.ReactIconDark {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/reactIconDark.png');
+}
+
+
+.ReactIconLight, .ReactIconDark {
+    animation-name: reactIconAnimation;
+    animation-duration: 1.5s;
+}
+  
+@keyframes reactIconAnimation {
+
+    0%{opacity: 5%; width: 34.8px;}
+    100%{opacity: 100%; width: 34.8px;}
+    
+}
