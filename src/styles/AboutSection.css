@@ -4,7 +4,7 @@
     position: fixed;
     top: 58px;
     padding: 60px 30px;
-    padding-bottom: 300px;
+    padding-bottom: 200px;
     border-style:solid;
     border-width: 2px;
     right: 0px;
@@ -22,8 +22,8 @@
 }
 
 @keyframes aboutAnimation {
-    0%{width: 30%;padding: 60px 0px;padding-bottom: 300px;letter-spacing: -10px;}
-    100%{width: 100%;padding: 60px 30px;padding-bottom: 300px;letter-spacing: 0px;}
+    0%{width: 30%;padding: 60px 0px;padding-bottom: 200px;letter-spacing: -10px;}
+    100%{width: 100%;padding: 60px 30px;padding-bottom: 200px;letter-spacing: 0px;}
 
 }
 

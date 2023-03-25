@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap:20px;
+    gap:15px;
 }
 
 .skillIcon {
@@ -18,9 +18,9 @@
     
 }
 
-.skillIcon:hover {
+.HtmlIconLight:hover,.HtmlIconDark:hover {
     background-image: url('../assets/icons/htmlIconColor.png');
-    transition-duration: 2s;
+    transition-duration: 1.5s;
 }
 
 .HtmlIconLight {
@@ -33,4 +33,38 @@
     width: 30px;
     height: 34.8px;
     background-image: url('../assets/icons/htmlIconDark.png');
+}
+
+.CssIconLight:hover,.CssIconDark:hover {
+    background-image: url('../assets/icons/cssIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.CssIconLight {
+    width: 30px;
+    height: 34.8px;
+    background-image: url('../assets/icons/cssIconLight.png');
+}
+
+.CssIconDark {
+    width: 30px;
+    height: 34.8px;
+    background-image: url('../assets/icons/cssIconDark.png');
+}
+
+.JavaScriptIconLight:hover,.JavaScriptIconDark:hover {
+    background-image: url('../assets/icons/javaScriptIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.JavaScriptIconLight {
+    width: 30px;
+    height: 34.8px;
+    background-image: url('../assets/icons/javaScriptIconLight.png');
+}
+
+.JavaScriptIconDark {
+    width: 30px;
+    height: 34.8px;
+    background-image: url('../assets/icons/javaScriptIconDark.png');
 }
