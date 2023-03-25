@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'LinkinPark';
-  src: url('./assets/fonts/LinkinPark.ttf');
+  font-family: 'KAPITAL';
+  src: url('./assets/fonts/KAPITAL.ttf');
 }
 
 @font-face {
@@ -27,7 +27,7 @@ html{
 :root {
   --darkColor: 213, 17%, 12%;
   --lightColor:192, 15%, 94%;
-  --jFont:'LinkinPark';
+  --jFont:'KAPITAL';
   --mainFont:'BankGothicBold';
   --secondFont:'Linkin';
 }
@@ -75,13 +75,13 @@ h1{
 }
 
 .lightModeComponent:hover {
-  background-color: hsl(var(--darkColor),75%);
-  transition-duration:60s;
+  background-color: hsl(var(--darkColor));
+  transition-duration:120s;
 }
 
 .darkModeComponent:hover {
-  background-color: hsl(var(--lightColor),75%);
-  transition-duration:60s;
+  background-color: hsl(var(--lightColor));
+  transition-duration:120s;
 }
 
 .lightModeElement {
