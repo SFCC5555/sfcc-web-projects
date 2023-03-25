@@ -9,7 +9,7 @@ const body = document.querySelector('body');
 
 let storageMode = localStorage.getItem('mode');
 
-storageMode = storageMode!=='null'?storageMode:'Light';
+storageMode!=='null'?storageMode=storageMode:storageMode='Light';
 
 storageMode==='Light'?body.classList.add('lightMode'):body.classList.remove('lightMode');
 
