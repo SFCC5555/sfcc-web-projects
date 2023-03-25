@@ -6,8 +6,8 @@
 }
 
 @keyframes sfccIconAnimation {
-    0% {width: 15%;opacity: 0%;}
-    100% {width: 30%;opacity: 100%;}  
+    0% {width: 30%;opacity: 0%;}
+    100% {width: 60%;opacity: 100%;}  
 }
 
 .sfccIcon:hover {
@@ -18,6 +18,13 @@
 @media screen and (min-width: 900px) {
     .sfccIcon {
         width: 30%;
+        animation-name: sfccIconAnimation;
+        animation-duration: 1.5s;
+    }
+    
+    @keyframes sfccIconAnimation {
+        0% {width: 15%;opacity: 0%;}
+        100% {width: 30%;opacity: 100%;}  
     }
 }
 

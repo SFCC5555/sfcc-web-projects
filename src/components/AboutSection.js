@@ -9,8 +9,7 @@ function AboutSection({ active, controlFunction, mode}) {
         <section className={active?`aboutSection ${lowerCaseMode}ModeComponent`:`aboutSection ${lowerCaseMode}ModeComponent inactive`}>
 
             <div onClick={controlFunction} className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
-            <h2>blablabla</h2>
-            <p>blablablablabla</p>
+            <p className={`${lowerCaseMode}ModeElement`}>A Front-End Developer with entry-level experience specializing in web development, user interface design, HTML, CSS, JavaScript and ReactJS. Adept at identifying opportunities to enhance front-end design and improve the user experience.</p>
 
 
         </section>
