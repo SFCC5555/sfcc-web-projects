@@ -62,10 +62,11 @@ h1{
 }
 
 .lightModeComponent {
-  background-color: hsl(var(--lightColor));
   color: hsl(var(--darkColor));
+  background-color: hsl(var(--lightColor));
   border-color: hsl(var(--darkColor),25%);
 }
+
 
 .darkModeComponent {
   background-color: hsl(var(--darkColor));
@@ -86,11 +87,25 @@ h1{
 .lightModeElement {
   color: hsl(var(--darkColor));
   border-color: hsl(var(--darkColor),25%);
+  animation-name: lightModeTextAnimation;
+  animation-duration: 3s;
+}
+
+@keyframes lightModeTextAnimation {
+  0% {color: hsl(var(--darkColor),0%);}
+  100% {color: hsl(var(--darkColor));}
 }
 
 .darkModeElement {
   color: hsl(var(--lightColor));
   border-color: hsl(var(--lightColor),25%);
+  animation-name: darkModeTextAnimation;
+  animation-duration: 3s;
+}
+
+@keyframes darkModeTextAnimation {
+  0% {color: hsl(var(--lightColor),0%);}
+  100% {color: hsl(var(--lightColor));}
 }
 
 .lightModeElement:hover {

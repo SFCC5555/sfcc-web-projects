@@ -20,13 +20,21 @@ span {
     background-size: 100%;
     background-repeat: no-repeat;
 
+
 }
 
 .burgerIcon {
     width: 31px;
     height: 40px;
     cursor: pointer;
+    animation-name: burgerIconAnimation;
+    animation-duration: 350ms;
 }
+
+@keyframes burgerIconAnimation {
+    0% {width: 5px;opacity: 25%;translate: 15px;}
+    100% {width: 31px;opacity: 100%;}  
+  }
 
 .burgerIconLight {
     background-image: url('../assets/icons/burgerIconMobileLight.png');
@@ -55,7 +63,15 @@ span {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    animation-name: pictureAnimation;
+    animation-duration: 2.5s;
 }
+
+@keyframes pictureAnimation {
+    0% {translate: 100px;background-image: url('../assets/images/sfccPicture.jpg');}
+    30% {translate: 0px;background-image: url('../assets/images/sfccPicture.jpg');}
+    100% {translate: 0px;background-image: url('../assets/images/sfccPictureBW.jpg');} 
+  }
 
 .sfccPictureBW {
     background-image: url('../assets/images/sfccPictureBW.jpg');
