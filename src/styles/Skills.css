@@ -8,14 +8,16 @@
 .skillIcon {
     animation-name: skillIconAnimation;
     background-size: contain;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
+    height: 32px;
+    width: 32px;
     cursor: crosshair;
 }
 
 @keyframes skillIconAnimation {
 
-    0%{opacity: 0%; width: 20px;}
-    100%{opacity: 100%; width: 30px;}
+    0%{opacity: 0%; height: 20px;}
+    100%{opacity: 100%; height: 32px;}
     
 }
 
@@ -25,14 +27,12 @@
 }
 
 .HtmlIconLight {
-    width: 30px;
-    height: 30px;
+
     background-image: url('../assets/icons/htmlIconLight.png');
 }
 
 .HtmlIconDark {
-    width: 30px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/htmlIconDark.png');
 }
 
@@ -42,14 +42,12 @@
 }
 
 .CssIconLight {
-    width: 30px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/cssIconLight.png');
 }
 
 .CssIconDark {
-    width: 30px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/cssIconDark.png');
 }
 
@@ -59,14 +57,12 @@
 }
 
 .JavaScriptIconLight {
-    width: 30px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/javaScriptIconLight.png');
 }
 
 .JavaScriptIconDark {
-    width: 30px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/javaScriptIconDark.png');
 }
 
@@ -83,14 +79,12 @@
 }
 
 .ReactIconLight {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/reactIconLight.png');
 }
 
 .ReactIconDark {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/reactIconDark.png');
 }
 
@@ -102,8 +96,8 @@
   
 @keyframes reactIconAnimation {
 
-    0%{opacity: 5%; width: 34.8px;}
-    100%{opacity: 100%; width: 34.8px;}
+    0%{opacity: 5%; width: 32px;}
+    100%{opacity: 100%; width: 32px;}
     
 }
 
@@ -113,14 +107,12 @@
 }
 
 .GitIconLight {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/gitIconLight.png');
 }
 
 .GitIconDark {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/gitIconDark.png');
 }
 
@@ -131,14 +123,12 @@
 }
 
 .GitHubIconLight {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/gitHubIconLight.png');
 }
 
 .GitHubIconDark {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/gitHubIconDark.png');
 }
 
@@ -149,14 +139,12 @@
 }
 
 .cvIconLight {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/cvIconLight.png');
 }
 
 .cvIconDark {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/cvIconDark.png');
 }
 
@@ -166,14 +154,12 @@
 }
 
 .AdobeIconLight {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/adobeIconLight.png');
 }
 
 .AdobeIconDark {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/adobeIconDark.png');
 }
 
@@ -183,14 +169,12 @@
 }
 
 .JsonIconLight {
-    width: 34.8px;
-    height: 34.8px;
+ 
     background-image: url('../assets/icons/jsonIconLight.png');
 }
 
 .JsonIconDark {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/jsonIconDark.png');
 }
 
@@ -200,27 +184,11 @@
 }
 
 .ApiIconLight {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/apiIconLight.png');
 }
 
 .ApiIconDark {
-    width: 34.8px;
-    height: 34.8px;
+
     background-image: url('../assets/icons/apiIconDark.png');
-}
-
-
-.GitIconLight,.GitIconDark,.GitHubIconLight,.GitHubIconDark,.cvIconLight,.cvIconDark,.AdobeIconLight,.AdobeIconDark,.JsonIconLight,.JsonIconDark,.ApiIconLight,.ApiIconDark {
-    animation-name: squareIconAnimation;
-    animation-duration: 1.5s;
-    cursor: crosshair;
-}
-
-@keyframes squareIconAnimation {
-
-    0%{opacity: 0%; width: 20px;}
-    100%{opacity: 100%; width: 34.8px;}
-    
 }
