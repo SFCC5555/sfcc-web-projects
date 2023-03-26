@@ -105,3 +105,20 @@
     100%{opacity: 100%; width: 34.8px;}
     
 }
+
+.GitIconLight:hover,.GitIconDark:hover {
+    background-image: url('../assets/icons/gitIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.GitIconLight {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/gitIconLight.png');
+}
+
+.GitIconDark {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/gitIconDark.png');
+}
