@@ -69,21 +69,6 @@
     }
 }
 
-@media screen and (min-width: 900px) {
-    .aboutSection {
-        width: 40%;
-        animation-name: aboutAnimation;
-        padding-bottom: 150px;
-        animation-duration: 1s;
-    }
-    
-    @keyframes aboutAnimation {
-        0%{width: 15%;letter-spacing: -10px;}
-        100%{width: 40%;letter-spacing: 0px;}
-    
-    }
-}
-
 .links {
     display: flex;
     align-items: center;
@@ -91,7 +76,7 @@
     gap:20px;
     font-size: 1.3rem;
     position: absolute;
-    top:83%;
+    top:70%;
     left: 20px;
 
 }
@@ -116,4 +101,22 @@ a:hover .GitHubIconLight, a:hover .GitHubIconDark {
 
 .inactive {
     display: none;
+}
+
+@media screen and (min-width: 900px) {
+    .aboutSection {
+        width: 40%;
+        animation-name: aboutAnimation;
+        padding-bottom: 150px;
+        animation-duration: 1s;
+    }
+    .links {
+        top: 83%;
+    }
+    
+    @keyframes aboutAnimation {
+        0%{width: 15%;letter-spacing: -10px;}
+        100%{width: 40%;letter-spacing: 0px;}
+    
+    }
 }
