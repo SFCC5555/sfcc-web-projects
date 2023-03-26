@@ -122,3 +122,16 @@
     height: 34.8px;
     background-image: url('../assets/icons/gitIconDark.png');
 }
+
+.GitIconLight,.GitIconDark {
+    animation-name: squareIconAnimation;
+    animation-duration: 1.5s;
+    cursor: crosshair;
+}
+
+@keyframes squareIconAnimation {
+
+    0%{opacity: 0%; width: 20px;}
+    100%{opacity: 100%; width: 34.8px;}
+    
+}
