@@ -54,10 +54,6 @@
     transition-duration: 200ms;
 }
 
-.inactive {
-    display: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
     .closeIcon:hover {
       animation: closeIcon-spin 1 200ms linear;
@@ -86,4 +82,38 @@
         100%{width: 40%;letter-spacing: 0px;}
     
     }
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+    font-size: 1.3rem;
+    position: absolute;
+    top:83%;
+    left: 20px;
+
+}
+
+.links > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+}
+
+a .skillIcon {
+    cursor: pointer;
+}
+
+a:hover .GitHubIconLight, a:hover .GitHubIconDark {
+    background-image: url('../assets/icons/gitHubIconColor.png');
+    transition-duration: 1.5s;
+}
+
+
+.inactive {
+    display: none;
 }

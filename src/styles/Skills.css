@@ -123,7 +123,26 @@
     background-image: url('../assets/icons/gitIconDark.png');
 }
 
-.GitIconLight,.GitIconDark {
+
+.GitHubIconLight:hover, .GitHubIconDark:hover {
+    background-image: url('../assets/icons/gitHubIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.GitHubIconLight {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/gitHubIconLight.png');
+}
+
+.GitHubIconDark {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/gitHubIconDark.png');
+}
+
+
+.GitIconLight,.GitIconDark,.GitHubIconLight,.GitHubIconDark {
     animation-name: squareIconAnimation;
     animation-duration: 1.5s;
     cursor: crosshair;
