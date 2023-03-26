@@ -98,6 +98,11 @@ a:hover .GitHubIconLight, a:hover .GitHubIconDark {
     transition-duration: 1.5s;
 }
 
+a:hover .cvIconLight, a:hover .cvIconDark {
+    background-image: url('../assets/icons/cvIconColor.png');
+    transition-duration: 1.5s;
+}
+
 
 .inactive {
     display: none;

@@ -16,7 +16,7 @@ function AboutSection({ active, controlFunction, mode}) {
             <Skills skillList={skillList} mode={mode} />
             <section className='links'>
                 <a href='https://github.com/SFCC5555' className={`${lowerCaseMode}ModeElement`}><span className={`skillIcon GitHubIcon${mode}`}></span>GitHub</a>
-                <a href={require('../assets/documents/CVFernandoCarrasco.pdf')} className={`${lowerCaseMode}ModeElement`}><span className={`skillIcon GitHubIcon${mode}`}></span>CV</a>
+                <a href={require('../assets/documents/CVFernandoCarrasco.pdf')} className={`${lowerCaseMode}ModeElement`}><span className={`skillIcon cvIcon${mode}`}></span>CV</a>
             </section>
 
         </section>

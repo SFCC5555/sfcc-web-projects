@@ -142,7 +142,26 @@
 }
 
 
-.GitIconLight,.GitIconDark,.GitHubIconLight,.GitHubIconDark {
+.cvIconLight:hover, .cvIconDark:hover {
+    background-image: url('../assets/icons/cvIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.cvIconLight {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/cvIconLight.png');
+}
+
+.cvIconDark {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/cvIconDark.png');
+}
+
+
+
+.GitIconLight,.GitIconDark,.GitHubIconLight,.GitHubIconDark,.cvIconLight,.cvIconDark {
     animation-name: squareIconAnimation;
     animation-duration: 1.5s;
     cursor: crosshair;
