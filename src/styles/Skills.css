@@ -159,9 +159,43 @@
     background-image: url('../assets/icons/cvIconDark.png');
 }
 
+.AdobeIconLight:hover, .AdobeIconDark:hover {
+    background-image: url('../assets/icons/adobeIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.AdobeIconLight {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/adobeIconLight.png');
+}
+
+.AdobeIconDark {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/adobeIconDark.png');
+}
+
+.JsonIconLight:hover, .JsonIconDark:hover {
+    background-image: url('../assets/icons/jsonIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.JsonIconLight {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/jsonIconLight.png');
+}
+
+.JsonIconDark {
+    width: 34.8px;
+    height: 34.8px;
+    background-image: url('../assets/icons/jsonIconDark.png');
+}
 
 
-.GitIconLight,.GitIconDark,.GitHubIconLight,.GitHubIconDark,.cvIconLight,.cvIconDark {
+
+.GitIconLight,.GitIconDark,.GitHubIconLight,.GitHubIconDark,.cvIconLight,.cvIconDark,.AdobeIconLight,.AdobeIconDark,.JsonIconLight,.JsonIconDark {
     animation-name: squareIconAnimation;
     animation-duration: 1.5s;
     cursor: crosshair;
