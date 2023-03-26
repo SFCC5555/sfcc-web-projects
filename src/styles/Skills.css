@@ -7,6 +7,7 @@
 
 .skillIcon {
     animation-name: skillIconAnimation;
+    background-size: contain;
     animation-duration: 1.5s;
     cursor: crosshair;
 }
@@ -25,7 +26,7 @@
 
 .HtmlIconLight {
     width: 30px;
-    height: 34.8px;
+    height: 30px;
     background-image: url('../assets/icons/htmlIconLight.png');
 }
 
