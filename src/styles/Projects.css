@@ -51,8 +51,8 @@ h2 {
 
 
 .projectIlustration {
-    width: 200px;
-    height: 300px;
+    width: 150px;
+    height: 225px;
     animation-name: projectIlustrationAnimation;
     animation-duration: 1.5s;
 }
@@ -85,6 +85,11 @@ h2 {
 @media screen and (min-width: 700px) {
     .projectContainer {
         grid-template-columns: repeat(3,1fr);
+    }
+    .projectIlustration {
+        width: 200px;
+        height: 300px;
+
     }
   }
 
