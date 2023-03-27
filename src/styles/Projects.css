@@ -58,8 +58,8 @@ h2 {
 }
 
 @keyframes projectIlustrationAnimation {
-    0%{width: 180px;}
-    100%{width: 200px;}
+    0%{width: 140px;}
+    100%{width: 150px;}
 }
 
 
@@ -90,6 +90,11 @@ h2 {
         width: 200px;
         height: 300px;
 
+    }
+
+    @keyframes projectIlustrationAnimation {
+        0%{width: 180px;}
+        100%{width: 200px;}
     }
   }
 
