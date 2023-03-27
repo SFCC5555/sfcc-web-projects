@@ -6,7 +6,7 @@ function AboutSection({ active, controlFunction, mode}) {
 
     let lowerCaseMode=mode.toLowerCase();
 
-    let skillList=['Html','Css','JavaScript','React','Git','Adobe-Illustrator','Figma','AutoCAD','Json','Api','SketchUp','Clip-Studio-Paint']
+    let skillList=['Html','Css','JavaScript','React','Git','Adobe-Illustrator']
 
     return (
         <section className={active?`aboutSection ${lowerCaseMode}ModeComponent`:`aboutSection ${lowerCaseMode}ModeComponent inactive`}>

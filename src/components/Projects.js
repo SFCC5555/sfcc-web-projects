@@ -9,7 +9,7 @@ function Projects({mode}) {
 
 
     return (<main>
-                <h2 className={`${lowerCaseMode}ModeElement`}>WxB PROJECTS</h2>
+                <h2 className={`${lowerCaseMode}ModeElement`}>WEB PROJECTS</h2>
                 <section>
 
                 </section>
