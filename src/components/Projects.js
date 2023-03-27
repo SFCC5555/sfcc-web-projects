@@ -1,5 +1,5 @@
 import '../styles/Projects.css';
-import projects from '../projects.json';
+import data from '../data.json';
 import { Skills } from './Skills';
 
 
@@ -8,7 +8,8 @@ function Projects({mode}) {
     const lowerCaseMode=mode.toLowerCase();
 
 
-    return (<main>
+    return (<main className='sectionContainer'>
+                <div className='sectionGap' id='WEB PROJECTS'></div>
                 <h2 className={`${lowerCaseMode}ModeElement`}>WEB PROJECTS</h2>
                 <section>
 
@@ -16,7 +17,7 @@ function Projects({mode}) {
                 <section className='projectContainer'>
                     
                     {
-                     projects.map(project=>(
+                     data.projects.map(project=>(
                         <div key={project.name} className={`${lowerCaseMode}ModeComponent project`}>
                             <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIlustration ${project.name}`} /></a>
                             <Skills skillList={project.skillList} mode={mode}/>

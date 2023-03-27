@@ -9,6 +9,7 @@
     font-size: 2rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     height: 100vh;
     gap: 40px;
     z-index: 1;
@@ -22,16 +23,16 @@
 
 }
 
-.menu div {
+.menu a {
+    text-decoration: none;
     cursor: pointer;
     margin-right: 60px;
-
 }
 
 .menu .closeIcon {
     position: absolute;
     top: 15px;
-    right: -45px;
+    right: 15px;
 }
 
 .inactive {
@@ -58,7 +59,7 @@
     }
 
 
-    .menu div {
+    .menu a {
         margin-right: 0px;  
     }
 

@@ -9,7 +9,7 @@ function Menu({ sectionsList, active, controlFunction, mode }) {
         <section className={active?`menu ${lowerCaseMode}ModeComponent`:`menu ${lowerCaseMode}ModeComponent inactive`}>
             <div onClick={controlFunction} className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
             {
-                sectionsList.map(section=>(<div className={`${lowerCaseMode}ModeElement`} key={section}>{section}</div>))
+                sectionsList.map(section=>(<a href={`#${section}`} className={`${lowerCaseMode}ModeElement`} key={section}>{section}</a>))
             }
 
 

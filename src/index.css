@@ -47,7 +47,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 25px;
+  gap: 20px;
 }
 
 h1{
@@ -118,6 +118,16 @@ h1{
 .darkModeElement:hover {
   color: hsl(var(--lightColor),50%);
   transition-duration: 1s;
+}
+
+.sectionContainer {
+  position: relative;
+}
+
+.sectionGap {
+  background-color: red;
+  position: absolute;
+  top: -100px;
 }
 
 
