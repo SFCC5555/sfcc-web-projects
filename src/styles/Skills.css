@@ -4,11 +4,16 @@
     align-items: center;
     flex-wrap: wrap;
     gap:15px;
-    animation-name: skillContainerAnimation;
-    animation-duration: 1.5s;
+
 }
 
-@keyframes skillContainerAnimation {
+.noWarp {
+    animation-name: noWarpAnimation;
+    animation-duration: 1.5s;
+    
+} 
+
+@keyframes noWarpAnimation {
 
     0%{flex-wrap:nowrap}
     100%{flex-wrap:nowrap}
