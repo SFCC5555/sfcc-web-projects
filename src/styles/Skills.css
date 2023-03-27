@@ -1,17 +1,26 @@
 .skillContainer {
+    max-width: 315px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap:15px;
+    animation-name: skillContainerAnimation;
+    animation-duration: 1.5s;
+}
+
+@keyframes skillContainerAnimation {
+
+    0%{flex-wrap:nowrap}
+    
 }
 
 .skillIcon {
-    animation-name: skillIconAnimation;
     background-size: contain;
-    animation-duration: 1s;
     height: 32px;
     width: 32px;
     cursor: crosshair;
+    animation-name: skillIconAnimation;
+    animation-duration: 1s;
 }
 
 @keyframes skillIconAnimation {
@@ -148,17 +157,17 @@
     background-image: url('../assets/icons/cvIconDark.png');
 }
 
-.AdobeIconLight:hover, .AdobeIconDark:hover {
+.Adobe-IllustratorIconLight:hover, .Adobe-IllustratorIconDark:hover {
     background-image: url('../assets/icons/adobeIconColor.png');
     transition-duration: 1.5s;
 }
 
-.AdobeIconLight {
+.Adobe-IllustratorIconLight {
 
     background-image: url('../assets/icons/adobeIconLight.png');
 }
 
-.AdobeIconDark {
+.Adobe-IllustratorIconDark {
 
     background-image: url('../assets/icons/adobeIconDark.png');
 }
@@ -191,4 +200,64 @@
 .ApiIconDark {
 
     background-image: url('../assets/icons/apiIconDark.png');
+}
+
+.FigmaIconLight:hover, .FigmaIconDark:hover {
+    background-image: url('../assets/icons/figmaIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.FigmaIconLight {
+
+    background-image: url('../assets/icons/figmaIconLight.png');
+}
+
+.FigmaIconDark {
+
+    background-image: url('../assets/icons/figmaIconDark.png');
+}
+
+.AutoCADIconLight:hover, .AutoCADIconDark:hover {
+    background-image: url('../assets/icons/autoCadIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.AutoCADIconLight {
+
+    background-image: url('../assets/icons/autoCadIconLight.png');
+}
+
+.AutoCADIconDark {
+
+    background-image: url('../assets/icons/autoCadIconDark.png');
+}
+
+.SketchUpIconLight:hover, .SketchUpIconDark:hover {
+    background-image: url('../assets/icons/sketchUpIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.SketchUpIconLight {
+
+    background-image: url('../assets/icons/sketchUpIconLight.png');
+}
+
+.SketchUpIconDark {
+
+    background-image: url('../assets/icons/sketchUpIconDark.png');
+}
+
+.Clip-Studio-PaintIconLight:hover, .Clip-Studio-PaintIconDark:hover {
+    background-image: url('../assets/icons/clipStudioPaintIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.Clip-Studio-PaintIconLight {
+
+    background-image: url('../assets/icons/clipStudioPaintIconLight.png');
+}
+
+.Clip-Studio-PaintIconDark {
+
+    background-image: url('../assets/icons/clipStudioPaintIconDark.png');
 }
