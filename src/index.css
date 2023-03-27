@@ -37,7 +37,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family:var(--mainFont);
-  padding: 80px 0px;
+  padding: 80px 15px;
 
 }
 
@@ -123,6 +123,6 @@ h1{
 
 @media screen and (min-width: 900px) {
   body {
-    padding: 100px 0px;
+    padding: 100px 20px;
   }
 }
