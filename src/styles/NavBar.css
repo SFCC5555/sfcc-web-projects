@@ -12,6 +12,7 @@
     padding: 0px 15px;
     font-size: 1.4rem;
     gap: 5px;
+    z-index: 2;
 }
 
 span {

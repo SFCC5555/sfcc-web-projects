@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import { NavBar } from './components/NavBar.js';
 import { DarkModeButton } from './components/DarkModeButton';
+import { Projects } from './components/Projects';
 import { useState } from 'react';
 
 const body = document.querySelector('body');
@@ -29,6 +30,7 @@ function App() {
         <NavBar sectionsList={sectionsList} mode={mode}/>
         <img alt='sfcc Icon' className='sfccIcon' src={require(`./assets/icons/sfccIcon${mode}.png`)} />
         <DarkModeButton controlFunction={controlDarkMode} mode={mode}/>
+        <Projects mode={mode}/>
       </React.Fragment>
   );
 }
