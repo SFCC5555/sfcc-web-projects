@@ -1,6 +1,8 @@
 import '../styles/Projects.css';
 import data from '../data.json';
 import { Skills } from './Skills';
+import { Search } from './Search';
+import { Filter} from './Filter';
 
 
 function Projects({mode}) {
@@ -11,8 +13,9 @@ function Projects({mode}) {
     return (<main className='sectionContainer'>
                 <div className='sectionGap' id='WEB PROJECTS'></div>
                 <h2 className={`${lowerCaseMode}ModeElement`}>WEB PROJECTS</h2>
-                <section>
-
+                <section className='searchFilterContainer'>
+                    <Search mode={mode} />
+                    <Filter mode={mode} />
                 </section>
                 <section className='projectContainer'>
                     

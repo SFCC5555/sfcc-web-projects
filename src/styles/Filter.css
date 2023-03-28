@@ -1,0 +1,44 @@
+.filterButton {
+    height: 30px;
+    width: 150px;
+    font-family: var(--mainFont);
+    font-size: 1.6rem;
+    cursor: pointer;
+    opacity: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.filterButton:hover {
+    opacity: 100%;
+}
+
+.darkModeFilter {
+    background-color: hsl(var(--darkColor));
+    color: hsl(var(--lightColor));
+    border: 2px solid hsl(var(--lightColor),40%);
+}
+
+.lightModeFilter {
+    background-color: hsl(var(--lightColor));
+    color: hsl(var(--darkColor));
+    border: 2px solid hsl(var(--darkColor),40%);
+
+}
+
+.filterIconDark {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/icons/filterIconDark.png');
+}
+
+.filterIconLight {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+
+    background-image: url('../assets/icons/filterIconLight.png');
+}

@@ -1,0 +1,56 @@
+.searchInput {
+    height: 30px;
+    padding: 10px;
+    font-family: var(--mainFont);
+    font-size: 1.6rem;
+    opacity: 75%;
+}
+
+.darkModeInput {
+    background-color: hsl(var(--darkColor));
+    color: hsl(var(--lightColor));
+    border: 2px solid hsl(var(--lightColor),40%);
+}
+
+.darkModeInput::placeholder {
+    color: hsl(var(--lightColor));
+
+}
+
+.lightModeInput {
+    background-color: hsl(var(--lightColor));
+    color: hsl(var(--darkColor));
+    border: 2px solid hsl(var(--darkColor),40%);
+
+}
+
+.lightModeInput::placeholder {
+    color: hsl(var(--darkColor));
+
+}
+
+.searchInput:hover {
+    opacity: 100%;
+}
+
+.searchIconDark {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    translate: -25px 3px;
+    opacity: 90%;
+    background-image: url('../assets/icons/searchIconDark.png');
+}
+
+.searchIconLight {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    translate: -25px 3px;
+    opacity: 90%;
+    background-image: url('../assets/icons/searchIconLight.png');
+}
+
+.searchIconDark:hover, .searchIconLight:hover {
+    opacity: 100%;
+}
