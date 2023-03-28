@@ -115,6 +115,23 @@
             "skillList":["Html","Css","JavaScript","Figma"]
         }    
     ],
-    "certifications":[]
+    "certifications":[
+        {
+            "name":"javaScriptAlgorithmsandDataStructures",
+            "Illustration":"javaScriptAlgorithmsandDataStructures.png"
+        },
+        {
+            "name":"javaScriptAlgorithmsandDataStructures",
+            "Illustration":"javaScriptAlgorithmsandDataStructures.png"
+        },
+        {
+            "name":"javaScriptAlgorithmsandDataStructures",
+            "Illustration":"javaScriptAlgorithmsandDataStructures.png"
+        },        {
+            "name":"javaScriptAlgorithmsandDataStructures",
+            "Illustration":"javaScriptAlgorithmsandDataStructures.png"
+        } 
+        
+    ]
 }
 

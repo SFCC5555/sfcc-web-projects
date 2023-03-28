@@ -6,12 +6,12 @@ main {
     gap: 10px;
 }
 
-
 h2 {
     font-size: 3rem;
 }
 
 .projectContainer {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
 
@@ -21,7 +21,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:5px;
     padding: 5px;
     border-style: solid;
     border-width: 2px;
@@ -58,14 +57,14 @@ h2 {
 }
 
 
-.projectIlustration {
+.projectIllustration {
     width: 150px;
     height: 225px;
-    animation-name: projectIlustrationAnimation;
+    animation-name: projectIllustrationAnimation;
     animation-duration: 1.5s;
 }
 
-@keyframes projectIlustrationAnimation {
+@keyframes projectIllustrationAnimation {
     0%{width: 140px;}
     100%{width: 150px;}
 }
@@ -94,13 +93,13 @@ h2 {
     .projectContainer {
         grid-template-columns: repeat(3,1fr);
     }
-    .projectIlustration {
+    .projectIllustration {
         width: 200px;
         height: 300px;
 
     }
 
-    @keyframes projectIlustrationAnimation {
+    @keyframes projectIllustrationAnimation {
         0%{width: 180px;}
         100%{width: 200px;}
     }

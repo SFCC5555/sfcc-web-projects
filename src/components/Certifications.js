@@ -18,7 +18,7 @@ function Certifications({mode}) {
                     {
                      data.certifications.map(certification=>(
                         <div key={certification.name} className={`${lowerCaseMode}ModeComponent certification`}>
-                            <a href={certification.link} target='_blank' rel="noreferrer" ><span className={`certificationIlustration ${certification.name}`} /></a>
+                            <span className={`certificationIllustration ${certification.name}`} />
                         </div>
                      ))   
                     }

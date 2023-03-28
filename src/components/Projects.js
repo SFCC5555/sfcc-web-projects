@@ -19,7 +19,7 @@ function Projects({mode}) {
                     {
                      data.projects.map(project=>(
                         <div key={project.name} className={`${lowerCaseMode}ModeComponent project`}>
-                            <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIlustration ${project.name}`} /></a>
+                            <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIllustration ${project.name}`} /></a>
                             <Skills skillList={project.skillList} mode={mode}/>
                             <a href={project.repository} target='_blank' rel="noreferrer" ><span className={`skillIcon GitHubIcon${mode} gitHubLink `}/></a>
                         </div>

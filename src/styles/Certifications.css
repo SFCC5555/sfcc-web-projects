@@ -1,0 +1,71 @@
+.certificationContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.certification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-width: 2px;
+    border-collapse: collapse;
+    animation-name: certificationAnimation;
+    animation-duration: 1.5s;
+
+}
+
+@keyframes certificationAnimation {
+    0%{opacity: 0%;}
+    100%{opacity: 100%;}
+    
+}
+
+.certificationIllustration {
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+    animation-name: certificationIllustrationAnimation;
+    animation-duration: 1.5s;
+}
+
+@keyframes certificationIllustrationAnimation {
+    0%{width: 180px;}
+    100%{width: 200px;}
+}
+
+
+.javaScriptAlgorithmsandDataStructures {
+    background-image: url('../assets/images/certificationIllustrations/javaScriptAlgorithmsandDataStructures.png');
+}
+
+.javaScriptAlgorithmsandDataStructures:hover {
+    background-image: url('../assets/images/certificationIllustrations/javaScriptAlgorithmsandDataStructuresColor.png');
+    transition-duration: 3s;
+} 
+
+
+
+
+@media screen and (min-width: 700px) {
+    .certificationContainer {
+        grid-template-columns: repeat(3,1fr);
+    }
+    .certificationIllustration {
+        width: 200px;
+        height: 150px;
+
+    }
+
+    @keyframes certificationIllustrationAnimation {
+        0%{width: 180px;}
+        100%{width: 200px;}
+    }
+  }
+
+@media screen and (min-width: 900px) {
+    .certificationContainer {
+        grid-template-columns: repeat(4,1fr);
+    }
+  }
