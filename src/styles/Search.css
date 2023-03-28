@@ -1,4 +1,5 @@
 .searchInput {
+    width: 200px;
     height: 30px;
     padding: 10px;
     font-family: var(--mainFont);
