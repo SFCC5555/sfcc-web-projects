@@ -1,7 +1,8 @@
 .searchInput {
-    width: 30px;
+    width: 40px;
     height: 30px;
     padding: 10px;
+    border-radius: 6px 2px 0px 0px;
     font-family: var(--mainFont);
     font-size: 0rem;
     opacity: 75%;
@@ -45,7 +46,7 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    translate: -22px 6px;
+    translate: -26px 6px;
     opacity: 90%;
 
 }
@@ -62,10 +63,6 @@
     opacity: 100%;
 }
 
-.inputContainer:hover .searchIcon {
-    translate: -26px 6px;
-}
-
 @media screen and (min-width: 700px) {
     .searchInput {
         width: 250px;   
@@ -76,7 +73,4 @@
         width: 250px;
     }
 
-    .searchIcon {
-        translate: -26px 6px;
-    }
 }
