@@ -125,14 +125,17 @@ h1{
 }
 
 .sectionGap {
-  background-color: red;
   position: absolute;
-  top: -100px;
+  top: -75px;
 }
 
 
 @media screen and (min-width: 900px) {
   body {
     padding: 100px 20px;
+  }
+
+  .sectionGap {
+    top: -115px;
   }
 }
