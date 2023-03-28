@@ -1,5 +1,5 @@
 .searchInput {
-    width: 28px;
+    width: 30px;
     height: 30px;
     padding: 10px;
     font-family: var(--mainFont);
@@ -7,7 +7,7 @@
     opacity: 75%;
 }
 
-.searchInput:hover {
+.searchInput:hover, .searchInput:focus {
     width: 200px;
     transition-duration: 2s;
     font-size: 1.6rem;
@@ -62,6 +62,10 @@
     opacity: 100%;
 }
 
+.inputContainer:hover .searchIcon {
+    translate: -26px 6px;
+}
+
 @media screen and (min-width: 700px) {
     .searchInput {
         width: 250px;   
@@ -70,5 +74,9 @@
 
     .searchInput:hover {
         width: 250px;
+    }
+
+    .searchIcon {
+        translate: -26px 6px;
     }
 }
