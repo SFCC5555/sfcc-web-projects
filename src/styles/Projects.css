@@ -114,17 +114,18 @@ h2 {
         100%{width: 200px;}
     }
 
-    main {
-        gap: 25px
+}
+@media screen and (min-width: 900px) {
+    .projectContainer {
+        grid-template-columns: repeat(4,1fr);
     }
 
     .searchFilterContainer {
 
         top: 27px;
     }
-}
-@media screen and (min-width: 900px) {
-    .projectContainer {
-        grid-template-columns: repeat(4,1fr);
+
+    main {
+        gap: 25px
     }
   }

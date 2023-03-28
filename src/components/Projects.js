@@ -10,6 +10,7 @@ function Projects({mode}) {
     const lowerCaseMode=mode.toLowerCase();
 
 
+
     return (<main className='sectionContainer'>
                 <div className='sectionGap' id='WEB PROJECTS'></div>
                 <h2 className={`${lowerCaseMode}ModeElement`}>WEB PROJECTS</h2>
