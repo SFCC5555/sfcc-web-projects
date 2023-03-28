@@ -2,7 +2,7 @@
     width: 40px;
     height: 30px;
     padding: 10px;
-    border-radius: 6px 2px 0px 0px;
+    border-radius: 2px 6px 0px 0px;
     font-family: var(--mainFont);
     font-size: 0rem;
     opacity: 75%;
@@ -10,7 +10,7 @@
 
 .searchInput:hover, .searchInput:focus {
     width: 200px;
-    transition-duration: 2s;
+    transition-duration: 1s;
     font-size: 1.6rem;
 }
 
@@ -65,12 +65,12 @@
 
 @media screen and (min-width: 700px) {
     .searchInput {
-        width: 250px;   
+        width: 205px;   
         font-size: 1.6rem;
     }
 
-    .searchInput:hover {
-        width: 250px;
+    .searchInput:focus, .searchInput:hover {
+        width: 240px;
     }
 
 }

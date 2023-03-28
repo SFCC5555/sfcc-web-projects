@@ -1,14 +1,21 @@
 .filterButton {
+    width: 40px;
     height: 30px;
-    width: 150px;
     font-family: var(--mainFont);
-    font-size: 1.6rem;
+    font-size: 0rem;
+    border-radius: 6px 2px 0px 0px;
     cursor: pointer;
     opacity: 75%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+}
+
+.filterButton:hover, .filterButton:focus {
+    width: 175px;
+    transition-duration: 1s;
+    font-size: 1.6rem;
 }
 
 .filterButton:hover {
@@ -28,17 +35,28 @@
 
 }
 
-.filterIconDark {
+.filterIcon {
     cursor: pointer;
     width: 16px;
     height: 16px;
+}
+
+.filterIconDark {
     background-image: url('../assets/icons/filterIconDark.png');
 }
 
 .filterIconLight {
-    cursor: pointer;
-    width: 16px;
-    height: 16px;
-
     background-image: url('../assets/icons/filterIconLight.png');
+}
+
+@media screen and (min-width: 700px) {
+    .filterButton {
+        width: 100px;   
+        font-size: 1.6rem;
+    }
+
+    .filterButton:focus, .filterButton:hover {
+        width: 200px;
+    }
+
 }
