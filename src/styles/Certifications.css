@@ -23,16 +23,16 @@
 }
 
 .certificationIllustration {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 131.25px;
     cursor: pointer;
     animation-name: certificationIllustrationAnimation;
     animation-duration: 1.5s;
 }
 
 @keyframes certificationIllustrationAnimation {
-    0%{width: 150px;}
-    100%{width: 200px;}
+    0%{width: 160px;}
+    100%{width: 175px;}
 }
 
 
