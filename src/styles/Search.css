@@ -55,3 +55,9 @@
 .searchIconDark:hover, .searchIconLight:hover {
     opacity: 100%;
 }
+
+@media screen and (min-width: 700px) {
+    .searchInput {
+        width: 250px;   
+    }
+}
