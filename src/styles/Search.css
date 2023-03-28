@@ -1,10 +1,16 @@
 .searchInput {
-    width: 200px;
+    width: 28px;
     height: 30px;
     padding: 10px;
     font-family: var(--mainFont);
-    font-size: 1.6rem;
+    font-size: 0rem;
     opacity: 75%;
+}
+
+.searchInput:hover {
+    width: 200px;
+    transition-duration: 2s;
+    font-size: 1.6rem;
 }
 
 .darkModeInput {
@@ -34,30 +40,35 @@
     opacity: 100%;
 }
 
-.searchIconDark {
+.searchIcon {
     cursor: pointer;
+    position: absolute;
     width: 16px;
     height: 16px;
-    translate: -25px 3px;
+    translate: -22px 6px;
     opacity: 90%;
+
+}
+
+.searchIconDark {
     background-image: url('../assets/icons/searchIconDark.png');
 }
 
 .searchIconLight {
-    cursor: pointer;
-    width: 16px;
-    height: 16px;
-    translate: -25px 3px;
-    opacity: 90%;
     background-image: url('../assets/icons/searchIconLight.png');
 }
 
-.searchIconDark:hover, .searchIconLight:hover {
+.searchIcon:hover {
     opacity: 100%;
 }
 
 @media screen and (min-width: 700px) {
     .searchInput {
         width: 250px;   
+        font-size: 1.6rem;
+    }
+
+    .searchInput:hover {
+        width: 250px;
     }
 }
