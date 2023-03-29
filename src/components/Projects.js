@@ -41,7 +41,7 @@ function Projects({mode}) {
     return (<main className='sectionContainer'>
                 <div className='sectionGap' id='WEB PROJECTS'></div>
                 <h2 className={`${lowerCaseMode}ModeElement`}>WEB PROJECTS</h2>
-                <section className='searchFilterContainer'>
+                <section className={`${lowerCaseMode}ModeElement searchFilterContainer`}>
                     <Search mode={mode} handleChange={searchFunction}/>
                     <Filter mode={mode} handleFilter={filterFunction}/>
                 </section>

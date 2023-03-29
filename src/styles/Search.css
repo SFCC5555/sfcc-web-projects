@@ -18,6 +18,7 @@
     background-color: hsl(var(--darkColor));
     color: hsl(var(--lightColor));
     border: 2px solid hsl(var(--lightColor),40%);
+    border-bottom: none;
 }
 
 .darkModeInput::placeholder {
@@ -29,6 +30,7 @@
     background-color: hsl(var(--lightColor));
     color: hsl(var(--darkColor));
     border: 2px solid hsl(var(--darkColor),40%);
+    border-bottom: none;
 
 }
 

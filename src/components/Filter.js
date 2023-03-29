@@ -37,7 +37,7 @@ function Filter({ mode, handleFilter}) {
     
 
     return (
-        <button id='filterButton' onClick={renderFilterMenu} className={`${lowerCaseMode}ModeFilter filterButton`}>Filter<span id='filterIcon' onClick={renderFilterMenu} className={`filterIcon${mode} filterIcon`} />
+        <button onClick={renderFilterMenu} className={`${lowerCaseMode}ModeFilter filterButton`}>Filter<span onClick={renderFilterMenu} className={`filterIcon${mode} filterIcon`} />
             <div className={`${lowerCaseMode}ModeComponent filterSkillsContainer ${activeFilterSkillsContainer?'':'inactive'}`}>
                 <div className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
                 {overAllSkillList.map(skill=>(<div onClick={handleFilter} className={`${lowerCaseMode}ModeElement filterSkill`} key={skill}>
