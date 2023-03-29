@@ -10,11 +10,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    z-index: 1;
 }
 
 .filterButton:hover, .filterButton:focus {
     width: 175px;
-    transition-duration: 1s;
+    transition-duration: 400ms;
     font-size: 1.6rem;
 }
 
@@ -48,6 +49,34 @@
 .filterIconLight {
     background-image: url('../assets/icons/filterIconLight.png');
 }
+
+
+.filterSkillsContainer {
+    width: 200px;
+    position: absolute;
+    height: 275px;
+    top:30px;
+    right: 0px;
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 7px;
+    animation-name: filterSkillsContainerAnimation;
+    animation-duration: 350ms;
+}
+
+@keyframes filterSkillsContainerAnimation {
+    0%{height: 0px;}
+    100%{height:275px;}
+}
+
+.inactive {
+    display: none;
+  }
 
 @media screen and (min-width: 700px) {
     .filterButton {

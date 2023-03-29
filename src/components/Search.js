@@ -1,12 +1,12 @@
 import '../styles/Search.css';
 
-function Search( {mode} ) {
+function Search({ mode, handleChange}) {
 
     const lowerCaseMode=mode.toLowerCase();
 
     return (
         <div className='inputContainer'>
-            <input id='search' className={`${lowerCaseMode}ModeInput searchInput`} type='text' placeholder='search a project' />
+            <input onChange={handleChange} id='search' className={`${lowerCaseMode}ModeInput searchInput`} type='text' placeholder='search a project' />
             <label htmlFor='search'><span className={`searchIcon${mode} searchIcon`} /></label>
         </div>
     )

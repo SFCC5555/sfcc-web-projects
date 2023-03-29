@@ -3,31 +3,53 @@ import data from '../data.json';
 import { Skills } from './Skills';
 import { Search } from './Search';
 import { Filter} from './Filter';
+import { useState } from 'react';
 
 
 function Projects({mode}) {
 
     const lowerCaseMode=mode.toLowerCase();
 
+    let [projects,setProjects] = useState(data.projects);
+
+    function searchFunction() {
+
+        let searchInputValue = document.getElementById('search').value.trim();
+
+        let regularExpresion = new RegExp(searchInputValue,'i')
+
+        let searchProjects=data.projects.filter(project=>regularExpresion.test(project.name));
+
+        setProjects(searchProjects);
+
+    }
 
 
     return (<main className='sectionContainer'>
                 <div className='sectionGap' id='WEB PROJECTS'></div>
                 <h2 className={`${lowerCaseMode}ModeElement`}>WEB PROJECTS</h2>
                 <section className='searchFilterContainer'>
-                    <Search mode={mode} />
+                    <Search mode={mode} handleChange={searchFunction}/>
                     <Filter mode={mode} />
                 </section>
                 <section className='projectContainer'>
                     
                     {
-                     data.projects.map(project=>(
+                     projects.map(project=>{
+
+                        let projectClass=project.name.split(' ');
+
+                        projectClass[0] = projectClass[0].toLowerCase();
+
+                        projectClass=projectClass.join('');
+
+                     return (
                         <div key={project.name} className={`${lowerCaseMode}ModeComponent project`}>
-                            <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIllustration ${project.name}`} /></a>
+                            <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIllustration ${projectClass}`} /></a>
                             <Skills skillList={project.skillList} mode={mode}/>
                             <a href={project.repository} target='_blank' rel="noreferrer" ><span className={`skillIcon GitHubIcon${mode} gitHubLink `}/></a>
                         </div>
-                     ))   
+                     )})   
                     }
 
                 </section>

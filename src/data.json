@@ -1,115 +1,115 @@
 {
     "projects":[
         {
-            "name":"spaceTourism",
+            "name":"Space Tourism Website",
             "link":"https://5pace.netlify.app/",
             "repository":"https://github.com/SFCC5555/spaceTourismWebsite",
             "skillList":["Html","Css","JavaScript","Json","Figma"]
         },
         {
-            "name":"reactToDoList",
+            "name":"To-Do List with React",
             "link":"https://react-to-do-list-sfcc.netlify.app/",
             "repository":"https://github.com/SFCC5555/react-to-do-list",
             "skillList":["Html","Css","JavaScript","React"]
         },
         {
-            "name":"countries",
+            "name":"Countries",
             "link":"https://sfcc-countries.netlify.app/",
             "repository":"https://github.com/SFCC5555/restCountriesApiWithColorThemeSwitcherMaster",
             "skillList":["Html","Css","JavaScript","Api","Figma"]
         },
         {
-            "name":"superCalculator",
+            "name":"Super Calculator",
             "link":"https://sfcc-super-calculator.netlify.app/",
             "repository":"https://github.com/SFCC5555/super-calculator",
             "skillList":["Html","Css","JavaScript","React"]
         },
         {
-            "name":"superCounter",
+            "name":"Super Counter",
             "link":"https://sfcc-super-counter.netlify.app/",
             "repository":"https://github.com/SFCC5555/counter",
             "skillList":["Html","Css","JavaScript","React"]
         },
         {
-            "name":"paradis",
+            "name":"Paradis",
             "link":"https://paradis.netlify.app/",
             "repository":"https://github.com/SFCC5555/comment-section-react",
             "skillList":["Html","Css","JavaScript","React","Json"]
         },
         {
-            "name":"toDoList",
+            "name":"To-Do List with JavaScript",
             "link":"https://sfcc-to-do-list.netlify.app/",
             "repository":"https://github.com/SFCC5555/to-doListJavaScript",
             "skillList":["Html","Css","JavaScript"]
         },
         {
-            "name":"portfolio",
+            "name":"Portfolio",
             "link":"https://sfcc-portfolio.netlify.app/",
             "repository":"https://github.com/SFCC5555/Portafolio",
             "skillList":["Html","Css","JavaScript","AutoCAD","SketchUp"]
         },
         {
-            "name":"wallCalculator",
+            "name":"Wall Calculator",
             "link":"https://sfcc-wall-calculator.netlify.app/",
             "repository":"https://github.com/SFCC5555/WALL",
             "skillList":["Html","Css","JavaScript","Adobe-Illustrator"]
         },
         {
-            "name":"tracker",
+            "name":"ip Address Tracker",
             "link":"https://sfcc-ip-address-tracker.netlify.app/",
             "repository":"https://github.com/SFCC5555/ipAddressTrackerMaster",
             "skillList":["Html","Css","JavaScript","Api","Figma"]
         },
         {
-            "name":"sfccGallery",
+            "name":"Sfcc Gallery",
             "link":"https://sfccgallery.netlify.app/",
             "repository":"https://github.com/SFCC5555/GALERIA",
             "skillList":["Html","Css","JavaScript","Adobe-Illustrator","Clip-Studio-Paint"]
         },
         {
-            "name":"splitter",
+            "name":"Splitter Tip Calculator App",
             "link":"https://sfcc-tip-calculator.netlify.app/",
             "repository":"https://github.com/SFCC5555/tipCalculatorApp",
             "skillList":["Html","Css","JavaScript","Figma"]
         },
         {
-            "name":"superAdviceGenerator",
+            "name":"Super Advice Generator",
             "link":"https://superadvicegenerator.netlify.app/",
             "repository":"https://github.com/SFCC5555/adviceGeneratorApp",
             "skillList":["Html","Css","JavaScript","Api","Figma"]
         },
         {
-            "name":"creditCard",
+            "name":"Credit Card Form",
             "link":"https://sfcccreditcard.netlify.app/",
             "repository":"https://github.com/SFCC5555/interactiveCardDetailsForm",
             "skillList":["Html","Css","JavaScript","Figma"]
         },
         {
-            "name":"timeTracking",
+            "name":"Time Tracking Dashboard",
             "link":"https://sfcc-time-tracking-dashboard.netlify.app/",
             "repository":"https://github.com/SFCC5555/timeTrackingDashboard",
             "skillList":["Html","Css","JavaScript","Json","Figma"]
         },
         {
-            "name":"xpensesChart",
+            "name":"Xpenses Chart",
             "link":"https://xpenseschart.netlify.app/",
             "repository":"https://github.com/SFCC5555/expensesChartComponent",
             "skillList":["Html","Css","JavaScript","Json","Figma"]
         },
         {
-            "name":"notifications",
+            "name":"Social Network Notifications",
             "link":"https://sfcc-socialnetwork-notifications.netlify.app/",
             "repository":"https://github.com/SFCC5555/notificationsPageMain",
             "skillList":["Html","Css","JavaScript","Figma"]
         },
         {
-            "name":"snap",
+            "name":"Snap Intro Section",
             "link":"https://sfcc-snap-intro-section.netlify.app/",
             "repository":"https://github.com/SFCC5555/introSectionWithDropdownNavigation",
             "skillList":["Html","Css","JavaScript","Figma"]
         },
         {
-            "name":"rating",
+            "name":"Interactive Rating Component",
             "link":"https://sfccrating.netlify.app/",
             "repository":"https://github.com/SFCC5555/interactiveRatingComponent",
             "skillList":["Html","Css","JavaScript","Figma"]
