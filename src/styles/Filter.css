@@ -51,7 +51,7 @@
 .filterSkillsContainer {
     width: 200px;
     position: absolute;
-    height: 275px;
+    height: 300px;
     top:30px;
     right: 0px;
     border-style: solid;
@@ -66,10 +66,26 @@
     animation-duration: 350ms;
 }
 
+.filterSkillsContainer>div:last-child {
+    opacity: 60%;
+
+}
+
 @keyframes filterSkillsContainerAnimation {
     0%{height: 0px;}
-    100%{height:275px;}
+    100%{height:300px;}
 }
+
+
+.filterSkillsContainer>.closeIcon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+}
+
 
 .inactive {
     display: none;

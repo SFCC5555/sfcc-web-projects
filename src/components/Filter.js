@@ -14,15 +14,32 @@ function Filter( {mode} ) {
 
     overAllSkillList = overAllSkillList.map(skill=>skill.replaceAll('-',' '))
 
-    function renderFilterMenu() {
-        activeFilterSkillsContainer?setActiveFilterSkillsContainer(false):setActiveFilterSkillsContainer(true);
-        
+    overAllSkillList.push('No Filter')
+
+    document.addEventListener('click',closeFilterMenu);
+
+    function closeFilterMenu(event) {
+
+        if (!(/(filter)(Button|Icon|Skill(sContainer)?)/.test(event.target.classList.value))) {
+            setActiveFilterSkillsContainer(false);
+        }
+
     }
 
+
+    function renderFilterMenu(event) {
+
+        if (!(/(filterSkill)(sContainer)?/.test(event.target.classList.value))) {
+            activeFilterSkillsContainer?setActiveFilterSkillsContainer(false):setActiveFilterSkillsContainer(true);
+        }
+    
+    }
+    
+
     return (
-        <button onClick={renderFilterMenu} className={`${lowerCaseMode}ModeFilter filterButton`}>filter<span className={`filterIcon${mode} filterIcon`} />
+        <button id='filterButton' onClick={renderFilterMenu} className={`${lowerCaseMode}ModeFilter filterButton`}>filter<span id='filterIcon' onClick={renderFilterMenu} className={`filterIcon${mode} filterIcon`} />
             <div className={`${lowerCaseMode}ModeComponent filterSkillsContainer ${activeFilterSkillsContainer?'':'inactive'}`}>
-           
+                <div className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
                 {overAllSkillList.map(skill=>(<div className={`${lowerCaseMode}ModeElement filterSkill`} key={skill}>
                                             {skill}
                                         </div>))
