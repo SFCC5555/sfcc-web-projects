@@ -35,14 +35,24 @@ function Projects({mode}) {
         optionsList.forEach(option=>option.classList.remove('selectFilterSkill'));
 
         let option=event.target.innerText.replaceAll(' ','-');
+
+        let filterSkillIcon = document.getElementById('filterSkillIcon');
     
         let filterProjects = data.projects.filter(project=>project.skillList.some(skill=>skill===option));
 
         if (option==='No-Filter') {
+            
+            filterSkillIcon.classList.value=`inactive`
             setProjects(data.projects);
+
         } else {
+
+            console.log(option)
+            
             event.target.classList.add('selectFilterSkill');
+            filterSkillIcon.classList.value=`filterSkillIcon ${option}Icon`;
             setProjects(filterProjects);
+
         }
     }
 

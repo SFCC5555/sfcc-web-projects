@@ -29,11 +29,35 @@
     animation-duration: 1s;
 }
 
+
 @keyframes skillIconAnimation {
 
     0%{opacity: 0%; height: 20px;}
     100%{opacity: 100%; height: 32px;}
     
+}
+
+.filterSkillIcon {
+    position: absolute;
+    top: -35px;
+    right: 5px;
+    background-size: contain;
+    height: 32px;
+    width: 32px;
+    cursor: crosshair;
+    animation-name: filterSkillIconAnimation;
+    animation-duration: 1s;
+}
+
+@keyframes filterSkillIconAnimation {
+
+    0%{opacity: 0%; height: 10px;top:0}
+    100%{opacity: 100%; height: 32px;top:-35;}
+    
+}
+
+.HtmlIcon {
+    background-image: url('../assets/icons/htmlIconColor.png');
 }
 
 .HtmlIconLight:hover,.HtmlIconDark:hover {
@@ -51,6 +75,10 @@
     background-image: url('../assets/icons/htmlIconDark.png');
 }
 
+.CssIcon {
+    background-image: url('../assets/icons/cssIconColor.png');
+}
+
 .CssIconLight:hover,.CssIconDark:hover {
     background-image: url('../assets/icons/cssIconColor.png');
     transition-duration: 1.5s;
@@ -64,6 +92,10 @@
 .CssIconDark {
 
     background-image: url('../assets/icons/cssIconDark.png');
+}
+
+.JavaScriptIcon {
+    background-image: url('../assets/icons/javaScriptIconColor.png');
 }
 
 .JavaScriptIconLight:hover,.JavaScriptIconDark:hover {
@@ -81,7 +113,11 @@
     background-image: url('../assets/icons/javaScriptIconDark.png');
 }
 
-.ReactIconLight:hover,.ReactIconDark:hover {
+.ReactIcon {
+    background-image: url('../assets/icons/reactIconColor.png');
+}
+
+.ReactIconLight:hover,.ReactIconDark:hover,.ReactIcon:hover {
     background-image: url('../assets/icons/reactIconColor.png');
     transition-duration: 1.5s;
     animation: reactIcon-spin infinite 25s linear;
@@ -116,6 +152,10 @@
     
 }
 
+.GitIcon {
+    background-image: url('../assets/icons/gitIconColor.png');
+}
+
 .GitIconLight:hover,.GitIconDark:hover {
     background-image: url('../assets/icons/gitIconColor.png');
     transition-duration: 1.5s;
@@ -131,6 +171,9 @@
     background-image: url('../assets/icons/gitIconDark.png');
 }
 
+.GitHubIcon {
+    background-image: url('../assets/icons/gitHubIconColor.png');
+}
 
 .GitHubIconLight:hover, .GitHubIconDark:hover {
     background-image: url('../assets/icons/gitHubIconColor.png');
@@ -163,6 +206,10 @@
     background-image: url('../assets/icons/cvIconDark.png');
 }
 
+.Adobe-IllustratorIcon {
+    background-image: url('../assets/icons/adobeIconColor.png');
+}
+
 .Adobe-IllustratorIconLight:hover, .Adobe-IllustratorIconDark:hover {
     background-image: url('../assets/icons/adobeIconColor.png');
     transition-duration: 1.5s;
@@ -176,6 +223,10 @@
 .Adobe-IllustratorIconDark {
 
     background-image: url('../assets/icons/adobeIconDark.png');
+}
+
+.JsonIcon {
+    background-image: url('../assets/icons/jsonIconColor.png');
 }
 
 .JsonIconLight:hover, .JsonIconDark:hover {
@@ -193,6 +244,10 @@
     background-image: url('../assets/icons/jsonIconDark.png');
 }
 
+.ApiIcon {
+    background-image: url('../assets/icons/apiIconColor.png');
+}
+
 .ApiIconLight:hover, .ApiIconDark:hover {
     background-image: url('../assets/icons/apiIconColor.png');
     transition-duration: 1.5s;
@@ -206,6 +261,10 @@
 .ApiIconDark {
 
     background-image: url('../assets/icons/apiIconDark.png');
+}
+
+.FigmaIcon {
+    background-image: url('../assets/icons/figmaIconColor.png');
 }
 
 .FigmaIconLight:hover, .FigmaIconDark:hover {
@@ -223,6 +282,10 @@
     background-image: url('../assets/icons/figmaIconDark.png');
 }
 
+.AutoCADIcon {
+    background-image: url('../assets/icons/autoCadIconColor.png');
+}
+
 .AutoCADIconLight:hover, .AutoCADIconDark:hover {
     background-image: url('../assets/icons/autoCadIconColor.png');
     transition-duration: 1.5s;
@@ -236,6 +299,9 @@
 .AutoCADIconDark {
 
     background-image: url('../assets/icons/autoCadIconDark.png');
+}
+.SketchUpIcon {
+    background-image: url('../assets/icons/sketchUpIconColor.png');
 }
 
 .SketchUpIconLight:hover, .SketchUpIconDark:hover {
@@ -252,6 +318,11 @@
 
     background-image: url('../assets/icons/sketchUpIconDark.png');
 }
+
+.Clip-Studio-PaintIcon {
+    background-image: url('../assets/icons/clipStudioPaintIconColor.png');
+}
+
 
 .Clip-Studio-PaintIconLight:hover, .Clip-Studio-PaintIconDark:hover {
     background-image: url('../assets/icons/clipStudioPaintIconColor.png');
