@@ -12,6 +12,8 @@ function Filter( {mode} ) {
 
     let overAllSkillList = [...overAllSkillSet];
 
+    overAllSkillList = overAllSkillList.map(skill=>skill.replaceAll('-',' '))
+
     function renderFilterMenu() {
         activeFilterSkillsContainer?setActiveFilterSkillsContainer(false):setActiveFilterSkillsContainer(true);
         

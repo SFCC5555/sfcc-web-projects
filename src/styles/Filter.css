@@ -14,13 +14,10 @@
 }
 
 .filterButton:hover, .filterButton:focus {
+    opacity: 100%;
     width: 175px;
     transition-duration: 400ms;
     font-size: 1.6rem;
-}
-
-.filterButton:hover {
-    opacity: 100%;
 }
 
 .darkModeFilter {
@@ -52,7 +49,7 @@
 
 
 .filterSkillsContainer {
-    width: 200px;
+    width: 175px;
     position: absolute;
     height: 275px;
     top:30px;
@@ -85,6 +82,10 @@
     }
 
     .filterButton:focus, .filterButton:hover {
+        width: 200px;
+    }
+
+    .filterSkillsContainer {
         width: 200px;
     }
 
