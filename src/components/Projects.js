@@ -30,11 +30,20 @@ function Projects({mode}) {
 
         searchInputValue.value='';
 
-        let option=event.target.innerText.replaceAll(' ','-');
+        let optionsList = document.querySelectorAll('.filterSkill');
 
+        optionsList.forEach(option=>option.classList.remove('selectFilterSkill'));
+
+        let option=event.target.innerText.replaceAll(' ','-');
+    
         let filterProjects = data.projects.filter(project=>project.skillList.some(skill=>skill===option));
 
-        setProjects(filterProjects);
+        if (option==='No-Filter') {
+            setProjects(data.projects);
+        } else {
+            event.target.classList.add('selectFilterSkill');
+            setProjects(filterProjects);
+        }
     }
 
 

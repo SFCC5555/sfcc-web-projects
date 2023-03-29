@@ -87,6 +87,9 @@
     font-size: 2rem;
 }
 
+.selectFilterSkill {
+    text-decoration:underline;
+}
 
 .inactive {
     display: none;
