@@ -18,10 +18,23 @@ function Projects({mode}) {
 
         let regularExpresion = new RegExp(searchInputValue,'i')
 
-        let searchProjects=data.projects.filter(project=>regularExpresion.test(project.name));
+        let searchProjects = data.projects.filter(project=>regularExpresion.test(project.name));
 
         setProjects(searchProjects);
 
+    }
+
+    function filterFunction(event) {
+
+        let searchInputValue = document.getElementById('search');
+
+        searchInputValue.value='';
+
+        let option=event.target.innerText.replaceAll(' ','-');
+
+        let filterProjects = data.projects.filter(project=>project.skillList.some(skill=>skill===option));
+
+        setProjects(filterProjects);
     }
 
 
@@ -30,7 +43,7 @@ function Projects({mode}) {
                 <h2 className={`${lowerCaseMode}ModeElement`}>WEB PROJECTS</h2>
                 <section className='searchFilterContainer'>
                     <Search mode={mode} handleChange={searchFunction}/>
-                    <Filter mode={mode} />
+                    <Filter mode={mode} handleFilter={filterFunction}/>
                 </section>
                 <section className='projectContainer'>
                     

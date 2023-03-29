@@ -2,7 +2,7 @@ import '../styles/Filter.css';
 import data from '../data.json';
 import { useState } from 'react';
 
-function Filter( {mode} ) {
+function Filter({ mode, handleFilter}) {
 
     const lowerCaseMode=mode.toLowerCase();
 
@@ -37,10 +37,10 @@ function Filter( {mode} ) {
     
 
     return (
-        <button id='filterButton' onClick={renderFilterMenu} className={`${lowerCaseMode}ModeFilter filterButton`}>filter<span id='filterIcon' onClick={renderFilterMenu} className={`filterIcon${mode} filterIcon`} />
+        <button id='filterButton' onClick={renderFilterMenu} className={`${lowerCaseMode}ModeFilter filterButton`}>Filter<span id='filterIcon' onClick={renderFilterMenu} className={`filterIcon${mode} filterIcon`} />
             <div className={`${lowerCaseMode}ModeComponent filterSkillsContainer ${activeFilterSkillsContainer?'':'inactive'}`}>
                 <div className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
-                {overAllSkillList.map(skill=>(<div className={`${lowerCaseMode}ModeElement filterSkill`} key={skill}>
+                {overAllSkillList.map(skill=>(<div onClick={handleFilter} className={`${lowerCaseMode}ModeElement filterSkill`} key={skill}>
                                             {skill}
                                         </div>))
                  }
