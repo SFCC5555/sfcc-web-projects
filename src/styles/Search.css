@@ -8,7 +8,7 @@
     opacity: 75%;
 }
 
-.searchInput:hover, .searchInput:focus {
+.searchInput:hover, .searchInput:focus, .searchInput:valid{
     width: 200px;
     transition-duration: 1s;
     font-size: 1.6rem;

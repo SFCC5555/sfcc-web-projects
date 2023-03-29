@@ -6,7 +6,7 @@ function Search({ mode, handleChange}) {
 
     return (
         <div className='inputContainer'>
-            <input onChange={handleChange} id='search' className={`${lowerCaseMode}ModeInput searchInput`} type='text' placeholder='search a project' />
+            <input type='text' required onChange={handleChange} id='search' className={`${lowerCaseMode}ModeInput searchInput`} placeholder='search a project' />
             <label htmlFor='search'><span className={`searchIcon${mode} searchIcon`} /></label>
         </div>
     )
