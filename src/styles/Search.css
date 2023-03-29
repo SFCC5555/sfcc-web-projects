@@ -8,8 +8,14 @@
     opacity: 75%;
 }
 
-.searchInput:hover, .searchInput:focus, .searchInput:valid{
+.searchInput:hover, .searchInput:focus {
     width: 200px;
+    transition-duration: 1s;
+    font-size: 1.6rem;
+}
+
+.searchInput:valid{
+    width:190px;
     transition-duration: 1s;
     font-size: 1.6rem;
 }
