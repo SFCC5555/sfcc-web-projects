@@ -14,6 +14,14 @@ function Projects({mode}) {
 
     function searchFunction() {
 
+        let filterSkillIcon = document.getElementById('filterSkillIcon');
+
+        filterSkillIcon.classList.value=`inactive`;
+
+        let optionsList = document.querySelectorAll('.filterSkill');
+
+        optionsList.forEach(option=>option.classList.remove('selectFilterSkill'));
+
         let searchInputValue = document.getElementById('search').value.trim();
 
         let regularExpresion = new RegExp(searchInputValue,'i')
@@ -46,11 +54,12 @@ function Projects({mode}) {
             setProjects(data.projects);
 
         } else {
-
-            console.log(option)
-            
+            filterSkillIcon.classList.value=`inactive`
             event.target.classList.add('selectFilterSkill');
-            filterSkillIcon.classList.value=`filterSkillIcon ${option}Icon`;
+            setTimeout(()=>{
+                filterSkillIcon.classList.value=`filterSkillIcon ${option}Icon`;
+            })
+            
             setProjects(filterProjects);
 
         }

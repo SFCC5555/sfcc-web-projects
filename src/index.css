@@ -77,13 +77,13 @@ h1{
 }
 
 .lightModeComponent:hover {
-  background-color: hsl(var(--darkColor));
-  transition-duration:120s;
+  background-color: rgb(195, 195, 195);
+  transition-duration:90s;
 }
 
 .darkModeComponent:hover {
-  background-color: hsl(var(--lightColor));
-  transition-duration:120s;
+  background-color: black;
+  transition-duration:90s;
 }
 
 .lightModeElement {

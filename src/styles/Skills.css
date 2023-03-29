@@ -117,7 +117,7 @@
     background-image: url('../assets/icons/reactIconColor.png');
 }
 
-.ReactIconLight:hover,.ReactIconDark:hover,.ReactIcon:hover {
+.ReactIconLight:hover,.ReactIconDark:hover, .ReactIcon:hover {
     background-image: url('../assets/icons/reactIconColor.png');
     transition-duration: 1.5s;
     animation: reactIcon-spin infinite 25s linear;
