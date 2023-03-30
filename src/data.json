@@ -117,21 +117,56 @@
     ],
     "certifications":[
         {
-            "name":"javaScriptAlgorithmsandDataStructures",
-            "Illustration":"javaScriptAlgorithmsandDataStructuresColor.png"
+            "name":"javaScriptAlgorithmsandDataStructures"
         },
         {
-            "name":"ingenieroCivil",
-            "Illustration":"ingenieroCivilColor.png"
+            "name":"ingenieroCivil"
         },
         {
-            "name":"javaScriptAlgorithmsandDataStructures",
-            "Illustration":"javaScriptAlgorithmsandDataStructures.png"
+            "name":"introduccionAReactJS"
         },
         {
-            "name":"javaScriptAlgorithmsandDataStructures",
-            "Illustration":"javaScriptAlgorithmsandDataStructures.png"
-        } 
+            "name":"ecmaScript6Plus"
+        },
+        {
+            "name":"asincronismoConJavaScript"
+        },
+        {
+            "name":"gitYGitHub"
+        },
+        {
+            "name":"npm"
+        },
+        {
+            "name":"advancedEnglishCourseForDevelopers"
+        },
+        {
+            "name":"expresionesRegulares"
+        },
+        {
+            "name":"mobileFirst"
+        },
+        {
+            "name":"javaScriptPractico"
+        },
+        {
+            "name":"htmlYCss"
+        },
+        {
+            "name":"frontendDeveloperPractico"
+        },
+        {
+            "name":"frontendDeveloper"
+        },
+        {
+            "name":"cssGridYFlexbox"
+        },
+        {
+            "name":"cssGridLayout"
+        },
+        {
+            "name":"javaScriptBasico"
+        }
         
     ]
 }

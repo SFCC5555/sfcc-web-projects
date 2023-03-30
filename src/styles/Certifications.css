@@ -46,6 +46,7 @@
     animation-name: renderCertificationAnimation;
     animation-duration: 500ms;
     overflow: hidden;
+    z-index: 2;
 }
 
 
@@ -64,10 +65,7 @@
     position: absolute;
     top:15px;
     right: 15px;
-    opacity: 100%;
 }
-
-
 
 
 .javaScriptAlgorithmsandDataStructures {
@@ -76,7 +74,7 @@
 
 .javaScriptAlgorithmsandDataStructures:hover {
     background-image: url('../assets/images/certificationIllustrations/javaScriptAlgorithmsandDataStructuresColor.png');
-    transition-duration: 2.5s;
+    transition-duration: 1.5s;
 }
 
 .ingenieroCivil {
@@ -85,9 +83,143 @@
 
 .ingenieroCivil:hover {
     background-image: url('../assets/images/certificationIllustrations/ingenieroCivilColor.png');
-    transition-duration: 2.5s;
+    transition-duration: 1.5s;
+}
+
+.introduccionAReactJS {
+    background-image: url('../assets/images/certificationIllustrations/introduccionAReactJS.png');
+}
+
+.introduccionAReactJS:hover {
+    background-image: url('../assets/images/certificationIllustrations/introduccionAReactJSColor.png');
+    transition-duration: 1.5s;
+}
+
+.ecmaScript6Plus {
+    background-image: url('../assets/images/certificationIllustrations/ecmaScript6Plus.png');
+}
+
+.ecmaScript6Plus:hover {
+    background-image: url('../assets/images/certificationIllustrations/ecmaScript6PlusColor.png');
+    transition-duration: 1.5s;
+}
+
+.asincronismoConJavaScript {
+    background-image: url('../assets/images/certificationIllustrations/asincronismoConJavaScript.png');
+}
+
+.asincronismoConJavaScript:hover {
+    background-image: url('../assets/images/certificationIllustrations/asincronismoConJavaScriptColor.png');
+    transition-duration: 1.5s;
 } 
 
+.gitYGitHub {
+    background-image: url('../assets/images/certificationIllustrations/gitYGitHub.png');
+}
+
+.gitYGitHub:hover {
+    background-image: url('../assets/images/certificationIllustrations/gitYGitHubColor.png');
+    transition-duration: 1.5s;
+}
+
+.npm {
+    background-image: url('../assets/images/certificationIllustrations/npm.png');
+}
+
+.npm:hover {
+    background-image: url('../assets/images/certificationIllustrations/npmColor.png');
+    transition-duration: 1.5s;
+}
+
+.advancedEnglishCourseForDevelopers {
+    background-image: url('../assets/images/certificationIllustrations/advancedEnglishCourseForDevelopers.png');
+}
+
+.advancedEnglishCourseForDevelopers:hover {
+    background-image: url('../assets/images/certificationIllustrations/advancedEnglishCourseForDevelopersColor.png');
+    transition-duration: 1.5s;
+}
+
+.expresionesRegulares {
+    background-image: url('../assets/images/certificationIllustrations/expresionesRegulares.png');
+}
+
+.expresionesRegulares:hover {
+    background-image: url('../assets/images/certificationIllustrations/expresionesRegularesColor.png');
+    transition-duration: 1.5s;
+}
+
+.mobileFirst {
+    background-image: url('../assets/images/certificationIllustrations/mobileFirst.png');
+}
+
+.mobileFirst:hover {
+    background-image: url('../assets/images/certificationIllustrations/mobileFirstColor.png');
+    transition-duration: 1.5s;
+} 
+
+.javaScriptPractico {
+    background-image: url('../assets/images/certificationIllustrations/javaScriptPractico.png');
+}
+
+.javaScriptPractico:hover {
+    background-image: url('../assets/images/certificationIllustrations/javaScriptPracticoColor.png');
+    transition-duration: 1.5s;
+}
+
+.htmlYCss {
+    background-image: url('../assets/images/certificationIllustrations/htmlYCss.png');
+}
+
+.htmlYCss:hover {
+    background-image: url('../assets/images/certificationIllustrations/htmlYCssColor.png');
+    transition-duration: 1.5s;
+}
+
+.frontendDeveloperPractico {
+    background-image: url('../assets/images/certificationIllustrations/frontendDeveloperPractico.png');
+}
+
+.frontendDeveloperPractico:hover {
+    background-image: url('../assets/images/certificationIllustrations/frontendDeveloperPracticoColor.png');
+    transition-duration: 1.5s;
+}
+
+.frontendDeveloper {
+    background-image: url('../assets/images/certificationIllustrations/frontendDeveloper.png');
+}
+
+.frontendDeveloper:hover {
+    background-image: url('../assets/images/certificationIllustrations/frontendDeveloperColor.png');
+    transition-duration: 1.5s;
+}
+
+.cssGridYFlexbox {
+    background-image: url('../assets/images/certificationIllustrations/cssGridYFlexbox.png');
+}
+
+.cssGridYFlexbox:hover {
+    background-image: url('../assets/images/certificationIllustrations/cssGridYFlexboxColor.png');
+    transition-duration: 1.5s;
+}
+
+.cssGridLayout {
+    background-image: url('../assets/images/certificationIllustrations/cssGridLayout.png');
+}
+
+.cssGridLayout:hover {
+    background-image: url('../assets/images/certificationIllustrations/cssGridLayoutColor.png');
+    transition-duration: 1.5s;
+}
+
+.javaScriptBasico {
+    background-image: url('../assets/images/certificationIllustrations/javaScriptBasico.png');
+}
+
+.javaScriptBasico:hover {
+    background-image: url('../assets/images/certificationIllustrations/javaScriptBasicoColor.png');
+    transition-duration: 1.5s;
+}
 
 
 

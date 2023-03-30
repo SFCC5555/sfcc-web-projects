@@ -82,11 +82,11 @@ h2 {
 }
 
 
-.spaceTourism {
+.spaceTourismWebsite {
     background-image: url('../assets/images/imagenPruebaBW.png');
 }
 
-.spaceTourism:hover {
+.spaceTourismWebsite:hover {
     background-image: url('../assets/images/imagenPruebaColor.png');
     transition-duration: 3s;
 } 
