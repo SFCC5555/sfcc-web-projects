@@ -16,8 +16,11 @@ function Certifications({mode}) {
     }
     
     function renderCertification(event) {
-        setSrcCertification(event.target.id);
-        setActiveCertification(true);
+        setActiveCertification(false);
+        setTimeout(()=>{
+            setSrcCertification(event.target.id);
+            setActiveCertification(true);
+        })
     }
 
 
@@ -26,7 +29,7 @@ function Certifications({mode}) {
                 <div className='sectionGap' id='CERTIFICATIONS'></div>
                 <h2 className={`${lowerCaseMode}ModeElement`}>CERTIFICATIONS</h2>
                 <div className={activeCertification?'renderCertificationContainer':'inactive'}>
-                    <div onClick={closeCertification} className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
+                    <div onClick={closeCertification} className={`closeIcon lightModeElement`}>X</div>
                     <img src={srcCertification?require(`../assets/images/certificationIllustrations/${srcCertification}Color.png`):''} alt={srcCertification} ></img>
                 </div>
                 <section className='certificationContainer'>
