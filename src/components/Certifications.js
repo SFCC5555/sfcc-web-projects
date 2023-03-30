@@ -28,8 +28,8 @@ function Certifications({mode}) {
     return (<main className='sectionContainer'>
                 <div className='sectionGap' id='CERTIFICATIONS'></div>
                 <h2 className={`${lowerCaseMode}ModeElement`}>CERTIFICATIONS</h2>
-                <div className={activeCertification?'renderCertificationContainer':'inactive'}>
-                    <div onClick={closeCertification} className={`closeIcon lightModeElement`}>X</div>
+                <div className={activeCertification?`${lowerCaseMode}ModeComponent renderCertificationContainer`:'inactive'}>
+                    <div onClick={closeCertification} className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
                     <img src={srcCertification?require(`../assets/images/certificationIllustrations/${srcCertification}Color.png`):''} alt={srcCertification} ></img>
                 </div>
                 <section className='certificationContainer'>
