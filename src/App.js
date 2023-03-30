@@ -33,6 +33,7 @@ function App() {
         <DarkModeButton controlFunction={controlDarkMode} mode={mode}/>
         <Projects mode={mode}/>
         <Certifications mode={mode}/>
+        <h3 className={`${mode.toLocaleLowerCase()}ModeElement`}>WORKING...</h3>
       </React.Fragment>
   );
 }

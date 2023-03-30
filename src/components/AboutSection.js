@@ -25,3 +25,4 @@ function AboutSection({ active, controlFunction, mode}) {
 };
 
 export { AboutSection };
+

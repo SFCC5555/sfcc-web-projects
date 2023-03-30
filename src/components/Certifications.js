@@ -1,24 +1,40 @@
 import '../styles/Certifications.css';
 import data from '../data.json';
+import { useState } from 'react';
 
 
 function Certifications({mode}) {
 
     const lowerCaseMode=mode.toLowerCase();
 
+    let [srcCertification,setSrcCertification] = useState('');
+
+    let [activeCertification,setActiveCertification] = useState(false);
+
+    function closeCertification() {
+        setActiveCertification(false);
+    }
+    
+    function renderCertification(event) {
+        setSrcCertification(event.target.id);
+        setActiveCertification(true);
+    }
+
+
 
     return (<main className='sectionContainer'>
                 <div className='sectionGap' id='CERTIFICATIONS'></div>
                 <h2 className={`${lowerCaseMode}ModeElement`}>CERTIFICATIONS</h2>
-                <section>
-
-                </section>
+                <div className={activeCertification?'renderCertificationContainer':'inactive'}>
+                    <div onClick={closeCertification} className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
+                    <img src={srcCertification?require(`../assets/images/certificationIllustrations/${srcCertification}Color.png`):''} alt={srcCertification} ></img>
+                </div>
                 <section className='certificationContainer'>
                     
                     {
                      data.certifications.map(certification=>(
                         <div key={certification.name} className={`${lowerCaseMode}ModeComponent certification`}>
-                            <span className={`certificationIllustration ${certification.name}`} />
+                            <span onClick={renderCertification} id={certification.name} className={`certificationIllustration ${certification.name}`} />
                         </div>
                      ))   
                     }

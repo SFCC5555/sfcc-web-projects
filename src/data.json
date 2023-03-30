@@ -43,8 +43,8 @@
             "skillList":["Html","Css","JavaScript"]
         },
         {
-            "name":"Portfolio",
-            "link":"https://sfcc-portfolio.netlify.app/",
+            "name":"Architecture And Civil Engineering Projects",
+            "link":"https://sfcc-architecture-civil-projects.netlify.app/",
             "repository":"https://github.com/SFCC5555/Portafolio",
             "skillList":["Html","Css","JavaScript","AutoCAD","SketchUp"]
         },
@@ -118,16 +118,17 @@
     "certifications":[
         {
             "name":"javaScriptAlgorithmsandDataStructures",
-            "Illustration":"javaScriptAlgorithmsandDataStructures.png"
+            "Illustration":"javaScriptAlgorithmsandDataStructuresColor.png"
+        },
+        {
+            "name":"ingenieroCivil",
+            "Illustration":"ingenieroCivilColor.png"
         },
         {
             "name":"javaScriptAlgorithmsandDataStructures",
             "Illustration":"javaScriptAlgorithmsandDataStructures.png"
         },
         {
-            "name":"javaScriptAlgorithmsandDataStructures",
-            "Illustration":"javaScriptAlgorithmsandDataStructures.png"
-        },        {
             "name":"javaScriptAlgorithmsandDataStructures",
             "Illustration":"javaScriptAlgorithmsandDataStructures.png"
         } 
