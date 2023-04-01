@@ -7,7 +7,7 @@
             "skillList":["Html","Css","JavaScript","Json","Figma"]
         },
         {
-            "name":"To-Do List with React",
+            "name":"To-Do List With React",
             "link":"https://react-to-do-list-sfcc.netlify.app/",
             "repository":"https://github.com/SFCC5555/react-to-do-list",
             "skillList":["Html","Css","JavaScript","React"]
@@ -37,7 +37,7 @@
             "skillList":["Html","Css","JavaScript","React","Json"]
         },
         {
-            "name":"To-Do List with JavaScript",
+            "name":"To-Do List With JavaScript",
             "link":"https://sfcc-to-do-list.netlify.app/",
             "repository":"https://github.com/SFCC5555/to-doListJavaScript",
             "skillList":["Html","Css","JavaScript"]

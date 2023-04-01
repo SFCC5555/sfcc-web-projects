@@ -91,12 +91,24 @@ h2 {
     transition-duration: 3s;
 } 
 
-.reactToDoList {
-    background-image: url('../assets/images/imagenPruebaBW.png');
+.to-doListWithReact {
+    background-image: url('../assets/images/projectIllustrations/to-doListWithReact.png');
 }
 
-.reactToDoList:hover {
-    background-image: url('../assets/images/imagenPruebaColor.png');
+.to-doListWithReact:hover {
+    background-image: url('../assets/images/projectIllustrations/to-doListWithReactColor.png');
+    transition-duration: 3s;
+}
+
+
+
+
+.to-doListWithJavaScript {
+    background-image: url('../assets/images/projectIllustrations/to-doListWithJavaScript.png');
+}
+
+.to-doListWithJavaScript:hover {
+    background-image: url('../assets/images/projectIllustrations/to-doListWithJavaScriptColor.png');
     transition-duration: 3s;
 } 
 
