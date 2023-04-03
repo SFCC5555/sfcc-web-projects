@@ -13,7 +13,7 @@
             "skillList":["Html","Css","JavaScript","React"]
         },
         {
-            "name":"Countries",
+            "name":"The Countries Database",
             "link":"https://sfcc-countries.netlify.app/",
             "repository":"https://github.com/SFCC5555/restCountriesApiWithColorThemeSwitcherMaster",
             "skillList":["Html","Css","JavaScript","Api","Figma"]

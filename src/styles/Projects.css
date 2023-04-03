@@ -100,7 +100,41 @@ h2 {
     transition-duration: 3s;
 }
 
+.theCountriesDatabase {
+    background-image: url('../assets/images/projectIllustrations/theCountriesDatabase.png');
+}
 
+.theCountriesDatabase:hover {
+    background-image: url('../assets/images/projectIllustrations/theCountriesDatabaseColor.png');
+    transition-duration: 3s;
+}
+
+.superCalculator {
+    background-image: url('../assets/images/projectIllustrations/superCalculator.png');
+}
+
+.superCalculator:hover {
+    background-image: url('../assets/images/projectIllustrations/superCalculatorColor.png');
+    transition-duration: 3s;
+}
+
+.superCounter {
+    background-image: url('../assets/images/projectIllustrations/superCounter.png');
+}
+
+.superCounter:hover {
+    background-image: url('../assets/images/projectIllustrations/superCounterColor.png');
+    transition-duration: 3s;
+}
+
+.paradis {
+    background-image: url('../assets/images/projectIllustrations/paradis.png');
+}
+
+.paradis:hover {
+    background-image: url('../assets/images/projectIllustrations/paradisColor.png');
+    transition-duration: 3s;
+}
 
 
 .to-doListWithJavaScript {
