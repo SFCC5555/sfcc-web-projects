@@ -136,7 +136,6 @@ h2 {
     transition-duration: 3s;
 }
 
-
 .to-doListWithJavaScript {
     background-image: url('../assets/images/projectIllustrations/to-doListWithJavaScript.png');
 }
@@ -144,7 +143,117 @@ h2 {
 .to-doListWithJavaScript:hover {
     background-image: url('../assets/images/projectIllustrations/to-doListWithJavaScriptColor.png');
     transition-duration: 3s;
-} 
+}
+
+.architectureAndCivilEngineeringProjects {
+    background-image: url('../assets/images/projectIllustrations/architectureAndCivilEngineeringProjects.png');
+}
+
+.architectureAndCivilEngineeringProjects:hover {
+    background-image: url('../assets/images/projectIllustrations/architectureAndCivilEngineeringProjectsColor.png');
+    transition-duration: 3s;
+}
+
+.wallCalculator {
+    background-image: url('../assets/images/projectIllustrations/wallCalculator.png');
+}
+
+.wallCalculator:hover {
+    background-image: url('../assets/images/projectIllustrations/wallCalculatorColor.png');
+    transition-duration: 3s;
+}
+
+.ipAddressTracker {
+    background-image: url('../assets/images/projectIllustrations/ipAddressTracker.png');
+}
+
+.ipAddressTracker:hover {
+    background-image: url('../assets/images/projectIllustrations/ipAddressTrackerColor.png');
+    transition-duration: 3s;
+}
+
+.sfccComicAndMangaArt {
+    background-image: url('../assets/images/projectIllustrations/sfccComicAndMangaArt.png');
+}
+
+.sfccComicAndMangaArt:hover {
+    background-image: url('../assets/images/projectIllustrations/sfccComicAndMangaArtColor.png');
+    transition-duration: 3s;
+}
+
+.splitterTipCalculatorApp {
+    background-image: url('../assets/images/projectIllustrations/splitterTipCalculatorApp.png');
+}
+
+.splitterTipCalculatorApp:hover {
+    background-image: url('../assets/images/projectIllustrations/splitterTipCalculatorAppColor.png');
+    transition-duration: 3s;
+}
+
+.adviceGenerator {
+    background-image: url('../assets/images/projectIllustrations/adviceGenerator.png');
+}
+
+.adviceGenerator:hover {
+    background-image: url('../assets/images/projectIllustrations/adviceGeneratorColor.png');
+    transition-duration: 3s;
+}
+
+.creditCardForm {
+    background-image: url('../assets/images/projectIllustrations/creditCardForm.png');
+}
+
+.creditCardForm:hover {
+    background-image: url('../assets/images/projectIllustrations/creditCardFormColor.png');
+    transition-duration: 3s;
+}
+
+.timeTrackingDashboard {
+    background-image: url('../assets/images/projectIllustrations/timeTrackingDashboard.png');
+}
+
+.timeTrackingDashboard:hover {
+    background-image: url('../assets/images/projectIllustrations/timeTrackingDashboardColor.png');
+    transition-duration: 3s;
+}
+
+.xpensesChart {
+    background-image: url('../assets/images/projectIllustrations/xpensesChart.png');
+}
+
+.xpensesChart:hover {
+    background-image: url('../assets/images/projectIllustrations/xpensesChartColor.png');
+    transition-duration: 3s;
+}
+
+.theSocialNetworkNotificationsPage {
+    background-image: url('../assets/images/projectIllustrations/theSocialNetworkNotificationsPage.png');
+}
+
+.theSocialNetworkNotificationsPage:hover {
+    background-image: url('../assets/images/projectIllustrations/theSocialNetworkNotificationsPageColor.png');
+    transition-duration: 3s;
+}
+
+.snapIntroSection {
+    background-image: url('../assets/images/projectIllustrations/snapIntroSection.png');
+}
+
+.snapIntroSection:hover {
+    background-image: url('../assets/images/projectIllustrations/snapIntroSectionColor.png');
+    transition-duration: 3s;
+}
+
+.interactiveRatingComponent {
+    background-image: url('../assets/images/projectIllustrations/interactiveRatingComponent.png');
+}
+
+.interactiveRatingComponent:hover {
+    background-image: url('../assets/images/projectIllustrations/interactiveRatingComponentColor.png');
+    transition-duration: 3s;
+}
+
+
 
 
 @media screen and (min-width: 700px) {
