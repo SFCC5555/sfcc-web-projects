@@ -1,0 +1,71 @@
+.formSection {
+
+    width: 300px;
+    height: 400px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contactMeTitle {
+    text-align: left;
+    font-size: 1.6rem;
+}
+
+.formInput {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    border-radius: 2px;
+    font-family: var(--mainFont);
+    font-size: 1.4rem;
+    opacity: 75%;
+}
+
+.textArea {
+    height: 160px;
+    resize: none;
+}
+
+.formButton {
+    height: 40px;
+    cursor: pointer;
+    width: 40%;
+    align-self: flex-end;
+    font-size: 1.4rem;
+    translate: 0px -10px;
+}
+
+.darkModeformInput {
+    background-color: hsl(var(--darkColor));
+    color: hsl(var(--lightColor));
+    border: 2px solid hsl(var(--lightColor),40%);
+}
+
+.darkModeformInput::placeholder {
+    color: hsl(var(--lightColor));
+
+}
+
+.lightModeformInput {
+    background-color: hsl(var(--lightColor));
+    color: hsl(var(--darkColor));
+    border: 2px solid hsl(var(--darkColor),40%);
+
+}
+
+.lightModeformInput::placeholder {
+    color: hsl(var(--darkColor));
+
+}
+
+.formInput:hover {
+    opacity: 100%;
+}
+

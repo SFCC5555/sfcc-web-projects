@@ -6,6 +6,8 @@ import { DarkModeButton } from './components/DarkModeButton';
 import { Projects } from './components/Projects';
 import { useState } from 'react';
 import { Certifications } from './components/Certifications';
+import { Form } from './components/Form';
+
 
 const body = document.querySelector('body');
 
@@ -15,7 +17,7 @@ storageMode==='Light'?body.classList.add('lightMode'):body.classList.remove('lig
 
 
 function App() {
-  const sectionsList = ['WEB PROJECTS','CERTIFICATIONS','CODE NETWORKS','CONTACT','BUY ME A COFFEE'];
+  const sectionsList = ['WEB PROJECTS','CERTIFICATIONS','CONTACT','BUY ME A COFFEE'];
 
   let [mode,setMode] = useState(storageMode);
   
@@ -33,6 +35,7 @@ function App() {
         <DarkModeButton controlFunction={controlDarkMode} mode={mode}/>
         <Projects mode={mode}/>
         <Certifications mode={mode}/>
+        <Form mode={mode}/>
         <h3 className={`${mode.toLocaleLowerCase()}ModeElement`}>WORKING...</h3>
       </React.Fragment>
   );
