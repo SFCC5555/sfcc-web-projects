@@ -84,8 +84,6 @@ function Projects({mode}) {
 
                         projectClass=projectClass.join('');
 
-                        console.log(projectClass)
-
                      return (
                         <div key={project.name} className={`${lowerCaseMode}ModeComponent project`}>
                             <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIllustration ${projectClass}`} /></a>
