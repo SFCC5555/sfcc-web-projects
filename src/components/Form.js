@@ -36,7 +36,7 @@ function Form({ mode }) {
             if (event.target.value==='') {
                 setIsEmail(false);
                 setValidEmail(true);
-            } else if (!(/(^\w+\.?\w+\@\w+\.\w\w+$)/.test(event.target.value))) {
+            } else if (!(/(^\w+\.?\w+@\w+\.\w\w+$)/.test(event.target.value))) {
                 setValidEmail(false);
                 setIsEmail(true);
             } else {
@@ -65,7 +65,7 @@ function Form({ mode }) {
             setIsEmail(false);
             setValidEmail(true);
 
-        } else if (!(/(^\w+\.?\w+\@\w+\.\w\w+$)/.test(email.value))) {
+        } else if (!(/(^\w+\.?\w+@\w+\.\w\w+$)/.test(email.value))) {
             setValidEmail(false);
             setIsEmail(true);
         }
@@ -76,7 +76,7 @@ function Form({ mode }) {
 
         console.log(validName,validEmail,isEmail,validMessage)
 
-        if (name.value !== '' && /(^\w+\.?\w+\@\w+\.\w\w+$)/.test(email.value) && message.value !== '') {
+        if (name.value !== '' && /(^\w+\.?\w+@\w+\.\w\w+$)/.test(email.value) && message.value !== '') {
             
 
             const formData = new FormData(form);
@@ -85,8 +85,6 @@ function Form({ mode }) {
     
             if(response.ok) {
                 setSubmit(true);
-            } else {
-                alert('vergaaaaaaaa')
             }
 
         }
@@ -106,7 +104,7 @@ function Form({ mode }) {
             <div className='sectionGap' id='CONTACT'></div>
             <h2 className={`${lowerCaseMode}ModeElement`}>CONTACT</h2>
             {!submit&&<section className={`formSection ${lowerCaseMode}ModeComponent`}>
-                <h3 className={`${lowerCaseMode}ModeElement contactMeTitle`}>Contact Me</h3>
+                <h3 className={`${lowerCaseMode}ModeElement contactMeTitle`}>Contact me</h3>
                 <form onSubmit={handleSubmit} action='https://formspree.io/f/xknapzwy' method='POST'>
                     <label></label>
                     <input onChange={handleChange} type='text' name='name' placeholder='Name' className={`${lowerCaseMode}ModeformInput formInput` } id='name' />
