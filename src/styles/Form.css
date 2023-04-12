@@ -5,6 +5,7 @@
     border-style: solid;
     border-width: 2px;
     padding: 25px;
+    position: relative;
 }
 
 form {
@@ -36,10 +37,10 @@ form {
 .formButton {
     height: 40px;
     cursor: pointer;
-    width: 40%;
+    width: 37.5%;
     align-self: flex-end;
     font-size: 1.4rem;
-    translate: 0px -10px;
+    translate: 0px -7.5px;
 }
 
 .darkModeformInput {
@@ -69,3 +70,20 @@ form {
     opacity: 100%;
 }
 
+.error {
+    color:crimson;
+    position: absolute;
+    left: 35px;
+}
+
+.errorName {
+    top: 95px;
+}
+
+.errorEmail {
+    top: 145px;
+}
+
+.errorMessage {
+    top: 325px
+}
