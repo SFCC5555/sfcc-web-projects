@@ -7,6 +7,7 @@ import { Projects } from './components/Projects';
 import { useState } from 'react';
 import { Certifications } from './components/Certifications';
 import { Form } from './components/Form';
+import { Touch } from './components/Touch';
 
 
 const body = document.querySelector('body');
@@ -37,6 +38,7 @@ function App() {
         <Certifications mode={mode}/>
         <Form mode={mode}/>
         <h3 className={`${mode.toLocaleLowerCase()}ModeElement`}>WORKING...</h3>
+        <Touch mode={mode} />
       </React.Fragment>
   );
 }

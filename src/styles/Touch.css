@@ -1,0 +1,30 @@
+.touchSection {
+    width: 100%;
+    margin-top: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.touchButton {
+    width: 200px;
+    font-family: var(--mainFont);
+    padding: 15px 10px;
+    cursor: pointer;
+    border: solid 2px grey;
+    opacity: 50%;
+    border-radius: 2px;
+    font-size: 1.2rem;
+}
+
+.darkModeTouchButton {
+    background-color: var(--darkColor);
+}
+
+.ligthModeTouchButton {
+    background-color: var(--ligthColor);
+}
+
+.touchButton:hover {
+    opacity: 100%;
+}
