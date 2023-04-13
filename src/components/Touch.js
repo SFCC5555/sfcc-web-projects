@@ -41,7 +41,14 @@ function Touch({ mode }) {
                 setTimeout(()=>{
                     $(this).addClass('animate__animated animate__hinge');
 
+                    setTimeout(()=>{
+                        $(this).remove();
+    
+                    },2000)
+
                 },200)
+
+
 
     
             })

@@ -17,6 +17,11 @@
     font-size: 1.2rem;
 }
 
+.touch {
+    position: absolute;
+    right: 20px;
+}
+
 .darkModeTouchButton {
     background-color: var(--darkColor);
 }
