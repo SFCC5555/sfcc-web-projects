@@ -30,7 +30,7 @@ function Touch({ mode }) {
             })
 
             $('.dontTouch').mouseleave(function() {
-                $(this).text("Don't! Touch this Button")
+                $(this).text("Don't Touch this Button")
             })
 
             $('.dontTouch').click(function() {
