@@ -8,7 +8,7 @@
 }
 
 .touchButton {
-    width: 100px;
+    width: 175px;
     font-family: var(--mainFont);
     padding: 15px 10px;
     cursor: pointer;
