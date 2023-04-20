@@ -338,3 +338,24 @@
 
     background-image: url('../assets/icons/clipStudioPaintIconDark.png');
 }
+
+
+.TailwindIcon {
+    background-image: url('../assets/icons/tailwindIconColor.png');
+}
+
+.TailwindIconLight:hover, .TailwindIconDark:hover {
+    background-image: url('../assets/icons/tailwindIconColor.png');
+    transition-duration: 1.5s;
+}
+
+.TailwindIconLight {
+
+    background-image: url('../assets/icons/tailwindIconLight.png');
+
+}
+
+.TailwindIconDark {
+
+    background-image: url('../assets/icons/tailwindIconDark.png');
+}

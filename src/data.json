@@ -1,6 +1,12 @@
 {
     "projects":[
         {
+            "name":"The Countries Database",
+            "link":"https://the-countries-database.netlify.app/",
+            "repository":"https://github.com/SFCC5555/the-countries-database",
+            "skillList":["Html","Css","JavaScript","React","Tailwind","Api","Figma"]
+        },
+        {
             "name":"Space Tourism Website",
             "link":"https://5pace.netlify.app/",
             "repository":"https://github.com/SFCC5555/spaceTourismWebsite",
@@ -11,12 +17,6 @@
             "link":"https://react-to-do-list-sfcc.netlify.app/",
             "repository":"https://github.com/SFCC5555/react-to-do-list",
             "skillList":["Html","Css","JavaScript","React"]
-        },
-        {
-            "name":"The Countries Database",
-            "link":"https://sfcc-countries.netlify.app/",
-            "repository":"https://github.com/SFCC5555/restCountriesApiWithColorThemeSwitcherMaster",
-            "skillList":["Html","Css","JavaScript","Api","Figma"]
         },
         {
             "name":"Super Calculator",
