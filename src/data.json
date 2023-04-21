@@ -116,11 +116,15 @@
         }    
     ],
     "certifications":[
+        
         {
             "name":"javaScriptAlgorithmsandDataStructures"
         },
         {
             "name":"ingenieroCivil"
+        },
+        {
+            "name":"javaScriptBasicHackerRank"
         },
         {
             "name":"introduccionAReactJS"

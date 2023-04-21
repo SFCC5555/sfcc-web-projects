@@ -221,6 +221,15 @@
     transition-duration: 1.5s;
 }
 
+.javaScriptBasicHackerRank {
+    background-image: url('../assets/images/certificationIllustrations/javaScriptBasicHackerRank.png');
+}
+
+.javaScriptBasicHackerRank:hover {
+    background-image: url('../assets/images/certificationIllustrations/javaScriptBasicHackerRankColor.png');
+    transition-duration: 1.5s;
+}
+
 
 
 @media screen and (min-width: 700px) {
