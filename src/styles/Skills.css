@@ -62,7 +62,7 @@
 
 .HtmlIconLight:hover,.HtmlIconDark:hover {
     background-image: url('../assets/icons/htmlIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .HtmlIconLight {
@@ -81,7 +81,7 @@
 
 .CssIconLight:hover,.CssIconDark:hover {
     background-image: url('../assets/icons/cssIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .CssIconLight {
@@ -100,7 +100,7 @@
 
 .JavaScriptIconLight:hover,.JavaScriptIconDark:hover {
     background-image: url('../assets/icons/javaScriptIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .JavaScriptIconLight {
@@ -119,7 +119,7 @@
 
 .ReactIconLight:hover,.ReactIconDark:hover, .ReactIcon:hover {
     background-image: url('../assets/icons/reactIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
     animation: reactIcon-spin infinite 25s linear;
 }
 
@@ -142,7 +142,7 @@
 
 .ReactIconLight, .ReactIconDark {
     animation-name: reactIconAnimation;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
 }
   
 @keyframes reactIconAnimation {
@@ -158,7 +158,7 @@
 
 .GitIconLight:hover,.GitIconDark:hover {
     background-image: url('../assets/icons/gitIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .GitIconLight {
@@ -177,7 +177,7 @@
 
 .GitHubIconLight:hover, .GitHubIconDark:hover {
     background-image: url('../assets/icons/gitHubIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .GitHubIconLight {
@@ -193,7 +193,7 @@
 
 .cvIconLight:hover, .cvIconDark:hover {
     background-image: url('../assets/icons/cvIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .cvIconLight {
@@ -212,7 +212,7 @@
 
 .Adobe-IllustratorIconLight:hover, .Adobe-IllustratorIconDark:hover {
     background-image: url('../assets/icons/adobeIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .Adobe-IllustratorIconLight {
@@ -231,7 +231,7 @@
 
 .JsonIconLight:hover, .JsonIconDark:hover {
     background-image: url('../assets/icons/jsonIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .JsonIconLight {
@@ -250,7 +250,7 @@
 
 .ApiIconLight:hover, .ApiIconDark:hover {
     background-image: url('../assets/icons/apiIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .ApiIconLight {
@@ -269,7 +269,7 @@
 
 .FigmaIconLight:hover, .FigmaIconDark:hover {
     background-image: url('../assets/icons/figmaIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .FigmaIconLight {
@@ -288,7 +288,7 @@
 
 .AutoCADIconLight:hover, .AutoCADIconDark:hover {
     background-image: url('../assets/icons/autoCadIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .AutoCADIconLight {
@@ -306,7 +306,7 @@
 
 .SketchUpIconLight:hover, .SketchUpIconDark:hover {
     background-image: url('../assets/icons/sketchUpIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .SketchUpIconLight {
@@ -326,7 +326,7 @@
 
 .Clip-Studio-PaintIconLight:hover, .Clip-Studio-PaintIconDark:hover {
     background-image: url('../assets/icons/clipStudioPaintIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .Clip-Studio-PaintIconLight {
@@ -346,7 +346,7 @@
 
 .TailwindIconLight:hover, .TailwindIconDark:hover {
     background-image: url('../assets/icons/tailwindIconColor.png');
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .TailwindIconLight {
@@ -358,4 +358,24 @@
 .TailwindIconDark {
 
     background-image: url('../assets/icons/tailwindIconDark.png');
+}
+
+.TypeScriptIcon {
+    background-image: url('../assets/icons/typeScriptIconColor.png');
+}
+
+.TypeScriptIconLight:hover, .TypeScriptIconDark:hover {
+    background-image: url('../assets/icons/typeScriptIconColor.png');
+    transition-duration: 1s;
+}
+
+.TypeScriptIconLight {
+
+    background-image: url('../assets/icons/typeScriptIconLight.png');
+
+}
+
+.TypeScriptIconDark {
+
+    background-image: url('../assets/icons/typeScriptIconDark.png');
 }

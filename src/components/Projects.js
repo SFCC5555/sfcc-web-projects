@@ -86,7 +86,7 @@ function Projects({mode}) {
 
                      return (
                         <div key={project.name} className={`${lowerCaseMode}ModeComponent project`}>
-                            <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIllustration ${projectClass}`} /></a>
+                            <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIllustration`} style={{backgroundImage:`url(${require(`../assets/images/projectIllustrations/${projectClass}Color.png`)})`}} /></a>
                             <Skills skillList={project.skillList} mode={mode}/>
                             <a href={project.repository} target='_blank' rel="noreferrer" ><span className={`skillIcon GitHubIcon${mode} gitHubLink `}/></a>
                         </div>

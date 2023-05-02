@@ -37,7 +37,7 @@ function Certifications({mode}) {
                     {
                      data.certifications.map(certification=>(
                         <div key={certification.name} className={`${lowerCaseMode}ModeComponent certification`}>
-                            <span onClick={renderCertification} id={certification.name} className={`certificationIllustration ${certification.name}`} />
+                            <span onClick={renderCertification} id={certification.name} className={`certificationIllustration`} style={{backgroundImage:`url(${require(`../assets/images/certificationIllustrations/${certification.name}Color.png`)})`}} />
                         </div>
                      ))   
                     }

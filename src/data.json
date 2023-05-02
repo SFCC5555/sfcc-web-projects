@@ -1,6 +1,12 @@
 {
     "projects":[
         {
+            "name":"Age Calculator App",
+            "link":"https://sfcc-age-calculator-app.netlify.app/",
+            "repository":"https://github.com/SFCC5555/age-calculator-app",
+            "skillList":["Html","Css","TypeScript","React"]
+        },
+        {
             "name":"The Countries Database",
             "link":"https://the-countries-database.netlify.app/",
             "repository":"https://github.com/SFCC5555/the-countries-database",
