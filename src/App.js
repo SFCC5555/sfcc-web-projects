@@ -18,7 +18,7 @@ storageMode==='Light'?body.classList.add('lightMode'):body.classList.remove('lig
 
 
 function App() {
-  const sectionsList = ['WEB PROJECTS','CERTIFICATIONS','CONTACT','BUY ME A COFFEE'];
+  const sectionsList = ['WEB PROJECTS','CERTIFICATIONS','CONTACT'];
 
   let [mode,setMode] = useState(storageMode);
   
@@ -37,7 +37,6 @@ function App() {
         <Projects mode={mode}/>
         <Certifications mode={mode}/>
         <Form mode={mode}/>
-        <h3 className={`${mode.toLocaleLowerCase()}ModeElement`}>WORKING...</h3>
         <Touch mode={mode} />
       </React.Fragment>
   );

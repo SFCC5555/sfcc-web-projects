@@ -43,7 +43,7 @@
     .menu {
         flex-direction: row;
         padding: 10px 20px;
-        width: 750px;
+        width:700px;
         height: 40px;
         font-size: 1.3rem;
         gap: 25px;
@@ -55,7 +55,7 @@
 
     @keyframes menuAnimation {
         0%{width: 0px;padding: 10px 0px;letter-spacing: -10px;gap:0px}
-        100%{width: 750px;padding: 10px 20px;letter-spacing: 0px;gap:25px}
+        100%{width: 700px;padding: 10px 20px;letter-spacing: 0px;gap:25px}
     }
 
 

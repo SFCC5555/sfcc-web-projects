@@ -99,7 +99,7 @@ function Form({ mode }) {
 
     return (
 
-        <main className='sectionContainer'>
+        <main className='sectionContainer contactSection'>
 
             <div className='sectionGap' id='CONTACT'></div>
             <h2 className={`${lowerCaseMode}ModeElement`}>CONTACT</h2>

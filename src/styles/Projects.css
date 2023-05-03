@@ -34,6 +34,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     padding: 5px;
+    padding-top: 30px;
     border-style: solid;
     border-width: 2px;
     gap: 5px;
@@ -50,12 +51,13 @@ h2 {
 }
 
 .gitHubLink {
+    width: 20px;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0px;
+    right: 4px;
     opacity: 75%;
     animation-name: gitHubLinkAnimation;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
 }
 
 @keyframes gitHubLinkAnimation {

@@ -177,7 +177,7 @@
 
 .GitHubIconLight:hover, .GitHubIconDark:hover {
     background-image: url('../assets/icons/gitHubIconColor.png');
-    transition-duration: 1s;
+
 }
 
 .GitHubIconLight {
@@ -193,7 +193,6 @@
 
 .cvIconLight:hover, .cvIconDark:hover {
     background-image: url('../assets/icons/cvIconColor.png');
-    transition-duration: 1s;
 }
 
 .cvIconLight {
