@@ -1,6 +1,12 @@
 {
     "projects":[
         {
+            "name":"The Social Network Comment Section",
+            "link":"https://the-social-network-comment-section.netlify.app/",
+            "repository":"https://github.com/SFCC5555/interactiveCommentsSection",
+            "skillList":["Html","Css","JavaScript","React","Json","Tailwind"]
+        },
+        {
             "name":"Age Calculator App",
             "link":"https://sfcc-age-calculator-app.netlify.app/",
             "repository":"https://github.com/SFCC5555/age-calculator-app",
