@@ -5,7 +5,7 @@
     cursor: pointer;
     top: 90%;
     right: 20px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .darkModeButtonLight {
