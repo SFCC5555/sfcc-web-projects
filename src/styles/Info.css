@@ -43,13 +43,13 @@
 }
 
 .infoTitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0px 15px;
     margin-bottom: 5px;
 }
 
 .infoContent {
-    font-weight: 100;
+    font-size: 0.8rem;
     text-align: justify;
 }
 
