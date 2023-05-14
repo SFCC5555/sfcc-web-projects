@@ -5,7 +5,7 @@
             "link":"https://the-social-network-comment-section.netlify.app/",
             "repository":"https://github.com/SFCC5555/interactiveCommentsSection",
             "skillList":["Html","Css","JavaScript","React","Json","Tailwind"],
-            "info":""
+            "info":"This project is an interactive commenting section that allows users to comment, reply, edit, and delete comments, and vote on each of them. Users can create different accounts with their respective usernames and profile pictures and interact with each other. These accounts can also be deleted. Information persistence was implemented using local storage, so the browser will remember any changes made. Therefore, a reset button was implemented to restore the comments section to its initial state, which comes from a JSON file. It was developed using React and styled with CSS and Tailwind, with a responsive “mobile first” design. The use of tools such as useState and useContext facilitated the manipulation of states and variables to build a better organized and modular architecture."
         },
         {
             "name":"Age Calculator App",

@@ -44,22 +44,23 @@
 
 .infoTitle {
     font-size: 1.3rem;
-    margin: 0px 10px;
+    margin: 0px 15px;
+    margin-bottom: 5px;
 }
 
 .infoContent {
-    font-size: 1rem;
+    font-weight: 100;
+    text-align: justify;
 }
 
 @media screen and (min-width: 700px) {
 
     .infoTitle {
         font-size: 1.8rem;
-        margin: 0px 15px;
     }
     
     .infoContent {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
 }
