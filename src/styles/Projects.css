@@ -70,7 +70,6 @@ h2 {
     opacity: 100%;
 }
 
-
 .projectIllustration {
     width: 150px;
     height: 225px;
@@ -89,7 +88,6 @@ h2 {
     100%{width: 150px;}
 }
 
-
 @media screen and (min-width: 700px) {
     .projectContainer {
         grid-template-columns: repeat(3,1fr);
@@ -106,6 +104,7 @@ h2 {
     }
 
 }
+
 @media screen and (min-width: 900px) {
     .projectContainer {
         grid-template-columns: repeat(4,1fr);

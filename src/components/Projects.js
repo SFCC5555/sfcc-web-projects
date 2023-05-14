@@ -4,6 +4,7 @@ import { Skills } from './Skills';
 import { Search } from './Search';
 import { Filter} from './Filter';
 import { useState } from 'react';
+import { Info } from './Info';
 
 
 function Projects({mode}) {
@@ -65,7 +66,6 @@ function Projects({mode}) {
         }
     }
 
-
     return (<main className='sectionContainer'>
                 <div className='sectionGap' id='WEB PROJECTS'></div>
                 <h2 className={`${lowerCaseMode}ModeElement`}>WEB PROJECTS</h2>
@@ -85,9 +85,10 @@ function Projects({mode}) {
                         projectClass=projectClass.join('');
 
                      return (
-                        <div key={project.name} className={`${lowerCaseMode}ModeComponent project`}>
+                        <div key={project.name} className={`${lowerCaseMode}ModeComponent project infoRelative`}>
                             <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIllustration`} style={{backgroundImage:`url(${require(`../assets/images/projectIllustrations/${projectClass}Color.png`)})`}} /></a>
-                            <Skills skillList={project.skillList} mode={mode}/>
+                            <Skills skillList={project.skillList} mode={mode} />
+                            <Info mode={mode} name={project.name} info={project.info} />
                             <a href={project.repository} target='_blank' rel="noreferrer" ><span className={`skillIcon GitHubIcon${mode} gitHubLink `}/></a>
                         </div>
                      )})   

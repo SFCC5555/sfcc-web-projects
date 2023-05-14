@@ -190,6 +190,16 @@
     background-image: url('../assets/icons/gitHubIconDark.png');
 }
 
+.aboutIconLight {
+
+    background-image: url('../assets/icons/aboutIconLight.png');
+}
+
+.aboutIconDark {
+
+    background-image: url('../assets/icons/aboutIconDark.png');
+}
+
 
 .cvIconLight:hover, .cvIconDark:hover {
     background-image: url('../assets/icons/cvIconColor.png');
