@@ -11,8 +11,8 @@
             "name":"Age Calculator App",
             "link":"https://sfcc-age-calculator-app.netlify.app/",
             "repository":"https://github.com/SFCC5555/age-calculator-app",
-            "skillList":["Html","Css","TypeScript","React"],
-            "info":""
+            "skillList":["Html","Css","TypeScript","React","Figma"],
+            "info":"This project is a challenge from Frontend Mentor, who provided the design through a Figma file. It is a simple yet useful application that allows users to calculate their age in years, months, and days. By entering their date of birth, the application automatically performs the calculation and ensures the accuracy of the information through field validation based on regular expressions. To develop the project, technologies such as HTML, CSS, React.js, and TypeScript were used, with the latter being my first approach to its basic and fundamental concepts, such as assigning types to each variable and using interfaces. The application is easy to use and has a responsive design that adapts to any mobile device."
         },
         {
             "name":"The Countries Database",
@@ -145,7 +145,7 @@
             "link":"https://sfccrating.netlify.app/",
             "repository":"https://github.com/SFCC5555/interactiveRatingComponent",
             "skillList":["Html","Css","JavaScript","Figma"],
-            "info":""
+            "info":"This project is about a web component designed to allow users to rate a simulated mobile application with up to 5 stars. The project was developed as a challenge by Front End Mentor, who provided the design via a Figma file. The component is built with HTML, CSS, and JavaScript and features interactive animations for each star, which creates a more engaging rating experience for the user. DOM manipulation and tools like addEventListener were used to achieve this effect. After the user rates the application, a modal is displayed with a message of gratitude."
         }    
     ],
     "certifications":[
