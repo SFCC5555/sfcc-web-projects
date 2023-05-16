@@ -75,77 +75,77 @@
             "link":"https://sfcc-wall-calculator.netlify.app/",
             "repository":"https://github.com/SFCC5555/WALL",
             "skillList":["Html","Css","JavaScript","Adobe-Illustrator"],
-            "info":""
+            "info":"This project is a web app that allows users with civil engineering knowledge to calculate the stability of retaining walls. Users can input soil parameters and wall dimensions to perform a stability analysis in terms of overturning, sliding, and load-bearing capacity, following Coulomb's theory. The app includes a scheme created with Adobe Illustrator, which facilitates dimension entry. The calculations are performed using mathematical formulas implemented in JavaScript. If the analysis results do not meet the stability criteria, messages will be displayed indicating it and suggesting adjustments to the wall dimensions. On the other hand, a confirmation message will be shown in case of successful compliance with the criteria. A dropdown menu facilitates access to different calculation sections."
         },
         {
             "name":"ip Address Tracker",
             "link":"https://sfcc-ip-address-tracker.netlify.app/",
             "repository":"https://github.com/SFCC5555/ipAddressTrackerMaster",
             "skillList":["Html","Css","JavaScript","Api","Figma"],
-            "info":""
+            "info":"The project focuses on a web application that tracks the location of an entered IP address. To accomplish this, two APIs are utilized: one for obtaining the location data and another for displaying it on an interactive map, similar to Google Maps. The APIs are accessed using the Fetch tool in JavaScript. The project is developed using HTML, CSS, and JavaScript, with attention given to responsive design to ensure proper display on various devices."
         },
         {
             "name":"Sfcc Comic And Manga Art",
             "link":"https://sfccgallery.netlify.app/",
             "repository":"https://github.com/SFCC5555/GALERIA",
             "skillList":["Html","Css","JavaScript","Adobe-Illustrator","Clip-Studio-Paint"],
-            "info":""
+            "info":"This project consists of an illustration gallery. The layout was created using HTML, while the styling was implemented using CSS. The main structure of the illustration container was achieved through CSS Grid Layout, with a responsive design that automatically adapts to the device it is viewed on, thanks to the use of media queries. The illustrations and their information are loaded dynamically using JavaScript, which also provides interactive features such as a dropdown menu and the ability to view the illustrations in an enlarged size in a separate tab. To add a decorative touch to the page, some illustrations created in Adobe Illustrator and Clip Studio Paint were used."
         },
         {
             "name":"Splitter Tip Calculator App",
             "link":"https://sfcc-tip-calculator.netlify.app/",
             "repository":"https://github.com/SFCC5555/tipCalculatorApp",
             "skillList":["Html","Css","JavaScript","Figma"],
-            "info":""
+            "info":"This project focuses on creating a small web application for calculating tips. Frontend Mentor provided the application design in a Figma file. The main functionality of the application is to calculate the tip based on user-entered data, such as the total bill amount, tip percentage, and number of people. The application returns the tip amount per person and the total bill amount per person, including the tip. HTML, CSS, and JavaScript were used for the development of this project. HTML was responsible for structuring the page, CSS was used to style and give it an appealing design, and JavaScript was implemented to perform the calculations and dynamically display the results. In addition, special attention has been given to the responsive design of the application."
         },
         {
             "name":"Advice Generator",
             "link":"https://superadvicegenerator.netlify.app/",
             "repository":"https://github.com/SFCC5555/adviceGeneratorApp",
             "skillList":["Html","Css","JavaScript","Api","Figma"],
-            "info":""
+            "info":"This project is based on a challenge proposed by Frontend Mentor, which involves creating an advice generator. The design of the generator was provided through a Figma file. The application connects to an API using the Fetch tool, representing my first experience in handling Fetch and promises in JavaScript. The application works as follows: when clicking a button, a random advice is requested from the API and displayed on the screen. HTML, CSS, and JavaScript are used to implement this functionality, and as always, attention has been given to responsive design to ensure an optimal experience on different devices."
         },
         {
             "name":"Credit Card Form",
             "link":"https://sfcccreditcard.netlify.app/",
             "repository":"https://github.com/SFCC5555/interactiveCardDetailsForm",
             "skillList":["Html","Css","JavaScript","Figma"],
-            "info":""
+            "info":"This project focuses on the creation of an interactive credit card detail form, which is a challenge proposed by Frontend Mentor. The design was provided in a Figma file. For its development, HTML, CSS, and JavaScript were used, with a focus on responsive design to ensure proper adaptation to any device. Each field of the form has validations that prevent the user from entering incorrect values. If an error is detected, a customized error message is displayed based on the type of error committed. Additionally, the entered information is updated in real-time on a template, thanks to the functions implemented with JavaScript. Once the form data is successfully submitted, a thank you message is displayed to the user."
         },
         {
             "name":"Time Tracking Dashboard",
             "link":"https://sfcc-time-tracking-dashboard.netlify.app/",
             "repository":"https://github.com/SFCC5555/timeTrackingDashboard",
             "skillList":["Html","Css","JavaScript","Json","Figma"],
-            "info":""
+            "info":"This project focuses on the layout of a time tracking dashboard, which is a challenge proposed by Frontend Mentor. The design of the dashboard was provided in a Figma file. For the development of this project, HTML, CSS, and JavaScript were used again, with an emphasis on responsive design. The information is dynamically implemented through a JSON file, allowing for flexible updates of the dashboard data. Additionally, a functionality has been implemented that allows users to switch between daily, weekly, or monthly information views. Regarding styling, CSS Flexbox has been used to achieve a proper structure and design in the time tracking dashboard."
         },
         {
             "name":"Xpenses Chart",
             "link":"https://xpenseschart.netlify.app/",
             "repository":"https://github.com/SFCC5555/expensesChartComponent",
             "skillList":["Html","Css","JavaScript","Json","Figma"],
-            "info":""
+            "info":"This project focuses on the layout using HTML, CSS, and JavaScript of an expenses chart component proposed by Front end Mentor website, whose design was provided in a Figma file. The objective is to allow users to virtually visualize daily expenses for the week, represented in columns. When hovering over the columns, the corresponding amount of money is displayed. This functionality is implemented using JavaScript. Additionally, a feature is added to highlight the column of the current day with a different color, making it easier to visually identify the current day. A notable aspect of this project is the dynamic implementation of information from a JSON file. This enables flexible and automatic updating and loading of expense data."
         },
         {
             "name":"The Social Network Notifications Page",
             "link":"https://sfcc-socialnetwork-notifications.netlify.app/",
             "repository":"https://github.com/SFCC5555/notificationsPageMain",
             "skillList":["Html","Css","JavaScript","Figma"],
-            "info":""
+            "info":"Continuing with the practice and study of web layout using HTML, CSS, JavaScript, and responsive design, this project focuses on creating a notifications section for a social media platform. It features a single functionality that allows users to mark notifications as read by clicking a button. One notable aspect of this project is that instead of directly implementing the notifications in the HTML file, they are dynamically added using JavaScript objects, functions, and DOM manipulation. This project helped solidify knowledge in web layout using HTML, CSS, and JavaScript, while also delving deeper into DOM manipulation, and dynamic content creation."
         },
         {
             "name":"Snap Intro Section",
             "link":"https://sfcc-snap-intro-section.netlify.app/",
             "repository":"https://github.com/SFCC5555/introSectionWithDropdownNavigation",
             "skillList":["Html","Css","JavaScript","Figma"],
-            "info":""
+            "info":"This project is about the layout of a homepage for a web application, as part of a challenge provided by the Frontend Mentor website. The design of the homepage was provided in a Figma file, which I used as a reference to implement the layout. To do this, I used fundamental technologies such as HTML, CSS, and basic JavaScript functions, with which I implemented dropdown menus in the navigation bar. The homepage has a responsive design, which means it adapts and displays correctly on different devices such as desktop computers, tablets, and mobile phones. The development process allowed me to gain practical experience in web layout and design, as well as in implementing responsive design concepts and basic functionalities using JavaScript."
         },
         {
             "name":"Interactive Rating Component",
             "link":"https://sfccrating.netlify.app/",
             "repository":"https://github.com/SFCC5555/interactiveRatingComponent",
             "skillList":["Html","Css","JavaScript","Figma"],
-            "info":"This project is about a web component designed to allow users to rate a simulated mobile application with up to 5 stars. The project was developed as a challenge by Front End Mentor, who provided the design via a Figma file. The component is built with HTML, CSS, and JavaScript and features interactive animations for each star, which creates a more engaging rating experience for the user. DOM manipulation and tools like addEventListener were used to achieve this effect. After the user rates the application, a modal is displayed with a message of gratitude."
+            "info":"This project is about a web component designed to allow users to rate a simulated mobile application with up to 5 stars. The project was developed as a challenge by Front End Mentor, who provided the design via a Figma file. The component is built with HTML, CSS, and JavaScript and features interactive animations for each star, which creates a more engaging rating experience for the user. DOM manipulation and tools like addEventListener were used to achieve this effect. After the user rates the application, a modal is displayed with a gratitude message."
         }    
     ],
     "certifications":[
