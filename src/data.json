@@ -19,56 +19,56 @@
             "link":"https://the-countries-database.netlify.app/",
             "repository":"https://github.com/SFCC5555/the-countries-database",
             "skillList":["Html","Css","JavaScript","React","Tailwind","Api","Figma"],
-            "info":""
-        },
-        {
-            "name":"Space Tourism Website",
-            "link":"https://5pace.netlify.app/",
-            "repository":"https://github.com/SFCC5555/spaceTourismWebsite",
-            "skillList":["Html","Css","JavaScript","Json","Figma"],
-            "info":""
+            "info":"This web project utilizes HTML, CSS, Tailwind, JavaScript, and React.js. It was proposed by Frontend Mentor and is based on a design in a Figma file. The application displays country cards with information such as flag, population, region, and capital. The card container has a responsive design implemented with CSS Flexbox. When clicking on a card, additional information about the country is shown. Additionally, there are buttons that allow accessing details of border countries. The application features a search field and a filter by continent, implemented using regular expressions and functional programming. Country information is obtained from an API consumed using fetch and the useEffect hook. The management of states and communication between components through props facilitated the implementation of functionalities such as the dark mode."
         },
         {
             "name":"To-Do List With React",
             "link":"https://react-to-do-list-sfcc.netlify.app/",
             "repository":"https://github.com/SFCC5555/react-to-do-list",
             "skillList":["Html","Css","JavaScript","React"],
-            "info":""
+            "info":"This web application is a to-do list developed using HTML, CSS, JavaScript, and the React.js framework. It is an adaptation of the original 'To-Do List With JavaScript' project. The core functionality remains the same, allowing users to add, mark, and delete tasks interactively. Tasks are displayed in a container, and the counter updates in real-time. The application also includes buttons to delete all tasks or completed ones. It uses local storage to preserve data even when the page is reloaded, ensuring that previously added tasks remain visible and efficiently managed. Overall, this web application provides an intuitive and practical experience for organizing and tracking daily tasks. It's worth noting that thanks to React.js, it was easier to implement the functionalities and structure the code more efficiently."
         },
         {
             "name":"Super Calculator",
             "link":"https://sfcc-super-calculator.netlify.app/",
             "repository":"https://github.com/SFCC5555/super-calculator",
             "skillList":["Html","Css","JavaScript","React"],
-            "info":""
+            "info":"This web project is a simple calculator developed with React.js, HTML, CSS, and JavaScript. It allows performing mathematical operations with integers and decimals, including positive and negative values, such as addition, subtraction, multiplication, and division. The result of each operation is displayed on a screen within the interface. During the implementation, the concepts of React components and state management were reinforced. Both class components and functional components were used, making use of hooks like useState. Additionally, regular expressions were applied to validate the results and detect syntax errors or division by zero. The user interface also includes interactive buttons to input numbers and operations, and a button to clear the screen."
         },
         {
             "name":"Super Counter",
             "link":"https://sfcc-super-counter.netlify.app/",
             "repository":"https://github.com/SFCC5555/counter",
             "skillList":["Html","Css","JavaScript","React"],
-            "info":""
+            "info":"This web project is a counter developed with React.js that has allowed me to practice and gain a deeper understanding of the fundamental concepts of React. The counter starts at zero and can be incremented by one by clicking a button. Another button is included to reset the counter to zero. During the implementation, JSX elements were used, and both class and functional components were created. Additionally, the new concept of useState was applied to efficiently manage the state of the counter. Of course, HTML, CSS, and JavaScript were used to build this project. The user interface features a title, the counter display, interactive buttons, and a React logo animated with CSS, highlighting the use of this technology."
         },
         {
             "name":"Paradis",
             "link":"https://paradis.netlify.app/",
             "repository":"https://github.com/SFCC5555/comment-section-react",
             "skillList":["Html","Css","JavaScript","React","Json"],
-            "info":""
+            "info":"This project marks my first step in practicing React.js. Also using HTML, CSS, and JavaScript, I created a section of cards inspired by the characters from the anime 'Attack on Titan'. Thanks to JSX elements, I developed a component that allowed me to dynamically implement the cards loaded from a JSON file. Each card features the character's image, name, location, position, and an iconic quote. Through this experience, I was able to gain familiarity with the fundamentals of React and explore its potential in web development in a practical and enjoyable way."
         },
         {
             "name":"To-Do List With JavaScript",
             "link":"https://sfcc-to-do-list.netlify.app/",
             "repository":"https://github.com/SFCC5555/to-doListJavaScript",
             "skillList":["Html","Css","JavaScript"],
-            "info":""
+            "info":"This is a web application of a to-do list developed with HTML, CSS, and JavaScript. Through JavaScript and functional programming techniques, interactive functionalities were implemented to add, mark, and delete tasks. The tasks are displayed in a container, and the task counter is updated. The application also provides options to delete all tasks or completed tasks using buttons. Additionally, it utilizes local storage to persist tasks, ensuring that the data remains even when the page is reloaded. This ensures that previously added tasks are visible and can be efficiently managed. Overall, this web application provides an intuitive and practical experience for organizing and tracking daily tasks."
+        },
+        {
+            "name":"Space Tourism Website",
+            "link":"https://5pace.netlify.app/",
+            "repository":"https://github.com/SFCC5555/spaceTourismWebsite",
+            "skillList":["Html","Css","JavaScript","Json","Figma"],
+            "info":"The project is an informative website about space travel, created as a challenge by Frontend Mentor. The design, coming from a Figma file, was implemented using HTML, CSS, and JavaScript. To obtain dynamic data, a JSON file is used. The main focus was to develop a responsive design following the 'mobile-first' approach, making it accessible and appealing on every device. Each section is presented in separate tabs, where users can explore space destinations, information about the crew, and the technology used. These tabs offer an interactive experience, allowing users to click on elements for more details on each aspect. With its modern design and dynamic functionality, the website provides an immersive and educational experience for space enthusiasts."
         },
         {
             "name":"Architecture And Civil Engineering Projects",
             "link":"https://sfcc-architecture-civil-projects.netlify.app/",
             "repository":"https://github.com/SFCC5555/Portafolio",
             "skillList":["Html","Css","JavaScript","AutoCAD","SketchUp"],
-            "info":""
+            "info":"This project is an architecture and civil engineering portfolio, developed using HTML, CSS, and JavaScript. CSS Grid Layout was employed to structure the project containers, with media queries for responsive design across various devices. The portfolio includes sections for architecture, civil engineering, and renders, with projects dynamically loaded using JavaScript. Each project showcases an image and name, and clicking on it reveals a popup window with additional details and supplementary files such as blueprints and technical reports. The navigation bar features a dropdown sections menu, and a button that opens the author's curriculum vitae in PDF format in a new tab, allowing visitors to review and download it."
         },
         {
             "name":"Wall Calculator",
@@ -138,7 +138,7 @@
             "link":"https://sfcc-snap-intro-section.netlify.app/",
             "repository":"https://github.com/SFCC5555/introSectionWithDropdownNavigation",
             "skillList":["Html","Css","JavaScript","Figma"],
-            "info":"This project is about the layout of a homepage for a web application, as part of a challenge provided by the Frontend Mentor website. The design of the homepage was provided in a Figma file, which I used as a reference to implement the layout. To do this, I used fundamental technologies such as HTML, CSS, and basic JavaScript functions, with which I implemented dropdown menus in the navigation bar. The homepage has a responsive design, which means it adapts and displays correctly on different devices such as desktop computers, tablets, and mobile phones. The development process allowed me to gain practical experience in web layout and design, as well as in implementing responsive design concepts and basic functionalities using JavaScript."
+            "info":"This project is about the layout of a homepage for a web application, as part of a challenge provided by the Frontend Mentor website. The design of the homepage was provided in a Figma file, which I used as a reference. I used fundamental technologies such as HTML, CSS, and basic JavaScript functions, with which I implemented dropdown menus in the navigation bar. The homepage has a responsive design, which means it adapts and displays correctly on different devices such as desktop computers, tablets, and mobile phones. The development process allowed me to gain practical experience in web layout and design, as well as in implementing responsive design concepts and basic functionalities using JavaScript."
         },
         {
             "name":"Interactive Rating Component",
