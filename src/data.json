@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"Rock Paper Scissors",
+            "link":"https://sfcc-rock-paper-scissors.netlify.app/",
+            "repository":"https://github.com/SFCC5555/rock-paper-scissors",
+            "skillList":["Html","Css","JavaScript","React","Json","Tailwind","Figma"],
+            "info":""
+        },
+        {
             "name":"The Social Network Comment Section",
             "link":"https://the-social-network-comment-section.netlify.app/",
             "repository":"https://github.com/SFCC5555/interactiveCommentsSection",
