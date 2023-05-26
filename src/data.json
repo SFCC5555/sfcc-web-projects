@@ -158,58 +158,76 @@
     "certifications":[
         
         {
-            "name":"javaScriptAlgorithmsandDataStructures"
+            "name":"javaScriptAlgorithmsandDataStructures",
+            "link":"https://www.freecodecamp.org/certification/SFCC5555/javascript-algorithms-and-data-structures"
         },
         {
-            "name":"ingenieroCivil"
+            "name":"ingenieroCivil",
+            "link":"ingenieroCivil.pdf"
         },
         {
-            "name":"javaScriptBasicHackerRank"
+            "name":"javaScriptBasicHackerRank",
+            "link":"javaScriptBasicHackerRank.pdf"
         },
         {
-            "name":"introduccionAReactJS"
+            "name":"introduccionAReactJS",
+            "link":"introduccionAReactJS.pdf"
         },
         {
-            "name":"ecmaScript6Plus"
+            "name":"ecmaScript6Plus",
+            "link":"ecmaScript6Plus.pdf"
         },
         {
-            "name":"asincronismoConJavaScript"
+            "name":"asincronismoConJavaScript",
+            "link":"asincronismoConJavaScript.pdf"
         },
         {
-            "name":"gitYGitHub"
+            "name":"gitYGitHub",
+            "link":"gitYGitHub.pdf"
         },
         {
-            "name":"npm"
+            "name":"npm",
+            "link":"npm.pdf"
         },
         {
-            "name":"advancedEnglishCourseForDevelopers"
+            "name":"advancedEnglishCourseForDevelopers",
+            "link":"advancedEnglishCourseForDevelopers.pdf"
         },
         {
-            "name":"expresionesRegulares"
+            "name":"expresionesRegulares",
+            "link":"expresionesRegulares.pdf"
         },
         {
-            "name":"mobileFirst"
+            "name":"mobileFirst",
+            "link":"mobileFirst.pdf"
         },
         {
-            "name":"javaScriptPractico"
+            "name":"javaScriptPractico",
+            "link":"javaScriptPractico.pdf"
         },
         {
-            "name":"htmlYCss"
+            "name":"htmlYCss",
+            "link":"dhtmlYCss.pdf"
         },
         {
-            "name":"frontendDeveloperPractico"
+            "name":"frontendDeveloperPractico",
+            "link":"frontendDeveloperPractico.pdf"
         },
         {
-            "name":"frontendDeveloper"
+            "name":"frontendDeveloper",
+            "link":"frontendDeveloper.pdf"
         },
         {
-            "name":"cssGridYFlexbox"
+            "name":"cssGridYFlexbox",
+            "link":"cssGridYFlexbox.pdf"
         },
         {
-            "name":"cssGridLayout"
+            "name":"cssGridLayout",
+            "link":"cssGridLayout.pdf"
         },
         {
-            "name":"javaScriptBasico"
+            "name":"javaScriptBasico",
+            "link":"javaScriptBasico.pdf"
         }
         
     ]
