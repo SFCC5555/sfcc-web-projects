@@ -388,3 +388,23 @@
 
     background-image: url('../assets/icons/typeScriptIconDark.png');
 }
+
+.React-Router-V6Icon {
+    background-image: url('../assets/icons/reactRouterV6IconColor.png');
+}
+
+.React-Router-V6IconLight:hover, .React-Router-V6IconDark:hover {
+    background-image: url('../assets/icons/reactRouterV6IconColor.png');
+    transition-duration: 1s;
+}
+
+.React-Router-V6IconLight {
+
+    background-image: url('../assets/icons/reactRouterV6IconLight.png');
+
+}
+
+.React-Router-V6IconDark {
+
+    background-image: url('../assets/icons/reactRouterV6IconDark.png');
+}

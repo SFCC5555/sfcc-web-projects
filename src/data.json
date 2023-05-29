@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"Multi Step Form",
+            "link":"https://sfcc-multi-step-form.netlify.app/",
+            "repository":"https://github.com/SFCC5555/multi-step-form",
+            "skillList":["Html","Css","JavaScript","React","React-Router-V6","Tailwind","Figma"],
+            "info":"At Frontend Mentor, I took on another exciting challenge: a multi-step form that presented different modes and options to choose from. Working with a base design provided in a Figma file, I utilized HTML, CSS, JavaScript, Tailwind CSS, and React.js for its development. It was my first practical experience using React Router v6, which allowed me to create a single-page application (SPA). This feature enabled me to have a custom route for each section and navigate between them, simplifying the programming logic in certain sections of the app by using the pathname of the route as a variable. Throughout the project development, I also leveraged tools such as useState, useContext, and Custom Hooks, which further facilitated the construction of the form and strengthened my understanding of these concepts. Additionally, I implemented regular expressions to validate the input fields of the form."
+        },
+        {
             "name":"Rock Paper Scissors",
             "link":"https://sfcc-rock-paper-scissors.netlify.app/",
             "repository":"https://github.com/SFCC5555/rock-paper-scissors",
