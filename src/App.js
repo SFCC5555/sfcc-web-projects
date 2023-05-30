@@ -7,7 +7,6 @@ import { Projects } from './components/Projects';
 import { useState } from 'react';
 import { Certifications } from './components/Certifications';
 import { Form } from './components/Form';
-import { Touch } from './components/Touch';
 
 
 const body = document.querySelector('body');
@@ -37,7 +36,6 @@ function App() {
         <Projects mode={mode}/>
         <Certifications mode={mode}/>
         <Form mode={mode}/>
-        <Touch mode={mode} />
       </React.Fragment>
   );
 }
