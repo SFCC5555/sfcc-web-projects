@@ -77,13 +77,7 @@
             "skillList":["Html","Css","JavaScript","Json","Figma"],
             "info":"The project is an informative website about space travel, created as a challenge by Frontend Mentor. The design, coming from a Figma file, was implemented using HTML, CSS, and JavaScript. To obtain dynamic data, a JSON file is used. The main focus was to develop a responsive design following the 'mobile-first' approach, making it accessible and appealing on every device. Each section is presented in separate tabs, where users can explore space destinations, information about the crew, and the technology used. These tabs offer an interactive experience, allowing users to click on elements for more details on each aspect. With its modern design and dynamic functionality, the website provides an immersive and educational experience for space enthusiasts."
         },
-        {
-            "name":"Architecture And Civil Engineering Projects",
-            "link":"https://sfcc-architecture-civil-projects.netlify.app/",
-            "repository":"https://github.com/SFCC5555/Portafolio",
-            "skillList":["Html","Css","JavaScript","AutoCAD","SketchUp"],
-            "info":"This project is an architecture and civil engineering portfolio, developed using HTML, CSS, and JavaScript. CSS Grid Layout was employed to structure the project containers, with media queries for responsive design across various devices. The portfolio includes sections for architecture, civil engineering, and renders, with projects dynamically loaded using JavaScript. Each project showcases an image and name, and clicking on it reveals a popup window with additional details and supplementary files such as blueprints and technical reports. The navigation bar features a dropdown sections menu, and a button that opens the author's curriculum vitae in PDF format in a new tab, allowing visitors to review and download it."
-        },
+
         {
             "name":"Wall Calculator",
             "link":"https://sfcc-wall-calculator.netlify.app/",
@@ -98,13 +92,7 @@
             "skillList":["Html","Css","JavaScript","Api","Figma"],
             "info":"The project focuses on a web application that tracks the location of an entered IP address. To accomplish this, two APIs are utilized: one for obtaining the location data and another for displaying it on an interactive map, similar to Google Maps. The APIs are accessed using the Fetch tool in JavaScript. The project is developed using HTML, CSS, and JavaScript, with attention given to responsive design to ensure proper display on various devices."
         },
-        {
-            "name":"Sfcc Comic And Manga Art",
-            "link":"https://sfccgallery.netlify.app/",
-            "repository":"https://github.com/SFCC5555/GALERIA",
-            "skillList":["Html","Css","JavaScript","Adobe-Illustrator","Clip-Studio-Paint"],
-            "info":"This project consists of an illustration gallery. The layout was created using HTML, while the styling was implemented using CSS. The main structure of the illustration container was achieved through CSS Grid Layout, with a responsive design that automatically adapts to the device it is viewed on, thanks to the use of media queries. The illustrations and their information are loaded dynamically using JavaScript, which also provides interactive features such as a dropdown menu and the ability to view the illustrations in an enlarged size in a separate tab. To add a decorative touch to the page, some illustrations created in Adobe Illustrator and Clip Studio Paint were used."
-        },
+        
         {
             "name":"Splitter Tip Calculator App",
             "link":"https://sfcc-tip-calculator.netlify.app/",
