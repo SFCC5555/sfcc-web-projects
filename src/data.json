@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"Lazarus Project",
+            "link":"https://lazarus-project.netlify.app/",
+            "repository":"https://github.com/SFCC5555/new-space-tourism-website",
+            "skillList":["Html","Css","JavaScript","React","React-Router-V6","Json","Tailwind","Adobe-Illustrator"],
+            "info":"This is a reimagining of the 'Space Tourism Website' project that utilizes more advanced technologies such as React, react Router v6, and Tailwind. In addition to the previously used technologies like HTML, CSS, JavaScript, and JSON. These enhancements have significantly simplified the development process, transforming the page into a Single Page Application (SPA) with customized routes for each section and subsection. This allows for an enhanced experience with reduced loading times. While maintaining its responsive design, the new version draws inspiration from the movie 'Interstellar' to provide a distinctive touch."
+        },
+        {
             "name":"Multi Step Form",
             "link":"https://sfcc-multi-step-form.netlify.app/",
             "repository":"https://github.com/SFCC5555/multi-step-form",
