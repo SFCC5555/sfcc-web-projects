@@ -408,3 +408,23 @@
 
     background-image: url('../assets/icons/reactRouterV6IconDark.png');
 }
+
+.ReduxIcon {
+    background-image: url('../assets/icons/reduxIconColor.png');
+}
+
+.ReduxIconLight:hover, .ReduxIconDark:hover {
+    background-image: url('../assets/icons/reduxIconColor.png');
+    transition-duration: 1s;
+}
+
+.ReduxIconLight {
+
+    background-image: url('../assets/icons/reduxIconLight.png');
+
+}
+
+.ReduxIconDark {
+
+    background-image: url('../assets/icons/reduxIconDark.png');
+}
