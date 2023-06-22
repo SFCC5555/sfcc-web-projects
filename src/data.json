@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"The Ring",
+            "link":"https://the-ring-countdown.netlify.app/",
+            "repository":"https://github.com/SFCC5555/the-ring",
+            "skillList":["Html","Css","JavaScript","React","Redux","Json","Tailwind","Adobe-Illustrator"],
+            "info":"This project is a variation of \"The Final Countdown Project\" developed using HTML, JavaScript, and React, with CSS and Tailwind used for styling. JSON for the data of the supported languages, Redux for state management, and Adobe Illustrator for certain illustrations. In this version, the countdown is displayed in either days, hours, minutes, or seconds, and a button is provided to switch between these units of time. It is said that there is a curse associated with this web application, and it is not recommended to open it or be present when the countdown reaches zero."
+        },
+        {
             "name":"The Final Countdown",
             "link":"https://sfcc-launch-countdown.netlify.app/",
             "repository":"https://github.com/SFCC5555/launch-countdown-timer",
@@ -26,7 +33,7 @@
             "link":"https://sfcc-rock-paper-scissors.netlify.app/",
             "repository":"https://github.com/SFCC5555/rock-paper-scissors",
             "skillList":["Html","Css","JavaScript","React","Json","Tailwind","Figma"],
-            "info":"This project is a challenge from Frontend Mentor. It consists of a rock, paper, scissors game with a base design provided in a Figma file. It was developed using HTML, CSS, JavaScript, Tailwind, and React.js. The game has two modes: 'NORMAL MODE' and 'PRO MODE', which can be toggled between, and pressing a button displays the corresponding rules for each mode. The score increases when winning, resets to zero when losing, and remains unchanged in case of a tie. A 'highscore' system was implemented to store the highest scores along with the user's nickname using browser's local storage. I emphasize the application of advanced concepts, such as custom hooks, which helped avoid code repetition and facilitated state management and local storage updates. CSS animations were also added."
+            "info":"This project is a challenge from Frontend Mentor. It consists of a rock, paper, scissors game with a base design provided in a Figma file. It was developed using HTML, CSS, JavaScript, Tailwind, and React.js. The game has two modes: \"NORMAL MODE\" and \"PRO MODE\", which can be toggled between, and pressing a button displays the corresponding rules for each mode. The score increases when winning, resets to zero when losing, and remains unchanged in case of a tie. A \"highscore\" system was implemented to store the highest scores along with the user's nickname using browser's local storage. I emphasize the application of advanced concepts, such as custom hooks, which helped avoid code repetition and facilitated state management and local storage updates. CSS animations were also added."
         },
         {
             "name":"The Social Network Comment Section",
