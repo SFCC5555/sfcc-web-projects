@@ -5,7 +5,7 @@
             "link":"https://the-ring-countdown.netlify.app/",
             "repository":"https://github.com/SFCC5555/the-ring",
             "skillList":["Html","Css","JavaScript","React","Redux","Json","Tailwind","Adobe-Illustrator"],
-            "info":"This project is a variation of \"The Final Countdown Project\" developed using HTML, JavaScript, and React, with CSS and Tailwind used for styling. JSON for the data of the supported languages, Redux for state management, and Adobe Illustrator for certain illustrations. In this version, the countdown is displayed in either days, hours, minutes, or seconds, and a button is provided to switch between these units of time. It is said that there is a curse associated with this web application, and it is not recommended to open it or be present when the countdown reaches zero."
+            "info":"This project is a variation of \"The Final Countdown\" project, developed using HTML, JavaScript, and React, with CSS and Tailwind used for styling. JSON for the data of the supported languages, Redux for state management, and Adobe Illustrator for certain illustrations. In this version, the countdown is displayed in either days, hours, minutes, or seconds, and a button is provided to switch between these units of time. It is said that there is a curse associated with this web application, and it is not recommended to open it or be present when the countdown reaches zero."
         },
         {
             "name":"The Final Countdown",
