@@ -12,7 +12,7 @@ function AboutSection({ active, controlFunction, mode}) {
         <section className={active?`aboutSection ${lowerCaseMode}ModeComponent`:`aboutSection ${lowerCaseMode}ModeComponent inactive`}>
 
             <div onClick={controlFunction} className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
-            <p className={`${lowerCaseMode}ModeElement`}>Front-End Developer with experience in web development, user interface design, and technologies such as HTML, CSS, JavaScript, and ReactJS. My goal is to become a Full-Stack Developer, and I am constantly seeking opportunities to expand my skills. I am passionate about problem-solving and creating quality user experiences. I am interested in a position that allows me to develop and enhance my skills while growing professionally.</p>
+            <p className={`${lowerCaseMode}ModeElement`}>Front-End Developer with experience in web development and user interface design with responsive design and a mobile-first approach. I have expertise in technologies such as HTML, CSS, JavaScript, ReactJS, Tailwind, and Git, among others. I am constantly seeking opportunities to expand my skills, learn, and explore new technologies in order to grow professionally and access better job opportunities. My passion lies in problem-solving and creating applications with high-quality user experiences.</p>
             <Skills skillList={skillList} mode={mode} noWarp='noWarp'/>
             <section className='links'>
                 <a href='https://github.com/SFCC5555' className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer"  ><span className={`skillIcon GitHubIcon${mode}`} />GitHub</a>
