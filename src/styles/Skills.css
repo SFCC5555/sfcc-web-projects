@@ -428,3 +428,23 @@
 
     background-image: url('../assets/icons/reduxIconDark.png');
 }
+
+.BootstrapIcon {
+    background-image: url('../assets/icons/bootstrapIconColor.png');
+}
+
+.BootstrapIconLight:hover, .BootstrapIconDark:hover {
+    background-image: url('../assets/icons/bootstrapIconColor.png');
+    transition-duration: 1s;
+}
+
+.BootstrapIconLight {
+
+    background-image: url('../assets/icons/bootstrapIconLight.png');
+
+}
+
+.BootstrapIconDark {
+
+    background-image: url('../assets/icons/bootstrapIconDark.png');
+}

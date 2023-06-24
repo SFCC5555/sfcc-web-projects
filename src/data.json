@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"Random Quote Machine",
+            "link":"https://sfcc-random-quote-machine.netlify.app/",
+            "repository":"https://github.com/SFCC5555/random-quote-machine-freecodecamp",
+            "skillList":["Html","Css","JavaScript","React","Api","Bootstrap"],
+            "info":"This project is a part of the challenges required to earn the Front End Development Libraries certification from freeCodeCamp. It showcases a random quote machine that displays a random quote and its author, fetched from an API. The application provides buttons to repost the quote on Twitter or Tumblr. Additionally, there is a button to generate a new quote when clicked, and the theme color changes with each new quote. The project was developed using HTML, JavaScript, React, and styled with CSS and Bootstrap."
+        },
+        {
             "name":"The Ring",
             "link":"https://the-ring-countdown.netlify.app/",
             "repository":"https://github.com/SFCC5555/the-ring",
