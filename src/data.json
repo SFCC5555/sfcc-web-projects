@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"Markdown Previewer",
+            "link":"https://sfcc-markdown-previewer.netlify.app/",
+            "repository":"https://github.com/SFCC5555/markdown-previewer",
+            "skillList":["Html","Css","JavaScript","React","Redux","Bootstrap"],
+            "info":"This project is part of the freeCodeCamp Front End Development Libraries certification. It involves building a Markdown previewer using HTML, CSS, JavaScript, React, Redux Toolkit, and Bootstrap. The application consists of an Editor where you can write Markdown code and a Previewer that displays a live preview of the rendered Markdown. This functionality is achieved using the marked library. To enhance the styling, Bootstrap icons are incorporated. The app includes a button to toggle between dark and light mode, as well as another button to switch between various fonts. The states of these functionalities are managed using Redux Toolkit. Additionally, there are buttons to expand the Editor and the Previewer to full screen, and a button to download the content of the Editor as a Markdown file (.md)."
+        },
+        {
             "name":"Random Quote Machine",
             "link":"https://sfcc-random-quote-machine.netlify.app/",
             "repository":"https://github.com/SFCC5555/random-quote-machine-freecodecamp",
