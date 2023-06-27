@@ -16,7 +16,7 @@ function AboutSection({ active, controlFunction, mode}) {
             <Skills skillList={skillList} mode={mode} noWarp='noWarp'/>
             <section className='links'>
                 <a href='https://github.com/SFCC5555' className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer"  ><span className={`skillIcon GitHubIcon${mode}`} />GitHub</a>
-                <a href={require('../assets/documents/RESUME2023FERNANDOCARRASCO.pdf')} className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer" ><span className={`skillIcon cvIcon${mode}`} />CV</a>
+                <a href={require('../assets/documents/RESUME2023FERNANDOCARRASCO.pdf')} className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer" ><span className={`skillIcon cvIcon${mode}`}/>CV</a>
             </section>
 
         </section>
