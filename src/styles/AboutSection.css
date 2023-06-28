@@ -1,10 +1,10 @@
 .aboutSection {
     width: 100%;
-    height: 100vh;
+    height: 100svh;
     position: fixed;
     top: 58px;
     padding: 60px 30px;
-    padding-bottom: 250px;
+    padding-bottom: 80px;
     border-style:solid;
     border-width: 2px;
     right: 0px;
@@ -71,17 +71,20 @@
 
 .links {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     gap:20px;
     font-size: 1.3rem;
-    position: absolute;
-    top:78%;
-    left: 20px;
+    align-self: flex-start;
 
 }
 
-.links > a {
+.links div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.links div > a {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -122,7 +125,6 @@ a:hover .manfredIconLight, a:hover .manfredIconDark {
     .aboutSection {
         width: 40%;
         animation-name: aboutAnimation;
-        padding-bottom: 150px;
         animation-duration: 1s;
     }
     
