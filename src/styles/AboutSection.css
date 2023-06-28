@@ -103,6 +103,16 @@ a:hover .cvIconLight, a:hover .cvIconDark {
 
 }
 
+a:hover .linkedinIconLight, a:hover .linkedinIconDark {
+    background-image: url('../assets/icons/linkedinIconColor.png');
+
+}
+
+a:hover .manfredIconLight, a:hover .manfredIconDark {
+    background-image: url('../assets/icons/manfredIconColor.png');
+
+}
+
 
 .inactive {
     display: none;

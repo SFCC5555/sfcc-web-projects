@@ -217,6 +217,34 @@
     background-image: url('../assets/icons/cvIconDark.png');
 }
 
+.linkedinIconLight:hover, .linkedinIconDark:hover {
+    background-image: url('../assets/icons/linkedinIconColor.png');
+}
+
+.linkedinIconLight {
+
+    background-image: url('../assets/icons/linkedinIconLight.png');
+}
+
+.linkedinIconDark {
+
+    background-image: url('../assets/icons/linkedinIconDark.png');
+}
+
+.manfredIconLight:hover, .manfredIconDark:hover {
+    background-image: url('../assets/icons/manfredIconColor.png');
+}
+
+.manfredIconLight {
+
+    background-image: url('../assets/icons/manfredIconLight.png');
+}
+
+.manfredIconDark {
+
+    background-image: url('../assets/icons/manfredIconDark.png');
+}
+
 .Adobe-IllustratorIcon {
     background-image: url('../assets/icons/adobeIconColor.png');
 }
