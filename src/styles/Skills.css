@@ -1,9 +1,11 @@
+
 .skillContainer {
     max-width: 315px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap:13px;
+    cursor: crosshair;
 
 }
 
@@ -62,7 +64,7 @@
 
 .HtmlIconLight:hover,.HtmlIconDark:hover {
     background-image: url('../assets/icons/htmlIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .HtmlIconLight {
@@ -81,7 +83,7 @@
 
 .CssIconLight:hover,.CssIconDark:hover {
     background-image: url('../assets/icons/cssIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .CssIconLight {
@@ -100,7 +102,7 @@
 
 .JavaScriptIconLight:hover,.JavaScriptIconDark:hover {
     background-image: url('../assets/icons/javaScriptIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .JavaScriptIconLight {
@@ -119,7 +121,7 @@
 
 .ReactIconLight:hover,.ReactIconDark:hover, .ReactIcon:hover {
     background-image: url('../assets/icons/reactIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
     animation: reactIcon-spin infinite 25s linear;
 }
 
@@ -142,7 +144,7 @@
 
 .ReactIconLight, .ReactIconDark {
     animation-name: reactIconAnimation;
-    animation-duration: 1s;
+    animation-duration: 300ms;
 }
   
 @keyframes reactIconAnimation {
@@ -158,7 +160,7 @@
 
 .GitIconLight:hover,.GitIconDark:hover {
     background-image: url('../assets/icons/gitIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .GitIconLight {
@@ -221,7 +223,7 @@
 
 .Adobe-IllustratorIconLight:hover, .Adobe-IllustratorIconDark:hover {
     background-image: url('../assets/icons/adobeIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .Adobe-IllustratorIconLight {
@@ -240,7 +242,7 @@
 
 .JsonIconLight:hover, .JsonIconDark:hover {
     background-image: url('../assets/icons/jsonIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .JsonIconLight {
@@ -259,7 +261,7 @@
 
 .ApiIconLight:hover, .ApiIconDark:hover {
     background-image: url('../assets/icons/apiIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .ApiIconLight {
@@ -278,7 +280,7 @@
 
 .FigmaIconLight:hover, .FigmaIconDark:hover {
     background-image: url('../assets/icons/figmaIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .FigmaIconLight {
@@ -297,7 +299,7 @@
 
 .AutoCADIconLight:hover, .AutoCADIconDark:hover {
     background-image: url('../assets/icons/autoCadIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .AutoCADIconLight {
@@ -315,7 +317,7 @@
 
 .SketchUpIconLight:hover, .SketchUpIconDark:hover {
     background-image: url('../assets/icons/sketchUpIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .SketchUpIconLight {
@@ -335,7 +337,7 @@
 
 .Clip-Studio-PaintIconLight:hover, .Clip-Studio-PaintIconDark:hover {
     background-image: url('../assets/icons/clipStudioPaintIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .Clip-Studio-PaintIconLight {
@@ -355,7 +357,7 @@
 
 .TailwindIconLight:hover, .TailwindIconDark:hover {
     background-image: url('../assets/icons/tailwindIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .TailwindIconLight {
@@ -375,7 +377,7 @@
 
 .TypeScriptIconLight:hover, .TypeScriptIconDark:hover {
     background-image: url('../assets/icons/typeScriptIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .TypeScriptIconLight {
@@ -395,7 +397,7 @@
 
 .React-Router-V6IconLight:hover, .React-Router-V6IconDark:hover {
     background-image: url('../assets/icons/reactRouterV6IconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .React-Router-V6IconLight {
@@ -415,7 +417,7 @@
 
 .ReduxIconLight:hover, .ReduxIconDark:hover {
     background-image: url('../assets/icons/reduxIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .ReduxIconLight {
@@ -435,7 +437,7 @@
 
 .BootstrapIconLight:hover, .BootstrapIconDark:hover {
     background-image: url('../assets/icons/bootstrapIconColor.png');
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .BootstrapIconLight {

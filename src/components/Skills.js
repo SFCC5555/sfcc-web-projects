@@ -7,7 +7,7 @@ function Skills({ skillList, mode, noWarp }) {
         <section className={`skillContainer ${noWarp}`}>
             
             {skillList.map(skill=>(
-                <span key={skill} className={`skillIcon ${skill}Icon${mode}`}></span>
+                <span key={skill} title={skill} className={`skillIcon ${skill}Icon${mode}`}></span>
             ))}
 
 
