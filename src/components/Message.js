@@ -1,4 +1,4 @@
-import '../styles/Message.css';
+import '../styles/Message.scss';
 
 
 function Message({ mode, controlFunction }) {

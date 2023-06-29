@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/NavBar.css';
+import '../styles/NavBar.scss';
 import { Menu } from './Menu';
 import { useState } from 'react';
 import { AboutSection } from './AboutSection';
@@ -8,7 +8,7 @@ import { AboutSection } from './AboutSection';
 function NavBar({ sectionsList, mode }) {
 
     let [active,setActive] = useState(false);
-    let [icon,setIcon] = useState('burgerIcon');
+    let [icon,setIcon] = useState('BurgerIcon');
 
     let [activeAbout,setActiveAbout] = useState(false);
     let [picture,setPicture] = useState('sfccPictureBW');
@@ -19,7 +19,7 @@ function NavBar({ sectionsList, mode }) {
 
         active?setActive(false):setActive(true);
 
-        icon==='burgerIcon'?setIcon('sIcon'):setIcon('burgerIcon');
+        icon==='BurgerIcon'?setIcon('SIcon'):setIcon('BurgerIcon');
 
         setActiveAbout(false);
 
@@ -34,14 +34,14 @@ function NavBar({ sectionsList, mode }) {
 
         setActive(false);
 
-        setIcon('burgerIcon');
+        setIcon('BurgerIcon');
 
     };
 
     return (
         <React.Fragment>
             <nav className={`navBar ${lowerCaseMode}ModeComponent`}>
-                <span onClick={controlMenu} className={`${icon} ${icon}${mode}`}></span>
+                <span onClick={controlMenu} className={`${icon} ${lowerCaseMode}${icon}`}></span>
                 <a href='.' className={`sFernando ${lowerCaseMode}ModeElement`}>ING. S. FERNANDO CARRASCO</a>
                 <div onClick={controlAboutMe} className={`aboutMe ${lowerCaseMode}ModeElement`}><span className={`picture ${picture}`}></span>ABOUT ME</div>
             </nav>

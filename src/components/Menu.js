@@ -1,4 +1,4 @@
-import '../styles/Menu.css';
+import '../styles/Menu.scss';
 
 
 function Menu({ sectionsList, active, controlFunction, mode }) {

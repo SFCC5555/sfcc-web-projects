@@ -1,4 +1,4 @@
-import '../styles/DarkModeButton.css';
+import '../styles/DarkModeButton.scss';
 
 
 function DarkModeButton({ controlFunction, mode }) {

@@ -1,4 +1,4 @@
-import '../styles/Projects.css';
+import '../styles/Projects.scss';
 import data from '../data.json';
 import { Skills } from './Skills';
 import { Search } from './Search';
@@ -58,7 +58,7 @@ function Projects({mode}) {
             filterSkillIcon.classList.value=`inactive`
             event.target.classList.add('selectFilterSkill');
             setTimeout(()=>{
-                filterSkillIcon.classList.value=`filterSkillIcon ${option}Icon`;
+                filterSkillIcon.classList.value=`filterSkillIcon ${option[0].toLowerCase()+option.slice(1)}Icon`;
             })
             
             setProjects(filterProjects);
@@ -89,7 +89,7 @@ function Projects({mode}) {
                             <a href={project.link} target='_blank' rel="noreferrer" ><span className={`projectIllustration`} style={{backgroundImage:`url(${require(`../assets/images/projectIllustrations/${projectClass}Color.png`)})`}} /></a>
                             <Skills skillList={project.skillList} mode={mode} />
                             <Info mode={mode} name={project.name} info={project.info} />
-                            <a href={project.repository} target='_blank' rel="noreferrer" ><span className={`skillIcon GitHubIcon${mode} gitHubLink `}/></a>
+                            <a href={project.repository} target='_blank' rel="noreferrer" ><span className={`skillIcon gitHubIcon${mode} gitHubLink `}/></a>
                         </div>
                      )})   
                     }

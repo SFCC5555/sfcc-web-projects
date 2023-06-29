@@ -1,4 +1,4 @@
-import '../styles/Certifications.css';
+import '../styles/Certifications.scss';
 import data from '../data.json';
 import { useState } from 'react';
 

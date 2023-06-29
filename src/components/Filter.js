@@ -1,4 +1,4 @@
-import '../styles/Filter.css';
+import '../styles/Filter.scss';
 import data from '../data.json';
 import { useState } from 'react';
 
@@ -36,7 +36,7 @@ function Filter({ mode, handleFilter}) {
     return (
         <button onClick={renderFilterMenu} className={`${lowerCaseMode}ModeFilter filterButton`}>
             Filter
-            <span onClick={renderFilterMenu} className={`filterIcon${mode} filterIcon`} />
+            <span onClick={renderFilterMenu} className={`${lowerCaseMode}FilterIcon filterIcon`} />
             <span id='filterSkillIcon' className={`inactive`} />
             <div className={`${lowerCaseMode}ModeComponent filterSkillsContainer ${activeFilterSkillsContainer?'':'inactive'}`}>
                 <div className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>

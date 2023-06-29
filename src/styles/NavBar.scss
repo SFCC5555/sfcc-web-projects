@@ -24,7 +24,7 @@ span {
 
 }
 
-.burgerIcon {
+.BurgerIcon {
     width: 31px;
     height: 40px;
     cursor: pointer;
@@ -37,28 +37,11 @@ span {
     100% {width: 31px;opacity: 100%;}  
   }
 
-.burgerIconLight {
-    background-image: url('../assets/icons/burgerIconMobileLight.png');
-}
-
-.burgerIconDark {
-    background-image: url('../assets/icons/burgerIconMobileDark.png');
-}
-
-.sIcon {
+.SIcon {
     width: 31px;
     height: 40px;
     cursor: pointer;
 }
-
-.sIconLight {
-    background-image: url('../assets/icons/sIconMobileLight.png');
-}
-
-.sIconDark {
-    background-image: url('../assets/icons/sIconMobileDark.png');
-}
-
 
 .picture {
     width: 40px;
@@ -96,50 +79,25 @@ span {
     text-decoration: none;
 }
 
+@each $mode in light, dark, {
+
+    .#{$mode}BurgerIcon {
+        background-image: url('../assets/icons/#{$mode}BurgerIconMobile.png');
+    }
+    
+    .#{$mode}SIcon {
+        background-image: url('../assets/icons/#{$mode}SIconMobile.png');
+    }
+
+}
+
 @media screen and (min-width: 900px) {
+    
     .navBar{
         padding: 0px 20px;
         font-size: 2.5rem;
         gap: 10px;
     }
-
-    .burgerIconLight {
-        background-image: url('../assets/icons/burgerIconLight.png');
-    }
-    
-    .burgerIconLight:hover {
-        background-image: url('../assets/icons/sIconLight.png');
-        transition-duration: 1s;
-    }
-    
-    .sIconLight {
-        background-image: url('../assets/icons/sIconLight.png');
-    }
-    
-    .sIconLight:hover {
-        background-image: url('../assets/icons/burgerIconLight.png');
-        transition-duration: 1s;
-    }
-
-
-    .burgerIconDark {
-        background-image: url('../assets/icons/burgerIconDark.png');
-    }
-    
-    .burgerIconDark:hover {
-        background-image: url('../assets/icons/sIconDark.png');
-        transition-duration: 1s;
-    }
-    
-    .sIconDark {
-        background-image: url('../assets/icons/sIconDark.png');
-    }
-    
-    .sIconDark:hover {
-        background-image: url('../assets/icons/burgerIconDark.png');
-        transition-duration: 1s;
-    }
-
 
     .aboutMe {
         flex-direction: row-reverse;
@@ -159,12 +117,33 @@ span {
         transition-duration: 1.5s;
     }
 
-
-
     .sFernando {
         position: absolute;
         left: 50%;
         translate: -50%;
+    }
+
+
+    @each $mode in light, dark {
+
+        .#{$mode}BurgerIcon {
+            background-image: url('../assets/icons/#{$mode}BurgerIcon.png');
+        }
+        
+        .#{$mode}BurgerIcon:hover {
+            background-image: url('../assets/icons/#{$mode}SIcon.png');
+            transition-duration: 1s;
+        }
+        
+        .#{$mode}SIcon {
+            background-image: url('../assets/icons/#{$mode}SIcon.png');
+        }
+        
+        .#{$mode}SIcon:hover {
+            background-image: url('../assets/icons/#{$mode}BurgerIcon.png');
+            transition-duration: 1s;
+        }
+
     }
   
 }

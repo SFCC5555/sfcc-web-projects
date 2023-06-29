@@ -43,29 +43,6 @@ form {
     translate: 0px -7.5px;
 }
 
-.darkModeformInput {
-    background-color: hsl(var(--darkColor));
-    color: hsl(var(--lightColor));
-    border: 2px solid hsl(var(--lightColor),40%);
-}
-
-.darkModeformInput::placeholder {
-    color: hsl(var(--lightColor));
-
-}
-
-.lightModeformInput {
-    background-color: hsl(var(--lightColor));
-    color: hsl(var(--darkColor));
-    border: 2px solid hsl(var(--darkColor),40%);
-
-}
-
-.lightModeformInput::placeholder {
-    color: hsl(var(--darkColor));
-
-}
-
 .formInput:hover {
     opacity: 100%;
 }
@@ -86,4 +63,18 @@ form {
 
 .errorMessage {
     top: 325px
+}
+
+@each $mode in light, dark {
+
+    .#{$mode}ModeformInput {
+        background-color: hsl(var(--#{$mode}Color));
+        color: hsl(var(--#{$mode}InverseColor));
+        border: 2px solid hsl(var(--#{$mode}InverseColor),40%);
+    }
+    
+    .#{$mode}ModeformInput::placeholder {
+        color: hsl(var(--#{$mode}InverseColor));
+    
+    }
 }

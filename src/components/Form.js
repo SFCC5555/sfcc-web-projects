@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Form.css';
+import '../styles/Form.scss';
 import { Message } from './Message';
 import { useState } from 'react';
 

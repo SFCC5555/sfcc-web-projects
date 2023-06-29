@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../styles/Info.css';
+import '../styles/Info.scss';
 
 
 function Info({ mode, name, info }) {

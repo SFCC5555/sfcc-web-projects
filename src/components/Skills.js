@@ -1,4 +1,4 @@
-import '../styles/Skills.css';
+import '../styles/Skills.scss';
 
 
 function Skills({ skillList, mode, noWarp }) {
@@ -7,7 +7,7 @@ function Skills({ skillList, mode, noWarp }) {
         <section className={`skillContainer ${noWarp}`}>
             
             {skillList.map(skill=>(
-                <span key={skill} title={skill} className={`skillIcon ${skill}Icon${mode}`}></span>
+                <span key={skill} title={skill} className={`skillIcon ${skill[0].toLowerCase()+skill.slice(1)}Icon${mode}`}></span>
             ))}
 
 

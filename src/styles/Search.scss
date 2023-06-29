@@ -20,31 +20,6 @@
     font-size: 1.6rem;
 }
 
-.darkModeInput {
-    background-color: hsl(var(--darkColor));
-    color: hsl(var(--lightColor));
-    border: 2px solid hsl(var(--lightColor),40%);
-    border-bottom: none;
-}
-
-.darkModeInput::placeholder {
-    color: hsl(var(--lightColor));
-
-}
-
-.lightModeInput {
-    background-color: hsl(var(--lightColor));
-    color: hsl(var(--darkColor));
-    border: 2px solid hsl(var(--darkColor),40%);
-    border-bottom: none;
-
-}
-
-.lightModeInput::placeholder {
-    color: hsl(var(--darkColor));
-
-}
-
 .searchInput:hover {
     opacity: 100%;
 }
@@ -59,16 +34,28 @@
 
 }
 
-.searchIconDark {
-    background-image: url('../assets/icons/searchIconDark.png');
-}
-
-.searchIconLight {
-    background-image: url('../assets/icons/searchIconLight.png');
-}
-
 .searchIcon:hover {
     opacity: 100%;
+}
+
+@each $mode in light, dark, {
+
+    .#{$mode}ModeInput {
+        background-color: hsl(var(--#{$mode}Color));
+        color: hsl(var(--#{$mode}InverseColor));
+        border: 2px solid hsl(var(--#{$mode}InverseColor),40%);
+        border-bottom: none;
+    }
+    
+    .#{$mode}ModeInput::placeholder {
+        color: hsl(var(--#{$mode}InverseColor));
+    
+    }
+    
+    .#{$mode}SearchIcon {
+        background-image: url('../assets/icons/#{$mode}SearchIcon.png');
+    }
+
 }
 
 @media screen and (min-width: 700px) {
