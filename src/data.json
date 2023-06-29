@@ -25,8 +25,8 @@
             "name":"The Final Countdown",
             "link":"https://sfcc-launch-countdown.netlify.app/",
             "repository":"https://github.com/SFCC5555/launch-countdown-timer",
-            "skillList":["Html","Css","JavaScript","React","Redux","Json","Tailwind","Figma"],
-            "info":"This project is a launch countdown timer for an event. It was created as a challenge for the Front-end Mentor website, which provided the base design in a Figma file. The countdown timer displays the remaining time in days, hours, minutes, and seconds. It utilizes local storage and the browser's built-in Date object to remember the elapsed time even when the application is not open. Additionally, I implemented two buttons: one for switching between five languages and another for switching between five themes. The state management for these buttons is handled using Redux Toolkit. To support multi-language functionality, I integrated a JSON file that holds the text content for each supported language. The application itself was built using HTML, JavaScript, and React, and the styling was done using CSS and Tailwind CSS."
+            "skillList":["Html","Css","JavaScript","React","Redux","Json","Sass","Tailwind","Figma"],
+            "info":"This project is a launch countdown timer for an event. It was created as a challenge for the Front-end Mentor website, which provided the base design in a Figma file. The countdown timer displays the remaining time in days, hours, minutes, and seconds. It utilizes local storage and the browser's built-in Date object to remember the elapsed time even when the application is not open. Additionally, I implemented two buttons: one for switching between five languages and another for switching between five themes. The state management for these buttons is handled using Redux Toolkit. To support multi-language functionality, I integrated a JSON file that holds the text content for each supported language. The application itself was built using HTML, JavaScript, and React, and the styling was done using CSS, Sass and Tailwind CSS."
         },
         {
             "name":"Lazarus Project",

@@ -478,3 +478,23 @@
 
     background-image: url('../assets/icons/bootstrapIconDark.png');
 }
+
+.SassIcon {
+    background-image: url('../assets/icons/sassIconColor.png');
+}
+
+.SassIconLight:hover, .SassIconDark:hover {
+    background-image: url('../assets/icons/sassIconColor.png');
+    transition-duration: 300ms;
+}
+
+.SassIconLight {
+
+    background-image: url('../assets/icons/sassIconLight.png');
+
+}
+
+.SassIconDark {
+
+    background-image: url('../assets/icons/sassIconDark.png');
+}
