@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'KAPITAL';
+  src: url('./assets/fonts/KAPITAL.ttf');
+}
+
+@font-face {
+  font-family: 'Linkin';
+  src: url('./assets/fonts/linkin.ttf');
+}
+
+@font-face {
+  font-family: 'BankGothicBold';
+  src: url('./assets/fonts/BankGothicBold.ttf');
+}
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+:root {
+  --darkColor: 213, 17%, 12%;
+  --lightColor: 192, 15%, 94%;
+  --darkInverseColor: 192, 15%, 94%;
+  --lightInverseColor: 213, 17%, 12%;
+  --darkBaseColor: black;
+  --lightBaseColor: rgb(195, 195, 195);
+  --jFont:'KAPITAL';
+  --mainFont:'BankGothicBold';
+  --secondFont:'Linkin';
+}
+
+body {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:var(--mainFont);
+  padding: 80px 15px;
+
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+h1{
+  font-size: 10rem;
+  font-family: var(--mainFont);
+}
+
+.sectionContainer {
+  position: relative;
+}
+
+.sectionGap {
+  position: absolute;
+  top: -75px;
+}
+
+@each $mode in light, dark, {
+  
+  .#{$mode}Mode {
+    background-color: hsl(var(--#{$mode}Color));
+  }
+
+  .#{$mode}ModeComponent {
+    background-color: hsl(var(--#{$mode}Color));
+    color: hsl(var(--#{$mode}InverseColor));
+    border-color: hsl(var(--#{$mode}InverseColor),25%);
+  }
+
+  .#{$mode}ModeComponent:hover {
+    background-color: var(--#{$mode}BaseColor);
+    transition-duration:90s;
+  }
+
+  .#{$mode}ModeElement {
+    color: hsl(var(--#{$mode}InverseColor));
+    border-color: hsl(var(--#{$mode}InverseColor),25%);
+    animation-name: #{$mode}ModeTextAnimation;
+    animation-duration: 3s;
+  }
+
+  .#{$mode}ModeElement:hover {
+    color: hsl(var(--#{$mode}InverseColor),50%);
+    transition-duration: 1s;
+  }
+  
+  @keyframes #{$mode}ModeTextAnimation {
+    0% {color: hsl(var(--#{$mode}InverseColor),0%);}
+    100% {color: hsl(var(--#{$mode}InverseColor));}
+  }
+
+}
+
+
+.lightMode {
+  background-color: hsl(var(--lightColor));
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    padding: 100px 20px;
+  }
+
+  .sectionGap {
+    top: -115px;
+  }
+}

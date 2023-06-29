@@ -1,4 +1,4 @@
-import '../styles/Touch.css';
+import '../styles/Touch.scss';
 import React from 'react';
 import $ from 'jquery';
 import 'animate.css/animate.min.css';

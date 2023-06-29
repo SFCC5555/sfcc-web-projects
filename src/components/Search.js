@@ -1,4 +1,4 @@
-import '../styles/Search.css';
+import '../styles/Search.scss';
 
 function Search({ mode, handleChange}) {
 
