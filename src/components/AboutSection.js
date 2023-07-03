@@ -20,7 +20,7 @@ function AboutSection({ active, controlFunction, mode}) {
                     <a href={require('../assets/documents/RESUME2023FERNANDOCARRASCO.pdf')} className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer" ><span className={`skillIcon cvIcon${mode}`}/>CV</a>
                 </div>
                 <div>
-                    <a href='https://www.linkedin.com/in/fernando-carrasco-dev/' className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer"  ><span className={`skillIcon linkedinIcon${mode}`} />Linkedin</a>
+                    {/*<a href='https://www.linkedin.com/in/fernando-carrasco-dev/' className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer"  ><span className={`skillIcon linkedinIcon${mode}`} />Linkedin</a>*/}
                     <a href='https://www.getmanfred.com/perfil/sfcc5555' className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer"  ><span className={`skillIcon manfredIcon${mode}`} />Manfred</a> 
                 </div>
             </section>
