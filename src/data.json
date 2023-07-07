@@ -1,11 +1,18 @@
 {
     "projects":[
         {
+            "name":"Calculator App",
+            "link":"https://sfcc-calculator.netlify.app/",
+            "repository":"https://github.com/SFCC5555/calculator-app",
+            "skillList":["Html","Css","JavaScript","React","Redux","Json","Sass","Bootstrap","Figma"],
+            "info":"The Calculator App is the fourth project for achieving the freeCodeCamp Front-End Development Libraries certification, as well as a challenge from Frontend Mentor on which I based the design. It is a simple calculator that performs basic operations and offers three different themes that can be toggled using a switch control. The application was built using various technologies, including HTML, CSS, Sass, Bootstrap, JavaScript, JSON, React, Redux Toolkit, and Figma. It features a responsive design and follows a mobile-first approach."
+        },
+        {
             "name":"Drum Machine",
             "link":"https://sfcc-drum-machine.netlify.app/",
             "repository":"https://github.com/SFCC5555/drum-machine",
             "skillList":["Html","Css","JavaScript","React","Redux","Json","Sass","Bootstrap"],
-            "info":"The third project of the freeCodeCamp Front End Development Libraries certification is a drum machine. It allows you to play different samples (sounds) to create tracks. The drum machine includes two kits of samples and provides buttons (drum pads) that are generated dynamically from a JSON file. You can play the samples by clicking on the buttons with the mouse or by using the corresponding keys on the keyboard. You can switch between the two kits by clicking a switch. Additionally, there is a power switch to turn onthe drum machine on or turn  off, also features a volume pad to control the volume level. The user interface presents a variety of colors and is designed to be responsive. The web application was built using HTML, JavaScript, and React, and styled using CSS, Sass, Bootstrap, and Bootstrap icons. All the application states are managed using Redux Toolkit."
+            "info":"The third project of the freeCodeCamp Front End Development Libraries certification is a drum machine. It allows you to play different samples (sounds) to create tracks. The drum machine includes two kits of samples and provides buttons that are generated dynamically from a JSON file. You can play the samples by clicking on the buttons with the mouse or by using the corresponding keys on the keyboard. You can switch between the two kits by clicking a switch. Additionally, there is a power switch to turn on the drum machine or turn  off, also features a volume pad to control the volume level. The user interface presents a variety of colors and is designed to be responsive. The web application was built using HTML, JavaScript, and React, and styled using CSS, Sass, Bootstrap, and Bootstrap icons. All the application states are managed using Redux Toolkit."
         },
         {
             "name":"Markdown Previewer",
