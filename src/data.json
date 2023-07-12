@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"Pomodoro Clock",
+            "link":"https://sfcc-pomodoro-clock.netlify.app/",
+            "repository":"https://github.com/SFCC5555/25-5-clock",
+            "skillList":["Html","Css","JavaScript","React","Redux","Sass","Bootstrap"],
+            "info":"This is the final project for obtaining the freeCodeCamp Front-End Development Libraries certification. It is a Pomodoro Clock designed to enhance productivity by allowing users to set session and break times. The clock includes buttons to start, pause, and reset the timer. By default, the clock is set to its initial state of 25 minutes for the session and 5 minutes for the break. The application also utilizes local storage to save the time configuration, and it offers a switch to toggle between light and dark modes. This project was developed using HTML, CSS, Sass, Bootstrap, JavaScript, React, and Redux Toolkit."
+        },
+        {
             "name":"Calculator App",
             "link":"https://sfcc-calculator.netlify.app/",
             "repository":"https://github.com/SFCC5555/calculator-app",
