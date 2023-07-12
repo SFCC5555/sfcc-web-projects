@@ -207,7 +207,11 @@
         }    
     ],
     "certifications":[
-        
+
+        {
+            "name":"front-endDevelopmentLibraries",
+            "link":"https://freecodecamp.org/certification/SFCC5555/front-end-development-libraries"
+        },       
         {
             "name":"javaScriptAlgorithmsandDataStructures",
             "link":"https://www.freecodecamp.org/certification/SFCC5555/javascript-algorithms-and-data-structures"
