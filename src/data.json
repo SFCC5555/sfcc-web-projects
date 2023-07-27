@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"Book List",
+            "link":"https://sfcc-book-list.netlify.app/",
+            "repository":"https://github.com/SFCC5555/pruebas-tecnicas/tree/main/pruebas/01-reading-list/SFCC5555",
+            "skillList":["Html","Css","JavaScript","Json","React","Redux","React-Router-V6","Sass","Tailwind"],
+            "info":"This project is a technical test for a reading list app developed with HTML, JavaScript, and React. Styling is achieved through CSS, SASS, Tailwind, and Bootstrap icons. Redux Toolkit is utilized for state management, while React Router v6 handles routes. The app offers a range of features, including viewing available books, creating personalized reading lists, filtering by genre and number of pages, and incorporating a title search engine. It ensures data persistence through browser local storage and boasts a responsive design for an improved user experience."
+        },
+        {
             "name":"Pomodoro Clock",
             "link":"https://sfcc-pomodoro-clock.netlify.app/",
             "repository":"https://github.com/SFCC5555/25-5-clock",
