@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"Country Quiz",
+            "link":"https://sfcc-country-quiz.netlify.app/",
+            "repository":"https://github.com/SFCC5555/country-quiz",
+            "skillList":["Html","Css","JavaScript","React","Redux","React-Router-V6","Api","Sass","Tailwind","Figma","NodeJS","Express","MongoDB","Mongoose"],
+            "info":"This project constitutes a challenge proposed by the devchallenges.io website and consists of a quiz game related to data from different countries. It has been developed using HTML, JavaScript, and React technologies. For styling, tools such as CSS, SASS, Tailwind, and Bootstrap icons have been employed. In terms of state management, Redux Toolkit has been utilized, and for handling routes, React Router v6 has been chosen. The game includes a scoring system that stores the highest local score in the browser's local storage. Furthermore, to record the highest global score among all users, a MongoDB database has been integrated. This database is managed through a Restful API developed with Node.js, Express, and Mongoose."
+        },
+        {
             "name":"Book List",
             "link":"https://sfcc-book-list.netlify.app/",
             "repository":"https://github.com/SFCC5555/pruebas-tecnicas/tree/main/pruebas/01-reading-list/SFCC5555",
