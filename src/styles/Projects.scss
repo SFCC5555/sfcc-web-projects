@@ -60,6 +60,16 @@ h2 {
     animation-duration: 1s;
 }
 
+.gitHubBackendLink {
+    width: 20px;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    opacity: 75%;
+    animation-name: gitHubLinkAnimation;
+    animation-duration: 1.3s;
+}
+
 @keyframes gitHubLinkAnimation {
     0%{width: 0px;}
     90%{width: 0px;translate: -15px;}
