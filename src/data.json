@@ -224,6 +224,10 @@
     "certifications":[
 
         {
+            "name":"back-endDevelopmentAndAPIs",
+            "link":"https://www.freecodecamp.org/certification/SFCC5555/back-end-development-and-apis"
+        }, 
+        {
             "name":"front-endDevelopmentLibraries",
             "link":"https://freecodecamp.org/certification/SFCC5555/front-end-development-libraries"
         },       
