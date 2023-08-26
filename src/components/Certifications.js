@@ -34,14 +34,14 @@ function Certifications({mode}) {
                 {activeCertification&&<div className={`${lowerCaseMode}ModeComponent renderCertificationContainer`}>
                     <div onClick={closeCertification} className={`closeIcon lightModeElement`}>X</div>
                     <a href={linkCertification[0]==='h'?linkCertification:require(`../assets/documents/${linkCertification}`)} target='_Blank' rel="noreferrer"><span className='externalLinkIcon'/></a>
-                    <img src={srcCertification?require(`../assets/images/certificationIllustrations/${srcCertification}Color.png`):''} alt={srcCertification} ></img>
+                    <img src={srcCertification?require(`../assets/images/certificationIllustrations/${srcCertification}Color.png`):''} alt={srcCertification}></img>
                 </div>}
                 <section className='certificationContainer'>
                     
                     {
                      data.certifications.map(certification=>(
                         <div key={certification.name} className={`${lowerCaseMode}ModeComponent certification`}>
-                            <span onClick={renderCertification} link={certification.link} id={certification.name} className={`certificationIllustration`} style={{backgroundImage:`url(${require(`../assets/images/certificationIllustrations/${certification.name}Color.png`)})`}} />
+                            <span onClick={renderCertification} link={certification.link} title={certification.date}  id={certification.name} className={`certificationIllustration`} style={{backgroundImage:`url(${require(`../assets/images/certificationIllustrations/${certification.name}Color.png`)})`}} />
                         </div>
                      ))   
                     }
