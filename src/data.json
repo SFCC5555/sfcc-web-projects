@@ -1,6 +1,15 @@
 {
     "projects":[
         {
+            "name":"The Wall",
+            "link":"https://sfcc-the-wall.netlify.app/",
+            "repository":"https://github.com/SFCC5555/the-wall",
+            "backendRepository":"https://github.com/SFCC5555/the-wall-manager",
+            "skillList":["Html","Css","JavaScript","React","Redux","Api","Sass","Tailwind","NodeJS","Express","MongoDB","Mongoose"],
+            "info":"This project is an interactive message wall that allows users to post messages with the option to include their signature or author's name and customize the text with various available fonts and colors. Regarding the development, the application's frontend has been built using a set of technologies, including HTML, CSS, JavaScript, React, SASS, Tailwind, and Redux. On the other hand, the backend has been developed with Node.js and Express, responsible for managing the message database stored in MongoDB. Additionally, to streamline interactions with the database, Mongoose has been utilized.",
+            "date":"August 2023"
+        },
+        {
             "name":"Country Quiz",
             "link":"https://sfcc-country-quiz.netlify.app/",
             "repository":"https://github.com/SFCC5555/country-quiz",
