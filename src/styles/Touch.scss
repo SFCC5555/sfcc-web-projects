@@ -1,3 +1,4 @@
+/* Styles for the touch section */
 .touchSection {
     width: 100%;
     margin-top: 1000px;
@@ -5,9 +6,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.touchButton {
+  }
+  
+  /* Styles for touch buttons */
+  .touchButton {
     width: 175px;
     font-family: var(--mainFont);
     padding: 15px 10px;
@@ -16,33 +18,34 @@
     opacity: 50%;
     border-radius: 2px;
     font-size: 1rem;
-}
-
-.touch {
+  }
+  
+  /* Positioning of touch button */
+  .touch {
     position: absolute;
     right: 20px;
-}
-
-.darkModeTouchButton {
+  }
+  
+  /* Dark mode touch button styles */
+  .darkModeTouchButton {
     background-color: var(--darkColor);
-}
-
-.ligthModeTouchButton {
+  }
+  
+  /* Light mode touch button styles */
+  .ligthModeTouchButton {
     background-color: var(--ligthColor);
-}
-
-.touchButton:hover {
+  }
+  
+  /* Hover effect for touch buttons */
+  .touchButton:hover {
     opacity: 100%;
-}
-
-
-@media screen and (min-width: 700px) {
-
+  }
+  
+  @media screen and (min-width: 700px) {
+    /* Adjusted styles for touch buttons on larger screens */
     .touchButton {
-        width: 200px;
-        font-size: 1.2rem;
-        margin-bottom: 0px;
+      width: 200px;
+      font-size: 1.2rem;
+      margin-bottom: 0px;
     }
-
-
-}
+  }

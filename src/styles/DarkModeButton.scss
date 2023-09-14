@@ -1,84 +1,91 @@
+/* Styles for the dark mode button */
 .darkModeButton {
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    cursor: pointer;
-    top: 90%;
-    right: 20px;
-    z-index: 3;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  cursor: pointer;
+  top: 90%;
+  right: 20px;
+  z-index: 3;
 }
 
+/* Light mode button background icon */
 .darkModeButtonLight {
-    background-image: url('../assets/icons/darkModeIcon.png');
+  background-image: url('../assets/icons/darkModeIcon.png');
 }
 
+/* Dark mode button background icon */
 .darkModeButtonDark {
-    background-image: url('../assets/icons/darkModeIconDark.png');
+  background-image: url('../assets/icons/darkModeIconDark.png');
 }
 
+/* Animation for light mode button when prefers-reduced-motion is not set */
 @media (prefers-reduced-motion: no-preference) {
-    .darkModeButtonLight {
-      animation: darkModeButtonLight-spin infinite 10s linear;
-    }
+  .darkModeButtonLight {
+    animation: darkModeButtonLight-spin infinite 10s linear;
+  }
 }
-  
+
+/* Keyframe animation for spinning the light mode button */
 @keyframes darkModeButtonLight-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation for dark mode button when prefers-reduced-motion is not set */
+@media (prefers-reduced-motion: no-preference) {
+  .darkModeButtonDark {
+    animation: darkModeButtonDark-spin infinite 10s linear;
+  }
+}
+
+/* Keyframe animation for spinning the dark mode button */
+@keyframes darkModeButtonDark-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Media query for screens with a minimum width of 900px */
+@media screen and (min-width: 900px) {
+  /* Animation for light mode button hover effect when prefers-reduced-motion is not set */
+  @media (prefers-reduced-motion: no-preference) {
+    .darkModeButtonLight:hover {
+      animation: darkModeButtonLightHover-spin 1 300ms linear;
+    }
+  }
+
+  /* Keyframe animation for spinning the light mode button on hover */
+  @keyframes darkModeButtonLightHover-spin {
     from {
       transform: rotate(0deg);
     }
     to {
       transform: rotate(360deg);
     }
-}
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-    .darkModeButtonDark {
-      animation: darkModeButtonDark-spin infinite 10s linear;
+  /* Animation for dark mode button hover effect when prefers-reduced-motion is not set */
+  @media (prefers-reduced-motion: no-preference) {
+    .darkModeButtonDark:hover {
+      animation: darkModeButtonDarkHover-spin 1 300ms linear;
     }
+  }
 
-}
-  
-@keyframes darkModeButtonDark-spin {
+  /* Keyframe animation for spinning the dark mode button on hover */
+  @keyframes darkModeButtonDarkHover-spin {
     from {
       transform: rotate(0deg);
     }
     to {
       transform: rotate(-360deg);
     }
-}
-
-
-@media screen and (min-width: 900px) {
-
-    @media (prefers-reduced-motion: no-preference) {
-
-        .darkModeButtonLight:hover {
-            animation: darkModeButtonLightHover-spin 1 300ms linear;
-        }
-    }
-
-    @keyframes darkModeButtonLightHover-spin {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-
-        .darkModeButtonDark:hover {
-            animation: darkModeButtonDarkHover-spin 1 300ms linear;
-        }
-    }
-
-    @keyframes darkModeButtonDarkHover-spin {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(-360deg);
-        }
-    }
+  }
 }

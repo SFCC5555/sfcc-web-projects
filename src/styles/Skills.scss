@@ -1,45 +1,51 @@
-
+/* Styles for the skill container */
 .skillContainer {
     max-width: 315px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap:13px;
+    gap: 13px;
     cursor: crosshair;
-
-}
-
-.noWarp {
+  }
+  
+  /* Animation class for preventing flex wrap */
+  .noWarp {
     animation-name: noWarpAnimation;
     animation-duration: 1.5s;
-    
-} 
-
-@keyframes noWarpAnimation {
-
-    0%{flex-wrap:nowrap}
-    100%{flex-wrap:nowrap}
-    
-}
-
-.skillIcon {
+  }
+  
+  @keyframes noWarpAnimation {
+    0% {
+      flex-wrap: nowrap;
+    }
+    100% {
+      flex-wrap: nowrap;
+    }
+  }
+  
+  /* Styles for skill icons */
+  .skillIcon {
     background-size: contain;
     height: 32px;
     width: 32px;
     cursor: crosshair;
     animation-name: skillIconAnimation;
     animation-duration: 1s;
-}
-
-
-@keyframes skillIconAnimation {
-
-    0%{opacity: 0%; height: 20px;}
-    100%{opacity: 100%; height: 32px;}
-    
-}
-
-.filterSkillIcon {
+  }
+  
+  @keyframes skillIconAnimation {
+    0% {
+      opacity: 0%;
+      height: 20px;
+    }
+    100% {
+      opacity: 100%;
+      height: 32px;
+    }
+  }
+  
+  /* Styles for filter skill icons */
+  .filterSkillIcon {
     position: absolute;
     top: -35px;
     right: 5px;
@@ -49,87 +55,93 @@
     cursor: crosshair;
     animation-name: filterSkillIconAnimation;
     animation-duration: 1s;
-}
-
-@keyframes filterSkillIconAnimation {
-
-    0%{opacity: 0%; height: 10px;top:0}
-    100%{opacity: 100%; height: 32px;top:-35;}
-    
-}
-
-
-.reactIcon {
+  }
+  
+  @keyframes filterSkillIconAnimation {
+    0% {
+      opacity: 0%;
+      height: 10px;
+      top: 0;
+    }
+    100% {
+      opacity: 100%;
+      height: 32px;
+      top: -35px;
+    }
+  }
+  
+  /* React icon styles */
+  .reactIcon {
     background-image: url('../assets/icons/reactIconColor.png');
-}
-
-.reactIconLight:hover,.reactIconDark:hover, .reactIcon:hover {
+  }
+  
+  .reactIconLight:hover, .reactIconDark:hover, .reactIcon:hover {
     background-image: url('../assets/icons/reactIconColor.png');
     transition-duration: 300ms;
     animation: reactIcon-spin infinite 25s linear;
-}
-
-@keyframes reactIcon-spin {
-
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
-}
-
-.reactIconLight {
-
+  }
+  
+  @keyframes reactIcon-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .reactIconLight {
     background-image: url('../assets/icons/reactIconLight.png');
-}
-
-.reactIconDark {
-
+  }
+  
+  .reactIconDark {
     background-image: url('../assets/icons/reactIconDark.png');
-}
-
-
-.reactIconLight, .reactIconDark {
+  }
+  
+  .reactIconLight, .reactIconDark {
     animation-name: reactIconAnimation;
     animation-duration: 300ms;
-}
+  }
   
-@keyframes reactIconAnimation {
-
-    0%{opacity: 5%; width: 32px;}
-    100%{opacity: 100%; width: 32px;}
-    
-}
-
-.aboutIconLight {
-
+  @keyframes reactIconAnimation {
+    0% {
+      opacity: 5%;
+      width: 32px;
+    }
+    100% {
+      opacity: 100%;
+      width: 32px;
+    }
+  }
+  
+  /* About icon styles for light and dark modes */
+  .aboutIconLight {
     background-image: url('../assets/icons/aboutIconLight.png');
-}
-
-.aboutIconDark {
-
-    background-image: url('../assets/icons/aboutIconDark.png');
-}
-
-
-$skills: ('html','css','javaScript','git','gitHub','cv','linkedin','manfred','adobe-Illustrator','json','api','figma','autoCad','sketchUp','clip-Studio-Paint','tailwind','typeScript','react-Router-V6','redux','bootstrap','sass','nodeJS','express','mongoDB','mongoose');
-
-@each $skill in $skills {
+  }
   
+  .aboutIconDark {
+    background-image: url('../assets/icons/aboutIconDark.png');
+  }
+  
+  /* List of skills to generate styles for */
+  $skills: ('html', 'css', 'javaScript', 'git', 'gitHub', 'cv', 'linkedin', 'manfred', 'adobe-Illustrator', 'json', 'api', 'figma', 'autoCad', 'sketchUp', 'clip-Studio-Paint', 'tailwind', 'typeScript', 'react-Router-V6', 'redux', 'bootstrap', 'sass', 'nodeJS', 'express', 'mongoDB', 'mongoose');
+  
+  /* Generate styles for each skill icon */
+  @each $skill in $skills {
     .#{$skill}Icon {
-        background-image: url('../assets/icons/#{$skill}IconColor.png');
+      background-image: url('../assets/icons/#{$skill}IconColor.png');
     }
-    
-    .#{$skill}IconLight:hover,.#{$skill}IconDark:hover {
-        background-image: url('../assets/icons/#{$skill}IconColor.png');
-        transition-duration: 300ms;
+  
+    .#{$skill}IconLight:hover, .#{$skill}IconDark:hover {
+      background-image: url('../assets/icons/#{$skill}IconColor.png');
+      transition-duration: 300ms;
     }
-    
+  
     .#{$skill}IconLight {
-    
-        background-image: url('../assets/icons/#{$skill}IconLight.png');
+      background-image: url('../assets/icons/#{$skill}IconLight.png');
     }
-    
+  
     .#{$skill}IconDark {
-    
-        background-image: url('../assets/icons/#{$skill}IconDark.png');
+      background-image: url('../assets/icons/#{$skill}IconDark.png');
     }
-
-}
+  }

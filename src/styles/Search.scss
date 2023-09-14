@@ -1,3 +1,4 @@
+/* Styles for the search input field */
 .searchInput {
     width: 40px;
     height: 30px;
@@ -6,66 +7,72 @@
     font-family: var(--mainFont);
     font-size: 0rem;
     opacity: 75%;
-}
-
-.searchInput:hover, .searchInput:focus {
+  }
+  
+  /* Hover and focus styles for the search input */
+  .searchInput:hover, .searchInput:focus {
     width: 200px;
     transition-duration: 1s;
     font-size: 1.6rem;
-}
-
-.searchInput:valid{
-    width:180px;
+  }
+  
+  /* Styles for the valid input (after user input) */
+  .searchInput:valid {
+    width: 180px;
     transition-duration: 1s;
     font-size: 1.6rem;
-}
-
-.searchInput:hover {
+  }
+  
+  /* Hover effect for search input */
+  .searchInput:hover {
     opacity: 100%;
-}
-
-.searchIcon {
+  }
+  
+  /* Styles for the search icon */
+  .searchIcon {
     cursor: pointer;
     position: absolute;
     width: 16px;
     height: 16px;
     translate: -26px 6px;
     opacity: 90%;
-
-}
-
-.searchIcon:hover {
+  }
+  
+  /* Hover effect for search icon */
+  .searchIcon:hover {
     opacity: 100%;
-}
-
-@each $mode in light, dark, {
-
+  }
+  
+  /* Styling for light and dark modes */
+  @each $mode in light, dark, {
+    /* Background and text color for the input */
     .#{$mode}ModeInput {
-        background-color: hsl(var(--#{$mode}Color));
-        color: hsl(var(--#{$mode}InverseColor));
-        border: 2px solid hsl(var(--#{$mode}InverseColor),40%);
-        border-bottom: none;
+      background-color: hsl(var(--#{$mode}Color));
+      color: hsl(var(--#{$mode}InverseColor));
+      border: 2px solid hsl(var(--#{$mode}InverseColor), 40%);
+      border-bottom: none;
     }
-    
+  
+    /* Placeholder color for the input */
     .#{$mode}ModeInput::placeholder {
-        color: hsl(var(--#{$mode}InverseColor));
-    
+      color: hsl(var(--#{$mode}InverseColor));
     }
-    
+  
+    /* Background image for the search icon */
     .#{$mode}SearchIcon {
-        background-image: url('../assets/icons/#{$mode}SearchIcon.png');
+      background-image: url('../assets/icons/#{$mode}SearchIcon.png');
     }
-
-}
-
-@media screen and (min-width: 700px) {
+  }
+  
+  /* Media query for medium-sized screens */
+  @media screen and (min-width: 700px) {
     .searchInput {
-        width: 205px;   
-        font-size: 1.6rem;
+      width: 205px;
+      font-size: 1.6rem;
     }
-
+  
+    /* Adjusted width for focus and hover */
     .searchInput:focus, .searchInput:hover, .searchInput:valid {
-        width: 240px;
+      width: 240px;
     }
-
-}
+  }

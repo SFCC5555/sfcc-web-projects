@@ -1,4 +1,4 @@
-
+/* Styles for the about icon */
 .aboutIcon {
     width: 20px;
     position: absolute;
@@ -9,19 +9,29 @@
     animation-duration: 1.5s;
     cursor: help;
     z-index: 1;
-}
-
-.aboutIcon:hover {
+  }
+  
+  /* Hover style for the about icon */
+  .aboutIcon:hover {
     opacity: 75%;
-}
-
-@keyframes aboutIconAnimation {
-    0%{width: 0px;}
-    90%{width: 0px;translate: 15px;}
-    100%{display: block;}
-}
-
-.info {
+  }
+  
+  /* Keyframe animation for the about icon */
+  @keyframes aboutIconAnimation {
+    0% {
+      width: 0px;
+    }
+    90% {
+      width: 0px;
+      transform: translate(15px);
+    }
+    100% {
+      display: block;
+    }
+  }
+  
+  /* Styles for the information section */
+  .info {
     width: 100%;
     height: 100%;
     top: 0;
@@ -30,38 +40,42 @@
     opacity: 90%;
     padding: 10px;
     padding-top: 20px;
-}
-
-.infoDark {
+  }
+  
+  /* Styles for the information section in dark mode */
+  .infoDark {
     background-color: hsl(var(--darkColor));
     color: hsl(var(--lightColor));
-}
-
-.infoLight {
+  }
+  
+  /* Styles for the information section in light mode */
+  .infoLight {
     background-color: hsl(var(--lightColor));
     color: hsl(var(--darkColor));
-}
-
-.infoTitle {
+  }
+  
+  /* Styles for the information section title */
+  .infoTitle {
     font-size: 1.2rem;
     margin: 4px 15px;
-}
-
-.infoContent {
+  }
+  
+  /* Styles for the information section content */
+  .infoContent {
     font-size: 1rem;
     line-height: 0.9rem;
     text-align: justify;
-}
-
-@media screen and (min-width: 700px) {
-
+  }
+  
+  /* Media query for larger screens */
+  @media screen and (min-width: 700px) {
+    /* Adjusted styles for larger screens */
     .infoTitle {
-        font-size: 1.8rem;
+      font-size: 1.8rem;
     }
-    
+  
     .infoContent {
-        font-size: 1.2rem;
-        line-height: 1.1rem;
+      font-size: 1.2rem;
+      line-height: 1.1rem;
     }
-
-}
+  }

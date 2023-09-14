@@ -1,3 +1,4 @@
+/* Styles for the message box */
 .messageBox {
     width: 350px;
     height: 220px;
@@ -11,18 +12,19 @@
     margin: 90px 0px;
     position: relative;
     padding: 25px;
-}
-
-
-.contactYouSoon {
+  }
+  
+  /* Styles for the "Contact You Soon" message */
+  .contactYouSoon {
     font-size: 1.6rem;
-}
-
-.closeIconMessage {
+  }
+  
+  /* Styles for the close icon in the message box */
+  .closeIconMessage {
     height: 35px;
     width: 35px;
     font-size: 2.5rem;
     position: absolute;
     top: 12.5px;
     right: 7.5px;
-}
+  }

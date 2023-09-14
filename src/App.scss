@@ -1,30 +1,46 @@
+/* Styles for the .sfccIcon class */
 .sfccIcon {
     width: 60%;
     cursor: crosshair;
     animation-name: sfccIconAnimation;
     animation-duration: 1.5s;
-}
-
-@keyframes sfccIconAnimation {
-    0% {width: 30%;opacity: 0%;}
-    100% {width: 60%;opacity: 100%;}  
-}
-
-.sfccIcon:hover {
+  }
+  
+  /* Keyframes animation for sfccIcon */
+  @keyframes sfccIconAnimation {
+    0% {
+      width: 30%;
+      opacity: 0%;
+    }
+    100% {
+      width: 60%;
+      opacity: 100%;
+    }
+  }
+  
+  /* Hover styles for .sfccIcon */
+  .sfccIcon:hover {
     scale: 1.3;
     transition-duration: 45s;
-}
-
-@media screen and (min-width: 900px) {
+  }
+  
+  /* Media query for screens wider than 900px */
+  @media screen and (min-width: 900px) {
     .sfccIcon {
-        width: 30%;
-        animation-name: sfccIconAnimation;
-        animation-duration: 1.5s;
+      width: 30%;
+      animation-name: sfccIconAnimation;
+      animation-duration: 1.5s;
     }
-    
+  
+    /* Keyframes animation for sfccIcon within the media query */
     @keyframes sfccIconAnimation {
-        0% {width: 15%;opacity: 0%;}
-        100% {width: 30%;opacity: 100%;}  
+      0% {
+        width: 15%;
+        opacity: 0%;
+      }
+      100% {
+        width: 30%;
+        opacity: 100%;
+      }
     }
-}
-
+  }

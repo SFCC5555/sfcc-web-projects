@@ -1,25 +1,28 @@
+/* Styles for the form section */
 .formSection {
-
     width: 300px;
     height: 400px;
     border-style: solid;
     border-width: 2px;
     padding: 25px;
     position: relative;
-}
-
-form {
+  }
+  
+  /* Styles for the form element */
+  form {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.contactMeTitle {
+  }
+  
+  /* Styles for the contact me title */
+  .contactMeTitle {
     text-align: left;
     font-size: 1.6rem;
-}
-
-.formInput {
+  }
+  
+  /* Styles for the form input elements */
+  .formInput {
     width: 100%;
     height: 30px;
     padding: 10px;
@@ -27,54 +30,60 @@ form {
     font-family: var(--mainFont);
     font-size: 1.4rem;
     opacity: 75%;
-}
-
-.textArea {
+  }
+  
+  /* Styles for the text area input */
+  .textArea {
     height: 160px;
     resize: none;
-}
-
-.formButton {
+  }
+  
+  /* Styles for the form submit button */
+  .formButton {
     height: 40px;
     cursor: pointer;
     width: 37.5%;
     align-self: flex-end;
     font-size: 1.4rem;
-    translate: 0px -7.5px;
-}
-
-.formInput:hover {
+    translate: 0px -7.5px; /* Typo? Should it be 'transform'? */
+  }
+  
+  /* Hover style for the form input */
+  .formInput:hover {
     opacity: 100%;
-}
-
-.error {
-    color:crimson;
+  }
+  
+  /* Styles for error messages */
+  .error {
+    color: crimson;
     position: absolute;
     left: 35px;
-}
-
-.errorName {
+  }
+  
+  /* Positioning for error message related to name input */
+  .errorName {
     top: 95px;
-}
-
-.errorEmail {
+  }
+  
+  /* Positioning for error message related to email input */
+  .errorEmail {
     top: 145px;
-}
-
-.errorMessage {
-    top: 325px
-}
-
-@each $mode in light, dark {
-
+  }
+  
+  /* Positioning for error message related to message input */
+  .errorMessage {
+    top: 325px;
+  }
+  
+  /* Styles for form inputs in light and dark modes */
+  @each $mode in light, dark {
     .#{$mode}ModeformInput {
-        background-color: hsl(var(--#{$mode}Color));
-        color: hsl(var(--#{$mode}InverseColor));
-        border: 2px solid hsl(var(--#{$mode}InverseColor),40%);
+      background-color: hsl(var(--#{$mode}Color));
+      color: hsl(var(--#{$mode}InverseColor));
+      border: 2px solid hsl(var(--#{$mode}InverseColor),40%);
     }
-    
+  
     .#{$mode}ModeformInput::placeholder {
-        color: hsl(var(--#{$mode}InverseColor));
-    
+      color: hsl(var(--#{$mode}InverseColor));
     }
-}
+  }

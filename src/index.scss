@@ -1,3 +1,4 @@
+/* Define custom fonts */
 @font-face {
   font-family: 'KAPITAL';
   src: url('./assets/fonts/KAPITAL.ttf');
@@ -13,17 +14,19 @@
   src: url('./assets/fonts/BankGothicBold.ttf');
 }
 
-
+/* Reset default styles */
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Set the base font size for better responsiveness */
 html{
   font-size: 62.5%;
 }
 
+/* Define CSS custom properties for color and fonts */
 :root {
   --darkColor: 213, 17%, 12%;
   --lightColor: 192, 15%, 94%;
@@ -36,6 +39,7 @@ html{
   --secondFont:'Linkin';
 }
 
+/* Define base styles for the body */
 body {
   
   display: flex;
@@ -46,6 +50,7 @@ body {
 
 }
 
+/* Define styles for the root element */
 #root {
   width: 100%;
   display: flex;
@@ -55,20 +60,24 @@ body {
   gap: 20px;
 }
 
+/* Styles for the main heading */
 h1{
   font-size: 10rem;
   font-family: var(--mainFont);
 }
 
+/* Container for sections with relative positioning */
 .sectionContainer {
   position: relative;
 }
 
+/* Gap element for section spacing */
 .sectionGap {
   position: absolute;
   top: -75px;
 }
 
+/* Define styles for light, dark, and other modes using SCSS variables */
 @each $mode in light, dark, {
   
   .#{$mode}Mode {
@@ -109,6 +118,7 @@ h1{
   background-color: hsl(var(--lightColor));
 }
 
+/* Media query for larger screens */
 @media screen and (min-width: 900px) {
   body {
     padding: 100px 20px;

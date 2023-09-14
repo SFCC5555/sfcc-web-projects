@@ -1,3 +1,4 @@
+/* Styles for the main content section */
 main {
     width: 100%;
     display: flex;
@@ -5,31 +6,34 @@ main {
     align-items: center;
     gap: 35px;
     margin-bottom: 25px;
-}
-
-h2 {
+  }
+  
+  /* Styles for heading 2 */
+  h2 {
     font-size: 3rem;
-}
-
-.searchFilterContainer {
+  }
+  
+  /* Styles for the search filter container */
+  .searchFilterContainer {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: absolute;
     top: 37px;
-    border-bottom-width:2px;
-    border-bottom-style:solid;
-}
-
-.projectContainer {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+  
+  /* Styles for the project container */
+  .projectContainer {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-
-}
-
-.project {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Styles for individual project items */
+  .project {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,15 +46,20 @@ h2 {
     animation-name: projectAnimation;
     animation-duration: 1.5s;
     border-collapse: collapse;
-}
-
-@keyframes projectAnimation {
-    0%{opacity: 0%;}
-    100%{opacity: 100%;}
-    
-}
-
-.gitHubLink {
+  }
+  
+  /* Animation for individual projects */
+  @keyframes projectAnimation {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  
+  /* Styles for GitHub link icon */
+  .gitHubLink {
     width: 20px;
     position: absolute;
     top: 0px;
@@ -58,9 +67,10 @@ h2 {
     opacity: 75%;
     animation-name: gitHubLinkAnimation;
     animation-duration: 1s;
-}
-
-.gitHubBackendLink {
+  }
+  
+  /* Styles for GitHub backend link icon */
+  .gitHubBackendLink {
     width: 20px;
     position: absolute;
     top: 0px;
@@ -68,64 +78,86 @@ h2 {
     opacity: 75%;
     animation-name: gitHubLinkAnimation;
     animation-duration: 1.3s;
-}
-
-@keyframes gitHubLinkAnimation {
-    0%{width: 0px;}
-    90%{width: 0px;translate: -15px;}
-    100%{display: block;}
-}
-
-.gitHubLink:hover {
+  }
+  
+  /* Animation for GitHub link icons */
+  @keyframes gitHubLinkAnimation {
+    0% {
+      width: 0px;
+    }
+    90% {
+      width: 0px;
+      translate: -15px;
+    }
+    100% {
+      display: block;
+    }
+  }
+  
+  /* Hover effect for GitHub link icons */
+  .gitHubLink:hover {
     opacity: 100%;
-}
-
-.projectIllustration {
+  }
+  
+  /* Styles for project illustrations */
+  .projectIllustration {
     width: 150px;
     height: 225px;
     animation-name: projectIllustrationAnimation;
     animation-duration: 1.5s;
-    filter:grayscale(100%)
-}
-
-.projectIllustration:hover {
+    filter: grayscale(100%);
+  }
+  
+  /* Hover effect for project illustrations */
+  .projectIllustration:hover {
     filter: grayscale(0%);
     transition-duration: 1s;
-}
-
-@keyframes projectIllustrationAnimation {
-    0%{width: 140px;}
-    100%{width: 150px;}
-}
-
-@media screen and (min-width: 700px) {
+  }
+  
+  /* Animation for project illustrations */
+  @keyframes projectIllustrationAnimation {
+    0% {
+      width: 140px;
+    }
+    100% {
+      width: 150px;
+    }
+  }
+  
+  /* Media query for medium-sized screens */
+  @media screen and (min-width: 700px) {
     .projectContainer {
-        grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
     .projectIllustration {
-        width: 200px;
-        height: 300px;
-
+      width: 200px;
+      height: 300px;
     }
-
+  
+    /* Animation for project illustrations on medium-sized screens */
     @keyframes projectIllustrationAnimation {
-        0%{width: 180px;}
-        100%{width: 200px;}
+      0% {
+        width: 180px;
+      }
+      100% {
+        width: 200px;
+      }
     }
-
-}
-
-@media screen and (min-width: 900px) {
+  }
+  
+  /* Media query for larger screens */
+  @media screen and (min-width: 900px) {
     .projectContainer {
-        grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
-
+  
+    /* Adjustments to the search filter container */
     .searchFilterContainer {
-
-        top: 27px;
+      top: 27px;
     }
-
+  
+    /* Adjustments to the main content section */
     main {
-        gap: 25px
+      gap: 25px;
     }
   }
