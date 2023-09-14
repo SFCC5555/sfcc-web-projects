@@ -17,7 +17,7 @@ function AboutSection({ active, controlFunction, mode}) {
             <section className='links'>
                 <div>
                     <a href='https://github.com/SFCC5555' className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer"  ><span className={`skillIcon gitHubIcon${mode}`} />GitHub</a>
-                    <a href={require('../assets/documents/RESUME2023FERNANDOCARRASCO.pdf')} className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer" ><span className={`skillIcon cvIcon${mode}`}/>CV</a>
+                    <a href='https://drive.google.com/file/d/1sh3eWM3I2og1D7108vL0rXvl2YZ97G7N/view?usp=sharing' className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer" ><span className={`skillIcon cvIcon${mode}`}/>CV</a>
                 </div>
                 <div>
                     <a href='https://www.linkedin.com/in/fernando-carrasco-dev/' className={`${lowerCaseMode}ModeElement`} target='_Blank' rel="noreferrer"  ><span className={`skillIcon linkedinIcon${mode}`} />Linkedin</a>
