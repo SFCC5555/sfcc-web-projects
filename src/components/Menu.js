@@ -1,6 +1,6 @@
 // Importing the necessary styles
-import React from 'react';
-import '../styles/Menu.scss';
+import React from "react";
+import "../styles/Menu.scss";
 
 // Functional component for the navigation menu
 function Menu({ sectionsList, active, controlFunction, mode }) {
@@ -15,15 +15,29 @@ function Menu({ sectionsList, active, controlFunction, mode }) {
   }
 
   return (
-    <section className={active ? `menu ${lowerCaseMode}ModeComponent` : `menu ${lowerCaseMode}ModeComponent inactive`}>
+    <section
+      className={
+        active
+          ? `menu ${lowerCaseMode}ModeComponent`
+          : `menu ${lowerCaseMode}ModeComponent inactive`
+      }
+    >
       {/* Close button for the menu */}
-      <div onClick={controlFunction} className={`closeIcon ${lowerCaseMode}ModeElement`}>
+      <div
+        onClick={controlFunction}
+        className={`closeIcon ${lowerCaseMode}ModeElement`}
+      >
         X
       </div>
 
       {/* Generating navigation links for each section */}
       {sectionsList.map((section) => (
-        <a onClick={closeMenu} href={`#${section}`} className={`${lowerCaseMode}ModeElement`} key={section}>
+        <a
+          onClick={closeMenu}
+          href={`#${section}`}
+          className={`${lowerCaseMode}ModeElement`}
+          key={section}
+        >
           {section}
         </a>
       ))}

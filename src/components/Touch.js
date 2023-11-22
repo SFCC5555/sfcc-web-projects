@@ -1,8 +1,8 @@
 // Importing necessary styles and dependencies
-import '../styles/Touch.scss';
-import React, { useEffect } from 'react';
-import $ from 'jquery';
-import 'animate.css/animate.min.css';
+import "../styles/Touch.scss";
+import React, { useEffect } from "react";
+import $ from "jquery";
+import "animate.css/animate.min.css";
 
 // Functional component for the touch section
 function Touch({ mode }) {
@@ -11,32 +11,32 @@ function Touch({ mode }) {
   useEffect(() => {
     $(document).ready(function () {
       // Event handler for the 'Touch this Button' button
-      $('.touch').mouseenter(function () {
+      $(".touch").mouseenter(function () {
         // Changing text and applying a CSS class for animation
-        $(this).css('translate', '200px');
-        $(this).text('Too Slow!');
+        $(this).css("translate", "200px");
+        $(this).text("Too Slow!");
         setTimeout(() => {
           $(this).remove();
         }, 100);
       });
 
       // Event handler for the 'Don't Touch this Button' button
-      $('.dontTouch').mouseenter(function () {
+      $(".dontTouch").mouseenter(function () {
         $(this).text("Don't!");
       });
 
-      $('.dontTouch').mouseleave(function () {
+      $(".dontTouch").mouseleave(function () {
         $(this).text("Don't Touch this Button");
       });
 
-      $('.dontTouch').click(function () {
+      $(".dontTouch").click(function () {
         // Adding animation classes to elements
-        $('.touch').addClass('animate__animated animate__bounce');
-        $('nav').addClass('animate__animated animate__hinge');
-        $('.menu').addClass('animate__animated animate__hinge');
+        $(".touch").addClass("animate__animated animate__bounce");
+        $("nav").addClass("animate__animated animate__hinge");
+        $(".menu").addClass("animate__animated animate__hinge");
 
         setTimeout(() => {
-          $(this).addClass('animate__animated animate__hinge');
+          $(this).addClass("animate__animated animate__hinge");
 
           setTimeout(() => {
             $(this).remove();
@@ -47,12 +47,16 @@ function Touch({ mode }) {
   }, []);
 
   return (
-    <section className='touchSection'>
+    <section className="touchSection">
       {/* Two buttons with different classes */}
-      <button className={`${lowerCaseMode}ModeTouchButton ${lowerCaseMode}ModeElement touchButton dontTouch`}>
+      <button
+        className={`${lowerCaseMode}ModeTouchButton ${lowerCaseMode}ModeElement touchButton dontTouch`}
+      >
         Don't Touch this Button
       </button>
-      <button className={`${lowerCaseMode}ModeTouchButton ${lowerCaseMode}ModeElement touchButton touch`}>
+      <button
+        className={`${lowerCaseMode}ModeTouchButton ${lowerCaseMode}ModeElement touchButton touch`}
+      >
         Touch this Button
       </button>
     </section>

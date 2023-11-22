@@ -1,5 +1,5 @@
 // Importing necessary styles
-import '../styles/Search.scss';
+import "../styles/Search.scss";
 
 // Functional component for the search input
 function Search({ mode, handleChange }) {
@@ -7,18 +7,18 @@ function Search({ mode, handleChange }) {
   const lowerCaseMode = mode.toLowerCase();
 
   return (
-    <div className='inputContainer'>
+    <div className="inputContainer">
       {/* Search input field */}
       <input
-        type='text'
+        type="text"
         required
         onChange={handleChange}
-        id='search'
+        id="search"
         className={`${lowerCaseMode}ModeInput searchInput`}
-        placeholder='Search a project'
+        placeholder="Search a project"
       />
       {/* Label for the search input */}
-      <label htmlFor='search'>
+      <label htmlFor="search">
         {/* Search icon */}
         <span className={`${lowerCaseMode}SearchIcon searchIcon`} />
       </label>

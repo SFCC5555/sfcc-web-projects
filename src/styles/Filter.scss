@@ -1,102 +1,106 @@
 /* Styles for the filter button */
 .filterButton {
-    width: 40px;
-    height: 30px;
-    font-family: var(--mainFont);
-    font-size: 0rem;
-    border-radius: 6px 2px 0px 0px;
-    cursor: pointer;
-    opacity: 75%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    z-index: 2;
-  }
-  
+  width: 40px;
+  height: 30px;
+  font-family: var(--mainFont);
+  font-size: 0rem;
+  border-radius: 6px 2px 0px 0px;
+  cursor: pointer;
+  opacity: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  z-index: 2;
+}
+
 /* Hover and focus styles for the filter button */
-.filterButton:hover, .filterButton:focus {
-opacity: 100%;
-width: 200px;
-transition-duration: 400ms;
-font-size: 1.6rem;
+.filterButton:hover,
+.filterButton:focus {
+  opacity: 100%;
+  width: 200px;
+  transition-duration: 400ms;
+  font-size: 1.6rem;
 }
 
 /* Styles for the filter icon */
 .filterIcon {
-cursor: pointer;
-width: 16px;
-height: 16px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
 }
 
 /* Styles for the filter skills container */
 .filterSkillsContainer {
-width: 200px;
-position: absolute;
-top: 30px;
-right: 0px;
-border-style: solid;
-border-width: 2px;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: space-between;
-padding: 10px;
-gap: 7px;
-animation-name: filterSkillsContainerAnimation;
-animation-duration: 350ms;
+  width: 200px;
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 7px;
+  animation-name: filterSkillsContainerAnimation;
+  animation-duration: 350ms;
 }
 
 /* Styles for the last child of the filter skills container */
-.filterSkillsContainer>div:last-child {
-opacity: 60%;
+.filterSkillsContainer > div:last-child {
+  opacity: 60%;
 }
 
 /* Keyframe animation for showing the filter skills container */
 @keyframes filterSkillsContainerAnimation {
-0% { height: 0px; }
-100% { height: 350px; }
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 350px;
+  }
 }
 
 /* Styles for the close icon in the filter skills container */
-.filterSkillsContainer>.closeIcon {
-position: absolute;
-top: 5px;
-right: 5px;
-width: 30px;
-height: 30px;
-font-size: 2rem;
+.filterSkillsContainer > .closeIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 2rem;
 }
 
 /* Underline style for selected filter skills */
 .selectFilterSkill {
-text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Styles for light and dark mode filter icons and filter mode */
 @each $mode in light, dark {
-.#{$mode}FilterIcon {
-    background-image: url('../assets/icons/#{$mode}FilterIcon.png');
-}
+  .#{$mode}FilterIcon {
+    background-image: url("../assets/icons/#{$mode}FilterIcon.png");
+  }
 
-.#{$mode}ModeFilter {
+  .#{$mode}ModeFilter {
     background-color: hsl(var(--#{$mode}Color));
     color: hsl(var(--#{$mode}InverseColor));
-    border: 2px solid hsl(var(--#{$mode}InverseColor),40%);
+    border: 2px solid hsl(var(--#{$mode}InverseColor), 40%);
     border-bottom-width: 1px;
-}
+  }
 }
 
 /* Styles for the inactive class (display: none) */
 .inactive {
-display: none;
+  display: none;
 }
 
 /* Media query for screens with a minimum width of 700px */
 @media screen and (min-width: 700px) {
-.filterButton {
+  .filterButton {
     width: 100px;
     font-size: 1.6rem;
+  }
 }
-}
-

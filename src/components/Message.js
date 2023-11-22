@@ -1,6 +1,6 @@
 // Importing the necessary styles
-import React from 'react';
-import '../styles/Message.scss';
+import React from "react";
+import "../styles/Message.scss";
 
 // Functional component to display a success message after form submission
 function Message({ mode, controlFunction }) {
@@ -12,10 +12,13 @@ function Message({ mode, controlFunction }) {
       <p>Your message has been sent successfully!</p>
       <br />
       <br />
-      <p className='contactYouSoon'>I will contact you soon.</p>
+      <p className="contactYouSoon">I will contact you soon.</p>
 
       {/* Close button for the message */}
-      <div onClick={controlFunction} className={`closeIcon ${lowerCaseMode}ModeElement closeIconMessage`}>
+      <div
+        onClick={controlFunction}
+        className={`closeIcon ${lowerCaseMode}ModeElement closeIconMessage`}
+      >
         X
       </div>
     </div>

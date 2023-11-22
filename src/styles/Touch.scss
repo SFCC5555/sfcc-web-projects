@@ -1,51 +1,51 @@
 /* Styles for the touch section */
 .touchSection {
-    width: 100%;
-    margin-top: 1000px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Styles for touch buttons */
+  width: 100%;
+  margin-top: 1000px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for touch buttons */
+.touchButton {
+  width: 175px;
+  font-family: var(--mainFont);
+  padding: 15px 10px;
+  cursor: pointer;
+  border: solid 2px grey;
+  opacity: 50%;
+  border-radius: 2px;
+  font-size: 1rem;
+}
+
+/* Positioning of touch button */
+.touch {
+  position: absolute;
+  right: 20px;
+}
+
+/* Dark mode touch button styles */
+.darkModeTouchButton {
+  background-color: var(--darkColor);
+}
+
+/* Light mode touch button styles */
+.ligthModeTouchButton {
+  background-color: var(--ligthColor);
+}
+
+/* Hover effect for touch buttons */
+.touchButton:hover {
+  opacity: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  /* Adjusted styles for touch buttons on larger screens */
   .touchButton {
-    width: 175px;
-    font-family: var(--mainFont);
-    padding: 15px 10px;
-    cursor: pointer;
-    border: solid 2px grey;
-    opacity: 50%;
-    border-radius: 2px;
-    font-size: 1rem;
+    width: 200px;
+    font-size: 1.2rem;
+    margin-bottom: 0px;
   }
-  
-  /* Positioning of touch button */
-  .touch {
-    position: absolute;
-    right: 20px;
-  }
-  
-  /* Dark mode touch button styles */
-  .darkModeTouchButton {
-    background-color: var(--darkColor);
-  }
-  
-  /* Light mode touch button styles */
-  .ligthModeTouchButton {
-    background-color: var(--ligthColor);
-  }
-  
-  /* Hover effect for touch buttons */
-  .touchButton:hover {
-    opacity: 100%;
-  }
-  
-  @media screen and (min-width: 700px) {
-    /* Adjusted styles for touch buttons on larger screens */
-    .touchButton {
-      width: 200px;
-      font-size: 1.2rem;
-      margin-bottom: 0px;
-    }
-  }
+}

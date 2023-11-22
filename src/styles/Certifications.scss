@@ -1,153 +1,153 @@
 /* Styles for the certification container */
 .certificationContainer {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Styles for individual certifications */
+.certification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-collapse: collapse;
+  animation-name: certificationAnimation;
+  animation-duration: 1.5s;
+}
+
+/* Keyframe animation for certification appearance */
+@keyframes certificationAnimation {
+  0% {
+    opacity: 0%;
   }
-  
-  /* Styles for individual certifications */
-  .certification {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-style: solid;
-    border-width: 2px;
-    border-collapse: collapse;
-    animation-name: certificationAnimation;
-    animation-duration: 1.5s;
+  100% {
+    opacity: 100%;
   }
-  
-  /* Keyframe animation for certification appearance */
-  @keyframes certificationAnimation {
-    0% {
-      opacity: 0%;
-    }
-    100% {
-      opacity: 100%;
-    }
+}
+
+/* Styles for certification illustrations */
+.certificationIllustration {
+  width: 175px;
+  height: 131.25px;
+  cursor: pointer;
+  animation-name: certificationIllustrationAnimation;
+  animation-duration: 1.5s;
+  filter: grayscale(100%);
+}
+
+/* Hover effect for certification illustrations */
+.certificationIllustration:hover {
+  filter: grayscale(0%);
+  transition-duration: 1s;
+}
+
+/* Keyframe animation for certification illustration size change */
+@keyframes certificationIllustrationAnimation {
+  0% {
+    width: 160px;
   }
-  
-  /* Styles for certification illustrations */
-  .certificationIllustration {
+  100% {
     width: 175px;
-    height: 131.25px;
-    cursor: pointer;
-    animation-name: certificationIllustrationAnimation;
-    animation-duration: 1.5s;
-    filter: grayscale(100%);
   }
-  
-  /* Hover effect for certification illustrations */
-  .certificationIllustration:hover {
-    filter: grayscale(0%);
-    transition-duration: 1s;
+}
+
+/* Styles for the render certification container */
+.renderCertificationContainer {
+  position: fixed;
+  top: 60px;
+  width: 400px;
+  height: 300px;
+  border-style: solid;
+  border-top: none;
+  animation-name: renderCertificationAnimation;
+  animation-duration: 500ms;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Keyframe animation for rendering certification container */
+@keyframes renderCertificationAnimation {
+  0% {
+    height: 0px;
+    width: 400px;
   }
-  
-  /* Keyframe animation for certification illustration size change */
+  100% {
+    height: 300px;
+    width: 400px;
+  }
+}
+
+/* Styles for close icon in the render certification container */
+.renderCertificationContainer > .closeIcon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+/* Media query for medium-sized screens */
+@media screen and (min-width: 700px) {
+  .certificationContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .certificationIllustration {
+    width: 200px;
+    height: 150px;
+  }
+
+  /* Keyframe animation for larger certification illustration size */
   @keyframes certificationIllustrationAnimation {
     0% {
-      width: 160px;
+      width: 180px;
     }
     100% {
-      width: 175px;
+      width: 200px;
     }
   }
-  
-  /* Styles for the render certification container */
+
   .renderCertificationContainer {
-    position: fixed;
-    top: 60px;
-    width: 400px;
-    height: 300px;
-    border-style: solid;
-    border-top: none;
-    animation-name: renderCertificationAnimation;
-    animation-duration: 500ms;
-    overflow: hidden;
-    z-index: 2;
+    width: 600px;
+    height: 450px;
   }
-  
-  /* Keyframe animation for rendering certification container */
+
+  .renderCertificationContainer > img {
+    width: 600px;
+  }
+
+  /* Keyframe animation for larger render certification container */
   @keyframes renderCertificationAnimation {
     0% {
       height: 0px;
-      width: 400px;
+      width: 600px;
     }
     100% {
-      height: 300px;
-      width: 400px;
-    }
-  }
-  
-  /* Styles for close icon in the render certification container */
-  .renderCertificationContainer > .closeIcon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-  
-  /* Media query for medium-sized screens */
-  @media screen and (min-width: 700px) {
-    .certificationContainer {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .certificationIllustration {
-      width: 200px;
-      height: 150px;
-    }
-  
-    /* Keyframe animation for larger certification illustration size */
-    @keyframes certificationIllustrationAnimation {
-      0% {
-        width: 180px;
-      }
-      100% {
-        width: 200px;
-      }
-    }
-  
-    .renderCertificationContainer {
-      width: 600px;
       height: 450px;
-    }
-  
-    .renderCertificationContainer > img {
       width: 600px;
     }
-  
-    /* Keyframe animation for larger render certification container */
-    @keyframes renderCertificationAnimation {
-      0% {
-        height: 0px;
-        width: 600px;
-      }
-      100% {
-        height: 450px;
-        width: 600px;
-      }
-    }
   }
-  
-  /* Media query for larger screens */
-  @media screen and (min-width: 900px) {
-    .certificationContainer {
-      grid-template-columns: repeat(4, 1fr);
-    }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 900px) {
+  .certificationContainer {
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  /* Styles for external link icon */
-  .externalLinkIcon {
-    position: absolute;
-    opacity: 50%;
-    bottom: 20px;
-    cursor: pointer;
-    right: 20px;
-    width: 25px;
-    height: 25px;
-    background-image: url('../assets/icons/externalLinkIcon.png');
-  }
-  
-  /* Hover effect for external link icon */
-  .externalLinkIcon:hover {
-    opacity: 75%;
-  }
+}
+
+/* Styles for external link icon */
+.externalLinkIcon {
+  position: absolute;
+  opacity: 50%;
+  bottom: 20px;
+  cursor: pointer;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  background-image: url("../assets/icons/externalLinkIcon.png");
+}
+
+/* Hover effect for external link icon */
+.externalLinkIcon:hover {
+  opacity: 75%;
+}

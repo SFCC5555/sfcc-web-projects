@@ -1,156 +1,160 @@
 /* Styles for the about section */
 .aboutSection {
-    width: 100%;
-    height: 100svh;
-    position: fixed;
-    top: 58px;
-    padding: 60px 30px;
-    padding-bottom: 80px;
-    border-style: solid;
-    border-width: 2px;
-    right: 0px;
-    font-size: 1.5rem;
-    line-height: 3rem;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    z-index: 3;
-    animation-name: aboutAnimation;
-    animation-duration: 1.5s;
+  width: 100%;
+  height: 100svh;
+  position: fixed;
+  top: 58px;
+  padding: 60px 30px;
+  padding-bottom: 80px;
+  border-style: solid;
+  border-width: 2px;
+  right: 0px;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 3;
+  animation-name: aboutAnimation;
+  animation-duration: 1.5s;
+}
+
+/* Keyframe animation for the about section */
+@keyframes aboutAnimation {
+  0% {
+    width: 30%;
+    letter-spacing: -10px;
   }
-  
-  /* Keyframe animation for the about section */
+  100% {
+    width: 100%;
+    letter-spacing: 0px;
+  }
+}
+
+/* Styles for the close icon */
+.aboutSection .closeIcon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.closeIcon {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-family: var(--mainFont);
+  font-size: 3rem;
+  border-radius: 50%;
+  padding: 5px;
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover effect for the close icon */
+.closeIcon:hover {
+  border: 2.5px solid hsl(var(--darkColor), 0%);
+  transition-duration: 200ms;
+}
+
+/* Keyframe animation for spinning the close icon on hover */
+@media (prefers-reduced-motion: no-preference) {
+  .closeIcon:hover {
+    animation: closeIcon-spin 1 200ms linear;
+  }
+}
+
+@keyframes closeIcon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+/* Styles for links section */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.3rem;
+  align-self: flex-start;
+}
+
+.links div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.links div > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Styles for skill icons */
+a .skillIcon {
+  cursor: pointer;
+}
+
+/* Hover effect for GitHub, CV, LinkedIn, and Manfred icons */
+a:hover .gitHubIconLight,
+a:hover .gitHubIconDark {
+  background-image: url("../assets/icons/gitHubIconColor.png");
+}
+
+a:hover .cvIconLight,
+a:hover .cvIconDark {
+  background-image: url("../assets/icons/cvIconColor.png");
+}
+
+a:hover .linkedinIconLight,
+a:hover .linkedinIconDark {
+  background-image: url("../assets/icons/linkedinIconColor.png");
+}
+
+a:hover .manfredIconLight,
+a:hover .manfredIconDark {
+  background-image: url("../assets/icons/manfredIconColor.png");
+}
+
+/* Styles for inactive elements */
+.inactive {
+  display: none;
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 900px) {
+  .aboutSection {
+    width: 40%;
+    animation-name: aboutAnimation;
+    animation-duration: 1s;
+  }
+
+  /* Keyframe animation for the about section on larger screens */
   @keyframes aboutAnimation {
     0% {
-      width: 30%;
+      width: 15%;
       letter-spacing: -10px;
     }
     100% {
-      width: 100%;
+      width: 40%;
       letter-spacing: 0px;
     }
   }
-  
-  /* Styles for the close icon */
-  .aboutSection .closeIcon {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-  }
-  
-  .closeIcon {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    font-family: var(--mainFont);
-    font-size: 3rem;
-    border-radius: 50%;
-    padding: 5px;
-    border-style: solid;
-    border-width: 2px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Hover effect for the close icon */
-  .closeIcon:hover {
-    border: 2.5px solid hsl(var(--darkColor), 0%);
-    transition-duration: 200ms;
-  }
-  
-  /* Keyframe animation for spinning the close icon on hover */
-  @media (prefers-reduced-motion: no-preference) {
-    .closeIcon:hover {
-      animation: closeIcon-spin 1 200ms linear;
-    }
-  }
-  
-  @keyframes closeIcon-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(90deg);
-    }
-  }
-  
-  /* Styles for links section */
+
+  /* Adjust the position of the links section */
   .links {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 1.3rem;
-    align-self: flex-start;
+    top: 83%;
   }
-  
-  .links div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .links div > a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    cursor: pointer;
-  }
-  
-  /* Styles for skill icons */
-  a .skillIcon {
-    cursor: pointer;
-  }
-  
-  /* Hover effect for GitHub, CV, LinkedIn, and Manfred icons */
-  a:hover .gitHubIconLight, a:hover .gitHubIconDark {
-    background-image: url('../assets/icons/gitHubIconColor.png');
-  }
-  
-  a:hover .cvIconLight, a:hover .cvIconDark {
-    background-image: url('../assets/icons/cvIconColor.png');
-  }
-  
-  a:hover .linkedinIconLight, a:hover .linkedinIconDark {
-    background-image: url('../assets/icons/linkedinIconColor.png');
-  }
-  
-  a:hover .manfredIconLight, a:hover .manfredIconDark {
-    background-image: url('../assets/icons/manfredIconColor.png');
-  }
-  
-  /* Styles for inactive elements */
-  .inactive {
-    display: none;
-  }
-  
-  /* Media query for larger screens */
-  @media screen and (min-width: 900px) {
-    .aboutSection {
-      width: 40%;
-      animation-name: aboutAnimation;
-      animation-duration: 1s;
-    }
-  
-    /* Keyframe animation for the about section on larger screens */
-    @keyframes aboutAnimation {
-      0% {
-        width: 15%;
-        letter-spacing: -10px;
-      }
-      100% {
-        width: 40%;
-        letter-spacing: 0px;
-      }
-    }
-  
-    /* Adjust the position of the links section */
-    .links {
-      top: 83%;
-    }
-  }
+}

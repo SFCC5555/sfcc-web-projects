@@ -1,60 +1,60 @@
 /* Styles for the menu */
 .menu {
-    width: 320px;
-    position: fixed;
-    top: 58px;
-    padding: 40px 15px;
-    border-style: solid;
-    border-width: 2px;
-    left: 0px;
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100vh;
-    gap: 40px;
-    z-index: 2;
-    animation-name: menuAnimation;
-    animation-duration: 1s;
-  }
-  
+  width: 320px;
+  position: fixed;
+  top: 58px;
+  padding: 40px 15px;
+  border-style: solid;
+  border-width: 2px;
+  left: 0px;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+  gap: 40px;
+  z-index: 2;
+  animation-name: menuAnimation;
+  animation-duration: 1s;
+}
+
 /* Keyframe animation for the menu */
 @keyframes menuAnimation {
-0% {
+  0% {
     width: 150px;
     padding: 40px 0px;
     letter-spacing: -10px;
-}
-100% {
+  }
+  100% {
     width: 320px;
     padding: 40px 15px;
     letter-spacing: 0px;
-}
+  }
 }
 
 /* Styles for links in the menu */
 .menu a {
-text-decoration: none;
-cursor: pointer;
-margin-right: 60px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 60px;
 }
 
 /* Styles for the close icon in the menu */
 .menu .closeIcon {
-position: absolute;
-top: 15px;
-right: 15px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 /* CSS class to hide the element */
 .inactive {
-display: none;
+  display: none;
 }
 
 /* Media query for larger screens */
 @media screen and (min-width: 900px) {
-/* Adjusted styles for larger screens */
-.menu {
+  /* Adjusted styles for larger screens */
+  .menu {
     flex-direction: row;
     padding: 10px 20px;
     width: 700px;
@@ -65,31 +65,31 @@ display: none;
     justify-content: space-between;
     animation-name: menuAnimation;
     animation-duration: 1s;
-}
+  }
 
-/* Keyframe animation for the menu on larger screens */
-@keyframes menuAnimation {
+  /* Keyframe animation for the menu on larger screens */
+  @keyframes menuAnimation {
     0% {
-    width: 0px;
-    padding: 10px 0px;
-    letter-spacing: -10px;
-    gap: 0px;
+      width: 0px;
+      padding: 10px 0px;
+      letter-spacing: -10px;
+      gap: 0px;
     }
     100% {
-    width: 700px;
-    padding: 10px 20px;
-    letter-spacing: 0px;
-    gap: 25px;
+      width: 700px;
+      padding: 10px 20px;
+      letter-spacing: 0px;
+      gap: 25px;
     }
-}
+  }
 
-/* Adjusted styles for links in the menu on larger screens */
-.menu a {
+  /* Adjusted styles for links in the menu on larger screens */
+  .menu a {
     margin-right: 0px;
-}
+  }
 
-/* Hide the close icon on larger screens */
-.menu .closeIcon {
+  /* Hide the close icon on larger screens */
+  .menu .closeIcon {
     display: none;
-}
+  }
 }

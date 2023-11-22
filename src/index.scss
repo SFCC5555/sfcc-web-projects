@@ -1,28 +1,28 @@
 /* Define custom fonts */
 @font-face {
-  font-family: 'KAPITAL';
-  src: url('./assets/fonts/KAPITAL.ttf');
+  font-family: "KAPITAL";
+  src: url("./assets/fonts/KAPITAL.ttf");
 }
 
 @font-face {
-  font-family: 'Linkin';
-  src: url('./assets/fonts/linkin.ttf');
+  font-family: "Linkin";
+  src: url("./assets/fonts/linkin.ttf");
 }
 
 @font-face {
-  font-family: 'BankGothicBold';
-  src: url('./assets/fonts/BankGothicBold.ttf');
+  font-family: "BankGothicBold";
+  src: url("./assets/fonts/BankGothicBold.ttf");
 }
 
 /* Reset default styles */
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 /* Set the base font size for better responsiveness */
-html{
+html {
   font-size: 62.5%;
 }
 
@@ -34,20 +34,18 @@ html{
   --lightInverseColor: 213, 17%, 12%;
   --darkBaseColor: black;
   --lightBaseColor: rgb(195, 195, 195);
-  --jFont:'KAPITAL';
-  --mainFont:'BankGothicBold';
-  --secondFont:'Linkin';
+  --jFont: "KAPITAL";
+  --mainFont: "BankGothicBold";
+  --secondFont: "Linkin";
 }
 
 /* Define base styles for the body */
 body {
-  
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family:var(--mainFont);
+  font-family: var(--mainFont);
   padding: 80px 15px;
-
 }
 
 /* Define styles for the root element */
@@ -61,7 +59,7 @@ body {
 }
 
 /* Styles for the main heading */
-h1{
+h1 {
   font-size: 10rem;
   font-family: var(--mainFont);
 }
@@ -78,8 +76,7 @@ h1{
 }
 
 /* Define styles for light, dark, and other modes using SCSS variables */
-@each $mode in light, dark, {
-  
+@each $mode in light, dark {
   .#{$mode}Mode {
     background-color: hsl(var(--#{$mode}Color));
   }
@@ -87,31 +84,34 @@ h1{
   .#{$mode}ModeComponent {
     background-color: hsl(var(--#{$mode}Color));
     color: hsl(var(--#{$mode}InverseColor));
-    border-color: hsl(var(--#{$mode}InverseColor),25%);
+    border-color: hsl(var(--#{$mode}InverseColor), 25%);
   }
 
   .#{$mode}ModeComponent:hover {
     background-color: var(--#{$mode}BaseColor);
-    transition-duration:90s;
+    transition-duration: 90s;
   }
 
   .#{$mode}ModeElement {
     color: hsl(var(--#{$mode}InverseColor));
-    border-color: hsl(var(--#{$mode}InverseColor),25%);
+    border-color: hsl(var(--#{$mode}InverseColor), 25%);
     animation-name: #{$mode}ModeTextAnimation;
     animation-duration: 3s;
   }
 
   .#{$mode}ModeElement:hover {
-    color: hsl(var(--#{$mode}InverseColor),50%);
+    color: hsl(var(--#{$mode}InverseColor), 50%);
     transition-duration: 1s;
   }
-  
-  @keyframes #{$mode}ModeTextAnimation {
-    0% {color: hsl(var(--#{$mode}InverseColor),0%);}
-    100% {color: hsl(var(--#{$mode}InverseColor));}
-  }
 
+  @keyframes #{$mode}ModeTextAnimation {
+    0% {
+      color: hsl(var(--#{$mode}InverseColor), 0%);
+    }
+    100% {
+      color: hsl(var(--#{$mode}InverseColor));
+    }
+  }
 }
 
 .lightMode {

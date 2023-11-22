@@ -1,367 +1,510 @@
 {
-    "projects":[
-        {
-            "name":"The Wall",
-            "link":"https://sfcc-the-wall.netlify.app/",
-            "repository":"https://github.com/SFCC5555/the-wall",
-            "backendRepository":"https://github.com/SFCC5555/the-wall-manager",
-            "skillList":["Html","Css","JavaScript","React","Redux","Api","Sass","Tailwind","NodeJS","Express","MongoDB","Mongoose"],
-            "info":"This project is an interactive message wall that allows users to post messages with the option to include their signature or author's name and customize the text with various available fonts and colors. Regarding the development, the application's frontend has been built using a set of technologies, including HTML, CSS, JavaScript, React, SASS, Tailwind, and Redux. On the other hand, the backend has been developed with Node.js and Express, responsible for managing the message database stored in MongoDB. Additionally, to streamline interactions with the database, Mongoose has been utilized.",
-            "date":"August 2023"
-        },
-        {
-            "name":"Country Quiz",
-            "link":"https://sfcc-country-quiz.netlify.app/",
-            "repository":"https://github.com/SFCC5555/country-quiz",
-            "backendRepository":"https://github.com/SFCC5555/country-quiz-highscore-manager",
-            "skillList":["Html","Css","JavaScript","React","Redux","React-Router-V6","Api","Sass","Tailwind","Figma","NodeJS","Express","MongoDB","Mongoose"],
-            "info":"This project constitutes a challenge proposed by the devchallenges.io website and consists of a quiz game related to data from different countries. It has been developed using HTML, JavaScript, and React technologies. For styling, tools such as CSS, SASS, Tailwind, and Bootstrap icons have been employed. In terms of state management, Redux Toolkit has been utilized, and for handling routes, React Router v6 has been chosen. The game includes a scoring system that stores the highest local score in the browser's local storage. Furthermore, to record the highest global score among all users, a MongoDB database has been integrated. This database is managed through a Restful API developed with Node.js, Express, and Mongoose.",
-            "date":"August 2023"
-        },
-        {
-            "name":"Book List",
-            "link":"https://sfcc-book-list.netlify.app/",
-            "repository":"https://github.com/SFCC5555/pruebas-tecnicas/tree/main/pruebas/01-reading-list/SFCC5555",
-            "skillList":["Html","Css","JavaScript","Json","React","Redux","React-Router-V6","Sass","Tailwind"],
-            "info":"This project is a technical test for a reading list app developed with HTML, JavaScript, and React. Styling is achieved through CSS, SASS, Tailwind, and Bootstrap icons. Redux Toolkit is utilized for state management, while React Router v6 handles routes. The app offers a range of features, including viewing available books, creating personalized reading lists, filtering by genre and number of pages, and incorporating a title search engine. It ensures data persistence through browser local storage and boasts a responsive design for an improved user experience.",
-            "date":"July 2023"
-        },
-        {
-            "name":"Pomodoro Clock",
-            "link":"https://sfcc-pomodoro-clock.netlify.app/",
-            "repository":"https://github.com/SFCC5555/25-5-clock",
-            "skillList":["Html","Css","JavaScript","React","Redux","Sass","Bootstrap"],
-            "info":"This is the final project for obtaining the freeCodeCamp Front-End Development Libraries certification. It is a Pomodoro Clock designed to enhance productivity by allowing users to set session and break times. The clock includes buttons to start, pause, and reset the timer. By default, the clock is set to its initial state of 25 minutes for the session and 5 minutes for the break. The application also utilizes local storage to save the time configuration, and it offers a switch to toggle between light and dark modes. This project was developed using HTML, CSS, Sass, Bootstrap, JavaScript, React, and Redux Toolkit.",
-            "date":"July 2023"
-        },
-        {
-            "name":"Calculator App",
-            "link":"https://sfcc-calculator.netlify.app/",
-            "repository":"https://github.com/SFCC5555/calculator-app",
-            "skillList":["Html","Css","JavaScript","React","Redux","Json","Sass","Bootstrap","Figma"],
-            "info":"The Calculator App is the fourth project for achieving the freeCodeCamp Front-End Development Libraries certification, as well as a challenge from Frontend Mentor on which I based the design. It is a simple calculator that performs basic operations and offers three different themes that can be toggled using a switch control. The application was built using various technologies, including HTML, CSS, Sass, Bootstrap, JavaScript, JSON, React, Redux Toolkit, and Figma. It features a responsive design and follows a mobile-first approach.",
-            "date":"July 2023"
-        },
-        {
-            "name":"Drum Machine",
-            "link":"https://sfcc-drum-machine.netlify.app/",
-            "repository":"https://github.com/SFCC5555/drum-machine",
-            "skillList":["Html","Css","JavaScript","React","Redux","Json","Sass","Bootstrap"],
-            "info":"The third project of the freeCodeCamp Front End Development Libraries certification is a drum machine. It allows you to play different samples (sounds) to create tracks. The drum machine includes two kits of samples and provides buttons that are generated dynamically from a JSON file. You can play the samples by clicking on the buttons with the mouse or by using the corresponding keys on the keyboard. You can switch between the two kits by clicking a switch. Additionally, there is a power switch to turn on the drum machine or turn  off, also features a volume pad to control the volume level. The user interface presents a variety of colors and is designed to be responsive. The web application was built using HTML, JavaScript, and React, and styled using CSS, Sass, Bootstrap, and Bootstrap icons. All the application states are managed using Redux Toolkit.",
-            "date":"July 2023"
-        },
-        {
-            "name":"Markdown Previewer",
-            "link":"https://sfcc-markdown-previewer.netlify.app/",
-            "repository":"https://github.com/SFCC5555/markdown-previewer",
-            "skillList":["Html","Css","JavaScript","React","Redux","Sass","Bootstrap"],
-            "info":"This project is part of the freeCodeCamp Front End Development Libraries certification. It involves building a Markdown previewer using HTML, CSS, Sass, JavaScript, React, Redux Toolkit, and Bootstrap. The application consists of an Editor where you can write Markdown code and a Previewer that displays a live preview of the rendered Markdown. This functionality is achieved using the marked library. To enhance the styling, Bootstrap icons are incorporated. The app includes a button to toggle between dark and light mode, as well as another button to switch between various fonts. The states of these functionalities are managed using Redux Toolkit. Additionally, there are buttons to expand the Editor and the Previewer to full screen, and a button to download the content of the Editor as a Markdown file (.md).",
-            "date":"June 2023"
-        },
-        {
-            "name":"Random Quote Machine",
-            "link":"https://sfcc-random-quote-machine.netlify.app/",
-            "repository":"https://github.com/SFCC5555/random-quote-machine-freecodecamp",
-            "skillList":["Html","Css","JavaScript","React","Api","Bootstrap"],
-            "info":"This project is a part of the challenges required to earn the Front End Development Libraries certification from freeCodeCamp. It showcases a random quote machine that displays a random quote and its author, fetched from an API. The application provides buttons to repost the quote on Twitter or Tumblr. Additionally, there is a button to generate a new quote when clicked, and the theme color changes with each new quote. The project was developed using HTML, JavaScript, React, and styled with CSS and Bootstrap.",
-            "date":"June 2023"
-        },
-        {
-            "name":"The Ring",
-            "link":"https://the-ring-countdown.netlify.app/",
-            "repository":"https://github.com/SFCC5555/the-ring",
-            "skillList":["Html","Css","JavaScript","React","Redux","Json","Tailwind","Adobe-Illustrator"],
-            "info":"This project is a variation of \"The Final Countdown\" project, developed using HTML, JavaScript, and React, with CSS and Tailwind used for styling. JSON for the data of the supported languages, Redux for state management, and Adobe Illustrator for certain illustrations. In this version, the countdown is displayed in either days, hours, minutes, or seconds, and a button is provided to switch between these units of time. It is said that there is a curse associated with this web application, and it is not recommended to open it or be present when the countdown reaches zero.",
-            "date":"June 2023"
-        },
-        {
-            "name":"The Final Countdown",
-            "link":"https://sfcc-launch-countdown.netlify.app/",
-            "repository":"https://github.com/SFCC5555/launch-countdown-timer",
-            "skillList":["Html","Css","JavaScript","React","Redux","Json","Sass","Tailwind","Figma"],
-            "info":"This project is a launch countdown timer for an event. It was created as a challenge for the Front-end Mentor website, which provided the base design in a Figma file. The countdown timer displays the remaining time in days, hours, minutes, and seconds. It utilizes local storage and the browser's built-in Date object to remember the elapsed time even when the application is not open. Additionally, I implemented two buttons: one for switching between five languages and another for switching between five themes. The state management for these buttons is handled using Redux Toolkit. To support multi-language functionality, I integrated a JSON file that holds the text content for each supported language. The application itself was built using HTML, JavaScript, and React, and the styling was done using CSS, Sass and Tailwind CSS.",
-            "date":"June 2023"
-        },
-        {
-            "name":"Lazarus Project",
-            "link":"https://lazarus-project.netlify.app/",
-            "repository":"https://github.com/SFCC5555/new-space-tourism-website",
-            "skillList":["Html","Css","JavaScript","React","React-Router-V6","Json","Tailwind","Adobe-Illustrator"],
-            "info":"This is a reimagining of the 'Space Tourism Website' project that utilizes more advanced technologies such as React, React Router v6, and Tailwind. In addition to the previously used technologies like HTML, CSS, JavaScript, and JSON. These enhancements have significantly simplified the development process, transforming the page into a Single Page Application (SPA) with customized routes and subroutes for each section. This allows for an enhanced experience with reduced loading times. While maintaining its responsive design, the new version draws inspiration from the movie 'Interstellar' to provide a distinctive touch.",
-            "date":"June 2023"
-        },
-        {
-            "name":"Multi Step Form",
-            "link":"https://sfcc-multi-step-form.netlify.app/",
-            "repository":"https://github.com/SFCC5555/multi-step-form",
-            "skillList":["Html","Css","JavaScript","React","React-Router-V6","Tailwind","Figma"],
-            "info":"At Frontend Mentor, I took on another challenge: a multi-step form that presented different modes and options to choose from. Working with a base design provided in a Figma file, I utilized HTML, CSS, JavaScript, Tailwind CSS, and React.js for its development. It was my first practical experience using React Router v6, which allowed me to create a single-page application (SPA). This feature enabled me to have a custom route for each section and navigate between them, simplifying the programming logic in certain sections by using the pathname of the route as a variable. I also leveraged tools such as useState, useContext, and Custom Hooks, which further facilitated the construction of the form and strengthened my understanding of these concepts. Additionally, I implemented regular expressions to validate the input fields of the form.",
-            "date":"May 2023"
-        },
-        {
-            "name":"Rock Paper Scissors",
-            "link":"https://sfcc-rock-paper-scissors.netlify.app/",
-            "repository":"https://github.com/SFCC5555/rock-paper-scissors",
-            "skillList":["Html","Css","JavaScript","React","Json","Tailwind","Figma"],
-            "info":"This project is a challenge from Frontend Mentor. It consists of a rock, paper, scissors game with a base design provided in a Figma file. It was developed using HTML, CSS, JavaScript, Tailwind, and React.js. The game has two modes: \"NORMAL MODE\" and \"PRO MODE\", which can be toggled between, and pressing a button displays the corresponding rules for each mode. The score increases when winning, resets to zero when losing, and remains unchanged in case of a tie. A \"highscore\" system was implemented to store the highest scores along with the user's nickname using browser's local storage. I emphasize the application of advanced concepts, such as custom hooks, which helped avoid code repetition and facilitated state management and local storage updates. CSS animations were also added.",
-            "date":"May 2023"
-        },
-        {
-            "name":"The Social Network Comment Section",
-            "link":"https://the-social-network-comment-section.netlify.app/",
-            "repository":"https://github.com/SFCC5555/interactiveCommentsSection",
-            "skillList":["Html","Css","JavaScript","React","Json","Tailwind"],
-            "info":"This project is an interactive commenting section that allows users to comment, reply, edit, and delete comments, and vote on each of them. Users can create different accounts with their respective usernames and profile pictures and interact with each other. These accounts can also be deleted. Information persistence was implemented using local storage, so the browser will remember any changes made. Therefore, a reset button was implemented to restore the comments section to its initial state, which comes from a JSON file. It was developed using React and styled with CSS and Tailwind, with a responsive “mobile first” design. The use of tools such as useState and useContext facilitated the manipulation of states and variables to build a better organized and modular architecture.",
-            "date":"May 2023"
-        },
-        {
-            "name":"Age Calculator App",
-            "link":"https://sfcc-age-calculator-app.netlify.app/",
-            "repository":"https://github.com/SFCC5555/age-calculator-app",
-            "skillList":["Html","Css","TypeScript","React","Figma"],
-            "info":"This project is a challenge from Frontend Mentor, who provided the design through a Figma file. It is a simple yet useful application that allows users to calculate their age in years, months, and days. By entering their date of birth, the application automatically performs the calculation and ensures the accuracy of the information through field validation based on regular expressions. To develop the project, technologies such as HTML, CSS, React.js, and TypeScript were used, with the latter being my first approach to its basic and fundamental concepts, such as assigning types to each variable and using interfaces. The application is easy to use and has a responsive design that adapts to any mobile device.",
-            "date":"May 2023"
-        },
-        {
-            "name":"The Countries Database",
-            "link":"https://the-countries-database.netlify.app/",
-            "repository":"https://github.com/SFCC5555/the-countries-database",
-            "skillList":["Html","Css","JavaScript","React","Tailwind","Api","Figma"],
-            "info":"This web project utilizes HTML, CSS, Tailwind, JavaScript, and React.js. It was proposed by Frontend Mentor and is based on a design in a Figma file. The application displays country cards with information such as flag, population, region, and capital. The card container has a responsive design implemented with CSS Flexbox. When clicking on a card, additional information about the country is shown. Additionally, there are buttons that allow accessing details of border countries. The application features a search field and a filter by continent, implemented using regular expressions and functional programming. Country information is obtained from an API consumed using fetch and the useEffect hook. The management of states and communication between components through props facilitated the implementation of functionalities such as the dark mode.",
-            "date":"April 2023"
-        },
-        {
-            "name":"To-Do List With React",
-            "link":"https://react-to-do-list-sfcc.netlify.app/",
-            "repository":"https://github.com/SFCC5555/react-to-do-list",
-            "skillList":["Html","Css","JavaScript","React"],
-            "info":"This web application is a to-do list developed using HTML, CSS, JavaScript, and the React.js framework. It is an adaptation of the original 'To-Do List With JavaScript' project. The core functionality remains the same, allowing users to add, mark, and delete tasks interactively. Tasks are displayed in a container, and the counter updates in real-time. The application also includes buttons to delete all tasks or completed ones. It uses local storage to preserve data even when the page is reloaded, ensuring that previously added tasks remain visible and efficiently managed. Overall, this web application provides an intuitive and practical experience for organizing and tracking daily tasks. It's worth noting that thanks to React.js, it was easier to implement the functionalities and structure the code more efficiently.",
-            "date":"March 2023"
-        },
-        {
-            "name":"Super Calculator",
-            "link":"https://sfcc-super-calculator.netlify.app/",
-            "repository":"https://github.com/SFCC5555/super-calculator",
-            "skillList":["Html","Css","JavaScript","React"],
-            "info":"This web project is a simple calculator developed with React.js, HTML, CSS, and JavaScript. It allows performing mathematical operations with integers and decimals, including positive and negative values, such as addition, subtraction, multiplication, and division. The result of each operation is displayed on a screen within the interface. During the implementation, the concepts of React components and state management were reinforced. Both class components and functional components were used, making use of hooks like useState. Additionally, regular expressions were applied to validate the results and detect syntax errors or division by zero. The user interface also includes interactive buttons to input numbers and operations, and a button to clear the screen.",
-            "date":"March 2023"
-        },
-        {
-            "name":"Super Counter",
-            "link":"https://sfcc-super-counter.netlify.app/",
-            "repository":"https://github.com/SFCC5555/counter",
-            "skillList":["Html","Css","JavaScript","React"],
-            "info":"This web project is a counter developed with React.js that has allowed me to practice and gain a deeper understanding of the fundamental concepts of React. The counter starts at zero and can be incremented by one by clicking a button. Another button is included to reset the counter to zero. During the implementation, JSX elements were used, and both class and functional components were created. Additionally, the new concept of useState was applied to efficiently manage the state of the counter. Of course, HTML, CSS, and JavaScript were used to build this project. The user interface features a title, the counter display, interactive buttons, and a React logo animated with CSS, highlighting the use of this technology.",
-            "date":"March 2023"
-        },
-        {
-            "name":"Paradis",
-            "link":"https://paradis.netlify.app/",
-            "repository":"https://github.com/SFCC5555/comment-section-react",
-            "skillList":["Html","Css","JavaScript","React","Json"],
-            "info":"This project marks my first step in practicing React.js. Also using HTML, CSS, and JavaScript, I created a section of cards inspired by the characters from the anime 'Attack on Titan'. Thanks to JSX elements, I developed a component that allowed me to dynamically implement the cards loaded from a JSON file. Each card features the character's image, name, location, position, and an iconic quote. Through this experience, I was able to gain familiarity with the fundamentals of React and explore its potential in web development in a practical and enjoyable way.",
-            "date":"March 2023"
-        },
-        {
-            "name":"To-Do List With JavaScript",
-            "link":"https://sfcc-to-do-list.netlify.app/",
-            "repository":"https://github.com/SFCC5555/to-doListJavaScript",
-            "skillList":["Html","Css","JavaScript"],
-            "info":"This is a web application of a to-do list developed with HTML, CSS, and JavaScript. Through JavaScript and functional programming techniques, interactive functionalities were implemented to add, mark, and delete tasks. The tasks are displayed in a container, and the task counter is updated. The application also provides options to delete all tasks or completed tasks using buttons. Additionally, it utilizes local storage to persist tasks, ensuring that the data remains even when the page is reloaded. This ensures that previously added tasks are visible and can be efficiently managed. Overall, this web application provides an intuitive and practical experience for organizing and tracking daily tasks.",
-            "date":"March 2023"
-        },
-        {
-            "name":"ip Address Tracker",
-            "link":"https://sfcc-ip-address-tracker.netlify.app/",
-            "repository":"https://github.com/SFCC5555/ipAddressTrackerMaster",
-            "skillList":["Html","Css","JavaScript","Api","Figma"],
-            "info":"The project focuses on a web application that tracks the location of an entered IP address. To accomplish this, two APIs are utilized: one for obtaining the location data and another for displaying it on an interactive map, similar to Google Maps. The APIs are accessed using the Fetch tool in JavaScript. The project is developed using HTML, CSS, and JavaScript, with attention given to responsive design to ensure proper display on various devices.",
-            "date":"February 2023"
-        },
-        {
-            "name":"Space Tourism Website",
-            "link":"https://5pace.netlify.app/",
-            "repository":"https://github.com/SFCC5555/spaceTourismWebsite",
-            "skillList":["Html","Css","JavaScript","Json","Figma"],
-            "info":"The project is an informative website about space travel, created as a challenge by Frontend Mentor. The design, coming from a Figma file, was implemented using HTML, CSS, and JavaScript. To obtain dynamic data, a JSON file is used. The main focus was to develop a responsive design following the 'mobile-first' approach, making it accessible and appealing on every device. Each section is presented in separate tabs, where users can explore space destinations, information about the crew, and the technology used. These tabs offer an interactive experience, allowing users to click on elements for more details on each aspect. With its modern design and dynamic functionality, the website provides an immersive and educational experience for space enthusiasts.",
-            "date":"December 2022"
-        },
-        {
-            "name":"Splitter Tip Calculator App",
-            "link":"https://sfcc-tip-calculator.netlify.app/",
-            "repository":"https://github.com/SFCC5555/tipCalculatorApp",
-            "skillList":["Html","Css","JavaScript","Figma"],
-            "info":"This project focuses on creating a small web application for calculating tips. Frontend Mentor provided the application design in a Figma file. The main functionality of the application is to calculate the tip based on user-entered data, such as the total bill amount, tip percentage, and number of people. The application returns the tip amount per person and the total bill amount per person, including the tip. HTML, CSS, and JavaScript were used for the development of this project. HTML was responsible for structuring the page, CSS was used to style and give it an appealing design, and JavaScript was implemented to perform the calculations and dynamically display the results. In addition, special attention has been given to the responsive design of the application.",
-            "date":"November 2022"
-        },
-        {
-            "name":"Advice Generator",
-            "link":"https://superadvicegenerator.netlify.app/",
-            "repository":"https://github.com/SFCC5555/adviceGeneratorApp",
-            "skillList":["Html","Css","JavaScript","Api","Figma"],
-            "info":"This project is based on a challenge proposed by Frontend Mentor, which involves creating an advice generator. The design of the generator was provided through a Figma file. The application connects to an API using the Fetch tool, representing my first experience in handling Fetch and promises in JavaScript. The application works as follows: when clicking a button, a random advice is requested from the API and displayed on the screen. HTML, CSS, and JavaScript are used to implement this functionality, and as always, attention has been given to responsive design to ensure an optimal experience on different devices.",
-            "date":"November 2022"
-        },
-        {
-            "name":"Time Tracking Dashboard",
-            "link":"https://sfcc-time-tracking-dashboard.netlify.app/",
-            "repository":"https://github.com/SFCC5555/timeTrackingDashboard",
-            "skillList":["Html","Css","JavaScript","Json","Figma"],
-            "info":"This project focuses on the layout of a time tracking dashboard, which is a challenge proposed by Frontend Mentor. The design of the dashboard was provided in a Figma file. For the development of this project, HTML, CSS, and JavaScript were used again, with an emphasis on responsive design. The information is dynamically implemented through a JSON file, allowing for flexible updates of the dashboard data. Additionally, a functionality has been implemented that allows users to switch between daily, weekly, or monthly information views. Regarding styling, CSS Flexbox has been used to achieve a proper structure and design in the time tracking dashboard.",
-            "date": "November 2022"
-        },
-        {
-            "name":"Xpenses Chart",
-            "link":"https://xpenseschart.netlify.app/",
-            "repository":"https://github.com/SFCC5555/expensesChartComponent",
-            "skillList":["Html","Css","JavaScript","Json","Figma"],
-            "info":"This project focuses on the layout using HTML, CSS, and JavaScript of an expenses chart component proposed by Front end Mentor website, whose design was provided in a Figma file. The objective is to allow users to virtually visualize daily expenses for the week, represented in columns. When hovering over the columns, the corresponding amount of money is displayed. This functionality is implemented using JavaScript. Additionally, a feature is added to highlight the column of the current day with a different color, making it easier to visually identify the current day. A notable aspect of this project is the dynamic implementation of information from a JSON file. This enables flexible and automatic updating and loading of expense data.",
-            "date": "November 2022"
-        },
-        {
-            "name":"Credit Card Form",
-            "link":"https://sfcccreditcard.netlify.app/",
-            "repository":"https://github.com/SFCC5555/interactiveCardDetailsForm",
-            "skillList":["Html","Css","JavaScript","Figma"],
-            "info":"This project focuses on the creation of an interactive credit card detail form, which is a challenge proposed by Frontend Mentor. The design was provided in a Figma file. For its development, HTML, CSS, and JavaScript were used, with a focus on responsive design to ensure proper adaptation to any device. Each field of the form has validations that prevent the user from entering incorrect values. If an error is detected, a customized error message is displayed based on the type of error committed. Additionally, the entered information is updated in real-time on a template, thanks to the functions implemented with JavaScript. Once the form data is successfully submitted, a thank you message is displayed to the user.",
-            "date": "October 2022"
-        },
-        {
-            "name":"The Social Network Notifications Page",
-            "link":"https://sfcc-socialnetwork-notifications.netlify.app/",
-            "repository":"https://github.com/SFCC5555/notificationsPageMain",
-            "skillList":["Html","Css","JavaScript","Figma"],
-            "info":"Continuing with the practice and study of web layout using HTML, CSS, JavaScript, and responsive design, this project focuses on creating a notifications section for a social media platform. It features a single functionality that allows users to mark notifications as read by clicking a button. One notable aspect of this project is that instead of directly implementing the notifications in the HTML file, they are dynamically added using JavaScript objects, functions, and DOM manipulation. This project helped solidify knowledge in web layout using HTML, CSS, and JavaScript, while also delving deeper into DOM manipulation, and dynamic content creation.",
-            "date": "October 2022"
-        },
-        {
-            "name":"Snap Intro Section",
-            "link":"https://sfcc-snap-intro-section.netlify.app/",
-            "repository":"https://github.com/SFCC5555/introSectionWithDropdownNavigation",
-            "skillList":["Html","Css","JavaScript","Figma"],
-            "info":"This project is about the layout of a homepage for a web application, as part of a challenge provided by the Frontend Mentor website. The design of the homepage was provided in a Figma file, which I used as a reference. I used fundamental technologies such as HTML, CSS, and basic JavaScript functions, with which I implemented dropdown menus in the navigation bar. The homepage has a responsive design, which means it adapts and displays correctly on different devices such as desktop computers, tablets, and mobile phones. The development process allowed me to gain practical experience in web layout and design, as well as in implementing responsive design concepts and basic functionalities using JavaScript.",
-            "date": "October 2022"
-        },
-        {
-            "name":"Interactive Rating Component",
-            "link":"https://sfccrating.netlify.app/",
-            "repository":"https://github.com/SFCC5555/interactiveRatingComponent",
-            "skillList":["Html","Css","JavaScript","Figma"],
-            "info":"This project is about a web component designed to allow users to rate a simulated mobile application with up to 5 stars. The project was developed as a challenge by Front End Mentor, who provided the design via a Figma file. The component is built with HTML, CSS, and JavaScript and features interactive animations for each star, which creates a more engaging rating experience for the user. DOM manipulation and tools like addEventListener were used to achieve this effect. After the user rates the application, a modal is displayed with a gratitude message.",
-            "date": "October 2022"
-        },
-        {
-            "name":"Wall Calculator",
-            "link":"https://sfcc-wall-calculator.netlify.app/",
-            "repository":"https://github.com/SFCC5555/WALL",
-            "skillList":["Html","Css","JavaScript","Adobe-Illustrator"],
-            "info":"This project is a web app that allows users with civil engineering knowledge to calculate the stability of retaining walls. Users can input soil parameters and wall dimensions to perform a stability analysis in terms of overturning, sliding, and load-bearing capacity, following Coulomb's theory. The app includes a scheme created with Adobe Illustrator, which facilitates dimension entry. The calculations are performed using mathematical formulas implemented in JavaScript. If the analysis results do not meet the stability criteria, messages will be displayed indicating it and suggesting adjustments to the wall dimensions. On the other hand, a confirmation message will be shown in case of successful compliance with the criteria. A dropdown menu facilitates access to different calculation sections.",
-            "date": "September 2022"
-        }
-    ],
-    "certifications":[
-
-        {
-            "name":"back-endDevelopmentAndAPIs",
-            "link":"https://www.freecodecamp.org/certification/SFCC5555/back-end-development-and-apis",
-            "date":"August 2023"
-        }, 
-        {
-            "name":"front-endDevelopmentLibraries",
-            "link":"https://freecodecamp.org/certification/SFCC5555/front-end-development-libraries",
-            "date":"July 2023"
-        },       
-        {
-            "name":"javaScriptBasicHackerRank",
-            "link":"https://www.hackerrank.com/certificates/dcc69937ef49",
-            "date":"April 2023"
-        },
-        {
-            "name":"javaScriptAlgorithmsandDataStructures",
-            "link":"https://www.freecodecamp.org/certification/SFCC5555/javascript-algorithms-and-data-structures",
-            "date":"March 2023"
-        },
-        {
-            "name":"introduccionAReactJS",
-            "link":"introduccionAReactJS.pdf",
-            "date":"March 2023"
-        },
-        {
-            "name":"npm",
-            "link":"npm.pdf",
-            "date":"February 2023"
-        },
-        {
-            "name":"advancedEnglishCourseForDevelopers",
-            "link":"advancedEnglishCourseForDevelopers.pdf",
-            "date":"February 2023"
-        },
-        {
-            "name":"expresionesRegulares",
-            "link":"expresionesRegulares.pdf",
-            "date":"February 2023"
-        },
-        {
-            "name":"ecmaScript6Plus",
-            "link":"ecmaScript6Plus.pdf",
-            "date":"January 2023"
-        },
-        {
-            "name":"asincronismoConJavaScript",
-            "link":"asincronismoConJavaScript.pdf",
-            "date":"January 2023"
-        },
-        {
-            "name":"gitYGitHub",
-            "link":"gitYGitHub.pdf",
-            "date":"October 2022"
-        },
-        {
-            "name":"javaScriptPractico",
-            "link":"javaScriptPractico.pdf",
-            "date":"September 2022"
-        },
-        {
-            "name":"mobileFirst",
-            "link":"mobileFirst.pdf",
-            "date":"August 2022"
-        },
-        {
-            "name":"htmlYCss",
-            "link":"dhtmlYCss.pdf",
-            "date":"August 2022"
-        },
-        {
-            "name":"frontendDeveloperPractico",
-            "link":"frontendDeveloperPractico.pdf",
-            "date":"August 2022"
-        },
-        {
-            "name":"frontendDeveloper",
-            "link":"frontendDeveloper.pdf",
-            "date":"August 2022"
-        },
-        {
-            "name":"cssGridYFlexbox",
-            "link":"cssGridYFlexbox.pdf",
-            "date":"August 2022"
-        },
-        {
-            "name":"javaScriptBasico",
-            "link":"javaScriptBasico.pdf",
-            "date":"August 2022"
-        },
-        {
-            "name":"cssGridLayout",
-            "link":"cssGridLayout.pdf",
-            "date":"July 2022"
-        },
-        {
-            "name":"ingenieroCivil",
-            "link":"ingenieroCivil.pdf",
-            "date":"November 2019"
-        }
-        
-    ]
+  "projects": [
+    {
+      "name": "Buydepa",
+      "link": "https://buydepa.com/",
+      "backendRepository": "private repository",
+      "skillList": [
+        "JavaScript",
+        "TypeScript",
+        "Api",
+        "Json",
+        "NodeJS",
+        "MySQL",
+        "GraphQL",
+        "Docker",
+        "Postman",
+        "Strapi"
+      ],
+      "info": "As a Backend Developer on the Technology team at PropTech Buydepa, I collaborated closely with the frontend, design, and other departments to carry out the development of the company's web application. My main responsibility was the creation of various key functionalities to ensure the efficient and effective operation of the application, using technologies such as JavaScript, TypeScript, Node.js, MySQL, GraphQL, Docker, Postman and Strapi. This experience not only allowed me to strengthen my skills in backend development but also to work effectively in collaboration with multidisciplinary teams, contributing significantly to the overall success of Buydepa's web application project.",
+      "date": "October-November 2023"
+    },
+    {
+      "name": "The Wall",
+      "link": "https://sfcc-the-wall.netlify.app/",
+      "repository": "https://github.com/SFCC5555/the-wall",
+      "backendRepository": "https://github.com/SFCC5555/the-wall-manager",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Api",
+        "Sass",
+        "Tailwind",
+        "NodeJS",
+        "Express",
+        "MongoDB",
+        "Mongoose",
+        "Postman"
+      ],
+      "info": "This project is an interactive message wall that allows users to post messages with the option to include their signature or author's name and customize the text with various available fonts and colors. Regarding the development, the application's frontend has been built using a set of technologies, including HTML, CSS, JavaScript, React, SASS, Tailwind, and Redux. On the other hand, the backend has been developed with Node.js and Express, responsible for managing the message database stored in MongoDB. Additionally, to streamline interactions with the database, Mongoose has been utilized.",
+      "date": "August 2023"
+    },
+    {
+      "name": "Country Quiz",
+      "link": "https://sfcc-country-quiz.netlify.app/",
+      "repository": "https://github.com/SFCC5555/country-quiz",
+      "backendRepository": "https://github.com/SFCC5555/country-quiz-highscore-manager",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Redux",
+        "React-Router-V6",
+        "Api",
+        "Sass",
+        "Tailwind",
+        "Figma",
+        "NodeJS",
+        "Express",
+        "MongoDB",
+        "Mongoose",
+        "Postman"
+      ],
+      "info": "This project constitutes a challenge proposed by the devchallenges.io website and consists of a quiz game related to data from different countries. It has been developed using HTML, JavaScript, and React technologies. For styling, tools such as CSS, SASS, Tailwind, and Bootstrap icons have been employed. In terms of state management, Redux Toolkit has been utilized, and for handling routes, React Router v6 has been chosen. The game includes a scoring system that stores the highest local score in the browser's local storage. Furthermore, to record the highest global score among all users, a MongoDB database has been integrated. This database is managed through a Restful API developed with Node.js, Express, and Mongoose.",
+      "date": "August 2023"
+    },
+    {
+      "name": "Book List",
+      "link": "https://sfcc-book-list.netlify.app/",
+      "repository": "https://github.com/SFCC5555/pruebas-tecnicas/tree/main/pruebas/01-reading-list/SFCC5555",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "Json",
+        "React",
+        "Redux",
+        "React-Router-V6",
+        "Sass",
+        "Tailwind"
+      ],
+      "info": "This project is a technical test for a reading list app developed with HTML, JavaScript, and React. Styling is achieved through CSS, SASS, Tailwind, and Bootstrap icons. Redux Toolkit is utilized for state management, while React Router v6 handles routes. The app offers a range of features, including viewing available books, creating personalized reading lists, filtering by genre and number of pages, and incorporating a title search engine. It ensures data persistence through browser local storage and boasts a responsive design for an improved user experience.",
+      "date": "July 2023"
+    },
+    {
+      "name": "Pomodoro Clock",
+      "link": "https://sfcc-pomodoro-clock.netlify.app/",
+      "repository": "https://github.com/SFCC5555/25-5-clock",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Sass",
+        "Bootstrap"
+      ],
+      "info": "This is the final project for obtaining the freeCodeCamp Front-End Development Libraries certification. It is a Pomodoro Clock designed to enhance productivity by allowing users to set session and break times. The clock includes buttons to start, pause, and reset the timer. By default, the clock is set to its initial state of 25 minutes for the session and 5 minutes for the break. The application also utilizes local storage to save the time configuration, and it offers a switch to toggle between light and dark modes. This project was developed using HTML, CSS, Sass, Bootstrap, JavaScript, React, and Redux Toolkit.",
+      "date": "July 2023"
+    },
+    {
+      "name": "Calculator App",
+      "link": "https://sfcc-calculator.netlify.app/",
+      "repository": "https://github.com/SFCC5555/calculator-app",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Json",
+        "Sass",
+        "Bootstrap",
+        "Figma"
+      ],
+      "info": "The Calculator App is the fourth project for achieving the freeCodeCamp Front-End Development Libraries certification, as well as a challenge from Frontend Mentor on which I based the design. It is a simple calculator that performs basic operations and offers three different themes that can be toggled using a switch control. The application was built using various technologies, including HTML, CSS, Sass, Bootstrap, JavaScript, JSON, React, Redux Toolkit, and Figma. It features a responsive design and follows a mobile-first approach.",
+      "date": "July 2023"
+    },
+    {
+      "name": "Drum Machine",
+      "link": "https://sfcc-drum-machine.netlify.app/",
+      "repository": "https://github.com/SFCC5555/drum-machine",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Json",
+        "Sass",
+        "Bootstrap"
+      ],
+      "info": "The third project of the freeCodeCamp Front End Development Libraries certification is a drum machine. It allows you to play different samples (sounds) to create tracks. The drum machine includes two kits of samples and provides buttons that are generated dynamically from a JSON file. You can play the samples by clicking on the buttons with the mouse or by using the corresponding keys on the keyboard. You can switch between the two kits by clicking a switch. Additionally, there is a power switch to turn on the drum machine or turn  off, also features a volume pad to control the volume level. The user interface presents a variety of colors and is designed to be responsive. The web application was built using HTML, JavaScript, and React, and styled using CSS, Sass, Bootstrap, and Bootstrap icons. All the application states are managed using Redux Toolkit.",
+      "date": "July 2023"
+    },
+    {
+      "name": "Markdown Previewer",
+      "link": "https://sfcc-markdown-previewer.netlify.app/",
+      "repository": "https://github.com/SFCC5555/markdown-previewer",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Sass",
+        "Bootstrap"
+      ],
+      "info": "This project is part of the freeCodeCamp Front End Development Libraries certification. It involves building a Markdown previewer using HTML, CSS, Sass, JavaScript, React, Redux Toolkit, and Bootstrap. The application consists of an Editor where you can write Markdown code and a Previewer that displays a live preview of the rendered Markdown. This functionality is achieved using the marked library. To enhance the styling, Bootstrap icons are incorporated. The app includes a button to toggle between dark and light mode, as well as another button to switch between various fonts. The states of these functionalities are managed using Redux Toolkit. Additionally, there are buttons to expand the Editor and the Previewer to full screen, and a button to download the content of the Editor as a Markdown file (.md).",
+      "date": "June 2023"
+    },
+    {
+      "name": "Random Quote Machine",
+      "link": "https://sfcc-random-quote-machine.netlify.app/",
+      "repository": "https://github.com/SFCC5555/random-quote-machine-freecodecamp",
+      "skillList": ["Html", "Css", "JavaScript", "React", "Api", "Bootstrap"],
+      "info": "This project is a part of the challenges required to earn the Front End Development Libraries certification from freeCodeCamp. It showcases a random quote machine that displays a random quote and its author, fetched from an API. The application provides buttons to repost the quote on Twitter or Tumblr. Additionally, there is a button to generate a new quote when clicked, and the theme color changes with each new quote. The project was developed using HTML, JavaScript, React, and styled with CSS and Bootstrap.",
+      "date": "June 2023"
+    },
+    {
+      "name": "The Ring",
+      "link": "https://the-ring-countdown.netlify.app/",
+      "repository": "https://github.com/SFCC5555/the-ring",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Json",
+        "Tailwind",
+        "Adobe-Illustrator"
+      ],
+      "info": "This project is a variation of \"The Final Countdown\" project, developed using HTML, JavaScript, and React, with CSS and Tailwind used for styling. JSON for the data of the supported languages, Redux for state management, and Adobe Illustrator for certain illustrations. In this version, the countdown is displayed in either days, hours, minutes, or seconds, and a button is provided to switch between these units of time. It is said that there is a curse associated with this web application, and it is not recommended to open it or be present when the countdown reaches zero.",
+      "date": "June 2023"
+    },
+    {
+      "name": "The Final Countdown",
+      "link": "https://sfcc-launch-countdown.netlify.app/",
+      "repository": "https://github.com/SFCC5555/launch-countdown-timer",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Json",
+        "Sass",
+        "Tailwind",
+        "Figma"
+      ],
+      "info": "This project is a launch countdown timer for an event. It was created as a challenge for the Front-end Mentor website, which provided the base design in a Figma file. The countdown timer displays the remaining time in days, hours, minutes, and seconds. It utilizes local storage and the browser's built-in Date object to remember the elapsed time even when the application is not open. Additionally, I implemented two buttons: one for switching between five languages and another for switching between five themes. The state management for these buttons is handled using Redux Toolkit. To support multi-language functionality, I integrated a JSON file that holds the text content for each supported language. The application itself was built using HTML, JavaScript, and React, and the styling was done using CSS, Sass and Tailwind CSS.",
+      "date": "June 2023"
+    },
+    {
+      "name": "Lazarus Project",
+      "link": "https://lazarus-project.netlify.app/",
+      "repository": "https://github.com/SFCC5555/new-space-tourism-website",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "React-Router-V6",
+        "Json",
+        "Tailwind",
+        "Adobe-Illustrator"
+      ],
+      "info": "This is a reimagining of the 'Space Tourism Website' project that utilizes more advanced technologies such as React, React Router v6, and Tailwind. In addition to the previously used technologies like HTML, CSS, JavaScript, and JSON. These enhancements have significantly simplified the development process, transforming the page into a Single Page Application (SPA) with customized routes and subroutes for each section. This allows for an enhanced experience with reduced loading times. While maintaining its responsive design, the new version draws inspiration from the movie 'Interstellar' to provide a distinctive touch.",
+      "date": "June 2023"
+    },
+    {
+      "name": "Multi Step Form",
+      "link": "https://sfcc-multi-step-form.netlify.app/",
+      "repository": "https://github.com/SFCC5555/multi-step-form",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "React-Router-V6",
+        "Tailwind",
+        "Figma"
+      ],
+      "info": "At Frontend Mentor, I took on another challenge: a multi-step form that presented different modes and options to choose from. Working with a base design provided in a Figma file, I utilized HTML, CSS, JavaScript, Tailwind CSS, and React.js for its development. It was my first practical experience using React Router v6, which allowed me to create a single-page application (SPA). This feature enabled me to have a custom route for each section and navigate between them, simplifying the programming logic in certain sections by using the pathname of the route as a variable. I also leveraged tools such as useState, useContext, and Custom Hooks, which further facilitated the construction of the form and strengthened my understanding of these concepts. Additionally, I implemented regular expressions to validate the input fields of the form.",
+      "date": "May 2023"
+    },
+    {
+      "name": "Rock Paper Scissors",
+      "link": "https://sfcc-rock-paper-scissors.netlify.app/",
+      "repository": "https://github.com/SFCC5555/rock-paper-scissors",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Json",
+        "Tailwind",
+        "Figma"
+      ],
+      "info": "This project is a challenge from Frontend Mentor. It consists of a rock, paper, scissors game with a base design provided in a Figma file. It was developed using HTML, CSS, JavaScript, Tailwind, and React.js. The game has two modes: \"NORMAL MODE\" and \"PRO MODE\", which can be toggled between, and pressing a button displays the corresponding rules for each mode. The score increases when winning, resets to zero when losing, and remains unchanged in case of a tie. A \"highscore\" system was implemented to store the highest scores along with the user's nickname using browser's local storage. I emphasize the application of advanced concepts, such as custom hooks, which helped avoid code repetition and facilitated state management and local storage updates. CSS animations were also added.",
+      "date": "May 2023"
+    },
+    {
+      "name": "The Social Network Comment Section",
+      "link": "https://the-social-network-comment-section.netlify.app/",
+      "repository": "https://github.com/SFCC5555/interactiveCommentsSection",
+      "skillList": ["Html", "Css", "JavaScript", "React", "Json", "Tailwind"],
+      "info": "This project is an interactive commenting section that allows users to comment, reply, edit, and delete comments, and vote on each of them. Users can create different accounts with their respective usernames and profile pictures and interact with each other. These accounts can also be deleted. Information persistence was implemented using local storage, so the browser will remember any changes made. Therefore, a reset button was implemented to restore the comments section to its initial state, which comes from a JSON file. It was developed using React and styled with CSS and Tailwind, with a responsive “mobile first” design. The use of tools such as useState and useContext facilitated the manipulation of states and variables to build a better organized and modular architecture.",
+      "date": "May 2023"
+    },
+    {
+      "name": "Age Calculator App",
+      "link": "https://sfcc-age-calculator-app.netlify.app/",
+      "repository": "https://github.com/SFCC5555/age-calculator-app",
+      "skillList": ["Html", "Css", "TypeScript", "React", "Figma"],
+      "info": "This project is a challenge from Frontend Mentor, who provided the design through a Figma file. It is a simple yet useful application that allows users to calculate their age in years, months, and days. By entering their date of birth, the application automatically performs the calculation and ensures the accuracy of the information through field validation based on regular expressions. To develop the project, technologies such as HTML, CSS, React.js, and TypeScript were used, with the latter being my first approach to its basic and fundamental concepts, such as assigning types to each variable and using interfaces. The application is easy to use and has a responsive design that adapts to any mobile device.",
+      "date": "May 2023"
+    },
+    {
+      "name": "The Countries Database",
+      "link": "https://the-countries-database.netlify.app/",
+      "repository": "https://github.com/SFCC5555/the-countries-database",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "React",
+        "Tailwind",
+        "Api",
+        "Figma"
+      ],
+      "info": "This web project utilizes HTML, CSS, Tailwind, JavaScript, and React.js. It was proposed by Frontend Mentor and is based on a design in a Figma file. The application displays country cards with information such as flag, population, region, and capital. The card container has a responsive design implemented with CSS Flexbox. When clicking on a card, additional information about the country is shown. Additionally, there are buttons that allow accessing details of border countries. The application features a search field and a filter by continent, implemented using regular expressions and functional programming. Country information is obtained from an API consumed using fetch and the useEffect hook. The management of states and communication between components through props facilitated the implementation of functionalities such as the dark mode.",
+      "date": "April 2023"
+    },
+    {
+      "name": "To-Do List With React",
+      "link": "https://react-to-do-list-sfcc.netlify.app/",
+      "repository": "https://github.com/SFCC5555/react-to-do-list",
+      "skillList": ["Html", "Css", "JavaScript", "React"],
+      "info": "This web application is a to-do list developed using HTML, CSS, JavaScript, and the React.js framework. It is an adaptation of the original 'To-Do List With JavaScript' project. The core functionality remains the same, allowing users to add, mark, and delete tasks interactively. Tasks are displayed in a container, and the counter updates in real-time. The application also includes buttons to delete all tasks or completed ones. It uses local storage to preserve data even when the page is reloaded, ensuring that previously added tasks remain visible and efficiently managed. Overall, this web application provides an intuitive and practical experience for organizing and tracking daily tasks. It's worth noting that thanks to React.js, it was easier to implement the functionalities and structure the code more efficiently.",
+      "date": "March 2023"
+    },
+    {
+      "name": "Super Calculator",
+      "link": "https://sfcc-super-calculator.netlify.app/",
+      "repository": "https://github.com/SFCC5555/super-calculator",
+      "skillList": ["Html", "Css", "JavaScript", "React"],
+      "info": "This web project is a simple calculator developed with React.js, HTML, CSS, and JavaScript. It allows performing mathematical operations with integers and decimals, including positive and negative values, such as addition, subtraction, multiplication, and division. The result of each operation is displayed on a screen within the interface. During the implementation, the concepts of React components and state management were reinforced. Both class components and functional components were used, making use of hooks like useState. Additionally, regular expressions were applied to validate the results and detect syntax errors or division by zero. The user interface also includes interactive buttons to input numbers and operations, and a button to clear the screen.",
+      "date": "March 2023"
+    },
+    {
+      "name": "Super Counter",
+      "link": "https://sfcc-super-counter.netlify.app/",
+      "repository": "https://github.com/SFCC5555/counter",
+      "skillList": ["Html", "Css", "JavaScript", "React"],
+      "info": "This web project is a counter developed with React.js that has allowed me to practice and gain a deeper understanding of the fundamental concepts of React. The counter starts at zero and can be incremented by one by clicking a button. Another button is included to reset the counter to zero. During the implementation, JSX elements were used, and both class and functional components were created. Additionally, the new concept of useState was applied to efficiently manage the state of the counter. Of course, HTML, CSS, and JavaScript were used to build this project. The user interface features a title, the counter display, interactive buttons, and a React logo animated with CSS, highlighting the use of this technology.",
+      "date": "March 2023"
+    },
+    {
+      "name": "Paradis",
+      "link": "https://paradis.netlify.app/",
+      "repository": "https://github.com/SFCC5555/comment-section-react",
+      "skillList": ["Html", "Css", "JavaScript", "React", "Json"],
+      "info": "This project marks my first step in practicing React.js. Also using HTML, CSS, and JavaScript, I created a section of cards inspired by the characters from the anime 'Attack on Titan'. Thanks to JSX elements, I developed a component that allowed me to dynamically implement the cards loaded from a JSON file. Each card features the character's image, name, location, position, and an iconic quote. Through this experience, I was able to gain familiarity with the fundamentals of React and explore its potential in web development in a practical and enjoyable way.",
+      "date": "March 2023"
+    },
+    {
+      "name": "To-Do List With JavaScript",
+      "link": "https://sfcc-to-do-list.netlify.app/",
+      "repository": "https://github.com/SFCC5555/to-doListJavaScript",
+      "skillList": ["Html", "Css", "JavaScript"],
+      "info": "This is a web application of a to-do list developed with HTML, CSS, and JavaScript. Through JavaScript and functional programming techniques, interactive functionalities were implemented to add, mark, and delete tasks. The tasks are displayed in a container, and the task counter is updated. The application also provides options to delete all tasks or completed tasks using buttons. Additionally, it utilizes local storage to persist tasks, ensuring that the data remains even when the page is reloaded. This ensures that previously added tasks are visible and can be efficiently managed. Overall, this web application provides an intuitive and practical experience for organizing and tracking daily tasks.",
+      "date": "March 2023"
+    },
+    {
+      "name": "ip Address Tracker",
+      "link": "https://sfcc-ip-address-tracker.netlify.app/",
+      "repository": "https://github.com/SFCC5555/ipAddressTrackerMaster",
+      "skillList": ["Html", "Css", "JavaScript", "Api", "Figma"],
+      "info": "The project focuses on a web application that tracks the location of an entered IP address. To accomplish this, two APIs are utilized: one for obtaining the location data and another for displaying it on an interactive map, similar to Google Maps. The APIs are accessed using the Fetch tool in JavaScript. The project is developed using HTML, CSS, and JavaScript, with attention given to responsive design to ensure proper display on various devices.",
+      "date": "February 2023"
+    },
+    {
+      "name": "Space Tourism Website",
+      "link": "https://5pace.netlify.app/",
+      "repository": "https://github.com/SFCC5555/spaceTourismWebsite",
+      "skillList": ["Html", "Css", "JavaScript", "Json", "Figma"],
+      "info": "The project is an informative website about space travel, created as a challenge by Frontend Mentor. The design, coming from a Figma file, was implemented using HTML, CSS, and JavaScript. To obtain dynamic data, a JSON file is used. The main focus was to develop a responsive design following the 'mobile-first' approach, making it accessible and appealing on every device. Each section is presented in separate tabs, where users can explore space destinations, information about the crew, and the technology used. These tabs offer an interactive experience, allowing users to click on elements for more details on each aspect. With its modern design and dynamic functionality, the website provides an immersive and educational experience for space enthusiasts.",
+      "date": "December 2022"
+    },
+    {
+      "name": "Splitter Tip Calculator App",
+      "link": "https://sfcc-tip-calculator.netlify.app/",
+      "repository": "https://github.com/SFCC5555/tipCalculatorApp",
+      "skillList": ["Html", "Css", "JavaScript", "Figma"],
+      "info": "This project focuses on creating a small web application for calculating tips. Frontend Mentor provided the application design in a Figma file. The main functionality of the application is to calculate the tip based on user-entered data, such as the total bill amount, tip percentage, and number of people. The application returns the tip amount per person and the total bill amount per person, including the tip. HTML, CSS, and JavaScript were used for the development of this project. HTML was responsible for structuring the page, CSS was used to style and give it an appealing design, and JavaScript was implemented to perform the calculations and dynamically display the results. In addition, special attention has been given to the responsive design of the application.",
+      "date": "November 2022"
+    },
+    {
+      "name": "Advice Generator",
+      "link": "https://superadvicegenerator.netlify.app/",
+      "repository": "https://github.com/SFCC5555/adviceGeneratorApp",
+      "skillList": ["Html", "Css", "JavaScript", "Api", "Figma"],
+      "info": "This project is based on a challenge proposed by Frontend Mentor, which involves creating an advice generator. The design of the generator was provided through a Figma file. The application connects to an API using the Fetch tool, representing my first experience in handling Fetch and promises in JavaScript. The application works as follows: when clicking a button, a random advice is requested from the API and displayed on the screen. HTML, CSS, and JavaScript are used to implement this functionality, and as always, attention has been given to responsive design to ensure an optimal experience on different devices.",
+      "date": "November 2022"
+    },
+    {
+      "name": "Time Tracking Dashboard",
+      "link": "https://sfcc-time-tracking-dashboard.netlify.app/",
+      "repository": "https://github.com/SFCC5555/timeTrackingDashboard",
+      "skillList": ["Html", "Css", "JavaScript", "Json", "Figma"],
+      "info": "This project focuses on the layout of a time tracking dashboard, which is a challenge proposed by Frontend Mentor. The design of the dashboard was provided in a Figma file. For the development of this project, HTML, CSS, and JavaScript were used again, with an emphasis on responsive design. The information is dynamically implemented through a JSON file, allowing for flexible updates of the dashboard data. Additionally, a functionality has been implemented that allows users to switch between daily, weekly, or monthly information views. Regarding styling, CSS Flexbox has been used to achieve a proper structure and design in the time tracking dashboard.",
+      "date": "November 2022"
+    },
+    {
+      "name": "Xpenses Chart",
+      "link": "https://xpenseschart.netlify.app/",
+      "repository": "https://github.com/SFCC5555/expensesChartComponent",
+      "skillList": ["Html", "Css", "JavaScript", "Json", "Figma"],
+      "info": "This project focuses on the layout using HTML, CSS, and JavaScript of an expenses chart component proposed by Front end Mentor website, whose design was provided in a Figma file. The objective is to allow users to virtually visualize daily expenses for the week, represented in columns. When hovering over the columns, the corresponding amount of money is displayed. This functionality is implemented using JavaScript. Additionally, a feature is added to highlight the column of the current day with a different color, making it easier to visually identify the current day. A notable aspect of this project is the dynamic implementation of information from a JSON file. This enables flexible and automatic updating and loading of expense data.",
+      "date": "November 2022"
+    },
+    {
+      "name": "Credit Card Form",
+      "link": "https://sfcccreditcard.netlify.app/",
+      "repository": "https://github.com/SFCC5555/interactiveCardDetailsForm",
+      "skillList": ["Html", "Css", "JavaScript", "Figma"],
+      "info": "This project focuses on the creation of an interactive credit card detail form, which is a challenge proposed by Frontend Mentor. The design was provided in a Figma file. For its development, HTML, CSS, and JavaScript were used, with a focus on responsive design to ensure proper adaptation to any device. Each field of the form has validations that prevent the user from entering incorrect values. If an error is detected, a customized error message is displayed based on the type of error committed. Additionally, the entered information is updated in real-time on a template, thanks to the functions implemented with JavaScript. Once the form data is successfully submitted, a thank you message is displayed to the user.",
+      "date": "October 2022"
+    },
+    {
+      "name": "The Social Network Notifications Page",
+      "link": "https://sfcc-socialnetwork-notifications.netlify.app/",
+      "repository": "https://github.com/SFCC5555/notificationsPageMain",
+      "skillList": ["Html", "Css", "JavaScript", "Figma"],
+      "info": "Continuing with the practice and study of web layout using HTML, CSS, JavaScript, and responsive design, this project focuses on creating a notifications section for a social media platform. It features a single functionality that allows users to mark notifications as read by clicking a button. One notable aspect of this project is that instead of directly implementing the notifications in the HTML file, they are dynamically added using JavaScript objects, functions, and DOM manipulation. This project helped solidify knowledge in web layout using HTML, CSS, and JavaScript, while also delving deeper into DOM manipulation, and dynamic content creation.",
+      "date": "October 2022"
+    },
+    {
+      "name": "Snap Intro Section",
+      "link": "https://sfcc-snap-intro-section.netlify.app/",
+      "repository": "https://github.com/SFCC5555/introSectionWithDropdownNavigation",
+      "skillList": ["Html", "Css", "JavaScript", "Figma"],
+      "info": "This project is about the layout of a homepage for a web application, as part of a challenge provided by the Frontend Mentor website. The design of the homepage was provided in a Figma file, which I used as a reference. I used fundamental technologies such as HTML, CSS, and basic JavaScript functions, with which I implemented dropdown menus in the navigation bar. The homepage has a responsive design, which means it adapts and displays correctly on different devices such as desktop computers, tablets, and mobile phones. The development process allowed me to gain practical experience in web layout and design, as well as in implementing responsive design concepts and basic functionalities using JavaScript.",
+      "date": "October 2022"
+    },
+    {
+      "name": "Interactive Rating Component",
+      "link": "https://sfccrating.netlify.app/",
+      "repository": "https://github.com/SFCC5555/interactiveRatingComponent",
+      "skillList": ["Html", "Css", "JavaScript", "Figma"],
+      "info": "This project is about a web component designed to allow users to rate a simulated mobile application with up to 5 stars. The project was developed as a challenge by Front End Mentor, who provided the design via a Figma file. The component is built with HTML, CSS, and JavaScript and features interactive animations for each star, which creates a more engaging rating experience for the user. DOM manipulation and tools like addEventListener were used to achieve this effect. After the user rates the application, a modal is displayed with a gratitude message.",
+      "date": "October 2022"
+    },
+    {
+      "name": "Wall Calculator",
+      "link": "https://sfcc-wall-calculator.netlify.app/",
+      "repository": "https://github.com/SFCC5555/WALL",
+      "skillList": ["Html", "Css", "JavaScript", "Adobe-Illustrator"],
+      "info": "This project is a web app that allows users with civil engineering knowledge to calculate the stability of retaining walls. Users can input soil parameters and wall dimensions to perform a stability analysis in terms of overturning, sliding, and load-bearing capacity, following Coulomb's theory. The app includes a scheme created with Adobe Illustrator, which facilitates dimension entry. The calculations are performed using mathematical formulas implemented in JavaScript. If the analysis results do not meet the stability criteria, messages will be displayed indicating it and suggesting adjustments to the wall dimensions. On the other hand, a confirmation message will be shown in case of successful compliance with the criteria. A dropdown menu facilitates access to different calculation sections.",
+      "date": "September 2022"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "back-endDevelopmentAndAPIs",
+      "link": "https://www.freecodecamp.org/certification/SFCC5555/back-end-development-and-apis",
+      "date": "August 2023"
+    },
+    {
+      "name": "front-endDevelopmentLibraries",
+      "link": "https://freecodecamp.org/certification/SFCC5555/front-end-development-libraries",
+      "date": "July 2023"
+    },
+    {
+      "name": "javaScriptBasicHackerRank",
+      "link": "https://www.hackerrank.com/certificates/dcc69937ef49",
+      "date": "April 2023"
+    },
+    {
+      "name": "javaScriptAlgorithmsandDataStructures",
+      "link": "https://www.freecodecamp.org/certification/SFCC5555/javascript-algorithms-and-data-structures",
+      "date": "March 2023"
+    },
+    {
+      "name": "introduccionAReactJS",
+      "link": "introduccionAReactJS.pdf",
+      "date": "March 2023"
+    },
+    {
+      "name": "npm",
+      "link": "npm.pdf",
+      "date": "February 2023"
+    },
+    {
+      "name": "advancedEnglishCourseForDevelopers",
+      "link": "advancedEnglishCourseForDevelopers.pdf",
+      "date": "February 2023"
+    },
+    {
+      "name": "expresionesRegulares",
+      "link": "expresionesRegulares.pdf",
+      "date": "February 2023"
+    },
+    {
+      "name": "ecmaScript6Plus",
+      "link": "ecmaScript6Plus.pdf",
+      "date": "January 2023"
+    },
+    {
+      "name": "asincronismoConJavaScript",
+      "link": "asincronismoConJavaScript.pdf",
+      "date": "January 2023"
+    },
+    {
+      "name": "gitYGitHub",
+      "link": "gitYGitHub.pdf",
+      "date": "October 2022"
+    },
+    {
+      "name": "javaScriptPractico",
+      "link": "javaScriptPractico.pdf",
+      "date": "September 2022"
+    },
+    {
+      "name": "mobileFirst",
+      "link": "mobileFirst.pdf",
+      "date": "August 2022"
+    },
+    {
+      "name": "htmlYCss",
+      "link": "dhtmlYCss.pdf",
+      "date": "August 2022"
+    },
+    {
+      "name": "frontendDeveloperPractico",
+      "link": "frontendDeveloperPractico.pdf",
+      "date": "August 2022"
+    },
+    {
+      "name": "frontendDeveloper",
+      "link": "frontendDeveloper.pdf",
+      "date": "August 2022"
+    },
+    {
+      "name": "cssGridYFlexbox",
+      "link": "cssGridYFlexbox.pdf",
+      "date": "August 2022"
+    },
+    {
+      "name": "javaScriptBasico",
+      "link": "javaScriptBasico.pdf",
+      "date": "August 2022"
+    },
+    {
+      "name": "cssGridLayout",
+      "link": "cssGridLayout.pdf",
+      "date": "July 2022"
+    },
+    {
+      "name": "ingenieroCivil",
+      "link": "ingenieroCivil.pdf",
+      "date": "November 2019"
+    }
+  ]
 }
-

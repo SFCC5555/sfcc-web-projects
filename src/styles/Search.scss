@@ -1,78 +1,81 @@
 /* Styles for the search input field */
 .searchInput {
-    width: 40px;
-    height: 30px;
-    padding: 10px;
-    border-radius: 2px 6px 0px 0px;
-    font-family: var(--mainFont);
-    font-size: 0rem;
-    opacity: 75%;
+  width: 40px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 2px 6px 0px 0px;
+  font-family: var(--mainFont);
+  font-size: 0rem;
+  opacity: 75%;
+}
+
+/* Hover and focus styles for the search input */
+.searchInput:hover,
+.searchInput:focus {
+  width: 200px;
+  transition-duration: 1s;
+  font-size: 1.6rem;
+}
+
+/* Styles for the valid input (after user input) */
+.searchInput:valid {
+  width: 180px;
+  transition-duration: 1s;
+  font-size: 1.6rem;
+}
+
+/* Hover effect for search input */
+.searchInput:hover {
+  opacity: 100%;
+}
+
+/* Styles for the search icon */
+.searchIcon {
+  cursor: pointer;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  translate: -26px 6px;
+  opacity: 90%;
+}
+
+/* Hover effect for search icon */
+.searchIcon:hover {
+  opacity: 100%;
+}
+
+/* Styling for light and dark modes */
+@each $mode in light, dark {
+  /* Background and text color for the input */
+  .#{$mode}ModeInput {
+    background-color: hsl(var(--#{$mode}Color));
+    color: hsl(var(--#{$mode}InverseColor));
+    border: 2px solid hsl(var(--#{$mode}InverseColor), 40%);
+    border-bottom: none;
   }
-  
-  /* Hover and focus styles for the search input */
-  .searchInput:hover, .searchInput:focus {
-    width: 200px;
-    transition-duration: 1s;
+
+  /* Placeholder color for the input */
+  .#{$mode}ModeInput::placeholder {
+    color: hsl(var(--#{$mode}InverseColor));
+  }
+
+  /* Background image for the search icon */
+  .#{$mode}SearchIcon {
+    background-image: url("../assets/icons/#{$mode}SearchIcon.png");
+  }
+}
+
+/* Media query for medium-sized screens */
+@media screen and (min-width: 700px) {
+  .searchInput {
+    width: 205px;
     font-size: 1.6rem;
   }
-  
-  /* Styles for the valid input (after user input) */
+
+  /* Adjusted width for focus and hover */
+  .searchInput:focus,
+  .searchInput:hover,
   .searchInput:valid {
-    width: 180px;
-    transition-duration: 1s;
-    font-size: 1.6rem;
+    width: 240px;
   }
-  
-  /* Hover effect for search input */
-  .searchInput:hover {
-    opacity: 100%;
-  }
-  
-  /* Styles for the search icon */
-  .searchIcon {
-    cursor: pointer;
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    translate: -26px 6px;
-    opacity: 90%;
-  }
-  
-  /* Hover effect for search icon */
-  .searchIcon:hover {
-    opacity: 100%;
-  }
-  
-  /* Styling for light and dark modes */
-  @each $mode in light, dark, {
-    /* Background and text color for the input */
-    .#{$mode}ModeInput {
-      background-color: hsl(var(--#{$mode}Color));
-      color: hsl(var(--#{$mode}InverseColor));
-      border: 2px solid hsl(var(--#{$mode}InverseColor), 40%);
-      border-bottom: none;
-    }
-  
-    /* Placeholder color for the input */
-    .#{$mode}ModeInput::placeholder {
-      color: hsl(var(--#{$mode}InverseColor));
-    }
-  
-    /* Background image for the search icon */
-    .#{$mode}SearchIcon {
-      background-image: url('../assets/icons/#{$mode}SearchIcon.png');
-    }
-  }
-  
-  /* Media query for medium-sized screens */
-  @media screen and (min-width: 700px) {
-    .searchInput {
-      width: 205px;
-      font-size: 1.6rem;
-    }
-  
-    /* Adjusted width for focus and hover */
-    .searchInput:focus, .searchInput:hover, .searchInput:valid {
-      width: 240px;
-    }
-  }
+}
