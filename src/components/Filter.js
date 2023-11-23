@@ -17,6 +17,7 @@ function Filter({ mode, handleFilter }) {
       .map((project) => project.skillList)
       .join()
       .split(",")
+      .sort()
   );
 
   // Converting the set to an array

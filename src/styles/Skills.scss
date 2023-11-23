@@ -47,8 +47,8 @@
 /* Styles for filter skill icons */
 .filterSkillIcon {
   position: absolute;
-  top: -35px;
-  right: 5px;
+  top: -40px;
+  right: 3px;
   background-size: contain;
   height: 32px;
   width: 32px;
@@ -66,7 +66,7 @@
   100% {
     opacity: 100%;
     height: 32px;
-    top: -35px;
+    top: -40px;
   }
 }
 
@@ -154,7 +154,10 @@ $skills: (
   "mongoDB",
   "mongoose",
   "mySQL",
-  "graphQL"
+  "graphQL",
+  "docker",
+  "postman",
+  "strapi"
 );
 
 /* Generate styles for each skill icon */

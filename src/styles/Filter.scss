@@ -12,6 +12,7 @@
   align-items: center;
   padding: 10px;
   z-index: 2;
+  position: relative;
 }
 
 /* Hover and focus styles for the filter button */
@@ -43,6 +44,7 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: 10px;
+  padding-top: 40px;
   gap: 7px;
   animation-name: filterSkillsContainerAnimation;
   animation-duration: 350ms;
