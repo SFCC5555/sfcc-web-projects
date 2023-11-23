@@ -36,7 +36,7 @@ function AboutSection({ active, controlFunction, mode }) {
       </div>
 
       {/* Description of the developer */}
-      <p className={`${lowerCaseMode}ModeElement`}>
+      <p className={`${lowerCaseMode}ModeElement paragraph`}>
         I am a Fullstack Developer with experience in both frontend and backend
         development. My focus in frontend development has been on creating
         responsive web applications with a 'mobile-first' approach. I am
