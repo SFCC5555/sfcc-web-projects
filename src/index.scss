@@ -64,6 +64,12 @@ h1 {
   font-family: var(--mainFont);
 }
 
+/* Styles for heading 2 */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 35px;
+}
+
 /* Container for sections with relative positioning */
 .sectionContainer {
   position: relative;
@@ -122,6 +128,10 @@ h1 {
 @media screen and (min-width: 900px) {
   body {
     padding: 100px 20px;
+  }
+
+  h2 {
+    font-size: 3rem;
   }
 
   .sectionGap {

@@ -4,13 +4,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 35px;
-  margin-bottom: 25px;
-}
 
-/* Styles for heading 2 */
-h2 {
-  font-size: 3rem;
+  margin-bottom: 25px;
 }
 
 /* Styles for the search filter container */
@@ -19,8 +14,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: absolute;
-  top: 37px;
   border-bottom-width: 2px;
   border-bottom-style: solid;
 }
@@ -161,7 +154,4 @@ h2 {
   }
 
   /* Adjustments to the main content section */
-  main {
-    gap: 25px;
-  }
 }

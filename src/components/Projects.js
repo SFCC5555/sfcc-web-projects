@@ -105,17 +105,9 @@ function Projects({ mode }) {
                   href={project.repository}
                   target="_blank"
                   rel="noreferrer"
-                  title={`Frontend ${
-                    project.repository === "private repository"
-                      ? "( private repository )"
-                      : ""
-                  }`}
+                  title="Frontend"
                 >
-                  <span
-                    className={`skillIcon gitHubIcon${mode} gitHubLink ${
-                      project.repository === "private repository" && "private"
-                    }`}
-                  />
+                  <span className={`skillIcon gitHubIcon${mode} gitHubLink`} />
                 </a>
               )}
               {project.backendRepository && (
@@ -123,19 +115,18 @@ function Projects({ mode }) {
                   href={project.backendRepository}
                   target="_blank"
                   rel="noreferrer"
-                  title={`Backend ${
-                    project.backendRepository === "private repository"
-                      ? "( private repository )"
-                      : ""
-                  }`}
+                  title="Backend"
                 >
                   <span
-                    className={`skillIcon gitHubIcon${mode} gitHubBackendLink ${
-                      project.backendRepository === "private repository" &&
-                      "private"
-                    }`}
+                    className={`skillIcon gitHubIcon${mode} gitHubBackendLink`}
                   />
                 </a>
+              )}
+              {project.privateRepository && (
+                <span
+                  title={`Private ${project.privateRepository} Repository`}
+                  className={`skillIcon gitHubIcon${mode} gitHubLink private`}
+                />
               )}
             </div>
           );

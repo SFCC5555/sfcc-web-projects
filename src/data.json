@@ -3,7 +3,7 @@
     {
       "name": "Buydepa",
       "link": "https://buydepa.com/",
-      "backendRepository": "private repository",
+      "privateRepository": "Backend",
       "skillList": [
         "JavaScript",
         "TypeScript",
