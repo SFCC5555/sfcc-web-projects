@@ -69,7 +69,7 @@
     },
     {
       "name": "Book List",
-      "link": "https://sfcc-book-list.netlify.app/",
+      "link": "https://book-list-sfcc.netlify.app/",
       "repository": "https://github.com/SFCC5555/pruebas-tecnicas/tree/main/pruebas/01-reading-list/SFCC5555",
       "skillList": [
         "Html",
