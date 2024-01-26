@@ -407,6 +407,11 @@
   ],
   "certifications": [
     {
+      "name": "scientificComputingWithPython",
+      "link": "https://www.freecodecamp.org/certification/SFCC5555/scientific-computing-with-python-v7",
+      "date": "January 2024"
+    },
+    {
       "name": "back-endDevelopmentAndAPIs",
       "link": "https://www.freecodecamp.org/certification/SFCC5555/back-end-development-and-apis",
       "date": "August 2023"

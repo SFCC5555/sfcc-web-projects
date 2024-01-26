@@ -67,7 +67,7 @@ function AboutSection({ active, controlFunction, mode }) {
             GitHub
           </a>
           <a
-            href="https://drive.google.com/file/d/1nBd9wi5nq28XrZac4gaMIoSRUDvZOJ-j/view?usp=sharing"
+            href="https://drive.google.com/file/d/1bntSQPpDwL0KrQqfO3cw9y_o3BRCwGdU/view?usp=sharing"
             className={`${lowerCaseMode}ModeElement`}
             target="_Blank"
             rel="noreferrer"
