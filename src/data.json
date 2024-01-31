@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "name": "Technical Test Calculator App",
+      "link": "https://calculator-react-bootstrap.netlify.app/",
+      "repository": "https://github.com/SFCC5555/vic-data-react-bootstrap",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "Json",
+        "React",
+        "Sass",
+        "Bootstrap"
+      ],
+      "info": "This project is a technical test from a company for the software developer position. The task involves designing and implementing the functionalities of a simple calculator that performs basic operations, guided by a reference image. The application is constructed using various technologies, including HTML, CSS, Sass, Bootstrap, JavaScript, JSON, and React. It boasts a responsive design and adheres to a mobile-first approach.",
+      "date": "January 2024"
+    },
+    {
       "name": "Buydepa",
       "link": "https://buydepa.com/",
       "privateRepository": "Backend",
