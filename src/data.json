@@ -1,6 +1,41 @@
 {
   "projects": [
     {
+      "name": "Technical Test ToDo App",
+      "link": "https://todo-app-sfcc.netlify.app/",
+      "repository": "https://github.com/SFCC5555/test-frontend-ui-ux-2",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "Api",
+        "React",
+        "React-Router-V6",
+        "Sass",
+        "Tailwind"
+      ],
+      "info": "This project involves a technical assessment for the software developer position within a company. Its main focus is on creating the user interface for a to-do list application, encompassing the implementation of key functionalities such as task creation, deletion, and marking tasks as resolved. The goal is to achieve close alignment with a provided design, ensuring consistency in both the user interface (UI) and user experience (UX). Technologically, the application is developed using a versatile set of tools including HTML, CSS, Sass, Tailwind, JavaScript, React, and React Router V6. It stands out for its responsive design, tailored to provide a seamless experience across various devices, and its commitment to a mobile-first development philosophy.",
+      "date": "February 2024"
+    },
+    {
+      "name": "Technical Test Freelancers Platform",
+      "link": "https://freelancers-sfcc.netlify.app/",
+      "repository": "https://github.com/SFCC5555/test-frontend-ui-ux",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "Json",
+        "Api",
+        "React",
+        "React-Router-V6",
+        "Sass",
+        "Tailwind"
+      ],
+      "info": "This project serves as a technical evaluation for the software developer position within a company. The primary objective is to create the user interface for a platform that displays information about freelancers sourced from an API. The goal is to closely replicate a given reference design, ensuring that both the UI and UX align with the provided model. Additionally, the task includes implementing specific functionalities. The application is built using a diverse set of technologies, encompassing HTML, CSS, Sass, Tailwind, JavaScript, JSON, React, and React Router V6. Notably, it features a responsive design and follows a mobile-first approach.",
+      "date": "February 2024"
+    },
+    {
       "name": "Technical Test Calculator App",
       "link": "https://calculator-react-bootstrap.netlify.app/",
       "repository": "https://github.com/SFCC5555/vic-data-react-bootstrap",
