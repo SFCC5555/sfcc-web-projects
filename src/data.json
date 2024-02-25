@@ -1,6 +1,30 @@
 {
   "projects": [
     {
+      "name": "Full-Stack ToDo App",
+      "link": "https://to-do-list.xyz/",
+      "repository": "https://github.com/SFCC5555/new-to-do-list_app/tree/main/client",
+      "backendRepository": "https://github.com/SFCC5555/new-to-do-list_app/tree/main/server",
+      "skillList": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "Api",
+        "React",
+        "React-Router-V6",
+        "Redux",
+        "Sass",
+        "Tailwind",
+        "NodeJS",
+        "Express",
+        "MongoDB",
+        "Mongoose",
+        "Postman"
+      ],
+      "info": "This full-stack project is a feature-rich web application for task management ('to-do list'). Users can create, edit, and delete tasks, and the platform includes secure user authentication for private profiles. On the frontend, the application is built with HTML, CSS, Sass, JavaScript, React, Tailwind CSS, React Router, and Redux, providing a dynamic and visually appealing interface. The backend, powered by Node.js and Express, utilizes MongoDB and Mongoose for data management. To enhance security, bcryptjs handles password hashing, cookie-parser manages cookies, and jsonwebtoken facilitates secure token generation and validation. This comprehensive tech stack ensures efficient data handling, scalability, and robust security measures, creating a well-rounded full-stack application optimized for task management and user authentication.",
+      "date": "February 2024"
+    },
+    {
       "name": "Technical Test ToDo App",
       "link": "https://todo-app-sfcc.netlify.app/",
       "repository": "https://github.com/SFCC5555/test-frontend-ui-ux-2",

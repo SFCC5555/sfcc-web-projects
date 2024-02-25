@@ -22,7 +22,7 @@ To facilitate searching and navigation between projects, a project search functi
 
 ### Screenshot
 
-![](./src/assets/images/screenshotsfccwebpro.png)
+![Desktop](./src/assets/images/screenshotsfccwebpro.png)
 
 
 ### Links
