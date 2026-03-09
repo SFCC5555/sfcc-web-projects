@@ -89,10 +89,9 @@ function Projects({ mode }) {
               key={project.name}
               className={`${lowerCaseMode}ModeComponent project infoRelative`}
             >
-              <a href={project.link} target="_blank" rel="noreferrer">
+              <a href={project.link} target="_blank" rel="noreferrer" title="Go to App">
                 <span
                   className={`projectIllustration`}
-                  title={project.date}
                   style={{
                     backgroundImage: `url(${require(`../assets/images/projectIllustrations/${projectClass}Color.png`)})`,
                   }}
@@ -100,6 +99,11 @@ function Projects({ mode }) {
               </a>
               <Skills skillList={project.skillList} mode={mode} />
               <Info mode={mode} name={project.name} info={project.info} />
+              {project.date && (
+                <span className={`projectDate ${lowerCaseMode}ModeElement`} title={project.date}>
+                  {project.date}
+                </span>
+              )}
               {project.repository && (
                 <a
                   href={project.repository}

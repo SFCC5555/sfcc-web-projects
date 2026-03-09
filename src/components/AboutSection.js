@@ -16,6 +16,8 @@ function AboutSection({ active, controlFunction, mode }) {
     "React",
     "NodeJS",
     "MongoDB",
+    "MySQL",
+    "Strapi",
     "Git",
   ];
 
@@ -37,18 +39,17 @@ function AboutSection({ active, controlFunction, mode }) {
 
       {/* Description of the developer */}
       <p className={`${lowerCaseMode}ModeElement paragraph`}>
-        I am a Fullstack Developer with experience in both frontend and backend
-        development. My focus in frontend development has been on creating
-        responsive web applications with a 'mobile-first' approach. I am
-        proficient in technologies such as HTML, CSS, Sass, JavaScript,
-        TypeScript, JSON, React.js, Redux, React Router V6, Bootstrap, and
-        Tailwind. In the backend realm, I stand out in constructing RESTful APIs
-        using Node.js and Express, and I have experience with databases like
-        MongoDB and Mongoose. Additionally, as a Backend Developer, I have
-        collaborated with multidisciplinary teams, contributing to the
-        development of functionalities for enterprise web applications. I bring
-        additional expertise in technologies like MySQL, GraphQL, Postman,
-        Docker, and Strapi.
+        I am a Full-Stack Developer with solid experience across the complete
+        development lifecycle — frontend and backend — focused
+        on product and critical operations. On the frontend, I build responsive
+        web applications using TypeScript, React.js, Next.js, Tailwind, and
+        modern JavaScript. On the backend, I design and maintain APIs and
+        services using Node.js, Python, GraphQL, RabbitMQ, and Strapi, with
+        experience in databases such as MySQL and PostgreSQL. I have worked in
+        production environments with AWS (S3, Lambda, SES), handling document
+        generation, event-driven notifications, and data migrations. I thrive in
+        multidisciplinary teams, working with high autonomy, ownership, and a
+        genuine commitment to code quality and continuous improvement.
       </p>
 
       {/* Displaying the skills using the Skills component */}
