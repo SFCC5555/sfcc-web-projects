@@ -3,9 +3,10 @@ import data from "../data.json";
 import { Skills } from "./Skills";
 import { Search } from "./Search";
 import { Filter } from "./Filter";
-import { useState } from "react";
+import { Sort, SortOrder } from "./Sort";
+import { useState, useRef } from "react";
 import { Info } from "./Info";
-import { Mode, Project } from "../types";
+import { Mode, Project, ProjectType } from "../types";
 
 interface ProjectsProps {
   mode: Mode;
@@ -14,7 +15,43 @@ interface ProjectsProps {
 function Projects({ mode }: ProjectsProps) {
   const lowerCaseMode = mode.toLowerCase();
 
-  const [projects, setProjects] = useState<Project[]>(data.projects);
+  const allProjects = data.projects as Project[];
+  const [projects, setProjects] = useState<Project[]>(allProjects);
+  const [sortOrder, setSortOrder] = useState<SortOrder>("default");
+  const [activeType, setActiveType] = useState<"all" | ProjectType>("all");
+  const filteredRef = useRef<Project[]>(allProjects);
+
+  function applyTypeFilter(list: Project[], type: "all" | ProjectType): Project[] {
+    if (type === "all") return list;
+    return list.filter((p) => p.type === type);
+  }
+
+  function typeFilterFunction(type: "all" | ProjectType) {
+    setActiveType(type);
+    setProjects(applySort(applyTypeFilter(filteredRef.current, type), sortOrder));
+  }
+
+  function applySort(list: Project[], order: SortOrder): Project[] {
+    const sorted = [...list];
+    if (order === "name-asc") return sorted.sort((a, b) => a.name.localeCompare(b.name));
+    if (order === "name-desc") return sorted.sort((a, b) => b.name.localeCompare(a.name));
+    if (order === "date-asc") return sorted.sort((a, b) => {
+      if (!a.date) return 1;
+      if (!b.date) return -1;
+      return a.date.localeCompare(b.date);
+    });
+    if (order === "date-desc") return sorted.sort((a, b) => {
+      if (!a.date) return 1;
+      if (!b.date) return -1;
+      return b.date.localeCompare(a.date);
+    });
+    return sorted;
+  }
+
+  function sortFunction(order: SortOrder) {
+    setSortOrder(order);
+    setProjects(applySort(applyTypeFilter(filteredRef.current, activeType), order));
+  }
 
   function searchFunction() {
     const filterSkillIcon = document.getElementById("filterSkillIcon");
@@ -29,9 +66,11 @@ function Projects({ mode }: ProjectsProps) {
     const searchInputValue = searchInput.value.trim();
     const regularExpresion = new RegExp(searchInputValue, "i");
 
-    setProjects(
-      data.projects.filter((project) => regularExpresion.test(project.name))
+    const filtered = allProjects.filter((project) =>
+      regularExpresion.test(project.name)
     );
+    filteredRef.current = filtered;
+    setProjects(applySort(applyTypeFilter(filtered, activeType), sortOrder));
   }
 
   function filterFunction(event: React.MouseEvent<HTMLDivElement>) {
@@ -47,7 +86,7 @@ function Projects({ mode }: ProjectsProps) {
     const option = target.innerText.replaceAll(" ", "-");
     const filterSkillIcon = document.getElementById("filterSkillIcon");
 
-    const filterProjects = data.projects.filter((project) =>
+    const filterProjects = allProjects.filter((project) =>
       project.skillList.some((skill) => skill === option)
     );
 
@@ -56,7 +95,8 @@ function Projects({ mode }: ProjectsProps) {
         filterSkillIcon.classList.value = "inactive";
         filterSkillIcon.removeAttribute("data-tooltip");
       }
-      setProjects(data.projects);
+      filteredRef.current = allProjects;
+      setProjects(applySort(applyTypeFilter(allProjects, activeType), sortOrder));
     } else {
       if (filterSkillIcon) filterSkillIcon.classList.value = "inactive";
       target.classList.add("selectFilterSkill");
@@ -70,7 +110,8 @@ function Projects({ mode }: ProjectsProps) {
         }
       });
 
-      setProjects(filterProjects);
+      filteredRef.current = filterProjects;
+      setProjects(applySort(applyTypeFilter(filterProjects, activeType), sortOrder));
     }
   }
 
@@ -82,8 +123,34 @@ function Projects({ mode }: ProjectsProps) {
       </h2>
       <section className={`${lowerCaseMode}ModeElement searchFilterContainer`}>
         <Search mode={mode} handleChange={searchFunction} />
-        <Filter mode={mode} handleFilter={filterFunction} />
+        <div className="typeFilterTabs">
+          {(["all", "project", "contribution"] as const).map((type) => (
+            <button
+              key={type}
+              onClick={() => typeFilterFunction(type)}
+              className={`${lowerCaseMode}ModeComponent typeTab${
+                activeType === type ? " activeTypeTab" : ""
+              }`}
+            >
+              {type === "all"
+                ? "All"
+                : type === "project"
+                ? "Projects"
+                : "Contributions"}
+            </button>
+          ))}
+        </div>
+        <div className="sortFilterGroup">
+          <Sort mode={mode} handleSort={sortFunction} />
+          <Filter mode={mode} handleFilter={filterFunction} />
+        </div>
       </section>
+
+      {projects.length === 0 && (
+        <p className={`noResults ${lowerCaseMode}ModeComponent ${lowerCaseMode}ModeElement`}>
+          No projects match your search
+        </p>
+      )}
       <section className="projectContainer">
         {projects.map((project) => {
           let projectClass = project.name.split(" ");

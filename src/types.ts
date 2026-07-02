@@ -1,5 +1,7 @@
 export type Mode = "Light" | "Dark";
 
+export type ProjectType = "project" | "contribution";
+
 export interface Project {
   name: string;
   link: string;
@@ -9,6 +11,7 @@ export interface Project {
   skillList: string[];
   info: string;
   date?: string;
+  type: ProjectType;
 }
 
 export interface Certification {

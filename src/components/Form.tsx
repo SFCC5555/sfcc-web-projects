@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/Form.scss";
-import { Message } from "./Message";
 import { Mode } from "../types";
 
 interface FormProps {
@@ -10,11 +9,16 @@ interface FormProps {
 function Form({ mode }: FormProps) {
   const lowerCaseMode = mode.toLowerCase();
 
-  const [submit, setSubmit] = useState(false);
   const [validName, setValidName] = useState(true);
   const [validEmail, setValidEmail] = useState(true);
   const [isEmail, setIsEmail] = useState(true);
   const [validMessage, setValidMessage] = useState(true);
+  const [toast, setToast] = useState<"success" | "error" | null>(null);
+
+  function showToast(type: "success" | "error") {
+    setToast(type);
+    setTimeout(() => setToast(null), 3500);
+  }
 
   function handleChange(
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -68,82 +72,90 @@ function Form({ mode }: FormProps) {
     ) {
       const formData = new FormData(form);
 
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
 
-      if (response.ok) {
-        setSubmit(true);
+        if (response.ok) {
+          form.reset();
+          showToast("success");
+        } else {
+          showToast("error");
+        }
+      } catch {
+        showToast("error");
       }
     }
-  }
-
-  function closeMessage() {
-    setSubmit(false);
   }
 
   return (
     <main className="sectionContainer contactSection">
       <div className="sectionGap" id="CONTACT"></div>
       <h2 className={`${lowerCaseMode}ModeElement`}>CONTACT</h2>
-      {!submit && (
-        <section className={`formSection ${lowerCaseMode}ModeComponent`}>
-          <h3 className={`${lowerCaseMode}ModeElement contactMeTitle`}>
-            Contact me
-          </h3>
-          <form
-            onSubmit={handleSubmit}
-            action="https://formspree.io/f/xknapzwy"
-            method="POST"
+      <section className={`formSection ${lowerCaseMode}ModeComponent`}>
+        <h3 className={`${lowerCaseMode}ModeElement contactMeTitle`}>
+          Contact me
+        </h3>
+        <form
+          onSubmit={handleSubmit}
+          action="https://formspree.io/f/xknapzwy"
+          method="POST"
+        >
+          <label></label>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="name"
+            placeholder="Name"
+            className={`${lowerCaseMode}ModeformInput formInput`}
+            id="name"
+          />
+          {!validName && (
+            <h3 className="error errorName">Name is required</h3>
+          )}
+          <input
+            onChange={handleChange}
+            type="text"
+            name="email"
+            placeholder="e-mail"
+            className={`${lowerCaseMode}ModeformInput formInput`}
+            id="email"
+          />
+          {!isEmail && (
+            <h3 className="error errorEmail">E-mail is required</h3>
+          )}
+          {!validEmail && (
+            <h3 className="error errorEmail">Invalid E-mail</h3>
+          )}
+          <textarea
+            onChange={handleChange}
+            name="message"
+            placeholder="Message"
+            className={`${lowerCaseMode}ModeformInput formInput textArea`}
+            id="message"
+          />
+          {!validMessage && (
+            <h3 className="error errorMessage">Message is required</h3>
+          )}
+          <button
+            type="submit"
+            className={`${lowerCaseMode}ModeformInput formInput formButton`}
           >
-            <label></label>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="name"
-              placeholder="Name"
-              className={`${lowerCaseMode}ModeformInput formInput`}
-              id="name"
-            />
-            {!validName && (
-              <h3 className="error errorName">Name is required</h3>
-            )}
-            <input
-              onChange={handleChange}
-              type="text"
-              name="email"
-              placeholder="e-mail"
-              className={`${lowerCaseMode}ModeformInput formInput`}
-              id="email"
-            />
-            {!isEmail && (
-              <h3 className="error errorEmail">E-mail is required</h3>
-            )}
-            {!validEmail && (
-              <h3 className="error errorEmail">Invalid E-mail</h3>
-            )}
-            <textarea
-              onChange={handleChange}
-              name="message"
-              placeholder="Message"
-              className={`${lowerCaseMode}ModeformInput formInput textArea`}
-              id="message"
-            />
-            {!validMessage && (
-              <h3 className="error errorMessage">Message is required</h3>
-            )}
-            <button
-              type="submit"
-              className={`${lowerCaseMode}ModeformInput formInput formButton`}
-            >
-              SEND
-            </button>
-          </form>
-        </section>
+            SEND
+          </button>
+        </form>
+      </section>
+
+      {toast && (
+        <div className={`toast toast--${toast} ${lowerCaseMode}ModeComponent`}>
+          {toast === "success"
+            ? "Message sent successfully!"
+            : "Something went wrong, please try again."}
+        </div>
       )}
-      {submit && <Message mode={mode} controlFunction={closeMessage} />}
     </main>
   );
 }
