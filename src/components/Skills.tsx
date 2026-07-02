@@ -1,11 +1,15 @@
-// Importing necessary styles
 import "../styles/Skills.scss";
+import { Mode } from "../types";
 
-// Functional component for displaying skills
-function Skills({ skillList, mode, noWarp }) {
+interface SkillsProps {
+  skillList: string[];
+  mode: Mode;
+  noWarp?: string;
+}
+
+function Skills({ skillList, mode, noWarp = "warp" }: SkillsProps) {
   return (
     <section className={`skillContainer ${noWarp}`}>
-      {/* Mapping over the skillList and displaying each skill icon */}
       {skillList.map((skill) => (
         <span
           key={skill}
@@ -18,8 +22,5 @@ function Skills({ skillList, mode, noWarp }) {
     </section>
   );
 }
-
-// Setting default prop for noWarp
-Skills.defaultProps = { noWarp: "warp" };
 
 export { Skills };

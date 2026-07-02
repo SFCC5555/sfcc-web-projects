@@ -1,35 +1,30 @@
-// Importing required dependencies and styles
 import React, { useState } from "react";
 import "../styles/Form.scss";
 import { Message } from "./Message";
+import { Mode } from "../types";
 
-// Functional component for the Form
-function Form({ mode }) {
+interface FormProps {
+  mode: Mode;
+}
+
+function Form({ mode }: FormProps) {
   const lowerCaseMode = mode.toLowerCase();
 
-  // States to manage form validation and submission
   const [submit, setSubmit] = useState(false);
   const [validName, setValidName] = useState(true);
   const [validEmail, setValidEmail] = useState(true);
   const [isEmail, setIsEmail] = useState(true);
   const [validMessage, setValidMessage] = useState(true);
 
-  // Function to handle input changes and perform validation
-  function handleChange(event) {
+  function handleChange(
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
     if (event.target.id === "name") {
-      if (event.target.value === "") {
-        setValidName(false);
-      } else {
-        setValidName(true);
-      }
+      setValidName(event.target.value !== "");
     }
 
     if (event.target.id === "message") {
-      if (event.target.value === "") {
-        setValidMessage(false);
-      } else {
-        setValidMessage(true);
-      }
+      setValidMessage(event.target.value !== "");
     }
 
     if (event.target.id === "email") {
@@ -41,22 +36,20 @@ function Form({ mode }) {
         setIsEmail(true);
       } else {
         setValidEmail(true);
+        setIsEmail(true);
       }
     }
   }
 
-  // Function to handle form submission
-  async function handleSubmit(event) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const form = document.querySelector("form");
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const message = document.getElementById("message");
+    const form = event.currentTarget;
+    const name = document.getElementById("name") as HTMLInputElement;
+    const email = document.getElementById("email") as HTMLInputElement;
+    const message = document.getElementById("message") as HTMLTextAreaElement;
 
-    if (name.value === "") {
-      setValidName(false);
-    }
+    if (name.value === "") setValidName(false);
 
     if (email.value === "") {
       setIsEmail(false);
@@ -66,9 +59,7 @@ function Form({ mode }) {
       setIsEmail(true);
     }
 
-    if (message.value === "") {
-      setValidMessage(false);
-    }
+    if (message.value === "") setValidMessage(false);
 
     if (
       name.value !== "" &&
@@ -80,7 +71,7 @@ function Form({ mode }) {
       const response = await fetch(form.action, {
         method: form.method,
         body: formData,
-        headers: { Accept: "aplication/json" },
+        headers: { Accept: "application/json" },
       });
 
       if (response.ok) {
@@ -89,7 +80,6 @@ function Form({ mode }) {
     }
   }
 
-  // Function to close the message component
   function closeMessage() {
     setSubmit(false);
   }

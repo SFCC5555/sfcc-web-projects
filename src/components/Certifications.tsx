@@ -1,29 +1,32 @@
-// Importing required styles and data
 import "../styles/Certifications.scss";
 import data from "../data.json";
 import { useState } from "react";
+import { Mode } from "../types";
 
-// Functional component to display certifications
-function Certifications({ mode }) {
-  // Convert mode to lowercase
+interface CertificationsProps {
+  mode: Mode;
+}
+
+function Certifications({ mode }: CertificationsProps) {
   const lowerCaseMode = mode.toLowerCase();
 
-  // State to manage certification source and link
-  let [srcCertification, setSrcCertification] = useState("");
-  let [linkCertification, setLinkCertification] = useState("");
-  let [activeCertification, setActiveCertification] = useState(false);
+  const [srcCertification, setSrcCertification] = useState("");
+  const [linkCertification, setLinkCertification] = useState("");
+  const [activeCertification, setActiveCertification] = useState(false);
 
-  // Function to close the displayed certification
   function closeCertification() {
     setActiveCertification(false);
   }
 
-  // Function to render and display a certification
-  function renderCertification(event) {
+  function renderCertification(event: React.MouseEvent<HTMLSpanElement>) {
+    const target = event.currentTarget;
+    const id = target.id;
+    const link = target.dataset.link ?? "";
+
     setActiveCertification(false);
     setTimeout(() => {
-      setSrcCertification(event.target.id);
-      setLinkCertification(event.target.attributes.link.value);
+      setSrcCertification(id);
+      setLinkCertification(link);
       setActiveCertification(true);
     });
   }
@@ -38,7 +41,7 @@ function Certifications({ mode }) {
         >
           <div
             onClick={closeCertification}
-            className={`closeIcon lightModeElement`}
+            className="closeIcon lightModeElement"
           >
             X
           </div>
@@ -71,10 +74,10 @@ function Certifications({ mode }) {
           >
             <span
               onClick={renderCertification}
-              link={certification.link}
+              data-link={certification.link}
               title={certification.date}
               id={certification.name}
-              className={`certificationIllustration`}
+              className="certificationIllustration"
               style={{
                 backgroundImage: `url(${require(`../assets/images/certificationIllustrations/${certification.name}Color.png`)})`,
               }}

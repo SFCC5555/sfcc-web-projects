@@ -1,15 +1,17 @@
-// Importing the required styles
 import "../styles/AboutSection.scss";
-
-// Importing the Skills component
 import { Skills } from "./Skills";
+import { Mode } from "../types";
 
-// Functional component for the About Section
-function AboutSection({ active, controlFunction, mode }) {
-  let lowerCaseMode = mode.toLowerCase();
+interface AboutSectionProps {
+  active: boolean;
+  controlFunction: () => void;
+  mode: Mode;
+}
 
-  // List of skills
-  let skillList = [
+function AboutSection({ active, controlFunction, mode }: AboutSectionProps) {
+  const lowerCaseMode = mode.toLowerCase();
+
+  const skillList = [
     "Html",
     "Css",
     "JavaScript",
@@ -29,7 +31,6 @@ function AboutSection({ active, controlFunction, mode }) {
           : `aboutSection ${lowerCaseMode}ModeComponent inactive`
       }
     >
-      {/* Button to close the About Section */}
       <div
         onClick={controlFunction}
         className={`closeIcon ${lowerCaseMode}ModeElement`}
@@ -37,7 +38,6 @@ function AboutSection({ active, controlFunction, mode }) {
         X
       </div>
 
-      {/* Description of the developer */}
       <p className={`${lowerCaseMode}ModeElement paragraph`}>
         I am a Full-Stack Developer with solid experience across the complete
         development lifecycle — frontend and backend — focused
@@ -52,10 +52,8 @@ function AboutSection({ active, controlFunction, mode }) {
         genuine commitment to code quality and continuous improvement.
       </p>
 
-      {/* Displaying the skills using the Skills component */}
       <Skills skillList={skillList} mode={mode} noWarp="noWarp" />
 
-      {/* Links to external profiles */}
       <section className="links">
         <div>
           <a

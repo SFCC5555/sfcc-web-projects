@@ -1,10 +1,13 @@
-// Importing the necessary styles
 import React from "react";
 import "../styles/Message.scss";
+import { Mode } from "../types";
 
-// Functional component to display a success message after form submission
-function Message({ mode, controlFunction }) {
-  // Converting the mode to lowercase for class names
+interface MessageProps {
+  mode: Mode;
+  controlFunction: () => void;
+}
+
+function Message({ mode, controlFunction }: MessageProps) {
   const lowerCaseMode = mode.toLowerCase();
 
   return (
@@ -13,8 +16,6 @@ function Message({ mode, controlFunction }) {
       <br />
       <br />
       <p className="contactYouSoon">I will contact you soon.</p>
-
-      {/* Close button for the message */}
       <div
         onClick={controlFunction}
         className={`closeIcon ${lowerCaseMode}ModeElement closeIconMessage`}

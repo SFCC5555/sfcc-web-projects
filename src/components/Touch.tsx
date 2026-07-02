@@ -1,18 +1,19 @@
-// Importing necessary styles and dependencies
 import "../styles/Touch.scss";
 import React, { useEffect } from "react";
 import $ from "jquery";
 import "animate.css/animate.min.css";
+import { Mode } from "../types";
 
-// Functional component for the touch section
-function Touch({ mode }) {
-  let lowerCaseMode = mode.toLowerCase();
+interface TouchProps {
+  mode: Mode;
+}
+
+function Touch({ mode }: TouchProps) {
+  const lowerCaseMode = mode.toLowerCase();
 
   useEffect(() => {
     $(document).ready(function () {
-      // Event handler for the 'Touch this Button' button
       $(".touch").mouseenter(function () {
-        // Changing text and applying a CSS class for animation
         $(this).css("translate", "200px");
         $(this).text("Too Slow!");
         setTimeout(() => {
@@ -20,7 +21,6 @@ function Touch({ mode }) {
         }, 100);
       });
 
-      // Event handler for the 'Don't Touch this Button' button
       $(".dontTouch").mouseenter(function () {
         $(this).text("Don't!");
       });
@@ -30,7 +30,6 @@ function Touch({ mode }) {
       });
 
       $(".dontTouch").click(function () {
-        // Adding animation classes to elements
         $(".touch").addClass("animate__animated animate__bounce");
         $("nav").addClass("animate__animated animate__hinge");
         $(".menu").addClass("animate__animated animate__hinge");
@@ -48,7 +47,6 @@ function Touch({ mode }) {
 
   return (
     <section className="touchSection">
-      {/* Two buttons with different classes */}
       <button
         className={`${lowerCaseMode}ModeTouchButton ${lowerCaseMode}ModeElement touchButton dontTouch`}
       >

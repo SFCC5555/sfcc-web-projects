@@ -1,4 +1,3 @@
-// Importing required styles and data
 import "../styles/Projects.scss";
 import data from "../data.json";
 import { Skills } from "./Skills";
@@ -6,62 +5,64 @@ import { Search } from "./Search";
 import { Filter } from "./Filter";
 import { useState } from "react";
 import { Info } from "./Info";
+import { Mode, Project } from "../types";
 
-// Functional component to display projects
-function Projects({ mode }) {
-  // Convert mode to lowercase
+interface ProjectsProps {
+  mode: Mode;
+}
+
+function Projects({ mode }: ProjectsProps) {
   const lowerCaseMode = mode.toLowerCase();
 
-  // State to manage projects
-  let [projects, setProjects] = useState(data.projects);
+  const [projects, setProjects] = useState<Project[]>(data.projects);
 
-  // Function to perform project search
   function searchFunction() {
-    let filterSkillIcon = document.getElementById("filterSkillIcon");
-    filterSkillIcon.classList.value = `inactive`;
+    const filterSkillIcon = document.getElementById("filterSkillIcon");
+    if (filterSkillIcon) filterSkillIcon.classList.value = "inactive";
 
-    let optionsList = document.querySelectorAll(".filterSkill");
+    const optionsList = document.querySelectorAll(".filterSkill");
     optionsList.forEach((option) =>
       option.classList.remove("selectFilterSkill")
     );
 
-    let searchInputValue = document.getElementById("search").value.trim();
-    let regularExpresion = new RegExp(searchInputValue, "i");
+    const searchInput = document.getElementById("search") as HTMLInputElement;
+    const searchInputValue = searchInput.value.trim();
+    const regularExpresion = new RegExp(searchInputValue, "i");
 
-    let searchProjects = data.projects.filter((project) =>
-      regularExpresion.test(project.name)
+    setProjects(
+      data.projects.filter((project) => regularExpresion.test(project.name))
     );
-    setProjects(searchProjects);
   }
 
-  // Function to filter projects based on selected skill
-  function filterFunction(event) {
-    let searchInputValue = document.getElementById("search");
-    searchInputValue.value = "";
+  function filterFunction(event: React.MouseEvent<HTMLDivElement>) {
+    const searchInput = document.getElementById("search") as HTMLInputElement;
+    searchInput.value = "";
 
-    let optionsList = document.querySelectorAll(".filterSkill");
+    const optionsList = document.querySelectorAll(".filterSkill");
     optionsList.forEach((option) =>
       option.classList.remove("selectFilterSkill")
     );
 
-    let option = event.target.innerText.replaceAll(" ", "-");
-    let filterSkillIcon = document.getElementById("filterSkillIcon");
+    const target = event.target as HTMLElement;
+    const option = target.innerText.replaceAll(" ", "-");
+    const filterSkillIcon = document.getElementById("filterSkillIcon");
 
-    let filterProjects = data.projects.filter((project) =>
+    const filterProjects = data.projects.filter((project) =>
       project.skillList.some((skill) => skill === option)
     );
 
     if (option === "No-Filter") {
-      filterSkillIcon.classList.value = `inactive`;
+      if (filterSkillIcon) filterSkillIcon.classList.value = "inactive";
       setProjects(data.projects);
     } else {
-      filterSkillIcon.classList.value = `inactive`;
-      event.target.classList.add("selectFilterSkill");
+      if (filterSkillIcon) filterSkillIcon.classList.value = "inactive";
+      target.classList.add("selectFilterSkill");
 
       setTimeout(() => {
-        filterSkillIcon.classList.value = `filterSkillIcon ${
-          option[0].toLowerCase() + option.slice(1)
-        }Icon`;
+        if (filterSkillIcon)
+          filterSkillIcon.classList.value = `filterSkillIcon ${
+            option[0].toLowerCase() + option.slice(1)
+          }Icon`;
       });
 
       setProjects(filterProjects);
@@ -82,7 +83,7 @@ function Projects({ mode }) {
         {projects.map((project) => {
           let projectClass = project.name.split(" ");
           projectClass[0] = projectClass[0].toLowerCase();
-          projectClass = projectClass.join("");
+          const projectClassName = projectClass.join("");
 
           return (
             <div
@@ -91,16 +92,19 @@ function Projects({ mode }) {
             >
               <a href={project.link} target="_blank" rel="noreferrer" title="Go to App">
                 <span
-                  className={`projectIllustration`}
+                  className="projectIllustration"
                   style={{
-                    backgroundImage: `url(${require(`../assets/images/projectIllustrations/${projectClass}Color.png`)})`,
+                    backgroundImage: `url(${require(`../assets/images/projectIllustrations/${projectClassName}Color.png`)})`,
                   }}
                 />
               </a>
               <Skills skillList={project.skillList} mode={mode} />
               <Info mode={mode} name={project.name} info={project.info} />
               {project.date && (
-                <span className={`projectDate ${lowerCaseMode}ModeElement`} title={project.date}>
+                <span
+                  className={`projectDate ${lowerCaseMode}ModeElement`}
+                  title={project.date}
+                >
                   {project.date}
                 </span>
               )}

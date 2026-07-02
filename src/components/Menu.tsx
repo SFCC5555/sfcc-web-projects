@@ -1,13 +1,17 @@
-// Importing the necessary styles
 import React from "react";
 import "../styles/Menu.scss";
+import { Mode } from "../types";
 
-// Functional component for the navigation menu
-function Menu({ sectionsList, active, controlFunction, mode }) {
-  // Converting the mode to lowercase for class names
-  let lowerCaseMode = mode.toLowerCase();
+interface MenuProps {
+  sectionsList: string[];
+  active: boolean;
+  controlFunction: () => void;
+  mode: Mode;
+}
 
-  // Function to close the menu when a section is selected (on small screens)
+function Menu({ sectionsList, active, controlFunction, mode }: MenuProps) {
+  const lowerCaseMode = mode.toLowerCase();
+
   function closeMenu() {
     if (window.innerWidth < 900) {
       controlFunction();
@@ -22,15 +26,12 @@ function Menu({ sectionsList, active, controlFunction, mode }) {
           : `menu ${lowerCaseMode}ModeComponent inactive`
       }
     >
-      {/* Close button for the menu */}
       <div
         onClick={controlFunction}
         className={`closeIcon ${lowerCaseMode}ModeElement`}
       >
         X
       </div>
-
-      {/* Generating navigation links for each section */}
       {sectionsList.map((section) => (
         <a
           onClick={closeMenu}
