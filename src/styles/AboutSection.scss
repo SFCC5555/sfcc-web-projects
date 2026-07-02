@@ -6,8 +6,6 @@
   top: 58px;
   padding: 60px 30px;
   padding-bottom: 80px;
-  border-style: solid;
-  border-width: 2px;
   right: 0px;
   font-size: 1.5rem;
   line-height: 3rem;
@@ -20,6 +18,7 @@
   z-index: 3;
   animation-name: aboutAnimation;
   animation-duration: 1.5s;
+  border-radius: var(--glass-radius) 0 0 var(--glass-radius);
 }
 
 /* Keyframe animation for the about section */

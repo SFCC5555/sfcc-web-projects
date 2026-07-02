@@ -52,17 +52,22 @@ function Projects({ mode }: ProjectsProps) {
     );
 
     if (option === "No-Filter") {
-      if (filterSkillIcon) filterSkillIcon.classList.value = "inactive";
+      if (filterSkillIcon) {
+        filterSkillIcon.classList.value = "inactive";
+        filterSkillIcon.removeAttribute("data-tooltip");
+      }
       setProjects(data.projects);
     } else {
       if (filterSkillIcon) filterSkillIcon.classList.value = "inactive";
       target.classList.add("selectFilterSkill");
 
       setTimeout(() => {
-        if (filterSkillIcon)
+        if (filterSkillIcon) {
           filterSkillIcon.classList.value = `filterSkillIcon ${
             option[0].toLowerCase() + option.slice(1)
           }Icon`;
+          filterSkillIcon.setAttribute("data-tooltip", target.innerText);
+        }
       });
 
       setProjects(filterProjects);
@@ -90,7 +95,7 @@ function Projects({ mode }: ProjectsProps) {
               key={project.name}
               className={`${lowerCaseMode}ModeComponent project infoRelative`}
             >
-              <a href={project.link} target="_blank" rel="noreferrer" title="Go to App">
+              <a href={project.link} target="_blank" rel="noreferrer" data-tooltip="Go to App">
                 <span
                   className="projectIllustration"
                   style={{
@@ -103,7 +108,7 @@ function Projects({ mode }: ProjectsProps) {
               {project.date && (
                 <span
                   className={`projectDate ${lowerCaseMode}ModeElement`}
-                  title={project.date}
+                  data-tooltip={project.date}
                 >
                   {project.date}
                 </span>
@@ -113,9 +118,11 @@ function Projects({ mode }: ProjectsProps) {
                   href={project.repository}
                   target="_blank"
                   rel="noreferrer"
-                  title="Frontend"
                 >
-                  <span className={`skillIcon gitHubIcon${mode} gitHubLink`} />
+                  <span
+                    data-tooltip="Frontend"
+                    className={`skillIcon gitHubIcon${mode} gitHubLink`}
+                  />
                 </a>
               )}
               {project.backendRepository && (
@@ -123,16 +130,16 @@ function Projects({ mode }: ProjectsProps) {
                   href={project.backendRepository}
                   target="_blank"
                   rel="noreferrer"
-                  title="Backend"
                 >
                   <span
+                    data-tooltip="Backend"
                     className={`skillIcon gitHubIcon${mode} gitHubBackendLink`}
                   />
                 </a>
               )}
               {project.privateRepository && (
                 <span
-                  title={`Private ${project.privateRepository} Repository`}
+                  data-tooltip={`Private ${project.privateRepository} Repository`}
                   className={`skillIcon gitHubIcon${mode} gitHubLink private`}
                 />
               )}

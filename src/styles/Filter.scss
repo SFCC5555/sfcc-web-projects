@@ -37,8 +37,6 @@
   position: absolute;
   top: 30px;
   right: 0px;
-  border-style: solid;
-  border-width: 2px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -48,6 +46,7 @@
   gap: 7px;
   animation-name: filterSkillsContainerAnimation;
   animation-duration: 350ms;
+  border-radius: 0 0 var(--glass-radius) var(--glass-radius);
 }
 
 /* Styles for the last child of the filter skills container */
@@ -76,21 +75,48 @@
 }
 
 /* Underline style for selected filter skills */
-.selectFilterSkill {
-  text-decoration: underline;
+/* Base styles for each filter item */
+.filterSkill {
+  font-size: 1.3rem;
+  cursor: pointer;
+  width: 100%;
+  padding: 2px 4px;
+  text-align: left;
+  border-radius: 4px;
+  transition: color 0.07s ease-out, background 0.07s ease-out;
+}
+
+/* Per-mode hover and selected states */
+@each $mode in light, dark {
+  .#{$mode}ModeElement.filterSkill:hover {
+    color: hsl(var(--#{$mode}InverseColor));
+    background: rgba(if($mode == dark, 255 255 255 / 0.18, 0 0 0 / 0.10));
+  }
+
+  .#{$mode}ModeElement.selectFilterSkill {
+    background: rgba(if($mode == dark, 255 255 255 / 0.28, 0 0 0 / 0.17));
+    color: hsl(var(--#{$mode}InverseColor));
+    text-decoration: none;
+  }
 }
 
 /* Styles for light and dark mode filter icons and filter mode */
 @each $mode in light, dark {
+  .#{$mode}ModeComponent.filterSkillsContainer {
+    background: rgba(if($mode == dark, 22 28 42 / 0.88, 235 240 245 / 0.88));
+  }
+
   .#{$mode}FilterIcon {
     background-image: url("../assets/icons/#{$mode}FilterIcon.png");
   }
 
   .#{$mode}ModeFilter {
-    background-color: hsl(var(--#{$mode}Color));
+    background: var(--glass-#{$mode}-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
     color: hsl(var(--#{$mode}InverseColor));
-    border: 2px solid hsl(var(--#{$mode}InverseColor), 40%);
-    border-bottom-width: 1px;
+    border: 1px solid var(--glass-#{$mode}-border);
+    box-shadow: var(--glass-#{$mode}-shadow);
   }
 }
 

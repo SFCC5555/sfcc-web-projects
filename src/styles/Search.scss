@@ -48,15 +48,17 @@
 @each $mode in light, dark {
   /* Background and text color for the input */
   .#{$mode}ModeInput {
-    background-color: hsl(var(--#{$mode}Color));
+    background: var(--glass-#{$mode}-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: hsl(var(--#{$mode}InverseColor));
-    border: 2px solid hsl(var(--#{$mode}InverseColor), 40%);
+    border: 1px solid var(--glass-#{$mode}-border);
     border-bottom: none;
   }
 
   /* Placeholder color for the input */
   .#{$mode}ModeInput::placeholder {
-    color: hsl(var(--#{$mode}InverseColor));
+    color: hsl(var(--#{$mode}InverseColor), 65%);
   }
 
   /* Background image for the search icon */

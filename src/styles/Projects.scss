@@ -14,8 +14,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
 }
 
 /* Styles for the project container */
@@ -32,13 +30,11 @@ main {
   align-items: center;
   padding: 5px;
   padding-top: 30px;
-  border-style: solid;
-  border-width: 2px;
   gap: 5px;
   position: relative;
   animation-name: projectAnimation;
   animation-duration: 1.5s;
-  border-collapse: collapse;
+  border-radius: 0;
 }
 
 /* Animation for individual projects */
@@ -116,12 +112,14 @@ main {
   animation-name: projectIllustrationAnimation;
   animation-duration: 1.5s;
   filter: grayscale(100%);
+  border-radius: 6px;
+  transition: filter 1s ease, transform 0.2s ease;
 }
 
 /* Hover effect for project illustrations */
 .projectIllustration:hover {
   filter: grayscale(0%);
-  transition-duration: 1s;
+  transform: scale(1.015);
 }
 
 /* Animation for project illustrations */

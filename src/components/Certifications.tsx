@@ -39,6 +39,16 @@ function Certifications({ mode }: CertificationsProps) {
         <div
           className={`${lowerCaseMode}ModeComponent renderCertificationContainer`}
         >
+          <div className="renderCertificationInner">
+            <img
+              src={
+                srcCertification
+                  ? require(`../assets/images/certificationIllustrations/${srcCertification}Color.png`)
+                  : ""
+              }
+              alt={srcCertification}
+            />
+          </div>
           <div
             onClick={closeCertification}
             className="closeIcon lightModeElement"
@@ -54,16 +64,8 @@ function Certifications({ mode }: CertificationsProps) {
             target="_Blank"
             rel="noreferrer"
           >
-            <span className="externalLinkIcon" />
+            <span className="externalLinkIcon" data-tooltip="See Certificate" />
           </a>
-          <img
-            src={
-              srcCertification
-                ? require(`../assets/images/certificationIllustrations/${srcCertification}Color.png`)
-                : ""
-            }
-            alt={srcCertification}
-          />
         </div>
       )}
       <section className="certificationContainer">
@@ -75,7 +77,7 @@ function Certifications({ mode }: CertificationsProps) {
             <span
               onClick={renderCertification}
               data-link={certification.link}
-              title={certification.date}
+              data-tooltip={certification.date}
               id={certification.name}
               className="certificationIllustration"
               style={{

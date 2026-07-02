@@ -6,14 +6,13 @@
   width: 100%;
   justify-content: space-between;
   font-weight: bold;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
   position: fixed;
   top: 0px;
   padding: 0px 15px;
   font-size: 1.4rem;
   gap: 5px;
   z-index: 10;
+  border-radius: 0 0 var(--glass-radius) var(--glass-radius);
 }
 
 /* Styles for various icons and images */

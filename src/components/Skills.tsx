@@ -13,7 +13,7 @@ function Skills({ skillList, mode, noWarp = "warp" }: SkillsProps) {
       {skillList.map((skill) => (
         <span
           key={skill}
-          title={skill}
+          data-tooltip={skill}
           className={`skillIcon ${
             skill[0].toLowerCase() + skill.slice(1)
           }Icon${mode}`}
