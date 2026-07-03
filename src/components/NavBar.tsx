@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/NavBar.scss";
 import { Menu } from "./Menu";
 import { AboutSection } from "./AboutSection";
 import { Mode } from "../types";
+import { useAuth } from "../context/AuthContext";
 
 interface NavBarProps {
   sectionsList: string[];
@@ -14,6 +16,7 @@ function NavBar({ sectionsList, mode }: NavBarProps) {
   const [icon, setIcon] = useState("BurgerIcon");
   const [activeAbout, setActiveAbout] = useState(false);
   const [picture, setPicture] = useState("sfccPictureBW");
+  const { session } = useAuth();
 
   const lowerCaseMode = mode.toLowerCase();
 
@@ -39,15 +42,22 @@ function NavBar({ sectionsList, mode }: NavBarProps) {
         <span
           onClick={controlMenu}
           className={`${icon} ${lowerCaseMode}${icon}`}
-        ></span>
+        />
         <a href="." className={`sFernando ${lowerCaseMode}ModeElement`}>
           ING. S. FERNANDO CARRASCO
         </a>
-        <div
-          onClick={controlAboutMe}
-          className={`aboutMe ${lowerCaseMode}ModeElement`}
-        >
-          <span className={`picture ${picture}`}></span>ABOUT ME
+        <div className="navBarRight">
+          {session && (
+            <Link to="/admin" className={`navAdminLink ${lowerCaseMode}ModeElement`}>
+              ADMIN
+            </Link>
+          )}
+          <div
+            onClick={controlAboutMe}
+            className={`aboutMe ${lowerCaseMode}ModeElement`}
+          >
+            <span className={`picture ${picture}`} />ABOUT ME
+          </div>
         </div>
       </nav>
       <Menu

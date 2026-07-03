@@ -1,10 +1,10 @@
 import "../styles/Projects.scss";
-import data from "../data.json";
+import { supabase } from "../lib/supabase";
 import { Skills } from "./Skills";
 import { Search } from "./Search";
 import { Filter } from "./Filter";
 import { Sort, SortOrder } from "./Sort";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Info } from "./Info";
 import { Mode, Project, ProjectType } from "../types";
 
@@ -15,11 +15,46 @@ interface ProjectsProps {
 function Projects({ mode }: ProjectsProps) {
   const lowerCaseMode = mode.toLowerCase();
 
-  const allProjects = data.projects as Project[];
-  const [projects, setProjects] = useState<Project[]>(allProjects);
+  const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [filterSkills, setFilterSkills] = useState<string[]>([]);
   const [sortOrder, setSortOrder] = useState<SortOrder>("default");
   const [activeType, setActiveType] = useState<"all" | ProjectType>("all");
-  const filteredRef = useRef<Project[]>(allProjects);
+
+  // allProjectsRef: full unfiltered list; filteredRef: after search/skill filter
+  const allProjectsRef = useRef<Project[]>([]);
+  const filteredRef = useRef<Project[]>([]);
+
+  useEffect(() => {
+    supabase
+      .from("projects")
+      .select("*")
+      .order("sort_order")
+      .then(({ data }) => {
+        if (data) {
+          const mapped: Project[] = data.map((p) => ({
+            name: p.name,
+            link: p.link,
+            info: p.info,
+            date: p.date ?? undefined,
+            type: p.type as ProjectType,
+            skillList: p.skill_list,
+            repository: p.repository ?? undefined,
+            backendRepository: p.backend_repository ?? undefined,
+            repositoryPrivate: p.repository_private ?? false,
+            backendRepositoryPrivate: p.backend_repository_private ?? false,
+            coverUrl: p.cover_url ?? undefined,
+          }));
+          allProjectsRef.current = mapped;
+          filteredRef.current = mapped;
+          setProjects(mapped);
+          setFilterSkills(
+            [...new Set(mapped.flatMap((p) => p.skillList))].sort()
+          );
+        }
+        setLoading(false);
+      });
+  }, []);
 
   function applyTypeFilter(list: Project[], type: "all" | ProjectType): Project[] {
     if (type === "all") return list;
@@ -66,7 +101,7 @@ function Projects({ mode }: ProjectsProps) {
     const searchInputValue = searchInput.value.trim();
     const regularExpresion = new RegExp(searchInputValue, "i");
 
-    const filtered = allProjects.filter((project) =>
+    const filtered = allProjectsRef.current.filter((project) =>
       regularExpresion.test(project.name)
     );
     filteredRef.current = filtered;
@@ -86,7 +121,7 @@ function Projects({ mode }: ProjectsProps) {
     const option = target.innerText.replaceAll(" ", "-");
     const filterSkillIcon = document.getElementById("filterSkillIcon");
 
-    const filterProjects = allProjects.filter((project) =>
+    const filterProjects = allProjectsRef.current.filter((project) =>
       project.skillList.some((skill) => skill === option)
     );
 
@@ -95,8 +130,8 @@ function Projects({ mode }: ProjectsProps) {
         filterSkillIcon.classList.value = "inactive";
         filterSkillIcon.removeAttribute("data-tooltip");
       }
-      filteredRef.current = allProjects;
-      setProjects(applySort(applyTypeFilter(allProjects, activeType), sortOrder));
+      filteredRef.current = allProjectsRef.current;
+      setProjects(applySort(applyTypeFilter(allProjectsRef.current, activeType), sortOrder));
     } else {
       if (filterSkillIcon) filterSkillIcon.classList.value = "inactive";
       target.classList.add("selectFilterSkill");
@@ -121,34 +156,38 @@ function Projects({ mode }: ProjectsProps) {
       <h2 className={`${lowerCaseMode}ModeElement`}>
         WEB PROJECTS & CONTRIBUTIONS
       </h2>
+      <div className="typeFilterTabs">
+        {(["all", "project", "contribution"] as const).map((type) => (
+          <button
+            key={type}
+            onClick={() => typeFilterFunction(type)}
+            className={`${lowerCaseMode}ModeComponent typeTab${
+              activeType === type ? " activeTypeTab" : ""
+            }`}
+          >
+            {type === "all"
+              ? "All"
+              : type === "project"
+              ? "Projects"
+              : "Contributions"}
+          </button>
+        ))}
+      </div>
       <section className={`${lowerCaseMode}ModeElement searchFilterContainer`}>
         <Search mode={mode} handleChange={searchFunction} />
-        <div className="typeFilterTabs">
-          {(["all", "project", "contribution"] as const).map((type) => (
-            <button
-              key={type}
-              onClick={() => typeFilterFunction(type)}
-              className={`${lowerCaseMode}ModeComponent typeTab${
-                activeType === type ? " activeTypeTab" : ""
-              }`}
-            >
-              {type === "all"
-                ? "All"
-                : type === "project"
-                ? "Projects"
-                : "Contributions"}
-            </button>
-          ))}
-        </div>
         <div className="sortFilterGroup">
           <Sort mode={mode} handleSort={sortFunction} />
-          <Filter mode={mode} handleFilter={filterFunction} />
+          <Filter mode={mode} handleFilter={filterFunction} skillList={filterSkills} />
         </div>
       </section>
 
       {projects.length === 0 && (
         <p className={`noResults ${lowerCaseMode}ModeComponent ${lowerCaseMode}ModeElement`}>
-          No projects match your search
+          {loading
+            ? "Loading…"
+            : allProjectsRef.current.length === 0
+            ? "No projects yet."
+            : "No projects match your search"}
         </p>
       )}
       <section className="projectContainer">
@@ -166,7 +205,9 @@ function Projects({ mode }: ProjectsProps) {
                 <span
                   className="projectIllustration"
                   style={{
-                    backgroundImage: `url(${require(`../assets/images/projectIllustrations/${projectClassName}Color.png`)})`,
+                    backgroundImage: project.coverUrl
+                      ? `url(${project.coverUrl})`
+                      : `url(${require(`../assets/images/projectIllustrations/${projectClassName}Color.png`)})`,
                   }}
                 />
               </a>
@@ -180,36 +221,32 @@ function Projects({ mode }: ProjectsProps) {
                   {project.date}
                 </span>
               )}
-              {project.repository && (
-                <a
-                  href={project.repository}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+              {project.repositoryPrivate ? (
+                <span
+                  data-tooltip="Private Frontend Repository"
+                  className={`skillIcon gitHubIcon${mode} gitHubLink private`}
+                />
+              ) : project.repository ? (
+                <a href={project.repository} target="_blank" rel="noreferrer">
                   <span
                     data-tooltip="Frontend"
                     className={`skillIcon gitHubIcon${mode} gitHubLink`}
                   />
                 </a>
-              )}
-              {project.backendRepository && (
-                <a
-                  href={project.backendRepository}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+              ) : null}
+              {project.backendRepositoryPrivate ? (
+                <span
+                  data-tooltip="Private Backend Repository"
+                  className={`skillIcon gitHubIcon${mode} gitHubBackendLink private`}
+                />
+              ) : project.backendRepository ? (
+                <a href={project.backendRepository} target="_blank" rel="noreferrer">
                   <span
                     data-tooltip="Backend"
                     className={`skillIcon gitHubIcon${mode} gitHubBackendLink`}
                   />
                 </a>
-              )}
-              {project.privateRepository && (
-                <span
-                  data-tooltip={`Private ${project.privateRepository} Repository`}
-                  className={`skillIcon gitHubIcon${mode} gitHubLink private`}
-                />
-              )}
+              ) : null}
             </div>
           );
         })}

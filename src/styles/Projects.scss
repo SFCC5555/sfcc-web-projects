@@ -14,8 +14,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px 0;
 }
 
 /* Empty state message */
@@ -35,10 +33,9 @@ main {
   display: flex;
   gap: 8px;
   align-items: center;
-  order: 3;
-  width: 100%;
   justify-content: center;
-  padding-top: 4px;
+  width: 100%;
+  margin-bottom: 8px;
 }
 
 .typeTab {
@@ -191,18 +188,6 @@ main {
 
 /* Media query for medium-sized screens */
 @media screen and (min-width: 700px) {
-  .searchFilterContainer {
-    flex-wrap: nowrap;
-    gap: 0;
-  }
-
-  .typeFilterTabs {
-    order: unset;
-    width: auto;
-    justify-content: flex-start;
-    padding-top: 0;
-  }
-
   .typeTab {
     padding: 5px 16px;
     font-size: 1.2rem;

@@ -1,17 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { DarkModeButton } from "../DarkModeButton";
+import { AdminProjects, ProjectsHandle } from "./AdminProjects";
+import { AdminCertifications, CertificationsHandle } from "./AdminCertifications";
+import { AdminTechnologies, TechnologiesHandle } from "./AdminTechnologies";
 import "../../styles/admin/AdminPanel.scss";
 import "../../styles/admin/AdminToast.scss";
 
+type Tab = "projects" | "certifications" | "technologies";
 type ToastType = "success" | "error";
 interface Toast { type: ToastType; message: string }
+
+const TAB_LABELS: Record<Tab, string> = {
+  projects: "Projects",
+  certifications: "Certifications",
+  technologies: "Technologies",
+};
 
 function AdminPanel() {
   const { session, signOut } = useAuth();
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState<Tab>("projects");
   const [toast, setToast] = useState<Toast | null>(null);
+
+  const projectsRef = useRef<ProjectsHandle>(null);
+  const certsRef = useRef<CertificationsHandle>(null);
+  const techsRef = useRef<TechnologiesHandle>(null);
 
   function showToast(type: ToastType, message: string) {
     setToast({ type, message });
@@ -36,40 +51,54 @@ function AdminPanel() {
     navigate("/admin");
   }
 
+  function handleAdd() {
+    if (activeTab === "projects") projectsRef.current?.openAdd();
+    else if (activeTab === "certifications") certsRef.current?.openAdd();
+    else techsRef.current?.openAdd();
+  }
+
+  function switchTab(tab: Tab) {
+    setActiveTab(tab);
+  }
+
   return (
     <div className="adminPage">
       <header className="adminHeader">
         <div className="adminHeaderLeft">
-          <Link to="/" className="adminBackLink">
-            ← Portfolio
-          </Link>
+          <Link to="/" className="adminBackLink">← Portfolio</Link>
           <h1 className="adminTitle">ADMIN PANEL</h1>
         </div>
         <div className="adminHeaderRight">
           <span className="adminEmail">{session?.user.email}</span>
-          <button className="adminSignOut" onClick={handleSignOut}>
-            Sign out
-          </button>
+          <button className="adminSignOut" onClick={handleSignOut}>Sign out</button>
         </div>
       </header>
 
-      <main className="adminMain">
-        <div className="adminCard">
-          <h2>Projects</h2>
-          <p>Manage your portfolio projects</p>
-          <button className="adminActionButton" disabled>Coming soon</button>
+      <div className="adminTabBar">
+        <div className="adminTabs">
+          {(["projects", "certifications", "technologies"] as Tab[]).map(tab => (
+            <button
+              key={tab}
+              onClick={() => switchTab(tab)}
+              className={`adminTab${activeTab === tab ? " adminTab--active" : ""}`}
+            >
+              {TAB_LABELS[tab]}
+            </button>
+          ))}
         </div>
-        <div className="adminCard">
-          <h2>Certifications</h2>
-          <p>Manage your certifications</p>
-          <button className="adminActionButton" disabled>Coming soon</button>
-        </div>
-      </main>
+        <button className="adminAddBtn" onClick={handleAdd}>
+          + Add {TAB_LABELS[activeTab].replace(/s$/, "")}
+        </button>
+      </div>
+
+      <div className="adminContent">
+        {activeTab === "projects" && <AdminProjects ref={projectsRef} onToast={showToast} />}
+        {activeTab === "certifications" && <AdminCertifications ref={certsRef} onToast={showToast} />}
+        {activeTab === "technologies" && <AdminTechnologies ref={techsRef} onToast={showToast} />}
+      </div>
 
       {toast && (
-        <div className={`adminToast adminToast--${toast.type}`}>
-          {toast.message}
-        </div>
+        <div className={`adminToast adminToast--${toast.type}`}>{toast.message}</div>
       )}
 
       <DarkModeButton />

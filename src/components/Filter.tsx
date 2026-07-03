@@ -1,32 +1,23 @@
 import "../styles/Filter.scss";
-import data from "../data.json";
 import { useState } from "react";
 import { Mode } from "../types";
 
 interface FilterProps {
   mode: Mode;
   handleFilter: React.MouseEventHandler<HTMLDivElement>;
+  skillList: string[];
 }
 
-function Filter({ mode, handleFilter }: FilterProps) {
+function Filter({ mode, handleFilter, skillList }: FilterProps) {
   const lowerCaseMode = mode.toLowerCase();
 
   const [activeFilterSkillsContainer, setActiveFilterSkillsContainer] =
     useState(false);
 
-  const overAllSkillSet = new Set(
-    data.projects
-      .map((project) => project.skillList)
-      .join()
-      .split(",")
-      .sort()
-  );
-
-  let overAllSkillList = Array.from(overAllSkillSet).map((skill) =>
-    skill.replaceAll("-", " ")
-  );
-
-  overAllSkillList.push("No Filter");
+  const overAllSkillList = [
+    ...skillList.map((s) => s.replaceAll("-", " ")),
+    "No Filter",
+  ];
 
   document.addEventListener("click", closeFilterMenu);
 

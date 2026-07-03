@@ -1,18 +1,35 @@
 import "../styles/Certifications.scss";
-import data from "../data.json";
-import { useState } from "react";
+import { supabase } from "../lib/supabase";
+import { useState, useEffect } from "react";
 import { Mode } from "../types";
 
 interface CertificationsProps {
   mode: Mode;
 }
 
+interface Certification {
+  name: string;
+  link: string;
+  date: string;
+}
+
 function Certifications({ mode }: CertificationsProps) {
   const lowerCaseMode = mode.toLowerCase();
 
+  const [certifications, setCertifications] = useState<Certification[]>([]);
   const [srcCertification, setSrcCertification] = useState("");
   const [linkCertification, setLinkCertification] = useState("");
   const [activeCertification, setActiveCertification] = useState(false);
+
+  useEffect(() => {
+    supabase
+      .from("certifications")
+      .select("name, link, date")
+      .order("sort_order")
+      .then(({ data }) => {
+        if (data) setCertifications(data);
+      });
+  }, []);
 
   function closeCertification() {
     setActiveCertification(false);
@@ -69,7 +86,7 @@ function Certifications({ mode }: CertificationsProps) {
         </div>
       )}
       <section className="certificationContainer">
-        {data.certifications.map((certification) => (
+        {certifications.map((certification) => (
           <div
             key={certification.name}
             className={`${lowerCaseMode}ModeComponent certification`}

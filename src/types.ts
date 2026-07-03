@@ -7,7 +7,9 @@ export interface Project {
   link: string;
   repository?: string;
   backendRepository?: string;
-  privateRepository?: string;
+  repositoryPrivate?: boolean;
+  backendRepositoryPrivate?: boolean;
+  coverUrl?: string;
   skillList: string[];
   info: string;
   date?: string;
