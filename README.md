@@ -72,7 +72,7 @@ The application evolved from a static React portfolio into a production-ready ap
 
 ## Portfolio
 
-![Desktop](./src/assets/images/screenshotsfccwebpro.png)
+![Desktop](./src/assets/images/sfccportfolio.png)
 
 ---
 
