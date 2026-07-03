@@ -1,17 +1,13 @@
 import "../styles/DarkModeButton.scss";
-import { Mode } from "../types";
+import { useTheme } from "../context/ThemeContext";
 
-interface DarkModeButtonProps {
-  controlFunction: () => void;
-  mode: Mode;
-}
-
-function DarkModeButton({ controlFunction, mode }: DarkModeButtonProps) {
+function DarkModeButton() {
+  const { mode, controlDarkMode } = useTheme();
   return (
     <span
-      onClick={controlFunction}
+      onClick={controlDarkMode}
       className={`darkModeButton darkModeButton${mode}`}
-    ></span>
+    />
   );
 }
 

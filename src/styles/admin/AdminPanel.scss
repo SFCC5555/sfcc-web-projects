@@ -1,0 +1,172 @@
+.adminPage {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  text-align: left;
+  background: linear-gradient(
+    135deg,
+    hsl(213, 25%, 7%) 0%,
+    hsl(222, 20%, 13%) 50%,
+    hsl(240, 18%, 9%) 100%
+  );
+  background-attachment: fixed;
+  font-family: var(--mainFont);
+  color: rgba(255, 255, 255, 0.90);
+}
+
+.adminHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.adminHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.adminBackLink {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.50);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+}
+
+.adminBackLink:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.adminTitle {
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+}
+
+.adminHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.adminEmail {
+  font-size: 1.2rem;
+  opacity: 0.55;
+}
+
+.adminSignOut {
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.80);
+  font-family: var(--mainFont);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.adminSignOut:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.adminMain {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 28px;
+}
+
+.adminCard {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.30);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.adminCard h2 {
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+}
+
+.adminCard p {
+  font-size: 1.3rem;
+  opacity: 0.55;
+}
+
+.adminActionButton {
+  margin-top: 8px;
+  padding: 8px 20px;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.80);
+  font-family: var(--mainFont);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.adminActionButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Light mode ── */
+body.lightMode .adminPage {
+  background: linear-gradient(
+    135deg,
+    hsl(192, 20%, 84%) 0%,
+    hsl(200, 22%, 92%) 50%,
+    hsl(215, 20%, 87%) 100%
+  );
+  color: rgba(20, 30, 50, 0.90);
+}
+
+body.lightMode .adminHeader {
+  background: rgba(255, 255, 255, 0.50);
+  border-bottom-color: rgba(255, 255, 255, 0.72);
+}
+
+body.lightMode .adminBackLink {
+  color: rgba(20, 30, 50, 0.45);
+}
+
+body.lightMode .adminBackLink:hover {
+  color: rgba(20, 30, 50, 0.85);
+}
+
+body.lightMode .adminSignOut {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: rgba(20, 30, 50, 0.80);
+}
+
+body.lightMode .adminSignOut:hover {
+  background: rgba(0, 0, 0, 0.11);
+}
+
+body.lightMode .adminCard {
+  background: var(--glass-light-bg);
+  border-color: var(--glass-light-border);
+  box-shadow: var(--glass-light-shadow);
+}
+
+body.lightMode .adminActionButton {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: rgba(20, 30, 50, 0.70);
+}
