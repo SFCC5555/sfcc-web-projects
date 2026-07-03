@@ -442,6 +442,14 @@ body.lightMode input[type="month"] { color-scheme: light; }
 /* ── Small modal variant ── */
 .crudModal--sm { max-width: 380px; }
 
+/* ── About singleton form ── */
+.aboutAdminForm {
+  padding: 24px 28px;
+  max-width: 700px;
+
+  @media (max-width: 560px) { padding: 16px 14px; }
+}
+
 /* ── Light mode ── */
 body.lightMode {
   .crudSection {

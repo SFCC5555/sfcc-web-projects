@@ -5,10 +5,11 @@ import { DarkModeButton } from "../DarkModeButton";
 import { AdminProjects, ProjectsHandle } from "./AdminProjects";
 import { AdminCertifications, CertificationsHandle } from "./AdminCertifications";
 import { AdminTechnologies, TechnologiesHandle } from "./AdminTechnologies";
+import { AdminAbout } from "./AdminAbout";
 import "../../styles/admin/AdminPanel.scss";
 import "../../styles/admin/AdminToast.scss";
 
-type Tab = "projects" | "certifications" | "technologies";
+type Tab = "projects" | "certifications" | "technologies" | "about";
 type ToastType = "success" | "error";
 interface Toast { type: ToastType; message: string }
 
@@ -16,6 +17,7 @@ const TAB_LABELS: Record<Tab, string> = {
   projects: "Projects",
   certifications: "Certifications",
   technologies: "Technologies",
+  about: "About",
 };
 
 function AdminPanel() {
@@ -54,11 +56,7 @@ function AdminPanel() {
   function handleAdd() {
     if (activeTab === "projects") projectsRef.current?.openAdd();
     else if (activeTab === "certifications") certsRef.current?.openAdd();
-    else techsRef.current?.openAdd();
-  }
-
-  function switchTab(tab: Tab) {
-    setActiveTab(tab);
+    else if (activeTab === "technologies") techsRef.current?.openAdd();
   }
 
   return (
@@ -76,25 +74,28 @@ function AdminPanel() {
 
       <div className="adminTabBar">
         <div className="adminTabs">
-          {(["projects", "certifications", "technologies"] as Tab[]).map(tab => (
+          {(["projects", "certifications", "technologies", "about"] as Tab[]).map(tab => (
             <button
               key={tab}
-              onClick={() => switchTab(tab)}
+              onClick={() => setActiveTab(tab)}
               className={`adminTab${activeTab === tab ? " adminTab--active" : ""}`}
             >
               {TAB_LABELS[tab]}
             </button>
           ))}
         </div>
-        <button className="adminAddBtn" onClick={handleAdd}>
-          + Add {TAB_LABELS[activeTab].replace(/s$/, "")}
-        </button>
+        {activeTab !== "about" && (
+          <button className="adminAddBtn" onClick={handleAdd}>
+            + Add {TAB_LABELS[activeTab].replace(/s$/, "")}
+          </button>
+        )}
       </div>
 
       <div className="adminContent">
         {activeTab === "projects" && <AdminProjects ref={projectsRef} onToast={showToast} />}
         {activeTab === "certifications" && <AdminCertifications ref={certsRef} onToast={showToast} />}
         {activeTab === "technologies" && <AdminTechnologies ref={techsRef} onToast={showToast} />}
+        {activeTab === "about" && <AdminAbout onToast={showToast} />}
       </div>
 
       {toast && (

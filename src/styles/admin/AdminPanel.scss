@@ -144,6 +144,57 @@
   overflow-y: auto;
 }
 
+/* ── Mobile ── */
+@media (max-width: 560px) {
+  .adminHeader {
+    padding: 0 14px;
+    height: 52px;
+  }
+
+  .adminHeaderLeft { gap: 10px; }
+
+  .adminTitle {
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .adminBackLink {
+    font-size: 1.1rem;
+    padding: 4px 8px;
+  }
+
+  .adminEmail { display: none; }
+
+  .adminHeaderRight { gap: 8px; }
+
+  .adminSignOut {
+    font-size: 1.1rem;
+    padding: 5px 10px;
+  }
+
+  .adminTabBar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 8px 14px;
+    gap: 8px;
+  }
+
+  .adminTabs { width: 100%; }
+
+  .adminTab {
+    flex: 1;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 5px 6px;
+  }
+
+  .adminAddBtn {
+    width: 100%;
+    text-align: center;
+    padding: 7px 12px;
+  }
+}
+
 /* ── Light mode ── */
 body.lightMode .adminPage {
   background: linear-gradient(
