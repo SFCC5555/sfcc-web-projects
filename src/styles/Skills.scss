@@ -38,6 +38,10 @@
   transform: scale(1.14);
 }
 
+.skillIcon[data-tooltip]::after {
+  bottom: calc(100% + 4px);
+}
+
 @keyframes skillIconAnimation {
   0% {
     opacity: 0%;

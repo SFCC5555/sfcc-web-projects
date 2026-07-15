@@ -450,6 +450,46 @@ body.lightMode input[type="month"] { color-scheme: light; }
   @media (max-width: 560px) { padding: 16px 14px; }
 }
 
+/* ── Mobile list layout ── */
+@media (max-width: 560px) {
+  .crudSectionHeader {
+    padding: 14px 16px;
+  }
+
+  .crudSectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .crudTable {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .crudTable--projects {
+    .crudTableHead,
+    .crudTableRow {
+      grid-template-columns: minmax(100px, 1fr) 90px 140px 44px 110px;
+      min-width: 500px;
+      padding: 10px 16px;
+      gap: 8px;
+    }
+  }
+
+  .crudTable--certs {
+    .crudTableHead,
+    .crudTableRow {
+      grid-template-columns: minmax(100px, 1fr) 120px 44px 110px;
+      min-width: 380px;
+      padding: 10px 16px;
+      gap: 8px;
+    }
+  }
+
+  .techChipGrid {
+    padding: 14px 16px;
+  }
+}
+
 /* ── Light mode ── */
 body.lightMode {
   .crudSection {

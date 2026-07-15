@@ -43,7 +43,7 @@ function NavBar({ sectionsList, mode }: NavBarProps) {
           onClick={controlMenu}
           className={`${icon} ${lowerCaseMode}${icon}`}
         />
-        <a href="." className={`sFernando ${lowerCaseMode}ModeElement`}>
+        <a href="." className={`sFernando ${lowerCaseMode}ModeElement${session ? " sFernandoAdmin" : ""}`}>
           ING. S. FERNANDO CARRASCO
         </a>
         <div className="navBarRight">

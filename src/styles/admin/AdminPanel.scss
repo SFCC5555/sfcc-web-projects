@@ -142,6 +142,13 @@
 .adminContent {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+
+  @media (max-width: 560px) {
+    padding: 12px;
+    overflow-x: auto;
+  }
 }
 
 /* ── Mobile ── */
