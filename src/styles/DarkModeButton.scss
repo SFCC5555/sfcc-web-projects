@@ -6,7 +6,11 @@
   cursor: pointer;
   top: 90%;
   right: 20px;
-  z-index: 3;
+  z-index: 200;
+
+  @media (max-width: 899px) {
+    right: 30px;
+  }
 }
 
 /* Light mode button background icon */
