@@ -1,48 +1,101 @@
-# SFCC Web Projects
+# Fernando Carrasco Portfolio
 
-## Table of contents
+A modern full-stack portfolio built to showcase my professional experience, projects, certifications, and technical skills.
 
-- [Overview](#overview)
-  - [The project](#the-project)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
+The application evolved from a static React portfolio into a production-ready application with a modern UI, Supabase backend, authentication, and a complete admin dashboard for content management.
 
-## Overview
+## Live Demo
 
-### The project
+🌐 https://fernando-carrasco.com
 
-This project is a web portfolio. It was developed using Html, Css, Sass, JSON, JavaScript, and React.js, with the main objective of showcasing the different projects I have worked on and the technologies used in each of them. It includes direct links to their respective GitHub repositories, an info button and an illustration as cover made with Adobe Illustrator. Additionally, it features a certifications section where I detail the courses and certifications I have obtained throughout my professional career.
+## Repository
 
-The website also includes a contact section for users to reach out to me directly. The "About Me" section describes my professional profile and provides links to my GitHub, Linkedin, Manfred profile and my resume (CV). It also highlights the main technologies I have experience with.
+💻 https://github.com/SFCC5555/sfcc-web-projects
 
-To facilitate searching and navigation between projects, a project search functionality and a filter based on the technologies used in each project have been implemented. Furthermore, a dark mode has been incorporated to enhance the user experience across different environments. In addition to a mobile-first approach and responsive design, the website includes animations that enrich the user experience on various devices and screen sizes.
+---
 
-### Screenshot
+# Features
 
-![Desktop](./src/assets/images/screenshotsfccwebpro.png)
+### Portfolio
 
+- Showcase of professional and personal projects
+- Certifications section with downloadable PDF certificates
+- Search, filtering, and sorting
+- Responsive design
+- Dark mode
+- Contact form with toast notifications
+- Modern glassmorphism UI
+- Technology tags
+- GitHub and live project links
 
-### Links
+### Admin Dashboard
 
-- Solution URL: [GitHub](https://github.com/SFCC5555/sfcc-web-projects)
-- Live Site URL: [SFCC Web Projects](https://sfcc5555.netlify.app/)
+- Secure authentication with Supabase
+- Protected admin area
+- Create, edit, and delete Projects
+- Manage Certifications
+- Manage Technologies
+- Edit the About section
+- Upload cover images
+- Upload PDF certificates
+- Upload CV
+- Manage social links
+- No code changes required to update portfolio content
 
-## My process
+---
 
-### Built with
+# Tech Stack
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- Mobile-first workflow
-- JavaScript
-- JSON
-- Sass
-- [React](https://reactjs.org/) - JS library
+## Frontend
 
-## Author
+- React
+- TypeScript
+- SCSS
+- React Router
 
-- Website - [Fernando Carrasco Portfolio](https://sfcc5555.netlify.app/)
+## Backend
+
+- Supabase
+- PostgreSQL
+- Supabase Authentication
+- Supabase Storage
+
+## Other Tools
+
+- Git
+- Vercel
+- Netlify (legacy deployment)
+
+---
+
+# Screenshots
+
+## Portfolio
+
+![Desktop](./src/assets/images/sfccportfolio.png)
+
+---
+
+# Project Evolution
+
+This repository originally started as one of my first React portfolio projects.
+
+As part of a modernization effort, I rebuilt it using a more scalable architecture and current technologies. The project now includes a backend, authentication, file storage, CRUD operations, and an admin panel, making it a much better representation of my current experience as a Full Stack Software Engineer.
+
+---
+
+# Links
+
+- **Live Portfolio:** https://fernando-carrasco.com
+- **Legacy Portfolio:** https://sfcc5555.netlify.app
+- **GitHub Repository:** https://github.com/SFCC5555/sfcc-web-projects
+
+---
+
+# Author
+
+**Fernando Carrasco**
+
+- Portfolio: https://fernando-carrasco.com
+- GitHub: https://github.com/SFCC5555
+- LinkedIn: https://www.linkedin.com/in/fernando-carrasco/
