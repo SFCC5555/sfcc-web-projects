@@ -44,9 +44,21 @@
   padding: 10px;
   padding-top: 40px;
   gap: 7px;
-  animation-name: filterSkillsContainerAnimation;
-  animation-duration: 350ms;
   border-radius: 0 0 var(--glass-radius) var(--glass-radius);
+}
+
+.lightModeComponent.filterSkillsContainer,
+.darkModeComponent.filterSkillsContainer {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: none;
+}
+
+.lightModeComponent.filterSkillsContainer:hover,
+.darkModeComponent.filterSkillsContainer:hover {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: none;
 }
 
 /* Styles for the last child of the filter skills container */
@@ -86,6 +98,16 @@
   transition: color 0.07s ease-out, background 0.07s ease-out;
 }
 
+.lightModeElement.filterSkill,
+.darkModeElement.filterSkill {
+  animation: none;
+}
+
+.lightModeElement.filterSkill:hover,
+.darkModeElement.filterSkill:hover {
+  transition: none;
+}
+
 /* Per-mode hover and selected states */
 @each $mode in light, dark {
   .#{$mode}ModeElement.filterSkill:hover {
@@ -117,6 +139,11 @@
     color: hsl(var(--#{$mode}InverseColor));
     border: 1px solid var(--glass-#{$mode}-border);
     box-shadow: var(--glass-#{$mode}-shadow);
+    transition: background 0.15s ease;
+  }
+
+  .#{$mode}ModeFilter:hover {
+    background: var(--glass-#{$mode}-hover-bg);
   }
 }
 
@@ -130,5 +157,24 @@
   .filterButton {
     width: 100px;
     font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .filterButton {
+    width: 180px;
+    font-size: 1.6rem;
+    opacity: 100%;
+    transition: none;
+  }
+
+  .filterButton:hover,
+  .filterButton:focus {
+    width: 180px;
+    transition-property: background;
+  }
+
+  .filterSkillsContainer {
+    width: 180px;
   }
 }

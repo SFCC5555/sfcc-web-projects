@@ -88,8 +88,35 @@
     margin-right: 0px;
   }
 
-  /* Hide the close icon on larger screens */
   .menu .closeIcon {
-    display: none;
+    position: static;
+    flex-shrink: 0;
+    order: 999;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    animation: menuCloseAppear 0.2s 0.9s both;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .menu .closeIcon:hover {
+    border: none;
+    animation: menuCloseHover 0.15s forwards;
+  }
+
+  @keyframes menuCloseAppear {
+    from { opacity: 0; }
+    to   { opacity: 0.6; }
+  }
+
+  @keyframes menuCloseHover {
+    from { opacity: 0.6; }
+    to   { opacity: 1; }
   }
 }

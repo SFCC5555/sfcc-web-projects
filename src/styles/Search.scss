@@ -3,7 +3,7 @@
   width: 40px;
   height: 30px;
   padding: 10px;
-  border-radius: 2px 6px 0px 0px;
+  border-radius: 0 var(--glass-radius) 0 0;
   font-family: var(--mainFont);
   font-size: 0rem;
   opacity: 75%;
@@ -53,7 +53,11 @@
     -webkit-backdrop-filter: blur(8px);
     color: hsl(var(--#{$mode}InverseColor));
     border: 1px solid var(--glass-#{$mode}-border);
-    border-bottom: none;
+    transition: background 0.15s ease;
+  }
+
+  .#{$mode}ModeInput:hover {
+    background: var(--glass-#{$mode}-hover-bg);
   }
 
   /* Placeholder color for the input */
@@ -79,5 +83,20 @@
   .searchInput:hover,
   .searchInput:valid {
     width: 240px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .searchInput {
+    width: 240px;
+    font-size: 1.6rem;
+    opacity: 100%;
+  }
+
+  .searchInput:hover,
+  .searchInput:focus,
+  .searchInput:valid {
+    width: 240px;
+    transition-duration: 0s;
   }
 }

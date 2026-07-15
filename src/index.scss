@@ -54,17 +54,17 @@ html {
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
     inset 0 -1px 0 rgba(0, 0, 0, 0.20);
 
-  --glass-light-bg: rgba(255, 255, 255, 0.42);
-  --glass-light-border: rgba(255, 255, 255, 0.72);
-  --glass-light-hover-bg: rgba(218, 228, 236, 0.56);
+  --glass-light-bg: rgba(255, 255, 255, 0.28);
+  --glass-light-border: rgba(255, 255, 255, 0.58);
+  --glass-light-hover-bg: rgba(190, 194, 198, 0.50);
   --glass-light-shadow:
     0 4px 30px rgba(0, 0, 0, 0.09),
-    inset 0 1px 0 rgba(255, 255, 255, 0.88),
+    inset 0 1px 0 rgba(255, 255, 255, 0.80),
     inset 0 -1px 0 rgba(0, 0, 0, 0.05);
   --glass-light-hover-shadow:
-    0 8px 36px rgba(0, 0, 0, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+    0 10px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.08);
 }
 
 /* Define base styles for the body */
@@ -139,8 +139,10 @@ h2 {
 
   .#{$mode}ModeComponent:hover {
     background: var(--glass-#{$mode}-hover-bg);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
     box-shadow: var(--glass-#{$mode}-hover-shadow);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
   }
 
   .#{$mode}ModeElement {

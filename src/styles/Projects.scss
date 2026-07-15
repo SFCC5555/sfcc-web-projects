@@ -63,6 +63,11 @@ main {
   }
 }
 
+.lightModeComponent.activeTypeTab {
+  background: rgba(160, 164, 168, 0.34);
+  box-shadow: var(--glass-light-hover-shadow);
+}
+
 /* Groups Sort and Filter side by side */
 .sortFilterGroup {
   display: flex;
@@ -75,6 +80,8 @@ main {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 4px;
 }
 
 /* Styles for individual project items */
@@ -88,7 +95,7 @@ main {
   position: relative;
   animation-name: projectAnimation;
   animation-duration: 1.5s;
-  border-radius: 0;
+  border-radius: var(--glass-radius);
 }
 
 /* Animation for individual projects */

@@ -3,6 +3,8 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 4px;
 }
 
 /* Styles for individual certifications */
@@ -10,9 +12,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 15px;
   animation-name: certificationAnimation;
   animation-duration: 1.5s;
-  border-radius: 0;
+  border-radius: var(--glass-radius);
 }
 
 /* Keyframe animation for certification appearance */

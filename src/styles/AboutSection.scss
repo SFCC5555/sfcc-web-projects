@@ -54,6 +54,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
 }
 
 /* Hover effect for the close icon */
