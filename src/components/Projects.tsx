@@ -157,11 +157,11 @@ function Projects({ mode }: ProjectsProps) {
         WEB PROJECTS & CONTRIBUTIONS
       </h2>
       <div className="typeFilterTabs">
-        {(["all", "project", "contribution"] as const).map((type) => (
+        {(["all", "project", "company", "learning"] as const).map((type) => (
           <button
             key={type}
             onClick={() => typeFilterFunction(type)}
-            className={`${lowerCaseMode}ModeComponent typeTab${
+            className={`${lowerCaseMode}ModeComponent typeTab typeTab--${type}${
               activeType === type ? " activeTypeTab" : ""
             }`}
           >
@@ -169,7 +169,9 @@ function Projects({ mode }: ProjectsProps) {
               ? "All"
               : type === "project"
               ? "Projects"
-              : "Contributions"}
+              : type === "company"
+              ? "Companies"
+              : "Learning"}
           </button>
         ))}
       </div>
@@ -201,16 +203,21 @@ function Projects({ mode }: ProjectsProps) {
               key={project.name}
               className={`${lowerCaseMode}ModeComponent project infoRelative`}
             >
-              <a href={project.link} target="_blank" rel="noreferrer" data-tooltip="Go to App">
-                <span
-                  className="projectIllustration"
-                  style={{
-                    backgroundImage: project.coverUrl
-                      ? `url(${project.coverUrl})`
-                      : `url(${require(`../assets/images/projectIllustrations/${projectClassName}Color.png`)})`,
-                  }}
-                />
-              </a>
+              <div className="projectImageWrapper">
+                <a href={project.link} target="_blank" rel="noreferrer" data-tooltip="Go to App">
+                  <span
+                    className="projectIllustration"
+                    style={{
+                      backgroundImage: project.coverUrl
+                        ? `url(${project.coverUrl})`
+                        : `url(${require(`../assets/images/projectIllustrations/${projectClassName}Color.png`)})`,
+                    }}
+                  />
+                </a>
+                <span className={`projectTypeBadge projectTypeBadge--${project.type}`}>
+                  {project.type === "project" ? "Project" : project.type === "company" ? "Company" : "Learning"}
+                </span>
+              </div>
               <Skills skillList={project.skillList} mode={mode} />
               <Info mode={mode} name={project.name} info={project.info} />
               {project.date && (

@@ -56,6 +56,14 @@ main {
   opacity: 1 !important;
 }
 
+.lightModeComponent.typeTab {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.darkModeComponent.typeTab {
+  background: rgba(255, 255, 255, 0.03);
+}
+
 @each $mode in light, dark {
   .#{$mode}ModeComponent.activeTypeTab {
     background: var(--glass-#{$mode}-hover-bg);
@@ -64,8 +72,23 @@ main {
 }
 
 .lightModeComponent.activeTypeTab {
-  background: rgba(160, 164, 168, 0.34);
+  background: rgba(160, 164, 168, 0.18);
   box-shadow: var(--glass-light-hover-shadow);
+}
+
+.activeTypeTab.typeTab--project {
+  color: rgb(100, 180, 255);
+  border-color: rgba(100, 180, 255, 0.50);
+}
+
+.activeTypeTab.typeTab--company {
+  color: rgb(80, 220, 130);
+  border-color: rgba(80, 220, 130, 0.50);
+}
+
+.activeTypeTab.typeTab--learning {
+  color: rgb(225, 160, 80);
+  border-color: rgba(225, 160, 80, 0.50);
 }
 
 /* Groups Sort and Filter side by side */
@@ -79,9 +102,15 @@ main {
 .projectContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 10px;
   padding: 4px;
+}
+
+@media screen and (min-width: 500px) {
+  .projectContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Styles for individual project items */
@@ -113,6 +142,74 @@ main {
   bottom: calc(100% - 8px);
 }
 
+/* Image wrapper — gives the badge an anchor point at the image corner */
+.projectImageWrapper {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.projectImageWrapper:hover {
+  transform: scale(1.015);
+}
+
+/* Type badge — centered on the top-right corner of the image */
+.projectTypeBadge {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  transform: translate(50%, -50%);
+  font-size: 1rem;
+  padding: 2px 10px;
+  border-radius: 6px;
+  border: 1px solid;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.lightModeComponent .projectTypeBadge {
+  background: rgb(240, 242, 244);
+}
+
+.darkModeComponent .projectTypeBadge {
+  background: rgb(20, 24, 28);
+}
+
+.projectTypeBadge--project {
+  color: rgba(80, 160, 255, 0.90);
+  border-color: rgba(80, 160, 255, 0.35);
+}
+
+.projectTypeBadge--company {
+  color: rgba(80, 200, 120, 0.90);
+  border-color: rgba(80, 200, 120, 0.35);
+}
+
+.projectTypeBadge--learning {
+  color: rgba(200, 140, 80, 0.90);
+  border-color: rgba(200, 140, 80, 0.35);
+}
+
+.projectImageWrapper:hover .projectTypeBadge--project {
+  color: rgb(100, 180, 255);
+  border-color: rgba(100, 180, 255, 0.70);
+}
+
+.projectImageWrapper:hover .projectTypeBadge--company {
+  color: rgb(80, 220, 130);
+  border-color: rgba(80, 220, 130, 0.70);
+}
+
+.projectImageWrapper:hover .projectTypeBadge--learning {
+  color: rgb(225, 160, 80);
+  border-color: rgba(225, 160, 80, 0.70);
+}
+
+
+
 /* Animation for individual projects */
 @keyframes projectAnimation {
   0% {
@@ -123,7 +220,6 @@ main {
   }
 }
 
-/* Fecha visible junto al botón info (sin tocar el hover de Info) */
 .projectDate {
   position: absolute;
   top: 0;
@@ -189,13 +285,12 @@ main {
   animation-duration: 1.5s;
   filter: grayscale(100%);
   border-radius: 6px;
-  transition: filter 1s ease, transform 0.2s ease;
+  transition: filter 1s ease;
 }
 
 /* Hover effect for project illustrations */
 .projectIllustration:hover {
   filter: grayscale(0%);
-  transform: scale(1.015);
 }
 
 /* Animation for project illustrations */
@@ -220,7 +315,6 @@ main {
   }
   .projectDate {
     font-size: 1.5rem;
-    left: 32px;
   }
   .projectIllustration {
     width: 200px;

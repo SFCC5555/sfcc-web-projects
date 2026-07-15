@@ -300,7 +300,8 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
                   <label>Type</label>
                   <select value={form.type} onChange={e => setField("type", e.target.value)}>
                     <option value="project">project</option>
-                    <option value="contribution">contribution</option>
+                    <option value="company">company</option>
+                    <option value="learning">learning</option>
                   </select>
                 </div>
                 <div className="crudFormGroup">

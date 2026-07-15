@@ -1,6 +1,6 @@
 export type Mode = "Light" | "Dark";
 
-export type ProjectType = "project" | "contribution";
+export type ProjectType = "project" | "company" | "learning";
 
 export interface Project {
   name: string;
