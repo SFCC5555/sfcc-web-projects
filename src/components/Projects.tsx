@@ -184,13 +184,12 @@ function Projects({ mode }: ProjectsProps) {
         </div>
       </section>
 
-      {projects.length === 0 && (
+      {loading && (
+        <p className={`noResults ${lowerCaseMode}ModeElement`}>Loading…</p>
+      )}
+      {!loading && projects.length === 0 && (
         <p className={`noResults ${lowerCaseMode}ModeComponent ${lowerCaseMode}ModeElement`}>
-          {loading
-            ? "Loading…"
-            : allProjectsRef.current.length === 0
-            ? "No projects yet."
-            : "No projects match your search"}
+          {allProjectsRef.current.length === 0 ? "No projects yet." : "No projects match your search"}
         </p>
       )}
       <section className="projectContainer">

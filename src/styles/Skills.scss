@@ -26,8 +26,8 @@
 /* Styles for skill icons */
 .skillIcon {
   background-size: contain;
-  height: 32px;
-  width: 32px;
+  height: 22px;
+  width: 22px;
   cursor: crosshair;
   animation-name: skillIconAnimation;
   animation-duration: 1s;
@@ -45,11 +45,29 @@
 @keyframes skillIconAnimation {
   0% {
     opacity: 0%;
-    height: 20px;
+    height: 14px;
   }
   100% {
     opacity: 100%;
-    height: 32px;
+    height: 22px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .skillIcon {
+    height: 28px;
+    width: 28px;
+  }
+
+  @keyframes skillIconAnimation {
+    0% {
+      opacity: 0%;
+      height: 18px;
+    }
+    100% {
+      opacity: 100%;
+      height: 28px;
+    }
   }
 }
 
