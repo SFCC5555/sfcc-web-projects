@@ -15,7 +15,6 @@ interface AboutData {
   skill_list: string[];
   github_url: string;
   linkedin_url: string;
-  manfred_url: string;
   cv_url: string | null;
 }
 
@@ -26,7 +25,7 @@ function AboutSection({ active, controlFunction, mode }: AboutSectionProps) {
   useEffect(() => {
     supabase
       .from("about")
-      .select("description, skill_list, github_url, linkedin_url, manfred_url, cv_url")
+      .select("description, skill_list, github_url, linkedin_url, cv_url")
       .single()
       .then(({ data }) => {
         if (data) setAbout(data as AboutData);
@@ -37,7 +36,6 @@ function AboutSection({ active, controlFunction, mode }: AboutSectionProps) {
   const skillList = about?.skill_list ?? [];
   const githubUrl = about?.github_url ?? "";
   const linkedinUrl = about?.linkedin_url ?? "";
-  const manfredUrl = about?.manfred_url ?? "";
   const cvUrl = about?.cv_url ?? "";
 
   return (
