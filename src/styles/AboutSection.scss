@@ -87,16 +87,35 @@
 /* Styles for links section */
 .links {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   align-self: flex-start;
 }
 
 .links div {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.links .skillIcon {
+  width: 27px;
+  height: 27px;
+}
+
+@media screen and (min-width: 900px) {
+  .links {
+    font-size: 1.3rem;
+  }
+
+  .links div {
+    gap: 20px;
+  }
+
+  .links .skillIcon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .links div > a {

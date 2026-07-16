@@ -72,24 +72,16 @@ function AboutSection({ active, controlFunction, mode }: AboutSectionProps) {
               GitHub
             </a>
           )}
-          {cvUrl && (
-            <a href={cvUrl} className={`${lowerCaseMode}ModeElement`} target="_Blank" rel="noreferrer">
-              <span className={`skillIcon cvIcon${mode}`} />
-              CV
-            </a>
-          )}
-        </div>
-        <div>
           {linkedinUrl && (
             <a href={linkedinUrl} className={`${lowerCaseMode}ModeElement`} target="_Blank" rel="noreferrer">
               <span className={`skillIcon linkedinIcon${mode}`} />
               Linkedin
             </a>
           )}
-          {manfredUrl && (
-            <a href={manfredUrl} className={`${lowerCaseMode}ModeElement`} target="_Blank" rel="noreferrer">
-              <span className={`skillIcon manfredIcon${mode}`} />
-              Manfred
+          {cvUrl && (
+            <a href={cvUrl} className={`${lowerCaseMode}ModeElement`} target="_Blank" rel="noreferrer">
+              <span className={`skillIcon cvIcon${mode}`} />
+              CV
             </a>
           )}
         </div>
