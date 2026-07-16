@@ -20,6 +20,7 @@ function Projects({ mode }: ProjectsProps) {
   const [filterSkills, setFilterSkills] = useState<string[]>([]);
   const [sortOrder, setSortOrder] = useState<SortOrder>("default");
   const [activeType, setActiveType] = useState<"all" | ProjectType>("all");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   // allProjectsRef: full unfiltered list; filteredRef: after search/skill filter
   const allProjectsRef = useRef<Project[]>([]);
@@ -219,7 +220,7 @@ function Projects({ mode }: ProjectsProps) {
                 </span>
               </div>
               <Skills skillList={project.skillList} mode={mode} />
-              <Info mode={mode} name={project.name} info={project.info} />
+              <Info mode={mode} name={project.name} info={project.info} onDetails={() => setSelectedProject(project)} />
               {project.date && (
                 <span
                   className={`projectDate ${lowerCaseMode}ModeElement`}
@@ -258,6 +259,57 @@ function Projects({ mode }: ProjectsProps) {
           );
         })}
       </section>
+      {selectedProject && (
+        <div className="projectModalOverlay" onClick={() => setSelectedProject(null)}>
+          <div
+            className={`projectModal ${lowerCaseMode}ModeComponent`}
+            onClick={e => e.stopPropagation()}
+          >
+            <button className="closeIcon projectModalClose" onClick={() => setSelectedProject(null)}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+
+            <div className="projectModalHeader">
+              <h3 className={`projectModalTitle ${lowerCaseMode}ModeElement`}>{selectedProject.name}</h3>
+              <span className={`projectTypeBadge projectTypeBadge--${selectedProject.type}`}>
+                {selectedProject.type === "project" ? "Project" : selectedProject.type === "company" ? "Company" : "Learning"}
+              </span>
+            </div>
+
+            {selectedProject.date && (
+              <p className={`projectModalDate ${lowerCaseMode}ModeElement`}>{selectedProject.date}</p>
+            )}
+
+            <p className={`projectModalInfo ${lowerCaseMode}ModeElement`}>{selectedProject.info}</p>
+
+            <Skills skillList={selectedProject.skillList} mode={mode} />
+
+            <div className="projectModalLinks">
+              <a href={selectedProject.link} target="_blank" rel="noreferrer" className={`projectModalLink ${lowerCaseMode}ModeComponent`}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+                Open App
+              </a>
+              {selectedProject.repository && !selectedProject.repositoryPrivate && (
+                <a href={selectedProject.repository} target="_blank" rel="noreferrer" className={`projectModalLink ${lowerCaseMode}ModeComponent`}>
+                  Frontend Repo
+                </a>
+              )}
+              {selectedProject.backendRepository && !selectedProject.backendRepositoryPrivate && (
+                <a href={selectedProject.backendRepository} target="_blank" rel="noreferrer" className={`projectModalLink ${lowerCaseMode}ModeComponent`}>
+                  Backend Repo
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

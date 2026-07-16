@@ -6,9 +6,10 @@ interface InfoProps {
   mode: Mode;
   name: string;
   info: string;
+  onDetails?: () => void;
 }
 
-function Info({ mode, name, info }: InfoProps) {
+function Info({ mode, name, info, onDetails }: InfoProps) {
   const [activeInfo, setActiveInfo] = useState(false);
 
   function aboutInfo() {
@@ -27,9 +28,18 @@ function Info({ mode, name, info }: InfoProps) {
         className={`skillIcon aboutIcon${mode} aboutIcon`}
       />
       {activeInfo && (
-        <div className={`info info${mode}`}>
+        <div
+          className={`info info${mode}`}
+          onMouseEnter={aboutInfo}
+          onMouseLeave={closeAboutInfo}
+        >
           <div className="infoTitle">{name}</div>
           <p className="infoContent">{info}</p>
+          {onDetails && (
+            <button className="infoDetailsBtn" onClick={onDetails}>
+              Detail
+            </button>
+          )}
         </div>
       )}
     </>

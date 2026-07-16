@@ -1,4 +1,4 @@
-import { useState, useEffect, forwardRef, useImperativeHandle } from "react";
+import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import { supabase } from "../../lib/supabase";
 import "../../styles/admin/AdminCrud.scss";
 
@@ -59,6 +59,8 @@ const AdminCertifications = forwardRef<CertificationsHandle, AdminCertifications
   const [saving, setSaving] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [dragOverId, setDragOverId] = useState<string | null>(null);
+  const dragId = useRef<string | null>(null);
 
   useImperativeHandle(ref, () => ({ openAdd }));
   useEffect(() => { load(); }, []);
@@ -78,7 +80,7 @@ const AdminCertifications = forwardRef<CertificationsHandle, AdminCertifications
   }
 
   function openAdd() {
-    setForm({ name: "", sort_order: certs.length });
+    setForm({ name: "", sort_order: 0 });
     resetExtras();
     setEditingId(null);
     setFormMode("add");
@@ -107,6 +109,38 @@ const AdminCertifications = forwardRef<CertificationsHandle, AdminCertifications
 
   function setField<K extends keyof FormState>(k: K, v: FormState[K]) {
     setForm(prev => ({ ...prev, [k]: v }));
+  }
+
+  function handleDragStart(e: React.DragEvent, id: string) {
+    dragId.current = id;
+    e.dataTransfer.effectAllowed = "move";
+  }
+
+  function handleDragOver(e: React.DragEvent, id: string) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    setDragOverId(id);
+  }
+
+  async function handleDrop(e: React.DragEvent, targetId: string) {
+    e.preventDefault();
+    if (!dragId.current || dragId.current === targetId) { setDragOverId(null); return; }
+    const list = [...certs];
+    const fromIdx = list.findIndex(c => c.id === dragId.current);
+    const toIdx = list.findIndex(c => c.id === targetId);
+    if (fromIdx === -1 || toIdx === -1) { setDragOverId(null); return; }
+    const [removed] = list.splice(fromIdx, 1);
+    list.splice(toIdx, 0, removed);
+    const updated = list.map((c, i) => ({ ...c, sort_order: i }));
+    setCerts(updated);
+    await Promise.all(updated.map(c => supabase.from("certifications").update({ sort_order: c.sort_order }).eq("id", c.id)));
+    dragId.current = null;
+    setDragOverId(null);
+  }
+
+  function handleDragEnd() {
+    setDragOverId(null);
+    dragId.current = null;
   }
 
   function switchLinkMode(mode: LinkMode) {
@@ -151,6 +185,12 @@ const AdminCertifications = forwardRef<CertificationsHandle, AdminCertifications
     const payload = { ...form, date: monthValueToDisplay(dateInput), link };
 
     if (formMode === "add") {
+      if (certs.length > 0) {
+        const toShift = certs.filter(c => c.sort_order >= payload.sort_order);
+        await Promise.all(
+          toShift.map(c => supabase.from("certifications").update({ sort_order: c.sort_order + 1 }).eq("id", c.id))
+        );
+      }
       const { error: e } = await supabase.from("certifications").insert([payload]);
       if (e) { setError(e.message); setSaving(false); return; }
     } else {
@@ -173,6 +213,8 @@ const AdminCertifications = forwardRef<CertificationsHandle, AdminCertifications
       }
     }
     await supabase.from("certifications").delete().eq("id", id);
+    const remaining = certs.filter(c => c.id !== id).sort((a, b) => a.sort_order - b.sort_order);
+    await Promise.all(remaining.map((c, i) => supabase.from("certifications").update({ sort_order: i }).eq("id", c.id)));
     setDeleteId(null);
     await load();
     onToast("success", "Certification deleted");
@@ -185,18 +227,26 @@ const AdminCertifications = forwardRef<CertificationsHandle, AdminCertifications
       ) : (
         <div className="crudTable crudTable--certs">
           <div className="crudTableHead">
-            <span>Name</span><span>Date</span><span>#</span><span></span>
+            <span></span><span>Name</span><span>Date</span><span></span>
           </div>
           {certs.length === 0 && <div className="crudEmpty">No certifications yet.</div>}
-          {certs.map(c => (
-            <div className="crudTableRow" key={c.id}>
+          {certs.map((c, idx) => (
+            <div
+              className={`crudTableRow${dragOverId === c.id ? " crudTableRow--dragOver" : ""}`}
+              key={c.id}
+              draggable
+              onDragStart={e => handleDragStart(e, c.id)}
+              onDragOver={e => handleDragOver(e, c.id)}
+              onDrop={e => handleDrop(e, c.id)}
+              onDragEnd={handleDragEnd}
+            >
+              <span className="crudCell crudDragHandle">{idx + 1}</span>
               <span className="crudCell crudName">
                 <a href={c.link.startsWith("h") ? c.link : "#"} target="_blank" rel="noreferrer">
                   {c.name}
                 </a>
               </span>
               <span className="crudCell crudMuted">{c.date}</span>
-              <span className="crudCell crudMuted">{c.sort_order}</span>
               <span className="crudCell crudActions">
                 <button className="crudBtn" onClick={() => openEdit(c)}>Edit</button>
                 <button className="crudBtn crudBtn--danger" onClick={() => setDeleteId(c.id)}>Del</button>
@@ -219,15 +269,9 @@ const AdminCertifications = forwardRef<CertificationsHandle, AdminCertifications
                 <input value={form.name} onChange={e => setField("name", e.target.value)} />
               </div>
 
-              <div className="crudFormRow2">
-                <div className="crudFormGroup">
-                  <label>Date *</label>
-                  <input type="month" value={dateInput} onChange={e => setDateInput(e.target.value)} />
-                </div>
-                <div className="crudFormGroup">
-                  <label>Sort order</label>
-                  <input type="number" value={form.sort_order} onChange={e => setField("sort_order", Number(e.target.value))} />
-                </div>
+              <div className="crudFormGroup">
+                <label>Date *</label>
+                <input type="month" value={dateInput} onChange={e => setDateInput(e.target.value)} />
               </div>
 
               {/* Link type toggle */}

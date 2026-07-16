@@ -1,4 +1,4 @@
-import { useState, useEffect, forwardRef, useImperativeHandle } from "react";
+import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import { supabase } from "../../lib/supabase";
 import "../../styles/admin/AdminCrud.scss";
 
@@ -77,6 +77,8 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
   const [saving, setSaving] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [dragOverId, setDragOverId] = useState<string | null>(null);
+  const dragId = useRef<string | null>(null);
 
   useImperativeHandle(ref, () => ({ openAdd }));
   useEffect(() => { load(); }, []);
@@ -100,7 +102,7 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
   }
 
   function openAdd() {
-    setForm({ ...EMPTY, sort_order: projects.length });
+    setForm({ ...EMPTY, sort_order: 0 });
     resetExtras();
     setEditingId(null);
     setFormMode("add");
@@ -135,6 +137,38 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
 
   function setField<K extends keyof FormState>(k: K, v: FormState[K]) {
     setForm(prev => ({ ...prev, [k]: v }));
+  }
+
+  function handleDragStart(e: React.DragEvent, id: string) {
+    dragId.current = id;
+    e.dataTransfer.effectAllowed = "move";
+  }
+
+  function handleDragOver(e: React.DragEvent, id: string) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    setDragOverId(id);
+  }
+
+  async function handleDrop(e: React.DragEvent, targetId: string) {
+    e.preventDefault();
+    if (!dragId.current || dragId.current === targetId) { setDragOverId(null); return; }
+    const list = [...projects];
+    const fromIdx = list.findIndex(p => p.id === dragId.current);
+    const toIdx = list.findIndex(p => p.id === targetId);
+    if (fromIdx === -1 || toIdx === -1) { setDragOverId(null); return; }
+    const [removed] = list.splice(fromIdx, 1);
+    list.splice(toIdx, 0, removed);
+    const updated = list.map((p, i) => ({ ...p, sort_order: i }));
+    setProjects(updated);
+    await Promise.all(updated.map(p => supabase.from("projects").update({ sort_order: p.sort_order }).eq("id", p.id)));
+    dragId.current = null;
+    setDragOverId(null);
+  }
+
+  function handleDragEnd() {
+    setDragOverId(null);
+    dragId.current = null;
   }
 
   function toggleSkill(name: string) {
@@ -179,6 +213,12 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
     };
 
     if (formMode === "add") {
+      if (projects.length > 0) {
+        const toShift = projects.filter(p => p.sort_order >= basePayload.sort_order);
+        await Promise.all(
+          toShift.map(p => supabase.from("projects").update({ sort_order: p.sort_order + 1 }).eq("id", p.id))
+        );
+      }
       const { data: inserted, error: e } = await supabase
         .from("projects")
         .insert([{ ...basePayload, cover_url: null }])
@@ -218,6 +258,8 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
       }
     }
     await supabase.from("projects").delete().eq("id", id);
+    const remaining = projects.filter(p => p.id !== id).sort((a, b) => a.sort_order - b.sort_order);
+    await Promise.all(remaining.map((p, i) => supabase.from("projects").update({ sort_order: i }).eq("id", p.id)));
     setDeleteId(null);
     await load();
     onToast("success", "Project deleted");
@@ -230,17 +272,25 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
       ) : (
         <div className="crudTable crudTable--projects">
           <div className="crudTableHead">
-            <span>Name</span><span>Type</span><span>Date</span><span>#</span><span></span>
+            <span></span><span>Name</span><span>Type</span><span>Date</span><span></span>
           </div>
           {projects.length === 0 && <div className="crudEmpty">No projects yet.</div>}
-          {projects.map(p => (
-            <div className="crudTableRow" key={p.id}>
+          {projects.map((p, idx) => (
+            <div
+              className={`crudTableRow${dragOverId === p.id ? " crudTableRow--dragOver" : ""}`}
+              key={p.id}
+              draggable
+              onDragStart={e => handleDragStart(e, p.id)}
+              onDragOver={e => handleDragOver(e, p.id)}
+              onDrop={e => handleDrop(e, p.id)}
+              onDragEnd={handleDragEnd}
+            >
+              <span className="crudCell crudDragHandle">{idx + 1}</span>
               <span className="crudCell crudName">
                 <a href={p.link} target="_blank" rel="noreferrer">{p.name}</a>
               </span>
               <span className={`crudCell crudBadge crudBadge--${p.type}`}>{p.type}</span>
               <span className="crudCell crudMuted">{p.date || "—"}</span>
-              <span className="crudCell crudMuted">{p.sort_order}</span>
               <span className="crudCell crudActions">
                 <button className="crudBtn" onClick={() => openEdit(p)}>Edit</button>
                 <button className="crudBtn crudBtn--danger" onClick={() => setDeleteId(p.id)}>Del</button>
@@ -294,8 +344,8 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
                 </label>
               </div>
 
-              {/* Type + Date + Sort */}
-              <div className="crudFormRow3">
+              {/* Type + Date */}
+              <div className="crudFormRow2">
                 <div className="crudFormGroup">
                   <label>Type</label>
                   <select value={form.type} onChange={e => setField("type", e.target.value)}>
@@ -307,10 +357,6 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
                 <div className="crudFormGroup">
                   <label>Date</label>
                   <input type="month" value={dateInput} onChange={e => setDateInput(e.target.value)} />
-                </div>
-                <div className="crudFormGroup">
-                  <label>Sort order</label>
-                  <input type="number" value={form.sort_order} onChange={e => setField("sort_order", Number(e.target.value))} />
                 </div>
               </div>
 

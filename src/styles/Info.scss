@@ -40,6 +40,8 @@
   opacity: 90%;
   padding: 10px;
   padding-top: 20px;
+  z-index: 2;
+  cursor: help;
 }
 
 /* Styles for the information section in dark mode */
@@ -65,6 +67,31 @@
   font-size: 1rem;
   line-height: 0.9rem;
   text-align: justify;
+}
+
+/* Details button inside the info hover panel */
+.infoDetailsBtn {
+  display: block;
+  margin: 16px auto 0;
+  padding: 4px 14px;
+  font-family: var(--mainFont);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover { background: rgba(255, 255, 255, 0.22); cursor: pointer; }
+}
+
+.infoLight .infoDetailsBtn {
+  background: rgba(0, 0, 0, 0.07);
+  border-color: rgba(0, 0, 0, 0.18);
+
+  &:hover { background: rgba(0, 0, 0, 0.14); }
 }
 
 /* Media query for larger screens */

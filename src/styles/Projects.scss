@@ -31,7 +31,7 @@ main {
 /* Type filter tabs: All / Projects / Contributions */
 .typeFilterTabs {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -39,7 +39,7 @@ main {
 }
 
 .typeTab {
-  padding: 4px 12px;
+  padding: 4px 8px;
   font-family: var(--mainFont);
   font-size: 1.1rem;
   cursor: pointer;
@@ -344,4 +344,137 @@ main {
   }
 
   /* Adjustments to the main content section */
+}
+
+
+/* ── Project detail modal ── */
+.projectModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  padding: 20px;
+}
+
+body.lightMode .projectModalOverlay {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.projectModal {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: var(--glass-radius);
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: projectModalIn 0.2s ease;
+}
+
+@keyframes projectModalIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.projectModalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  opacity: 0.55;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border-width: 1px;
+
+  svg { width: 14px; height: 14px; }
+
+  &:hover { opacity: 1; background: transparent; }
+}
+
+.darkModeComponent .projectModalClose {
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.lightModeComponent .projectModalClose {
+  color: rgba(20, 30, 50, 0.85);
+  border-color: rgba(20, 30, 50, 0.85);
+}
+
+
+.projectModalHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-right: 28px;
+}
+
+.projectModalTitle {
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.projectModalDate {
+  font-size: 1.1rem;
+  opacity: 0.55;
+  margin: 0;
+  text-align: left;
+}
+
+.projectModalInfo {
+  font-size: 1.2rem;
+  line-height: 1.6em;
+  opacity: 0.85;
+  margin: 0;
+  text-align: justify;
+}
+
+.projectModalLinks {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  justify-content: flex-end;
+}
+
+.projectModalLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 18px;
+  border-radius: var(--glass-radius);
+  font-family: var(--mainFont);
+  font-size: 1.1rem;
+  text-decoration: none;
+  opacity: 0.80;
+  transition: opacity 0.15s ease;
+
+  svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  &:hover { opacity: 1; }
+}
+
+/* badge inside the modal uses the same .projectTypeBadge rules, just reset position */
+.projectModal .projectTypeBadge {
+  position: static;
+  transform: none;
+  pointer-events: auto;
+}
+
+.lightModeComponent.projectModal .projectTypeBadge {
+  background: rgb(240, 242, 244);
+}
+
+.darkModeComponent.projectModal .projectTypeBadge {
+  background: rgb(20, 24, 28);
 }

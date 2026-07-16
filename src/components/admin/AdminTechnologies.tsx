@@ -159,13 +159,13 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
         <>
           {techs.length === 0 && <div className="crudEmpty">No technologies yet.</div>}
           <div className="techChipGrid">
-            {techs.map(t => (
+            {techs.map((t, idx) => (
               <div className="techChip" key={t.id}>
+                <span className="techChipOrder">{idx + 1}</span>
                 {t.icon_url && (
                   <img src={t.icon_url} alt={t.name} className="techChipIcon" />
                 )}
                 <span className="techChipName">{t.name}</span>
-                <span className="techChipOrder">#{t.sort_order}</span>
                 <div className="techChipActions">
                   <button className="crudBtn" onClick={() => openEdit(t)}>Edit</button>
                   <button className="crudBtn crudBtn--danger" onClick={() => setDeleteId(t.id)}>Del</button>
