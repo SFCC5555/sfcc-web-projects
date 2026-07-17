@@ -139,7 +139,7 @@ main {
 
 /* Pull project image tooltip closer to the illustration */
 .project a[data-tooltip]::after {
-  bottom: calc(100% - 8px);
+  bottom: calc(100% + 2px);
 }
 
 /* Image wrapper — gives the badge an anchor point at the image corner */
@@ -444,6 +444,7 @@ body.lightMode .projectModalOverlay {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 4px;
+  margin-bottom: 4px;
   justify-content: flex-end;
 }
 
@@ -462,6 +463,22 @@ body.lightMode .projectModalOverlay {
   svg { width: 14px; height: 14px; flex-shrink: 0; }
 
   &:hover { opacity: 1; }
+}
+
+/* disable glass hover effect on the modal container */
+.darkModeComponent.projectModal:hover {
+  background: var(--glass-dark-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-dark-shadow);
+  transition: none;
+}
+.lightModeComponent.projectModal:hover {
+  background: var(--glass-light-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-light-shadow);
+  transition: none;
 }
 
 /* badge inside the modal uses the same .projectTypeBadge rules, just reset position */

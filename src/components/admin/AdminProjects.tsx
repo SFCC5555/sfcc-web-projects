@@ -21,7 +21,8 @@ interface Project {
   cover_url: string | null;
   skill_list: string[];
   info: string;
-  date: string | null;
+  start_date: string | null;
+  end_date: string | null;
   type: string;
   sort_order: number;
 }
@@ -74,6 +75,7 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
   const [coverFile, setCoverFile] = useState<File | null>(null);
   const [coverPreview, setCoverPreview] = useState("");
   const [existingCoverUrl, setExistingCoverUrl] = useState("");
+  const [endDateInput, setEndDateInput] = useState("");
   const [saving, setSaving] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -95,6 +97,7 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
 
   function resetExtras() {
     setDateInput("");
+    setEndDateInput("");
     setCoverFile(null);
     setCoverPreview("");
     setExistingCoverUrl("");
@@ -118,7 +121,8 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
       backend_repository_private: p.backend_repository_private,
       info: p.info, type: p.type, sort_order: p.sort_order,
     });
-    setDateInput(displayToMonthValue(p.date ?? ""));
+    setDateInput(displayToMonthValue(p.start_date ?? ""));
+    setEndDateInput(displayToMonthValue(p.end_date ?? ""));
     setExistingCoverUrl(p.cover_url ?? "");
     setCoverFile(null);
     setCoverPreview("");
@@ -204,10 +208,13 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
     setSaving(true);
     setError(null);
 
+    const startDate = dateInput ? monthValueToDisplay(dateInput) : null;
+    const endDate = endDateInput ? monthValueToDisplay(endDateInput) : null;
     const basePayload = {
       ...form,
       skill_list: selectedSkills,
-      date: dateInput ? monthValueToDisplay(dateInput) : null,
+      start_date: startDate,
+      end_date: endDate ?? startDate,
       repository: form.repository || null,
       backend_repository: form.backend_repository || null,
     };
@@ -290,7 +297,13 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
                 <a href={p.link} target="_blank" rel="noreferrer">{p.name}</a>
               </span>
               <span className={`crudCell crudBadge crudBadge--${p.type}`}>{p.type}</span>
-              <span className="crudCell crudMuted">{p.date || "—"}</span>
+              <span className="crudCell crudMuted">
+                {p.start_date
+                  ? p.end_date && p.end_date !== p.start_date
+                    ? `${p.start_date} – ${p.end_date}`
+                    : p.start_date
+                  : "—"}
+              </span>
               <span className="crudCell crudActions">
                 <button className="crudBtn" onClick={() => openEdit(p)}>Edit</button>
                 <button className="crudBtn crudBtn--danger" onClick={() => setDeleteId(p.id)}>Del</button>
@@ -344,19 +357,40 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
                 </label>
               </div>
 
-              {/* Type + Date */}
+              {/* Type */}
+              <div className="crudFormGroup">
+                <label>Type</label>
+                <select value={form.type} onChange={e => setField("type", e.target.value)}>
+                  <option value="project">project</option>
+                  <option value="company">company</option>
+                  <option value="learning">learning</option>
+                </select>
+              </div>
+
+              {/* Start + End date */}
               <div className="crudFormRow2">
                 <div className="crudFormGroup">
-                  <label>Type</label>
-                  <select value={form.type} onChange={e => setField("type", e.target.value)}>
-                    <option value="project">project</option>
-                    <option value="company">company</option>
-                    <option value="learning">learning</option>
-                  </select>
+                  <label>Start Date</label>
+                  <input
+                    type="month"
+                    value={dateInput}
+                    onChange={e => {
+                      setDateInput(e.target.value);
+                      if (endDateInput && e.target.value > endDateInput) setEndDateInput("");
+                    }}
+                    onClick={e => (e.currentTarget as HTMLInputElement).showPicker?.()}
+                  />
                 </div>
                 <div className="crudFormGroup">
-                  <label>Date</label>
-                  <input type="month" value={dateInput} onChange={e => setDateInput(e.target.value)} />
+                  <label>End Date</label>
+                  <input
+                    type="month"
+                    value={endDateInput}
+                    min={dateInput}
+                    disabled={!dateInput}
+                    onChange={e => setEndDateInput(e.target.value)}
+                    onClick={e => (e.currentTarget as HTMLInputElement).showPicker?.()}
+                  />
                 </div>
               </div>
 

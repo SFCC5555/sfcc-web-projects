@@ -12,7 +12,8 @@ export interface Project {
   coverUrl?: string;
   skillList: string[];
   info: string;
-  date?: string;
+  startDate?: string;
+  endDate?: string;
   type: ProjectType;
 }
 

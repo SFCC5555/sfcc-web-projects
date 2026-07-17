@@ -12,6 +12,13 @@ interface ProjectsProps {
   mode: Mode;
 }
 
+function formatDateRange(startDate?: string, endDate?: string): string {
+  if (!startDate && !endDate) return "";
+  if (!startDate) return endDate!;
+  if (!endDate || startDate === endDate) return startDate;
+  return `${startDate} - ${endDate}`;
+}
+
 function Projects({ mode }: ProjectsProps) {
   const lowerCaseMode = mode.toLowerCase();
 
@@ -21,12 +28,20 @@ function Projects({ mode }: ProjectsProps) {
   const [sortOrder, setSortOrder] = useState<SortOrder>("default");
   const [activeType, setActiveType] = useState<"all" | ProjectType>("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [techIcons, setTechIcons] = useState<Record<string, string>>({});
 
   // allProjectsRef: full unfiltered list; filteredRef: after search/skill filter
   const allProjectsRef = useRef<Project[]>([]);
   const filteredRef = useRef<Project[]>([]);
 
   useEffect(() => {
+    supabase.from("technologies").select("name, icon_url").order("sort_order").then(({ data }) => {
+      if (data) {
+        const map: Record<string, string> = {};
+        data.forEach(t => { map[t.name] = t.icon_url ?? ""; });
+        setTechIcons(map);
+      }
+    });
     supabase
       .from("projects")
       .select("*")
@@ -37,7 +52,8 @@ function Projects({ mode }: ProjectsProps) {
             name: p.name,
             link: p.link,
             info: p.info,
-            date: p.date ?? undefined,
+            startDate: p.start_date ?? undefined,
+            endDate: p.end_date ?? undefined,
             type: p.type as ProjectType,
             skillList: p.skill_list,
             repository: p.repository ?? undefined,
@@ -72,14 +88,14 @@ function Projects({ mode }: ProjectsProps) {
     if (order === "name-asc") return sorted.sort((a, b) => a.name.localeCompare(b.name));
     if (order === "name-desc") return sorted.sort((a, b) => b.name.localeCompare(a.name));
     if (order === "date-asc") return sorted.sort((a, b) => {
-      if (!a.date) return 1;
-      if (!b.date) return -1;
-      return a.date.localeCompare(b.date);
+      if (!a.startDate) return 1;
+      if (!b.startDate) return -1;
+      return a.startDate.localeCompare(b.startDate);
     });
     if (order === "date-desc") return sorted.sort((a, b) => {
-      if (!a.date) return 1;
-      if (!b.date) return -1;
-      return b.date.localeCompare(a.date);
+      if (!a.startDate) return 1;
+      if (!b.startDate) return -1;
+      return b.startDate.localeCompare(a.startDate);
     });
     return sorted;
   }
@@ -218,14 +234,14 @@ function Projects({ mode }: ProjectsProps) {
                   {project.type === "project" ? "Project" : project.type === "company" ? "Company" : "Learning"}
                 </span>
               </div>
-              <Skills skillList={project.skillList} mode={mode} />
+              <Skills skillList={project.skillList} mode={mode} techIcons={techIcons} />
               <Info mode={mode} name={project.name} info={project.info} onDetails={() => setSelectedProject(project)} />
-              {project.date && (
+              {(project.startDate || project.endDate) && (
                 <span
                   className={`projectDate ${lowerCaseMode}ModeElement`}
-                  data-tooltip={project.date}
+                  data-tooltip={formatDateRange(project.startDate, project.endDate)}
                 >
-                  {project.date}
+                  {formatDateRange(project.startDate, project.endDate)}
                 </span>
               )}
               {project.repositoryPrivate ? (
@@ -278,13 +294,15 @@ function Projects({ mode }: ProjectsProps) {
               </span>
             </div>
 
-            {selectedProject.date && (
-              <p className={`projectModalDate ${lowerCaseMode}ModeElement`}>{selectedProject.date}</p>
+            {(selectedProject.startDate || selectedProject.endDate) && (
+              <p className={`projectModalDate ${lowerCaseMode}ModeElement`}>
+                {formatDateRange(selectedProject.startDate, selectedProject.endDate)}
+              </p>
             )}
 
             <p className={`projectModalInfo ${lowerCaseMode}ModeElement`}>{selectedProject.info}</p>
 
-            <Skills skillList={selectedProject.skillList} mode={mode} />
+            <Skills skillList={selectedProject.skillList} mode={mode} techIcons={techIcons} />
 
             <div className="projectModalLinks">
               <a href={selectedProject.link} target="_blank" rel="noreferrer" className={`projectModalLink ${lowerCaseMode}ModeComponent`}>
@@ -297,11 +315,17 @@ function Projects({ mode }: ProjectsProps) {
               </a>
               {selectedProject.repository && !selectedProject.repositoryPrivate && (
                 <a href={selectedProject.repository} target="_blank" rel="noreferrer" className={`projectModalLink ${lowerCaseMode}ModeComponent`}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style={{ flexShrink: 0 }}>
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
                   Frontend Repo
                 </a>
               )}
               {selectedProject.backendRepository && !selectedProject.backendRepositoryPrivate && (
                 <a href={selectedProject.backendRepository} target="_blank" rel="noreferrer" className={`projectModalLink ${lowerCaseMode}ModeComponent`}>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style={{ flexShrink: 0 }}>
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
                   Backend Repo
                 </a>
               )}

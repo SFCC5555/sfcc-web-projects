@@ -1,4 +1,4 @@
-import { useState, useEffect, forwardRef, useImperativeHandle } from "react";
+import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import { supabase } from "../../lib/supabase";
 import "../../styles/admin/AdminCrud.scss";
 
@@ -19,10 +19,9 @@ interface Technology {
 
 interface FormState {
   name: string;
-  sort_order: number;
 }
 
-const EMPTY: FormState = { name: "", sort_order: 0 };
+const EMPTY: FormState = { name: "" };
 
 const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>(({ onToast }, ref) => {
   const [techs, setTechs] = useState<Technology[]>([]);
@@ -36,6 +35,8 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
   const [saving, setSaving] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [dragOverId, setDragOverId] = useState<string | null>(null);
+  const dragId = useRef<string | null>(null);
 
   useImperativeHandle(ref, () => ({ openAdd }));
 
@@ -53,8 +54,40 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
     setExistingIconUrl("");
   }
 
+  function handleDragStart(e: React.DragEvent, id: string) {
+    dragId.current = id;
+    e.dataTransfer.effectAllowed = "move";
+  }
+
+  function handleDragOver(e: React.DragEvent, id: string) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    setDragOverId(id);
+  }
+
+  async function handleDrop(e: React.DragEvent, targetId: string) {
+    e.preventDefault();
+    if (!dragId.current || dragId.current === targetId) { setDragOverId(null); return; }
+    const list = [...techs];
+    const fromIdx = list.findIndex(t => t.id === dragId.current);
+    const toIdx = list.findIndex(t => t.id === targetId);
+    if (fromIdx === -1 || toIdx === -1) { setDragOverId(null); return; }
+    const [removed] = list.splice(fromIdx, 1);
+    list.splice(toIdx, 0, removed);
+    const updated = list.map((t, i) => ({ ...t, sort_order: i }));
+    setTechs(updated);
+    await Promise.all(updated.map(t => supabase.from("technologies").update({ sort_order: t.sort_order }).eq("id", t.id)));
+    dragId.current = null;
+    setDragOverId(null);
+  }
+
+  function handleDragEnd() {
+    setDragOverId(null);
+    dragId.current = null;
+  }
+
   function openAdd() {
-    setForm({ name: "", sort_order: techs.length });
+    setForm({ name: "" });
     resetExtras();
     setEditingId(null);
     setFormMode("add");
@@ -62,7 +95,7 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
   }
 
   function openEdit(t: Technology) {
-    setForm({ name: t.name, sort_order: t.sort_order });
+    setForm({ name: t.name });
     setExistingIconUrl(t.icon_url ?? "");
     setIconFile(null);
     setIconPreview("");
@@ -107,9 +140,12 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
     setError(null);
 
     if (formMode === "add") {
+      if (techs.length > 0) {
+        await Promise.all(techs.map(t => supabase.from("technologies").update({ sort_order: t.sort_order + 1 }).eq("id", t.id)));
+      }
       const { data: inserted, error: e } = await supabase
         .from("technologies")
-        .insert([{ ...form, icon_url: null }])
+        .insert([{ ...form, sort_order: 0, icon_url: null }])
         .select()
         .single();
       if (e) { setError(e.message); setSaving(false); return; }
@@ -146,6 +182,8 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
       }
     }
     await supabase.from("technologies").delete().eq("id", id);
+    const remaining = techs.filter(t => t.id !== id).sort((a, b) => a.sort_order - b.sort_order);
+    await Promise.all(remaining.map((t, i) => supabase.from("technologies").update({ sort_order: i }).eq("id", t.id)));
     setDeleteId(null);
     await load();
     onToast("success", "Technology deleted");
@@ -160,7 +198,15 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
           {techs.length === 0 && <div className="crudEmpty">No technologies yet.</div>}
           <div className="techChipGrid">
             {techs.map((t, idx) => (
-              <div className="techChip" key={t.id}>
+              <div
+                className={`techChip${dragOverId === t.id ? " techChip--dragOver" : ""}`}
+                key={t.id}
+                draggable
+                onDragStart={e => handleDragStart(e, t.id)}
+                onDragOver={e => handleDragOver(e, t.id)}
+                onDrop={e => handleDrop(e, t.id)}
+                onDragEnd={handleDragEnd}
+              >
                 <span className="techChipOrder">{idx + 1}</span>
                 {t.icon_url && (
                   <img src={t.icon_url} alt={t.name} className="techChipIcon" />
@@ -190,15 +236,6 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
                   value={form.name}
                   onChange={e => setField("name", e.target.value)}
                   placeholder="e.g. React, TypeScript, Sass"
-                />
-              </div>
-
-              <div className="crudFormGroup">
-                <label>Sort order</label>
-                <input
-                  type="number"
-                  value={form.sort_order}
-                  onChange={e => setField("sort_order", Number(e.target.value))}
                 />
               </div>
 

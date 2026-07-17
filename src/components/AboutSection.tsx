@@ -21,8 +21,16 @@ interface AboutData {
 function AboutSection({ active, controlFunction, mode }: AboutSectionProps) {
   const lowerCaseMode = mode.toLowerCase();
   const [about, setAbout] = useState<AboutData | null>(null);
+  const [techIcons, setTechIcons] = useState<Record<string, string>>({});
 
   useEffect(() => {
+    supabase.from("technologies").select("name, icon_url").order("sort_order").then(({ data }) => {
+      if (data) {
+        const map: Record<string, string> = {};
+        data.forEach((t: { name: string; icon_url: string | null }) => { map[t.name] = t.icon_url ?? ""; });
+        setTechIcons(map);
+      }
+    });
     supabase
       .from("about")
       .select("description, skill_list, github_url, linkedin_url, cv_url")
@@ -60,7 +68,7 @@ function AboutSection({ active, controlFunction, mode }: AboutSectionProps) {
         {description}
       </p>
 
-      <Skills skillList={skillList} mode={mode} noWarp="noWarp" />
+      <Skills skillList={skillList} mode={mode} noWarp="noWarp" techIcons={techIcons} />
 
       <section className="links">
         <div>

@@ -12,7 +12,6 @@ interface About {
   skill_list: string[];
   github_url: string;
   linkedin_url: string;
-  manfred_url: string;
   cv_url: string | null;
 }
 
@@ -23,7 +22,6 @@ function AdminAbout({ onToast }: AdminAboutProps) {
   const [skillList, setSkillList] = useState<string[]>([]);
   const [githubUrl, setGithubUrl] = useState("");
   const [linkedinUrl, setLinkedinUrl] = useState("");
-  const [manfredUrl, setManfredUrl] = useState("");
   const [existingCvUrl, setExistingCvUrl] = useState("");
   const [cvFile, setCvFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(true);
@@ -44,7 +42,6 @@ function AdminAbout({ onToast }: AdminAboutProps) {
       setSkillList(a.skill_list ?? []);
       setGithubUrl(a.github_url ?? "");
       setLinkedinUrl(a.linkedin_url ?? "");
-      setManfredUrl(a.manfred_url ?? "");
       setExistingCvUrl(a.cv_url ?? "");
     }
     if (techsRes.data) setAllTechs(techsRes.data);
@@ -93,7 +90,6 @@ function AdminAbout({ onToast }: AdminAboutProps) {
         skill_list: skillList,
         github_url: githubUrl,
         linkedin_url: linkedinUrl,
-        manfred_url: manfredUrl,
         cv_url,
         updated_at: new Date().toISOString(),
       })
@@ -158,15 +154,6 @@ function AdminAbout({ onToast }: AdminAboutProps) {
               placeholder="https://linkedin.com/in/..."
             />
           </div>
-        </div>
-
-        <div className="crudFormGroup">
-          <label>Manfred URL</label>
-          <input
-            value={manfredUrl}
-            onChange={e => setManfredUrl(e.target.value)}
-            placeholder="https://www.getmanfred.com/perfil/..."
-          />
         </div>
 
         <div className="crudFormGroup">

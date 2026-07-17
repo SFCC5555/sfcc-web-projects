@@ -246,14 +246,17 @@
     font-size: 1.2rem;
     padding: 8px 12px;
     outline: none;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease, background 0.15s ease;
     width: 100%;
     resize: vertical;
 
-    &:focus { border-color: rgba(255, 255, 255, 0.35); }
+    &:hover { background: rgba(255, 255, 255, 0.11); border-color: rgba(255, 255, 255, 0.24); }
+    &:focus { background: rgba(255, 255, 255, 0.11); border-color: rgba(255, 255, 255, 0.35); }
+    &:disabled { opacity: 0.30; cursor: not-allowed; }
   }
 
   select { cursor: pointer; resize: none; }
+  select option { background: rgb(22, 28, 42); color: rgba(255, 255, 255, 0.90); }
 }
 
 .crudFormRow2 {
@@ -343,7 +346,8 @@
 }
 
 /* month input color fix */
-input[type="month"] { color-scheme: dark; }
+input[type="month"] { color-scheme: dark; cursor: pointer; }
+input[type="month"]::-webkit-calendar-picker-indicator { cursor: pointer; }
 body.lightMode input[type="month"] { color-scheme: light; }
 
 .crudError {
@@ -390,6 +394,14 @@ body.lightMode input[type="month"] { color-scheme: light; }
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   font-size: 1.2rem;
+  cursor: grab;
+
+  &:active { cursor: grabbing; }
+}
+
+.techChip--dragOver {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.30);
 }
 
 .techChipName { opacity: 0.88; }
@@ -600,8 +612,11 @@ body.lightMode {
       background: rgba(0, 0, 0, 0.05);
       border-color: rgba(0, 0, 0, 0.15);
       color: rgba(20, 30, 50, 0.90);
-      &:focus { border-color: rgba(0, 0, 0, 0.35); }
+      &:hover { background: rgba(0, 0, 0, 0.09); border-color: rgba(0, 0, 0, 0.25); }
+      &:focus { background: rgba(0, 0, 0, 0.09); border-color: rgba(0, 0, 0, 0.35); }
+      &:disabled { opacity: 0.30; cursor: not-allowed; }
     }
+    select option { background: rgb(235, 240, 245); color: rgba(20, 30, 50, 0.90); }
   }
 
   .crudError { color: rgba(160, 30, 30, 0.90); }
@@ -610,6 +625,11 @@ body.lightMode {
     background: rgba(0, 0, 0, 0.05);
     border-color: rgba(0, 0, 0, 0.12);
     color: rgba(20, 30, 50, 0.85);
+  }
+
+  .techChip--dragOver {
+    background: rgba(0, 0, 0, 0.10) !important;
+    border-color: rgba(0, 0, 0, 0.25);
   }
 
   .techTag {

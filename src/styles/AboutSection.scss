@@ -131,26 +131,6 @@ a .skillIcon {
   cursor: pointer;
 }
 
-/* Hover effect for GitHub, CV, LinkedIn, and Manfred icons */
-a:hover .gitHubIconLight,
-a:hover .gitHubIconDark {
-  background-image: url("../assets/icons/gitHubIconColor.png");
-}
-
-a:hover .cvIconLight,
-a:hover .cvIconDark {
-  background-image: url("../assets/icons/cvIconColor.png");
-}
-
-a:hover .linkedinIconLight,
-a:hover .linkedinIconDark {
-  background-image: url("../assets/icons/linkedinIconColor.png");
-}
-
-a:hover .manfredIconLight,
-a:hover .manfredIconDark {
-  background-image: url("../assets/icons/manfredIconColor.png");
-}
 
 /* Styles for inactive elements */
 .inactive {

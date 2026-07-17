@@ -271,7 +271,7 @@ const AdminCertifications = forwardRef<CertificationsHandle, AdminCertifications
 
               <div className="crudFormGroup">
                 <label>Date *</label>
-                <input type="month" value={dateInput} onChange={e => setDateInput(e.target.value)} />
+                <input type="month" value={dateInput} onChange={e => setDateInput(e.target.value)} onClick={e => (e.currentTarget as HTMLInputElement).showPicker?.()} />
               </div>
 
               {/* Link type toggle */}
