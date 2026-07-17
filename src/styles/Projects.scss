@@ -293,6 +293,29 @@ main {
   filter: grayscale(0%);
 }
 
+.projectIllustrationEmpty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none !important;
+  filter: none !important;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: var(--mainFont);
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  padding: 8px;
+  line-height: 1.3;
+}
+
+body.lightMode .projectIllustrationEmpty {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(20, 25, 38, 0.40);
+}
+
 /* Animation for project illustrations */
 @keyframes projectIllustrationAnimation {
   0% {

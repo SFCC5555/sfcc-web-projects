@@ -210,10 +210,6 @@ function Projects({ mode }: ProjectsProps) {
       )}
       <section className="projectContainer">
         {projects.map((project) => {
-          let projectClass = project.name.split(" ");
-          projectClass[0] = projectClass[0].toLowerCase();
-          const projectClassName = projectClass.join("");
-
           return (
             <div
               key={project.name}
@@ -221,14 +217,16 @@ function Projects({ mode }: ProjectsProps) {
             >
               <div className="projectImageWrapper">
                 <a href={project.link} target="_blank" rel="noreferrer" data-tooltip="Go to App">
-                  <span
-                    className="projectIllustration"
-                    style={{
-                      backgroundImage: project.coverUrl
-                        ? `url(${project.coverUrl})`
-                        : `url(${require(`../assets/images/projectIllustrations/${projectClassName}Color.png`)})`,
-                    }}
-                  />
+                  {project.coverUrl ? (
+                    <span
+                      className="projectIllustration"
+                      style={{ backgroundImage: `url(${project.coverUrl})` }}
+                    />
+                  ) : (
+                    <span className="projectIllustration projectIllustrationEmpty">
+                      {project.name}
+                    </span>
+                  )}
                 </a>
                 <span className={`projectTypeBadge projectTypeBadge--${project.type}`}>
                   {project.type === "project" ? "Project" : project.type === "company" ? "Company" : "Learning"}
