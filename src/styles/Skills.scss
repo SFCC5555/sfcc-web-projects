@@ -88,6 +88,35 @@ body.lightMode .skillIconFallback:hover {
   100% { opacity: 1; }
 }
 
+/* Active filter — show matching icon in color */
+.skillIcon--active {
+  filter: grayscale(0%) !important;
+}
+
+.skillIconFallback--active {
+  background: rgba(22, 28, 42, 0.90);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.lightMode .skillIconFallback--active {
+  background: rgba(235, 240, 245, 0.92);
+  border-color: rgba(255, 255, 255, 0.80);
+  color: rgba(20, 25, 38, 0.90);
+}
+
+/* React easter egg — spin on hover */
+.skillIconWrapper[data-skill="React"] .skillIcon:hover {
+  animation: reactSpin 25s linear infinite;
+  filter: grayscale(0%);
+  transform: none;
+}
+
+@keyframes reactSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 @media screen and (min-width: 700px) {
   .skillIcon {
     height: 28px;
@@ -97,12 +126,9 @@ body.lightMode .skillIconFallback:hover {
 
 /* Styles for filter skill icons */
 .filterSkillIcon {
-  position: absolute;
-  top: -40px;
-  right: 3px;
-  background-size: contain;
-  height: 32px;
   width: 32px;
+  height: 32px;
+  object-fit: contain;
   cursor: crosshair;
   animation-name: filterSkillIconAnimation;
   animation-duration: 1s;
@@ -114,8 +140,8 @@ body.lightMode .skillIconFallback:hover {
 }
 
 @keyframes filterSkillIconAnimation {
-  0%   { opacity: 0%; height: 10px; top: 0; }
-  100% { opacity: 100%; height: 32px; top: -40px; }
+  0%   { opacity: 0; height: 10px; }
+  100% { opacity: 1; height: 32px; }
 }
 
 /* About (info) icon — used in Info.tsx */

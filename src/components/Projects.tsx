@@ -29,6 +29,7 @@ function Projects({ mode }: ProjectsProps) {
   const [activeType, setActiveType] = useState<"all" | ProjectType>("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [techIcons, setTechIcons] = useState<Record<string, string>>({});
+  const [activeFilterSkill, setActiveFilterSkill] = useState<string | null>(null);
 
   // allProjectsRef: full unfiltered list; filteredRef: after search/skill filter
   const allProjectsRef = useRef<Project[]>([]);
@@ -108,6 +109,7 @@ function Projects({ mode }: ProjectsProps) {
   function searchFunction() {
     const filterSkillIcon = document.getElementById("filterSkillIcon");
     if (filterSkillIcon) filterSkillIcon.classList.value = "inactive";
+    setActiveFilterSkill(null);
 
     const optionsList = document.querySelectorAll(".filterSkill");
     optionsList.forEach((option) =>
@@ -147,11 +149,13 @@ function Projects({ mode }: ProjectsProps) {
         filterSkillIcon.classList.value = "inactive";
         filterSkillIcon.removeAttribute("data-tooltip");
       }
+      setActiveFilterSkill(null);
       filteredRef.current = allProjectsRef.current;
       setProjects(applySort(applyTypeFilter(allProjectsRef.current, activeType), sortOrder));
     } else {
       if (filterSkillIcon) filterSkillIcon.classList.value = "inactive";
       target.classList.add("selectFilterSkill");
+      setActiveFilterSkill(option);
 
       setTimeout(() => {
         if (filterSkillIcon) {
@@ -196,7 +200,7 @@ function Projects({ mode }: ProjectsProps) {
         <Search mode={mode} handleChange={searchFunction} />
         <div className="sortFilterGroup">
           <Sort mode={mode} handleSort={sortFunction} />
-          <Filter mode={mode} handleFilter={filterFunction} skillList={filterSkills} />
+          <Filter mode={mode} handleFilter={filterFunction} skillList={filterSkills} techIcons={techIcons} activeFilterSkill={activeFilterSkill} />
         </div>
       </section>
 
@@ -232,7 +236,7 @@ function Projects({ mode }: ProjectsProps) {
                   {project.type === "project" ? "Project" : project.type === "company" ? "Company" : "Learning"}
                 </span>
               </div>
-              <Skills skillList={project.skillList} mode={mode} techIcons={techIcons} />
+              <Skills skillList={project.skillList} mode={mode} techIcons={techIcons} activeSkill={activeFilterSkill} />
               <Info mode={mode} name={project.name} info={project.info} onDetails={() => setSelectedProject(project)} />
               {(project.startDate || project.endDate) && (
                 <span

@@ -6,17 +6,21 @@ interface FilterProps {
   mode: Mode;
   handleFilter: React.MouseEventHandler<HTMLDivElement>;
   skillList: string[];
+  techIcons?: Record<string, string>;
+  activeFilterSkill?: string | null;
 }
 
-function Filter({ mode, handleFilter, skillList }: FilterProps) {
+function Filter({ mode, handleFilter, skillList, techIcons = {}, activeFilterSkill }: FilterProps) {
   const lowerCaseMode = mode.toLowerCase();
 
   const [activeFilterSkillsContainer, setActiveFilterSkillsContainer] =
     useState(false);
+  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
+  const [selectedIcon, setSelectedIcon] = useState<string | null>(null);
 
   const overAllSkillList = [
-    ...skillList.map((s) => s.replaceAll("-", " ")),
     "No Filter",
+    ...skillList.map((s) => s.replaceAll("-", " ")),
   ];
 
   document.addEventListener("click", closeFilterMenu);
@@ -49,22 +53,42 @@ function Filter({ mode, handleFilter, skillList }: FilterProps) {
         onClick={renderFilterMenu as unknown as React.MouseEventHandler<HTMLSpanElement>}
         className={`${lowerCaseMode}FilterIcon filterIcon`}
       />
-      <span id="filterSkillIcon" className="inactive" />
+      {(hoveredIcon || selectedIcon) && (
+        <div className="filterSkillIconWrapper">
+          <img key={hoveredIcon || selectedIcon} src={(hoveredIcon || selectedIcon)!} alt="" className="filterSkillIcon" />
+        </div>
+      )}
       <div
         className={`${lowerCaseMode}ModeComponent filterSkillsContainer ${
           activeFilterSkillsContainer ? "" : "inactive"
         }`}
       >
         <div className={`closeIcon ${lowerCaseMode}ModeElement`}>X</div>
-        {overAllSkillList.map((skill) => (
-          <div
-            onClick={handleFilter}
-            className={`${lowerCaseMode}ModeElement filterSkill`}
-            key={skill}
-          >
-            {skill}
-          </div>
-        ))}
+        {overAllSkillList.map((skill) => {
+          const iconUrl = techIcons[skill] || techIcons[skill.replaceAll(" ", "-")];
+          const isSelected = skill === "No Filter"
+            ? !activeFilterSkill
+            : activeFilterSkill === skill.replaceAll(" ", "-");
+
+          return (
+            <div
+              onClick={(e) => {
+                handleFilter(e as any);
+                if (skill === "No Filter") {
+                  setSelectedIcon(null);
+                } else {
+                  setSelectedIcon(iconUrl || null);
+                }
+              }}
+              className={`${lowerCaseMode}ModeElement filterSkill${isSelected ? " selectFilterSkill" : ""}`}
+              key={skill}
+              onMouseEnter={() => setHoveredIcon(iconUrl || null)}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              {skill}
+            </div>
+          );
+        })}
       </div>
     </button>
   );
