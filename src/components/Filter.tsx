@@ -1,5 +1,5 @@
 import "../styles/Filter.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mode } from "../types";
 
 interface FilterProps {
@@ -16,24 +16,24 @@ function Filter({ mode, handleFilter, skillList, techIcons = {}, activeFilterSki
   const [activeFilterSkillsContainer, setActiveFilterSkillsContainer] =
     useState(false);
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   const [selectedIcon, setSelectedIcon] = useState<string | null>(null);
+  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
 
   const overAllSkillList = [
     "No Filter",
     ...skillList.map((s) => s.replaceAll("-", " ")),
   ];
 
-  document.addEventListener("click", closeFilterMenu);
-
-  function closeFilterMenu(event: MouseEvent) {
-    if (
-      !/(filter)(Button|Icon|Skill(sContainer)?)/.test(
-        (event.target as HTMLElement).classList.value
-      )
-    ) {
-      setActiveFilterSkillsContainer(false);
+  useEffect(() => {
+    function closeFilterMenu(event: MouseEvent) {
+      if (!/(filter)(Button|Icon|Skill(sContainer)?)/.test((event.target as HTMLElement).classList.value)) {
+        setActiveFilterSkillsContainer(false);
+      }
     }
-  }
+    document.addEventListener("click", closeFilterMenu);
+    return () => document.removeEventListener("click", closeFilterMenu);
+  }, []);
 
   function renderFilterMenu(event: React.MouseEvent<HTMLButtonElement>) {
     if (!/(filterSkill)(sContainer)?/.test((event.target as HTMLElement).classList.value)) {
@@ -55,7 +55,13 @@ function Filter({ mode, handleFilter, skillList, techIcons = {}, activeFilterSki
       />
       {(hoveredIcon || selectedIcon) && (
         <div className="filterSkillIconWrapper">
-          <img key={hoveredIcon || selectedIcon} src={(hoveredIcon || selectedIcon)!} alt="" className="filterSkillIcon" />
+          <img
+            key={hoveredIcon || selectedIcon}
+            src={(hoveredIcon || selectedIcon)!}
+            alt=""
+            className="filterSkillIcon"
+            data-skill={hoveredSkill || selectedSkill || ""}
+          />
         </div>
       )}
       <div
@@ -76,14 +82,16 @@ function Filter({ mode, handleFilter, skillList, techIcons = {}, activeFilterSki
                 handleFilter(e as any);
                 if (skill === "No Filter") {
                   setSelectedIcon(null);
+                  setSelectedSkill(null);
                 } else {
                   setSelectedIcon(iconUrl || null);
+                  setSelectedSkill(skill);
                 }
               }}
               className={`${lowerCaseMode}ModeElement filterSkill${isSelected ? " selectFilterSkill" : ""}`}
               key={skill}
-              onMouseEnter={() => setHoveredIcon(iconUrl || null)}
-              onMouseLeave={() => setHoveredIcon(null)}
+              onMouseEnter={() => { setHoveredIcon(iconUrl || null); setHoveredSkill(skill); }}
+              onMouseLeave={() => { setHoveredIcon(null); setHoveredSkill(null); }}
             >
               {skill}
             </div>

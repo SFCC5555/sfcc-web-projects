@@ -106,7 +106,8 @@ body.lightMode .skillIconFallback--active {
 }
 
 /* React easter egg — spin on hover */
-.skillIconWrapper[data-skill="React"] .skillIcon:hover {
+.skillIconWrapper[data-skill="React"] .skillIcon:hover,
+.filterSkillIconWrapper:hover .filterSkillIcon[data-skill="React"] {
   animation: reactSpin 25s linear infinite;
   filter: grayscale(0%);
   transform: none;

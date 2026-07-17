@@ -7,6 +7,7 @@ import { Sort, SortOrder } from "./Sort";
 import { useState, useRef, useEffect } from "react";
 import { Info } from "./Info";
 import { Mode, Project, ProjectType } from "../types";
+import { useTechIcons } from "../context/TechIconsContext";
 
 interface ProjectsProps {
   mode: Mode;
@@ -28,7 +29,7 @@ function Projects({ mode }: ProjectsProps) {
   const [sortOrder, setSortOrder] = useState<SortOrder>("default");
   const [activeType, setActiveType] = useState<"all" | ProjectType>("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [techIcons, setTechIcons] = useState<Record<string, string>>({});
+  const techIcons = useTechIcons();
   const [activeFilterSkill, setActiveFilterSkill] = useState<string | null>(null);
 
   // allProjectsRef: full unfiltered list; filteredRef: after search/skill filter
@@ -36,13 +37,6 @@ function Projects({ mode }: ProjectsProps) {
   const filteredRef = useRef<Project[]>([]);
 
   useEffect(() => {
-    supabase.from("technologies").select("name, icon_url").order("sort_order").then(({ data }) => {
-      if (data) {
-        const map: Record<string, string> = {};
-        data.forEach(t => { map[t.name] = t.icon_url ?? ""; });
-        setTechIcons(map);
-      }
-    });
     supabase
       .from("projects")
       .select("*")

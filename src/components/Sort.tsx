@@ -1,5 +1,5 @@
 import "../styles/Sort.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mode } from "../types";
 
 export type SortOrder =
@@ -27,17 +27,15 @@ function Sort({ mode, handleSort }: SortProps) {
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState<SortOrder>("default");
 
-  document.addEventListener("click", closeSortMenu);
-
-  function closeSortMenu(event: MouseEvent) {
-    if (
-      !/(sort)(Button|sContainer|Option)/.test(
-        (event.target as HTMLElement).classList.value
-      )
-    ) {
-      setOpen(false);
+  useEffect(() => {
+    function closeSortMenu(event: MouseEvent) {
+      if (!/(sort)(Button|sContainer|Option)/.test((event.target as HTMLElement).classList.value)) {
+        setOpen(false);
+      }
     }
-  }
+    document.addEventListener("click", closeSortMenu);
+    return () => document.removeEventListener("click", closeSortMenu);
+  }, []);
 
   function toggleMenu(event: React.MouseEvent<HTMLButtonElement>) {
     if (

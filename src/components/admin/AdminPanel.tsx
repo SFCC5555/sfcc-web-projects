@@ -86,7 +86,7 @@ function AdminPanel() {
         </div>
         {activeTab !== "about" && (
           <button className="adminAddBtn" onClick={handleAdd}>
-            + Add {TAB_LABELS[activeTab].replace(/s$/, "")}
+            + Add {TAB_LABELS[activeTab].replace(/ies$/, "y").replace(/s$/, "")}
           </button>
         )}
       </div>
