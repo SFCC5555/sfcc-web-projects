@@ -7,8 +7,10 @@ import { Certifications } from "./Certifications";
 import { Form } from "./Form";
 import { useTheme } from "../context/ThemeContext";
 import { TechIconsProvider } from "../context/TechIconsContext";
+import { useVisitTracker } from "../hooks/useVisitTracker";
 
 function Portfolio() {
+  useVisitTracker();
   const sectionsList = ["WEB PROJECTS", "CERTIFICATIONS", "CONTACT"];
   const { mode } = useTheme();
 

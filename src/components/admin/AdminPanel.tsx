@@ -6,10 +6,11 @@ import { AdminProjects, ProjectsHandle } from "./AdminProjects";
 import { AdminCertifications, CertificationsHandle } from "./AdminCertifications";
 import { AdminTechnologies, TechnologiesHandle } from "./AdminTechnologies";
 import { AdminAbout } from "./AdminAbout";
+import { AdminAnalytics } from "./AdminAnalytics";
 import "../../styles/admin/AdminPanel.scss";
 import "../../styles/admin/AdminToast.scss";
 
-type Tab = "projects" | "certifications" | "technologies" | "about";
+type Tab = "projects" | "certifications" | "technologies" | "about" | "analytics";
 type ToastType = "success" | "error";
 interface Toast { type: ToastType; message: string }
 
@@ -18,6 +19,7 @@ const TAB_LABELS: Record<Tab, string> = {
   certifications: "Certifications",
   technologies: "Technologies",
   about: "About",
+  analytics: "Analytics",
 };
 
 function AdminPanel() {
@@ -74,7 +76,7 @@ function AdminPanel() {
 
       <div className="adminTabBar">
         <div className="adminTabs">
-          {(["projects", "certifications", "technologies", "about"] as Tab[]).map(tab => (
+          {(["projects", "certifications", "technologies", "about", "analytics"] as Tab[]).map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -84,7 +86,7 @@ function AdminPanel() {
             </button>
           ))}
         </div>
-        {activeTab !== "about" && (
+        {activeTab !== "about" && activeTab !== "analytics" && (
           <button className="adminAddBtn" onClick={handleAdd}>
             + Add {TAB_LABELS[activeTab].replace(/ies$/, "y").replace(/s$/, "")}
           </button>
@@ -96,6 +98,7 @@ function AdminPanel() {
         {activeTab === "certifications" && <AdminCertifications ref={certsRef} onToast={showToast} />}
         {activeTab === "technologies" && <AdminTechnologies ref={techsRef} onToast={showToast} />}
         {activeTab === "about" && <AdminAbout onToast={showToast} />}
+        {activeTab === "analytics" && <AdminAnalytics />}
       </div>
 
       {toast && (

@@ -1,0 +1,80 @@
+.analyticsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 24px;
+  max-width: 860px;
+}
+
+.analyticsCard {
+  background: var(--admin-card-bg, rgba(255 255 255 / 0.04));
+  border: 1px solid rgba(255 255 255 / 0.08);
+  border-radius: 10px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.analyticsCard--wide {
+  grid-column: 1 / -1;
+}
+
+.analyticsLabel {
+  font-size: 1.1rem;
+  opacity: 0.55;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.analyticsValue {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.analyticsEmpty {
+  font-size: 1.2rem;
+  opacity: 0.4;
+  margin: 8px 0 0;
+}
+
+.analyticsVisitorId {
+  font-family: monospace;
+  font-size: 1.1rem;
+  opacity: 0.6;
+}
+
+.analyticsProjectToggle {
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.analyticsNone {
+  opacity: 0.3;
+}
+
+.analyticsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.3rem;
+  margin-top: 8px;
+
+  th {
+    text-align: left;
+    opacity: 0.45;
+    font-weight: 500;
+    padding: 4px 0 8px;
+    border-bottom: 1px solid rgba(255 255 255 / 0.08);
+  }
+
+  td {
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255 255 255 / 0.04);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
