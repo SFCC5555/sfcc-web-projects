@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import "../styles/AboutSection.scss";
-import { Skills } from "./Skills";
 import { Mode } from "../types";
 import { supabase } from "../lib/supabase";
-import { useTechIcons } from "../context/TechIconsContext";
 
 interface AboutSectionProps {
   active: boolean;
@@ -22,8 +20,6 @@ interface AboutData {
 function AboutSection({ active, controlFunction, mode }: AboutSectionProps) {
   const lowerCaseMode = mode.toLowerCase();
   const [about, setAbout] = useState<AboutData | null>(null);
-  const techIcons = useTechIcons();
-
   useEffect(() => {
     supabase
       .from("about")
@@ -35,7 +31,6 @@ function AboutSection({ active, controlFunction, mode }: AboutSectionProps) {
   }, []);
 
   const description = about?.description ?? "";
-  const skillList = about?.skill_list ?? [];
   const githubUrl = about?.github_url ?? "";
   const linkedinUrl = about?.linkedin_url ?? "";
   const cvUrl = about?.cv_url ?? "";
@@ -61,8 +56,6 @@ function AboutSection({ active, controlFunction, mode }: AboutSectionProps) {
       <p className={`${lowerCaseMode}ModeElement paragraph`}>
         {description}
       </p>
-
-      <Skills skillList={skillList} mode={mode} noWarp="noWarp" techIcons={techIcons} />
 
       <section className="links">
         <div>

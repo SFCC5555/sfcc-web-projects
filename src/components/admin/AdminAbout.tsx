@@ -9,7 +9,6 @@ interface AdminAboutProps {
 interface About {
   id: string;
   description: string;
-  skill_list: string[];
   github_url: string;
   linkedin_url: string;
   cv_url: string | null;
@@ -17,9 +16,7 @@ interface About {
 
 function AdminAbout({ onToast }: AdminAboutProps) {
   const [aboutId, setAboutId] = useState<string | null>(null);
-  const [allTechs, setAllTechs] = useState<{ name: string; icon_url: string | null }[]>([]);
   const [description, setDescription] = useState("");
-  const [skillList, setSkillList] = useState<string[]>([]);
   const [githubUrl, setGithubUrl] = useState("");
   const [linkedinUrl, setLinkedinUrl] = useState("");
   const [existingCvUrl, setExistingCvUrl] = useState("");
@@ -31,27 +28,16 @@ function AdminAbout({ onToast }: AdminAboutProps) {
   useEffect(() => { load(); }, []);
 
   async function load() {
-    const [aboutRes, techsRes] = await Promise.all([
-      supabase.from("about").select("*").single(),
-      supabase.from("technologies").select("name, icon_url").order("sort_order"),
-    ]);
-    if (aboutRes.data) {
-      const a = aboutRes.data as About;
+    const { data } = await supabase.from("about").select("*").single();
+    if (data) {
+      const a = data as About;
       setAboutId(a.id);
       setDescription(a.description);
-      setSkillList(a.skill_list ?? []);
       setGithubUrl(a.github_url ?? "");
       setLinkedinUrl(a.linkedin_url ?? "");
       setExistingCvUrl(a.cv_url ?? "");
     }
-    if (techsRes.data) setAllTechs(techsRes.data);
     setLoading(false);
-  }
-
-  function toggleSkill(name: string) {
-    setSkillList(prev =>
-      prev.includes(name) ? prev.filter(s => s !== name) : [...prev, name]
-    );
   }
 
   async function uploadCv(): Promise<string | null> {
@@ -87,7 +73,6 @@ function AdminAbout({ onToast }: AdminAboutProps) {
       .from("about")
       .update({
         description,
-        skill_list: skillList,
         github_url: githubUrl,
         linkedin_url: linkedinUrl,
         cv_url,
@@ -113,28 +98,6 @@ function AdminAbout({ onToast }: AdminAboutProps) {
             value={description}
             onChange={e => setDescription(e.target.value)}
           />
-        </div>
-
-        <div className="crudFormGroup">
-          <label>
-            Technologies
-            {skillList.length > 0 && (
-              <span className="techPickerCount"> ({skillList.length} selected)</span>
-            )}
-          </label>
-          <div className="techTagPicker">
-            {allTechs.map(tech => (
-              <button
-                key={tech.name}
-                type="button"
-                onClick={() => toggleSkill(tech.name)}
-                className={`techTag${skillList.includes(tech.name) ? " techTag--selected" : ""}`}
-              >
-                {tech.icon_url && <img src={tech.icon_url} alt="" className="techTagIcon" />}
-                {tech.name}
-              </button>
-            ))}
-          </div>
         </div>
 
         <div className="crudFormRow2">

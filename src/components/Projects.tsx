@@ -131,7 +131,7 @@ function Projects({ mode }: ProjectsProps) {
     );
 
     const target = event.target as HTMLElement;
-    const option = target.innerText.replaceAll(" ", "-");
+    const option = (target.dataset.skill ?? target.innerText).replaceAll(" ", "-");
     const filterSkillIcon = document.getElementById("filterSkillIcon");
 
     const filterProjects = allProjectsRef.current.filter((project) =>

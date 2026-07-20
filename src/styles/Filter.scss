@@ -66,6 +66,12 @@
   opacity: 60%;
 }
 
+/* Clear filter: shown when another filter is active */
+.filterSkill.clearFilterActive {
+  opacity: 100%;
+  font-style: italic;
+}
+
 /* Keyframe animation for showing the filter skills container */
 @keyframes filterSkillsContainerAnimation {
   0% {

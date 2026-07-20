@@ -88,12 +88,13 @@ function Filter({ mode, handleFilter, skillList, techIcons = {}, activeFilterSki
                   setSelectedSkill(skill);
                 }
               }}
-              className={`${lowerCaseMode}ModeElement filterSkill${isSelected ? " selectFilterSkill" : ""}`}
+              className={`${lowerCaseMode}ModeElement filterSkill${isSelected ? " selectFilterSkill" : ""}${skill === "No Filter" && activeFilterSkill ? " clearFilterActive" : ""}`}
               key={skill}
+              data-skill={skill}
               onMouseEnter={() => { setHoveredIcon(iconUrl || null); setHoveredSkill(skill); }}
               onMouseLeave={() => { setHoveredIcon(null); setHoveredSkill(null); }}
             >
-              {skill}
+              {skill === "No Filter" && activeFilterSkill ? "× Clear filter" : skill}
             </div>
           );
         })}
