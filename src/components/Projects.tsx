@@ -233,7 +233,7 @@ function Projects({ mode }: ProjectsProps) {
               <Skills skillList={project.skillList} mode={mode} techIcons={techIcons} activeSkill={activeFilterSkill} />
               <Info mode={mode} name={project.name} info={project.info} onDetails={() => {
                 setSelectedProject(project);
-                supabase.from("project_clicks").insert({ project_id: project.name, project_name: project.name, visitor_id: localStorage.getItem("sfcc_visitor_id") });
+                supabase.from("project_clicks").insert({ project_id: project.name, project_name: project.name, visitor_id: localStorage.getItem("sfcc_visitor_id") }).then();
               }} />
               {(project.startDate || project.endDate) && (
                 <span
