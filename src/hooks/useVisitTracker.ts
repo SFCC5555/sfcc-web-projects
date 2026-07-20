@@ -14,6 +14,6 @@ function getOrCreateVisitorId(): string {
 export function useVisitTracker() {
   useEffect(() => {
     const visitorId = getOrCreateVisitorId();
-    supabase.from("visits").insert({ visitor_id: visitorId }).then();
+    supabase.from("visits").insert({ visitor_id: visitorId }).then(({ error }) => { if (error) console.error("visits:", error); });
   }, []);
 }
