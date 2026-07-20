@@ -7,13 +7,18 @@
 }
 
 .analyticsCard {
-  background: var(--admin-card-bg, rgba(255 255 255 / 0.04));
+  background: rgba(255 255 255 / 0.04);
   border: 1px solid rgba(255 255 255 / 0.08);
   border-radius: 10px;
   padding: 20px 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+body.lightMode .analyticsCard {
+  background: rgba(0 0 0 / 0.04);
+  border-color: rgba(0 0 0 / 0.12);
 }
 
 .analyticsCard--wide {
@@ -37,6 +42,91 @@
   font-size: 1.2rem;
   opacity: 0.4;
   margin: 8px 0 0;
+}
+
+/* Project opens list */
+.analyticsProjectList {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.analyticsProjectItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+}
+
+.analyticsProjectRank {
+  font-size: 1.1rem;
+  opacity: 0.35;
+  width: 18px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.analyticsProjectName {
+  flex: 1;
+}
+
+.analyticsProjectCount {
+  font-size: 1.2rem;
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+/* Visitors table */
+.analyticsVisitorProjectsCell {
+  position: relative;
+  display: inline-block;
+}
+
+.analyticsToggleIcon {
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+.analyticsPopover {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 50;
+  min-width: 180px;
+  background: hsl(222, 20%, 16%);
+  border: 1px solid rgba(255 255 255 / 0.12);
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 8px 24px rgba(0 0 0 / 0.35);
+}
+
+body.lightMode .analyticsPopover {
+  background: hsl(210, 20%, 96%);
+  border-color: rgba(0 0 0 / 0.12);
+  box-shadow: 0 8px 24px rgba(0 0 0 / 0.12);
+}
+
+.analyticsVisitorProjects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  li {
+    font-size: 1.2rem;
+    opacity: 0.85;
+
+    &::before {
+      content: "·";
+      margin-right: 6px;
+      opacity: 0.4;
+    }
+  }
 }
 
 .analyticsVisitorId {
@@ -77,4 +167,9 @@
   tr:last-child td {
     border-bottom: none;
   }
+}
+
+body.lightMode .analyticsTable {
+  th { border-bottom-color: rgba(0 0 0 / 0.10); }
+  td { border-bottom-color: rgba(0 0 0 / 0.05); }
 }
