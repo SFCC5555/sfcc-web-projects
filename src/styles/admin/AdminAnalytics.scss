@@ -129,6 +129,12 @@ body.lightMode .analyticsPopover {
   }
 }
 
+.analyticsLastVisit {
+  font-size: 1.1rem;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
 .analyticsVisitorId {
   font-family: monospace;
   font-size: 1.1rem;

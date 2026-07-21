@@ -4,7 +4,21 @@ import "../../styles/admin/AdminAnalytics.scss";
 
 interface DayStat { day: string; count: number }
 interface ProjectStat { project_name: string; clicks: number }
-interface VisitorStat { visitor_id: string; visits: number; country: string | null; city: string | null; projects: string[] }
+interface VisitorStat { visitor_id: string; visits: number; lastVisit: string; country: string | null; city: string | null; projects: string[] }
+
+const TZ = "America/Guayaquil";
+
+function toECTDay(iso: string): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(new Date(iso));
+}
+
+function formatECT(iso: string): string {
+  return new Intl.DateTimeFormat("en", {
+    timeZone: TZ,
+    month: "short", day: "numeric",
+    hour: "2-digit", minute: "2-digit", hour12: false,
+  }).format(new Date(iso));
+}
 
 function AdminAnalytics() {
   const [totalVisits, setTotalVisits] = useState<number | null>(null);
@@ -38,9 +52,13 @@ function AdminAnalytics() {
       setTotalVisits(visitsRes.data.length);
 
       const visitCountByVisitor: Record<string, number> = {};
+      const lastVisitByVisitor: Record<string, string> = {};
       const locationByVisitor: Record<string, { country: string | null; city: string | null }> = {};
       visitsRes.data.forEach(v => {
         visitCountByVisitor[v.visitor_id] = (visitCountByVisitor[v.visitor_id] ?? 0) + 1;
+        if (!lastVisitByVisitor[v.visitor_id] || v.visited_at > lastVisitByVisitor[v.visitor_id]) {
+          lastVisitByVisitor[v.visitor_id] = v.visited_at;
+        }
         if (!locationByVisitor[v.visitor_id] && (v.country || v.city)) {
           locationByVisitor[v.visitor_id] = { country: v.country, city: v.city };
         }
@@ -49,7 +67,7 @@ function AdminAnalytics() {
 
       const byDay: Record<string, number> = {};
       visitsRes.data.forEach(v => {
-        const day = v.visited_at.slice(0, 10);
+        const day = toECTDay(v.visited_at);
         byDay[day] = (byDay[day] ?? 0) + 1;
       });
       setVisitsByDay(
@@ -80,11 +98,12 @@ function AdminAnalytics() {
           .map(([visitor_id, visits]) => ({
             visitor_id,
             visits,
+            lastVisit: lastVisitByVisitor[visitor_id],
             country: locationByVisitor[visitor_id]?.country ?? null,
             city: locationByVisitor[visitor_id]?.city ?? null,
             projects: Array.from(projectsByVisitor[visitor_id] ?? []),
           }))
-          .sort((a, b) => b.visits - a.visits)
+          .sort((a, b) => b.lastVisit.localeCompare(a.lastVisit))
       );
     }
 
@@ -151,16 +170,17 @@ function AdminAnalytics() {
         ) : (
           <table className="analyticsTable">
             <thead>
-              <tr><th>Visitor</th><th>Location</th><th>Visits</th><th>Projects opened</th></tr>
+              <tr><th>Visitor</th><th>Location</th><th>Last visit</th><th>Visits</th><th>Projects opened</th></tr>
             </thead>
             <tbody>
-              {visitors.map(({ visitor_id, visits, country, city, projects }) => {
+              {visitors.map(({ visitor_id, visits, lastVisit, country, city, projects }) => {
                 const short = visitor_id.slice(0, 8);
                 const location = [city, country].filter(Boolean).join(", ") || "—";
                 return (
                   <tr key={visitor_id}>
                     <td className="analyticsVisitorId">{short}…</td>
                     <td>{location}</td>
+                    <td className="analyticsLastVisit">{formatECT(lastVisit)}</td>
                     <td>{visits}</td>
                     <td>
                       {projects.length === 0 ? (
