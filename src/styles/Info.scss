@@ -2,13 +2,19 @@
 .aboutIcon {
   width: 20px;
   position: absolute;
-  top: 0px;
-  left: 4px;
+  top: 2px;
+  left: 6px;
   opacity: 15%;
   animation-name: aboutIconAnimation;
   animation-duration: 1.5s;
   cursor: help;
   z-index: 1;
+}
+
+@media screen and (max-width: 699px) {
+  .aboutIcon {
+    top: 4px;
+  }
 }
 
 /* Hover style for the about icon */
