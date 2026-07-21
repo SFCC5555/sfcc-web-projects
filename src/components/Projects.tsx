@@ -190,6 +190,11 @@ function Projects({ mode }: ProjectsProps) {
           </button>
         ))}
       </div>
+      {!loading && (
+        <p className={`projectCounter ${lowerCaseMode}ModeElement`}>
+          {projects.length} of {allProjectsRef.current.length} projects
+        </p>
+      )}
       <section className={`${lowerCaseMode}ModeElement searchFilterContainer`}>
         <Search mode={mode} handleChange={searchFunction} />
         <div className="sortFilterGroup">
@@ -240,32 +245,24 @@ function Projects({ mode }: ProjectsProps) {
                   {formatDateRange(project.startDate, project.endDate)}
                 </span>
               )}
-              {project.repositoryPrivate ? (
-                <span
-                  data-tooltip="Private Frontend Repository"
-                  className={`skillIcon gitHubIcon${mode} gitHubLink private`}
-                />
-              ) : project.repository ? (
-                <a href={project.repository} target="_blank" rel="noreferrer">
-                  <span
-                    data-tooltip="Frontend"
-                    className={`skillIcon gitHubIcon${mode} gitHubLink`}
-                  />
-                </a>
-              ) : null}
-              {project.backendRepositoryPrivate ? (
-                <span
-                  data-tooltip="Private Backend Repository"
-                  className={`skillIcon gitHubIcon${mode} gitHubBackendLink private`}
-                />
-              ) : project.backendRepository ? (
-                <a href={project.backendRepository} target="_blank" rel="noreferrer">
-                  <span
-                    data-tooltip="Backend"
-                    className={`skillIcon gitHubIcon${mode} gitHubBackendLink`}
-                  />
-                </a>
-              ) : null}
+              {(project.repository || project.repositoryPrivate || project.backendRepository || project.backendRepositoryPrivate) && (
+                <div className="projectRepoLinks">
+                  {project.repositoryPrivate ? (
+                    <span data-tooltip="Private Frontend Repository" className={`skillIcon gitHubIcon${mode} projectRepoIcon private`} />
+                  ) : project.repository ? (
+                    <a href={project.repository} target="_blank" rel="noreferrer">
+                      <span data-tooltip="Frontend" className={`skillIcon gitHubIcon${mode} projectRepoIcon`} />
+                    </a>
+                  ) : null}
+                  {project.backendRepositoryPrivate ? (
+                    <span data-tooltip="Private Backend Repository" className={`skillIcon gitHubIcon${mode} projectRepoIcon private`} />
+                  ) : project.backendRepository ? (
+                    <a href={project.backendRepository} target="_blank" rel="noreferrer">
+                      <span data-tooltip="Backend" className={`skillIcon gitHubIcon${mode} projectRepoIcon`} />
+                    </a>
+                  ) : null}
+                </div>
+              )}
             </div>
           );
         })}

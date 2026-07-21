@@ -29,6 +29,13 @@ main {
 }
 
 /* Type filter tabs: All / Projects / Contributions */
+.projectCounter {
+  font-size: 1.1rem;
+  opacity: 0.45;
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
+}
+
 .typeFilterTabs {
   display: flex;
   gap: 4px;
@@ -132,8 +139,7 @@ main {
 }
 
 /* Tighten tooltip gap for icons pinned to the top of the card */
-.gitHubLink[data-tooltip]::after,
-.gitHubBackendLink[data-tooltip]::after {
+.projectRepoIcon[data-tooltip]::after {
   bottom: calc(100% + 2px);
 }
 
@@ -232,26 +238,22 @@ main {
   pointer-events: none;
 }
 
-/* Styles for GitHub link icon */
-.gitHubLink {
-  width: 20px;
+/* Container for GitHub repo icons on the card */
+.projectRepoLinks {
   position: absolute;
-  top: 0px;
-  right: 4px;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.projectRepoIcon {
+  width: 12px;
+  height: 12px;
   opacity: 75%;
   animation-name: gitHubLinkAnimation;
   animation-duration: 1s;
-}
-
-/* Styles for GitHub backend link icon */
-.gitHubBackendLink {
-  width: 20px;
-  position: absolute;
-  top: 0px;
-  right: 30px;
-  opacity: 75%;
-  animation-name: gitHubLinkAnimation;
-  animation-duration: 1.3s;
 }
 
 .private {

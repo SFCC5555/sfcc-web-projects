@@ -129,6 +129,122 @@ body.lightMode .analyticsPopover {
   }
 }
 
+/* Known visitor */
+.analyticsRow--known {
+  background: rgba(255 255 255 / 0.03);
+}
+
+body.lightMode .analyticsRow--known {
+  background: rgba(0 0 0 / 0.03);
+}
+
+.analyticsKnownBtn {
+  font-family: var(--mainFont);
+  font-size: 1.1rem;
+  padding: 3px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgba(255 255 255 / 0.15);
+  background: transparent;
+  color: inherit;
+  opacity: 0.55;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+
+  &:hover { opacity: 1; }
+}
+
+.analyticsKnownBtn--active {
+  opacity: 1;
+  border-color: #f5c542;
+  color: #f5c542;
+}
+
+body.lightMode .analyticsKnownBtn {
+  border-color: rgba(0 0 0 / 0.15);
+}
+
+body.lightMode .analyticsKnownBtn--active {
+  border-color: #c9a000;
+  color: #c9a000;
+}
+
+/* Confirmation modal */
+.analyticsModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0 0 0 / 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.analyticsModal {
+  background: hsl(222, 20%, 16%);
+  border: 1px solid rgba(255 255 255 / 0.12);
+  border-radius: 10px;
+  padding: 24px 28px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+body.lightMode .analyticsModal {
+  background: hsl(210, 20%, 96%);
+  border-color: rgba(0 0 0 / 0.12);
+}
+
+.analyticsModalText {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.analyticsModalActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.analyticsModalCancel,
+.analyticsModalConfirm {
+  font-family: var(--mainFont);
+  font-size: 1.2rem;
+  padding: 6px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.analyticsModalCancel {
+  background: transparent;
+  border: 1px solid rgba(255 255 255 / 0.15);
+  color: inherit;
+  opacity: 0.7;
+
+  &:hover { opacity: 1; }
+}
+
+body.lightMode .analyticsModalCancel {
+  border-color: rgba(0 0 0 / 0.15);
+}
+
+.analyticsModalConfirm {
+  background: rgba(255 255 255 / 0.10);
+  border: 1px solid rgba(255 255 255 / 0.20);
+  color: inherit;
+
+  &:hover { background: rgba(255 255 255 / 0.18); }
+}
+
+body.lightMode .analyticsModalConfirm {
+  background: rgba(0 0 0 / 0.08);
+  border-color: rgba(0 0 0 / 0.18);
+
+  &:hover { background: rgba(0 0 0 / 0.14); }
+}
+
 .analyticsLastVisit {
   font-size: 1.1rem;
   opacity: 0.6;
@@ -161,12 +277,12 @@ body.lightMode .analyticsPopover {
     text-align: left;
     opacity: 0.45;
     font-weight: 500;
-    padding: 4px 0 8px;
+    padding: 4px 16px 8px 0;
     border-bottom: 1px solid rgba(255 255 255 / 0.08);
   }
 
   td {
-    padding: 7px 0;
+    padding: 7px 16px 7px 0;
     border-bottom: 1px solid rgba(255 255 255 / 0.04);
   }
 
@@ -178,4 +294,13 @@ body.lightMode .analyticsPopover {
 body.lightMode .analyticsTable {
   th { border-bottom-color: rgba(0 0 0 / 0.10); }
   td { border-bottom-color: rgba(0 0 0 / 0.05); }
+}
+
+.analyticsTableScroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  .analyticsTable {
+    min-width: 480px;
+  }
 }

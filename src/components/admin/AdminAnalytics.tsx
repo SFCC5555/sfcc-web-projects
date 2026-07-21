@@ -4,7 +4,7 @@ import "../../styles/admin/AdminAnalytics.scss";
 
 interface DayStat { day: string; count: number }
 interface ProjectStat { project_name: string; clicks: number }
-interface VisitorStat { visitor_id: string; visits: number; lastVisit: string; country: string | null; city: string | null; projects: string[] }
+interface VisitorStat { visitor_id: string; visits: number; lastVisit: string; country: string | null; city: string | null; projects: string[]; isKnown: boolean }
 
 const TZ = "America/Guayaquil";
 
@@ -27,6 +27,7 @@ function AdminAnalytics() {
   const [projectClicks, setProjectClicks] = useState<ProjectStat[]>([]);
   const [visitors, setVisitors] = useState<VisitorStat[]>([]);
   const [expandedVisitor, setExpandedVisitor] = useState<string | null>(null);
+  const [confirm, setConfirm] = useState<{ visitor_id: string; isKnown: boolean } | null>(null);
   const [loading, setLoading] = useState(true);
   const popoverRef = useRef<HTMLDivElement>(null);
 
@@ -43,10 +44,13 @@ function AdminAnalytics() {
   }, []);
 
   async function load() {
-    const [visitsRes, clicksRes] = await Promise.all([
+    const [visitsRes, clicksRes, knownRes] = await Promise.all([
       supabase.from("visits").select("visitor_id, visited_at, country, city"),
       supabase.from("project_clicks").select("project_name, visitor_id, clicked_at"),
+      supabase.from("known_visitors").select("visitor_id"),
     ]);
+
+    const knownSet = new Set((knownRes.data ?? []).map(k => k.visitor_id));
 
     if (visitsRes.data) {
       setTotalVisits(visitsRes.data.length);
@@ -102,12 +106,27 @@ function AdminAnalytics() {
             country: locationByVisitor[visitor_id]?.country ?? null,
             city: locationByVisitor[visitor_id]?.city ?? null,
             projects: Array.from(projectsByVisitor[visitor_id] ?? []),
+            isKnown: knownSet.has(visitor_id),
           }))
           .sort((a, b) => b.lastVisit.localeCompare(a.lastVisit))
       );
     }
 
     setLoading(false);
+  }
+
+  async function confirmToggle() {
+    if (!confirm) return;
+    const { visitor_id, isKnown } = confirm;
+    if (isKnown) {
+      await supabase.from("known_visitors").delete().eq("visitor_id", visitor_id);
+    } else {
+      await supabase.from("known_visitors").insert({ visitor_id });
+    }
+    setVisitors(prev => prev.map(v =>
+      v.visitor_id === visitor_id ? { ...v, isKnown: !isKnown } : v
+    ));
+    setConfirm(null);
   }
 
   if (loading) return <div className="crudLoading">Loading…</div>;
@@ -168,49 +187,75 @@ function AdminAnalytics() {
         {visitors.length === 0 ? (
           <p className="analyticsEmpty">No data yet</p>
         ) : (
-          <table className="analyticsTable">
-            <thead>
-              <tr><th>Visitor</th><th>Location</th><th>Last visit</th><th>Visits</th><th>Projects opened</th></tr>
-            </thead>
-            <tbody>
-              {visitors.map(({ visitor_id, visits, lastVisit, country, city, projects }) => {
-                const short = visitor_id.slice(0, 8);
-                const location = [city, country].filter(Boolean).join(", ") || "—";
-                return (
-                  <tr key={visitor_id}>
-                    <td className="analyticsVisitorId">{short}…</td>
-                    <td>{location}</td>
-                    <td className="analyticsLastVisit">{formatECT(lastVisit)}</td>
-                    <td>{visits}</td>
-                    <td>
-                      {projects.length === 0 ? (
-                        <span className="analyticsNone">—</span>
-                      ) : (
-                        <div className="analyticsVisitorProjectsCell">
-                          <span
-                            className="analyticsProjectToggle"
-                            onClick={() => setExpandedVisitor(expandedVisitor === visitor_id ? null : visitor_id)}
-                          >
-                            {projects.length} {projects.length === 1 ? "project" : "projects"}
-                            <span className="analyticsToggleIcon">{expandedVisitor === visitor_id ? " ▴" : " ▾"}</span>
-                          </span>
-                          {expandedVisitor === visitor_id && (
-                            <div className="analyticsPopover" ref={popoverRef}>
-                              <ul className="analyticsVisitorProjects">
-                                {projects.map(p => <li key={p}>{p}</li>)}
-                              </ul>
-                            </div>
-                          )}
-                        </div>
-                      )}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          <div className="analyticsTableScroll">
+            <table className="analyticsTable">
+              <thead>
+                <tr><th>Visitor</th><th>Location</th><th>Last visit</th><th>Visits</th><th>Projects opened</th><th></th></tr>
+              </thead>
+              <tbody>
+                {visitors.map(({ visitor_id, visits, lastVisit, country, city, projects, isKnown }) => {
+                  const short = visitor_id.slice(0, 8);
+                  const location = [city, country].filter(Boolean).join(", ") || "—";
+                  return (
+                    <tr key={visitor_id} className={isKnown ? "analyticsRow--known" : ""}>
+                      <td className="analyticsVisitorId">{short}…</td>
+                      <td>{location}</td>
+                      <td className="analyticsLastVisit">{formatECT(lastVisit)}</td>
+                      <td>{visits}</td>
+                      <td>
+                        {projects.length === 0 ? (
+                          <span className="analyticsNone">—</span>
+                        ) : (
+                          <div className="analyticsVisitorProjectsCell">
+                            <span
+                              className="analyticsProjectToggle"
+                              onClick={() => setExpandedVisitor(expandedVisitor === visitor_id ? null : visitor_id)}
+                            >
+                              {projects.length} {projects.length === 1 ? "project" : "projects"}
+                              <span className="analyticsToggleIcon">{expandedVisitor === visitor_id ? " ▴" : " ▾"}</span>
+                            </span>
+                            {expandedVisitor === visitor_id && (
+                              <div className="analyticsPopover" ref={popoverRef}>
+                                <ul className="analyticsVisitorProjects">
+                                  {projects.map(p => <li key={p}>{p}</li>)}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </td>
+                      <td>
+                        <button
+                          className={`analyticsKnownBtn${isKnown ? " analyticsKnownBtn--active" : ""}`}
+                          onClick={() => setConfirm({ visitor_id, isKnown })}
+                        >
+                          {isKnown ? "Known" : "Mark"}
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
+
+      {confirm && (
+        <div className="analyticsModalOverlay" onClick={() => setConfirm(null)}>
+          <div className="analyticsModal" onClick={e => e.stopPropagation()}>
+            <p className="analyticsModalText">
+              {confirm.isKnown
+                ? "Remove this visitor from known?"
+                : "Mark this visitor as known?"}
+            </p>
+            <div className="analyticsModalActions">
+              <button className="analyticsModalCancel" onClick={() => setConfirm(null)}>Cancel</button>
+              <button className="analyticsModalConfirm" onClick={confirmToggle}>Confirm</button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
