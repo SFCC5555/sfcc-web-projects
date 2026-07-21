@@ -15,6 +15,7 @@ export interface Project {
   startDate?: string;
   endDate?: string;
   type: ProjectType;
+  updatedAt?: string;
 }
 
 export interface Certification {

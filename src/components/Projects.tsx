@@ -56,6 +56,7 @@ function Projects({ mode }: ProjectsProps) {
             repositoryPrivate: p.repository_private ?? false,
             backendRepositoryPrivate: p.backend_repository_private ?? false,
             coverUrl: p.cover_url ?? undefined,
+            updatedAt: p.updated_at ?? undefined,
           }));
           allProjectsRef.current = mapped;
           filteredRef.current = mapped;
@@ -223,7 +224,7 @@ function Projects({ mode }: ProjectsProps) {
                   {project.coverUrl ? (
                     <span
                       className="projectIllustration"
-                      style={{ backgroundImage: `url(${project.coverUrl})` }}
+                      style={{ backgroundImage: `url(${project.coverUrl}${project.updatedAt ? `?t=${encodeURIComponent(project.updatedAt)}` : ""})` }}
                     />
                   ) : (
                     <span className="projectIllustration projectIllustrationEmpty">
