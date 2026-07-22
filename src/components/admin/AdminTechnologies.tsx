@@ -154,6 +154,9 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
         if (url) await supabase.from("technologies").update({ icon_url: url }).eq("id", inserted.id);
       }
     } else {
+      const oldName = techs.find(t => t.id === editingId)?.name ?? "";
+      const newName = form.name.trim();
+
       let icon_url: string | null = existingIconUrl || null;
       if (iconFile && editingId) {
         const url = await uploadIcon(editingId);
@@ -165,6 +168,20 @@ const AdminTechnologies = forwardRef<TechnologiesHandle, AdminTechnologiesProps>
         .update({ ...form, icon_url })
         .eq("id", editingId);
       if (e) { setError(e.message); setSaving(false); return; }
+
+      if (oldName && oldName !== newName) {
+        const { data: projectsData } = await supabase.from("projects").select("id, skill_list");
+        if (projectsData) {
+          const affected = projectsData.filter(p => p.skill_list?.includes(oldName));
+          await Promise.all(
+            affected.map(p =>
+              supabase.from("projects")
+                .update({ skill_list: p.skill_list.map((s: string) => s === oldName ? newName : s) })
+                .eq("id", p.id)
+            )
+          );
+        }
+      }
     }
 
     await load();

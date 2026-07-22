@@ -214,6 +214,13 @@ h2 {
   transition-delay: 0.25s;
 }
 
+@media (hover: none) {
+  [data-tooltip]:focus::after {
+    opacity: 1;
+    transition-delay: 0.25s;
+  }
+}
+
 body.lightMode [data-tooltip]::after {
   background: rgba(235, 240, 245, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.80);

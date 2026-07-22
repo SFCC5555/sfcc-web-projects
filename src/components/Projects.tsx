@@ -250,17 +250,17 @@ function Projects({ mode }: ProjectsProps) {
               {(project.repository || project.repositoryPrivate || project.backendRepository || project.backendRepositoryPrivate) && (
                 <div className="projectRepoLinks">
                   {project.repositoryPrivate ? (
-                    <span data-tooltip="Private Frontend Repository" className={`skillIcon gitHubIcon${mode} projectRepoIcon private`} />
+                    <span data-tooltip="Private Frontend Repository" className={`skillIcon gitHubIcon${mode} projectRepoIcon private`} tabIndex={0} />
                   ) : project.repository ? (
                     <a href={project.repository} target="_blank" rel="noreferrer">
-                      <span data-tooltip="Frontend" className={`skillIcon gitHubIcon${mode} projectRepoIcon`} />
+                      <span data-tooltip="Frontend Repository" className={`skillIcon gitHubIcon${mode} projectRepoIcon`} />
                     </a>
                   ) : null}
                   {project.backendRepositoryPrivate ? (
-                    <span data-tooltip="Private Backend Repository" className={`skillIcon gitHubIcon${mode} projectRepoIcon private`} />
+                    <span data-tooltip="Private Backend Repository" className={`skillIcon gitHubIcon${mode} projectRepoIcon private`} tabIndex={0} />
                   ) : project.backendRepository ? (
                     <a href={project.backendRepository} target="_blank" rel="noreferrer">
-                      <span data-tooltip="Backend" className={`skillIcon gitHubIcon${mode} projectRepoIcon`} />
+                      <span data-tooltip="Backend Repository" className={`skillIcon gitHubIcon${mode} projectRepoIcon`} />
                     </a>
                   ) : null}
                 </div>
