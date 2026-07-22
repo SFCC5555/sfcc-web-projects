@@ -132,6 +132,7 @@ main {
   animation-name: projectAnimation;
   animation-duration: 1.5s;
   border-radius: var(--glass-radius);
+  overflow: hidden;
 }
 
 .project:hover {

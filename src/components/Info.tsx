@@ -25,6 +25,7 @@ function Info({ mode, name, info, onDetails }: InfoProps) {
       <span
         onMouseLeave={closeAboutInfo}
         onMouseEnter={aboutInfo}
+        onClick={() => setActiveInfo(v => !v)}
         className={`skillIcon aboutIcon${mode} aboutIcon`}
       />
       {activeInfo && (
@@ -32,6 +33,7 @@ function Info({ mode, name, info, onDetails }: InfoProps) {
           className={`info info${mode}`}
           onMouseEnter={aboutInfo}
           onMouseLeave={closeAboutInfo}
+          onClick={e => e.stopPropagation()}
         >
           <div className="infoTitle">{name}</div>
           <p className="infoContent">{info}</p>
