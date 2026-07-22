@@ -3,6 +3,7 @@ export type Mode = "Light" | "Dark";
 export type ProjectType = "project" | "company" | "learning";
 
 export interface Project {
+  id: string;
   name: string;
   link: string;
   repository?: string;

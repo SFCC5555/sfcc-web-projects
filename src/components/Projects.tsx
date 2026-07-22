@@ -44,6 +44,7 @@ function Projects({ mode }: ProjectsProps) {
       .then(({ data }) => {
         if (data) {
           const mapped: Project[] = data.map((p) => ({
+            id: p.id,
             name: p.name,
             link: p.link,
             info: p.info,
@@ -216,11 +217,11 @@ function Projects({ mode }: ProjectsProps) {
         {projects.map((project) => {
           return (
             <div
-              key={project.name}
+              key={project.id}
               className={`${lowerCaseMode}ModeComponent project infoRelative`}
             >
               <div className="projectImageWrapper">
-                <a href={project.link} target="_blank" rel="noreferrer" data-tooltip="Go to App" onClick={() => { supabase.from("project_clicks").insert({ project_id: project.name, project_name: project.name, visitor_id: localStorage.getItem("sfcc_visitor_id") }).then(({ error }) => { if (error) console.error("project_clicks:", error); }); }}>
+                <a href={project.link} target="_blank" rel="noreferrer" data-tooltip="Go to App" onClick={() => { supabase.from("project_clicks").insert({ project_id: project.id, project_name: project.name, visitor_id: localStorage.getItem("sfcc_visitor_id") }).then(({ error }) => { if (error) console.error("project_clicks:", error); }); }}>
                   {project.coverUrl ? (
                     <span
                       className="projectIllustration"
@@ -299,7 +300,7 @@ function Projects({ mode }: ProjectsProps) {
             <Skills skillList={selectedProject.skillList} mode={mode} techIcons={techIcons} />
 
             <div className="projectModalLinks">
-              <a href={selectedProject.link} target="_blank" rel="noreferrer" className={`projectModalLink ${lowerCaseMode}ModeComponent`} onClick={() => { supabase.from("project_clicks").insert({ project_id: selectedProject.name, project_name: selectedProject.name, visitor_id: localStorage.getItem("sfcc_visitor_id") }).then(({ error }) => { if (error) console.error("project_clicks:", error); }); }}>
+              <a href={selectedProject.link} target="_blank" rel="noreferrer" className={`projectModalLink ${lowerCaseMode}ModeComponent`} onClick={() => { supabase.from("project_clicks").insert({ project_id: selectedProject.id, project_name: selectedProject.name, visitor_id: localStorage.getItem("sfcc_visitor_id") }).then(({ error }) => { if (error) console.error("project_clicks:", error); }); }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                   <polyline points="15 3 21 3 21 9" />
