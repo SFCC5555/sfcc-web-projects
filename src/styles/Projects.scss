@@ -143,6 +143,14 @@ main {
   bottom: calc(100% + 2px);
 }
 
+@media screen and (max-width: 699px) {
+  .projectRepoIcon[data-tooltip]::after {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+}
+
 /* Pull project image tooltip closer to the illustration */
 .project a[data-tooltip]::after {
   bottom: calc(100% + 2px);

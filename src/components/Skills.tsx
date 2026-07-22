@@ -20,17 +20,18 @@ function Skills({ skillList, noWarp = "warp", techIcons = {}, activeSkill }: Ski
       {sorted.map((skill) => {
         const iconUrl = techIcons[skill];
         const isActive = activeSkill === skill;
+        const label = skill.replaceAll("-", " ");
         return iconUrl ? (
-          <span key={skill} data-tooltip={skill} data-skill={skill} className="skillIconWrapper">
-            <img src={iconUrl} alt={skill} className={`skillIcon${isActive ? " skillIcon--active" : ""}`} />
+          <span key={skill} data-tooltip={label} data-skill={skill} className="skillIconWrapper">
+            <img src={iconUrl} alt={label} className={`skillIcon${isActive ? " skillIcon--active" : ""}`} />
           </span>
         ) : (
           <span
             key={skill}
-            data-tooltip={skill}
+            data-tooltip={label}
             className={`skillIcon skillIconFallback${isActive ? " skillIconFallback--active" : ""}`}
           >
-            {skill[0].toUpperCase()}
+            {label[0].toUpperCase()}
           </span>
         );
       })}
