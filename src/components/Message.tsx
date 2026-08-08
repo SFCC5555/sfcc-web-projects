@@ -1,0 +1,29 @@
+import React from "react";
+import "../styles/Message.scss";
+import { Mode } from "../types";
+
+interface MessageProps {
+  mode: Mode;
+  controlFunction: () => void;
+}
+
+function Message({ mode, controlFunction }: MessageProps) {
+  const lowerCaseMode = mode.toLowerCase();
+
+  return (
+    <div className={`${lowerCaseMode}ModeComponent messageBox`}>
+      <p>Your message has been sent successfully!</p>
+      <br />
+      <br />
+      <p className="contactYouSoon">I will contact you soon.</p>
+      <div
+        onClick={controlFunction}
+        className={`closeIcon ${lowerCaseMode}ModeElement closeIconMessage`}
+      >
+        X
+      </div>
+    </div>
+  );
+}
+
+export { Message };

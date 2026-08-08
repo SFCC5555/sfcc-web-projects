@@ -1,0 +1,228 @@
+.loginPage {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    hsl(213, 25%, 7%) 0%,
+    hsl(222, 20%, 13%) 50%,
+    hsl(240, 18%, 9%) 100%
+  );
+  background-attachment: fixed;
+  font-family: var(--mainFont);
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 36px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.loginLogo {
+  width: 52px;
+  height: auto;
+  align-self: center;
+}
+
+.loginTitle {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.90);
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+.loginSubtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  margin-top: -16px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.loginInput {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.90);
+  font-family: var(--mainFont);
+  font-size: 1.3rem;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.loginInput::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.loginInput:focus {
+  border-color: rgba(255, 255, 255, 0.30);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.loginButton {
+  width: 100%;
+  height: 42px;
+  margin-top: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.90);
+  font-family: var(--mainFont);
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.loginButton:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.30);
+}
+
+.loginButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loginError {
+  font-size: 1.2rem;
+  color: rgba(220, 80, 80, 0.90);
+  text-align: center;
+  padding: 10px 14px;
+  background: rgba(220, 60, 60, 0.10);
+  border: 1px solid rgba(220, 60, 60, 0.25);
+  border-radius: 6px;
+}
+
+.loginBackLink {
+  align-self: center;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.40);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+}
+
+.loginBackLink:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Loading screen */
+.adminLoadingScreen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(213, 25%, 7%);
+}
+
+.adminLoadingSpinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255, 255, 255, 0.10);
+  border-top-color: rgba(255, 255, 255, 0.60);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Light mode ── */
+body.lightMode .loginPage {
+  background: linear-gradient(
+    135deg,
+    hsl(192, 20%, 84%) 0%,
+    hsl(200, 22%, 92%) 50%,
+    hsl(215, 20%, 87%) 100%
+  );
+}
+
+body.lightMode .loginCard {
+  background: var(--glass-light-bg);
+  border-color: var(--glass-light-border);
+  box-shadow: var(--glass-light-shadow);
+}
+
+body.lightMode .loginTitle {
+  color: rgba(20, 30, 50, 0.90);
+}
+
+body.lightMode .loginSubtitle {
+  color: rgba(20, 30, 50, 0.50);
+}
+
+body.lightMode .loginInput {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: rgba(20, 30, 50, 0.90);
+}
+
+body.lightMode .loginInput::placeholder {
+  color: rgba(20, 30, 50, 0.35);
+}
+
+body.lightMode .loginInput:focus {
+  border-color: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.70);
+}
+
+body.lightMode .loginButton {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(20, 30, 50, 0.85);
+}
+
+body.lightMode .loginButton:hover {
+  background: rgba(0, 0, 0, 0.13);
+  border-color: rgba(0, 0, 0, 0.22);
+}
+
+body.lightMode .loginError {
+  color: rgba(180, 40, 40, 0.90);
+  background: rgba(200, 50, 50, 0.10);
+  border-color: rgba(200, 50, 50, 0.25);
+}
+
+body.lightMode .loginBackLink {
+  color: rgba(20, 30, 50, 0.40);
+}
+
+body.lightMode .loginBackLink:hover {
+  color: rgba(20, 30, 50, 0.75);
+}
+
+body.lightMode .adminLoadingScreen {
+  background: hsl(192, 20%, 84%);
+}
+
+body.lightMode .adminLoadingSpinner {
+  border-color: rgba(0, 0, 0, 0.10);
+  border-top-color: rgba(0, 0, 0, 0.50);
+}

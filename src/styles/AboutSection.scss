@@ -6,8 +6,6 @@
   top: 58px;
   padding: 60px 30px;
   padding-bottom: 80px;
-  border-style: solid;
-  border-width: 2px;
   right: 0px;
   font-size: 1.5rem;
   line-height: 3rem;
@@ -17,9 +15,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  z-index: 3;
+  z-index: 30;
   animation-name: aboutAnimation;
   animation-duration: 1.5s;
+  border-radius: var(--glass-radius) 0 0 var(--glass-radius);
 }
 
 /* Keyframe animation for the about section */
@@ -55,6 +54,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
 }
 
 /* Hover effect for the close icon */
@@ -82,16 +87,35 @@
 /* Styles for links section */
 .links {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   align-self: flex-start;
 }
 
 .links div {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.links .skillIcon {
+  width: 27px;
+  height: 27px;
+}
+
+@media screen and (min-width: 900px) {
+  .links {
+    font-size: 1.3rem;
+  }
+
+  .links div {
+    gap: 20px;
+  }
+
+  .links .skillIcon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .links div > a {
@@ -107,26 +131,6 @@ a .skillIcon {
   cursor: pointer;
 }
 
-/* Hover effect for GitHub, CV, LinkedIn, and Manfred icons */
-a:hover .gitHubIconLight,
-a:hover .gitHubIconDark {
-  background-image: url("../assets/icons/gitHubIconColor.png");
-}
-
-a:hover .cvIconLight,
-a:hover .cvIconDark {
-  background-image: url("../assets/icons/cvIconColor.png");
-}
-
-a:hover .linkedinIconLight,
-a:hover .linkedinIconDark {
-  background-image: url("../assets/icons/linkedinIconColor.png");
-}
-
-a:hover .manfredIconLight,
-a:hover .manfredIconDark {
-  background-image: url("../assets/icons/manfredIconColor.png");
-}
 
 /* Styles for inactive elements */
 .inactive {

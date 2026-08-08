@@ -1,0 +1,114 @@
+import "../styles/Certifications.scss";
+import { supabase } from "../lib/supabase";
+import { useState, useEffect } from "react";
+import { Mode } from "../types";
+
+interface CertificationsProps {
+  mode: Mode;
+}
+
+interface Certification {
+  name: string;
+  link: string;
+  date: string;
+}
+
+function Certifications({ mode }: CertificationsProps) {
+  const lowerCaseMode = mode.toLowerCase();
+
+  const [certifications, setCertifications] = useState<Certification[]>([]);
+  const [srcCertification, setSrcCertification] = useState("");
+  const [linkCertification, setLinkCertification] = useState("");
+  const [activeCertification, setActiveCertification] = useState(false);
+
+  useEffect(() => {
+    supabase
+      .from("certifications")
+      .select("name, link, date")
+      .order("sort_order")
+      .then(({ data }) => {
+        if (data) setCertifications(data);
+      });
+  }, []);
+
+  function closeCertification() {
+    setActiveCertification(false);
+  }
+
+  function renderCertification(event: React.MouseEvent<HTMLSpanElement>) {
+    const target = event.currentTarget;
+    const id = target.id;
+    const link = target.dataset.link ?? "";
+
+    setActiveCertification(false);
+    setTimeout(() => {
+      setSrcCertification(id);
+      setLinkCertification(link);
+      setActiveCertification(true);
+    });
+  }
+
+  return (
+    <main className="sectionContainer">
+      <div className="sectionGap" id="CERTIFICATIONS"></div>
+      <h2 className={`${lowerCaseMode}ModeElement`}>CERTIFICATIONS</h2>
+      {activeCertification && (
+        <div
+          className={`${lowerCaseMode}ModeComponent renderCertificationContainer`}
+        >
+          <div className="renderCertificationInner">
+            <img
+              src={
+                srcCertification
+                  ? require(`../assets/images/certificationIllustrations/${srcCertification}Color.png`)
+                  : ""
+              }
+              alt={srcCertification}
+            />
+          </div>
+          <div
+            onClick={closeCertification}
+            className="closeIcon lightModeElement"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </div>
+          <a
+            href={
+              linkCertification[0] === "h"
+                ? linkCertification
+                : require(`../assets/documents/${linkCertification}`)
+            }
+            target="_Blank"
+            rel="noreferrer"
+          >
+            <span className="externalLinkIcon" data-tooltip="See Certificate" />
+          </a>
+        </div>
+      )}
+      <section className="certificationContainer">
+        {certifications.map((certification) => (
+          <div
+            key={certification.name}
+            className={`${lowerCaseMode}ModeComponent certification`}
+          >
+            <span
+              onClick={renderCertification}
+              data-link={certification.link}
+              data-tooltip={certification.date}
+              id={certification.name}
+              className="certificationIllustration"
+              style={{
+                backgroundImage: `url(${require(`../assets/images/certificationIllustrations/${certification.name}Color.png`)})`,
+              }}
+            />
+          </div>
+        ))}
+      </section>
+    </main>
+  );
+}
+
+export { Certifications };

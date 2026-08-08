@@ -24,6 +24,7 @@
 /* Set the base font size for better responsiveness */
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 /* Define CSS custom properties for color and fonts */
@@ -37,6 +38,34 @@ html {
   --jFont: "KAPITAL";
   --mainFont: "BankGothicBold";
   --secondFont: "Linkin";
+
+  /* Glass system */
+  --glass-blur: blur(14px);
+  --glass-radius: 8px;
+
+  --glass-dark-bg: rgba(255, 255, 255, 0.06);
+  --glass-dark-border: rgba(255, 255, 255, 0.10);
+  --glass-dark-hover-bg: rgba(255, 255, 255, 0.13);
+  --glass-dark-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+  --glass-dark-hover-shadow:
+    0 8px 36px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.20);
+
+  --glass-light-bg: rgba(255, 255, 255, 0.28);
+  --glass-light-border: rgba(255, 255, 255, 0.58);
+  --glass-light-hover-bg: rgba(190, 194, 198, 0.50);
+  --glass-light-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.80),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  --glass-light-hover-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.08);
 }
 
 /* Define base styles for the body */
@@ -46,6 +75,16 @@ body {
   justify-content: center;
   font-family: var(--mainFont);
   padding: 80px 15px;
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(
+    135deg,
+    hsl(213, 25%, 7%) 0%,
+    hsl(222, 20%, 13%) 50%,
+    hsl(240, 18%, 9%) 100%
+  );
+  background-attachment: fixed;
 }
 
 /* Define styles for the root element */
@@ -92,14 +131,21 @@ h2 {
   }
 
   .#{$mode}ModeComponent {
-    background-color: hsl(var(--#{$mode}Color));
+    background: var(--glass-#{$mode}-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
     color: hsl(var(--#{$mode}InverseColor));
-    border-color: hsl(var(--#{$mode}InverseColor), 25%);
+    border: 1px solid var(--glass-#{$mode}-border);
+    border-radius: var(--glass-radius);
+    box-shadow: var(--glass-#{$mode}-shadow);
   }
 
   .#{$mode}ModeComponent:hover {
-    background-color: var(--#{$mode}BaseColor);
-    transition-duration: 90s;
+    background: var(--glass-#{$mode}-hover-bg);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow: var(--glass-#{$mode}-hover-shadow);
+    transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
   }
 
   .#{$mode}ModeElement {
@@ -125,7 +171,61 @@ h2 {
 }
 
 .lightMode {
-  background-color: hsl(var(--lightColor));
+  background: linear-gradient(
+    135deg,
+    hsl(192, 20%, 84%) 0%,
+    hsl(200, 22%, 92%) 50%,
+    hsl(215, 20%, 87%) 100%
+  ) !important;
+  background-attachment: fixed !important;
+}
+
+/* Custom tooltip system — replaces native title attribute */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  line-height: 1;
+  font-family: var(--mainFont);
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 99;
+  background: rgba(22, 28, 42, 0.90);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.92);
+  transition: opacity 0.1s ease-out;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+
+@media (hover: none) {
+  [data-tooltip]:focus::after {
+    opacity: 1;
+    transition-delay: 0.25s;
+  }
+}
+
+body.lightMode [data-tooltip]::after {
+  background: rgba(235, 240, 245, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.80);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  color: rgba(20, 25, 38, 0.90);
 }
 
 /* Media query for larger screens */

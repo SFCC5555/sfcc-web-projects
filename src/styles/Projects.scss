@@ -14,15 +14,122 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
+}
+
+/* Empty state message */
+.noResults {
+  width: fit-content;
+  text-align: center;
+  padding: 20px 40px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  opacity: 0.75;
+  animation-name: projectAnimation;
+  animation-duration: 0.5s;
+}
+
+/* Type filter tabs: All / Projects / Contributions */
+.projectCounter {
+  font-size: 1.1rem;
+  opacity: 0.45;
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
+}
+
+.typeFilterTabs {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.typeTab {
+  padding: 4px 8px;
+  font-family: var(--mainFont);
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: var(--glass-radius);
+  opacity: 0.55;
+  transition: opacity 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.typeTab:hover {
+  opacity: 0.85;
+}
+
+.activeTypeTab {
+  opacity: 1 !important;
+}
+
+.lightModeComponent.typeTab {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.darkModeComponent.typeTab {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+@each $mode in light, dark {
+  .#{$mode}ModeComponent.activeTypeTab {
+    background: var(--glass-#{$mode}-hover-bg);
+    box-shadow: var(--glass-#{$mode}-hover-shadow);
+  }
+}
+
+.lightModeComponent.activeTypeTab {
+  background: rgba(160, 164, 168, 0.18);
+  box-shadow: var(--glass-light-hover-shadow);
+}
+
+.activeTypeTab.typeTab--project {
+  color: rgb(100, 180, 255);
+  border-color: rgba(100, 180, 255, 0.50);
+}
+
+.activeTypeTab.typeTab--company {
+  color: rgb(80, 220, 130);
+  border-color: rgba(80, 220, 130, 0.50);
+}
+
+.activeTypeTab.typeTab--learning {
+  color: rgb(225, 160, 80);
+  border-color: rgba(225, 160, 80, 0.50);
+}
+
+.activeTypeTab.typeTab--technical-test {
+  color: rgb(180, 120, 255);
+  border-color: rgba(180, 120, 255, 0.50);
+}
+
+.tabLabelShort { display: none; }
+
+@media screen and (max-width: 699px) {
+  .tabLabelFull  { display: none; }
+  .tabLabelShort { display: inline; }
+}
+
+/* Groups Sort and Filter side by side */
+.sortFilterGroup {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
 }
 
 /* Styles for the project container */
 .projectContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 4px;
+}
+
+@media screen and (min-width: 500px) {
+  .projectContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Styles for individual project items */
@@ -32,14 +139,112 @@ main {
   align-items: center;
   padding: 5px;
   padding-top: 30px;
-  border-style: solid;
-  border-width: 2px;
   gap: 5px;
   position: relative;
   animation-name: projectAnimation;
   animation-duration: 1.5s;
-  border-collapse: collapse;
+  border-radius: var(--glass-radius);
 }
+
+.project:hover {
+  z-index: 30;
+}
+
+/* Tighten tooltip gap for icons pinned to the top of the card */
+.projectRepoIcon[data-tooltip]::after {
+  bottom: calc(100% + 2px);
+}
+
+@media screen and (max-width: 699px) {
+  .projectRepoIcon[data-tooltip]::after {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+}
+
+/* Pull project image tooltip closer to the illustration */
+.project a[data-tooltip]::after {
+  bottom: calc(100% + 2px);
+}
+
+/* Image wrapper — gives the badge an anchor point at the image corner */
+.projectImageWrapper {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.projectImageWrapper:hover {
+  transform: scale(1.015);
+}
+
+/* Type badge — centered on the top-right corner of the image */
+.projectTypeBadge {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  transform: translate(50%, -50%);
+  font-size: 1rem;
+  padding: 2px 10px;
+  border-radius: 6px;
+  border: 1px solid;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.lightModeComponent .projectTypeBadge {
+  background: rgb(240, 242, 244);
+}
+
+.darkModeComponent .projectTypeBadge {
+  background: rgb(20, 24, 28);
+}
+
+.projectTypeBadge--project {
+  color: rgba(80, 160, 255, 0.90);
+  border-color: rgba(80, 160, 255, 0.35);
+}
+
+.projectTypeBadge--company {
+  color: rgba(80, 200, 120, 0.90);
+  border-color: rgba(80, 200, 120, 0.35);
+}
+
+.projectTypeBadge--learning {
+  color: rgba(200, 140, 80, 0.90);
+  border-color: rgba(200, 140, 80, 0.35);
+}
+
+.projectTypeBadge--technical-test {
+  color: rgba(160, 100, 240, 0.90);
+  border-color: rgba(160, 100, 240, 0.35);
+}
+
+.projectImageWrapper:hover .projectTypeBadge--project {
+  color: rgb(100, 180, 255);
+  border-color: rgba(100, 180, 255, 0.70);
+}
+
+.projectImageWrapper:hover .projectTypeBadge--company {
+  color: rgb(80, 220, 130);
+  border-color: rgba(80, 220, 130, 0.70);
+}
+
+.projectImageWrapper:hover .projectTypeBadge--learning {
+  color: rgb(225, 160, 80);
+  border-color: rgba(225, 160, 80, 0.70);
+}
+
+.projectImageWrapper:hover .projectTypeBadge--technical-test {
+  color: rgb(180, 120, 255);
+  border-color: rgba(180, 120, 255, 0.70);
+}
+
+
 
 /* Animation for individual projects */
 @keyframes projectAnimation {
@@ -51,7 +256,6 @@ main {
   }
 }
 
-/* Fecha visible junto al botón info (sin tocar el hover de Info) */
 .projectDate {
   position: absolute;
   top: 0;
@@ -64,26 +268,28 @@ main {
   pointer-events: none;
 }
 
-/* Styles for GitHub link icon */
-.gitHubLink {
-  width: 20px;
+@media screen and (max-width: 699px) {
+  .projectDate {
+    left: 36px;
+  }
+}
+
+/* Container for GitHub repo icons on the card */
+.projectRepoLinks {
   position: absolute;
-  top: 0px;
-  right: 4px;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.projectRepoIcon {
+  width: 12px;
+  height: 12px;
   opacity: 75%;
   animation-name: gitHubLinkAnimation;
   animation-duration: 1s;
-}
-
-/* Styles for GitHub backend link icon */
-.gitHubBackendLink {
-  width: 20px;
-  position: absolute;
-  top: 0px;
-  right: 30px;
-  opacity: 75%;
-  animation-name: gitHubLinkAnimation;
-  animation-duration: 1.3s;
 }
 
 .private {
@@ -116,12 +322,36 @@ main {
   animation-name: projectIllustrationAnimation;
   animation-duration: 1.5s;
   filter: grayscale(100%);
+  border-radius: 6px;
+  transition: filter 1s ease;
 }
 
 /* Hover effect for project illustrations */
 .projectIllustration:hover {
   filter: grayscale(0%);
-  transition-duration: 1s;
+}
+
+.projectIllustrationEmpty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none !important;
+  filter: none !important;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: var(--mainFont);
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  padding: 8px;
+  line-height: 1.3;
+}
+
+body.lightMode .projectIllustrationEmpty {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(20, 25, 38, 0.40);
 }
 
 /* Animation for project illustrations */
@@ -136,12 +366,16 @@ main {
 
 /* Media query for medium-sized screens */
 @media screen and (min-width: 700px) {
+  .typeTab {
+    padding: 5px 16px;
+    font-size: 1.2rem;
+  }
+
   .projectContainer {
     grid-template-columns: repeat(3, 1fr);
   }
   .projectDate {
     font-size: 1.5rem;
-    left: 32px;
   }
   .projectIllustration {
     width: 200px;
@@ -171,4 +405,154 @@ main {
   }
 
   /* Adjustments to the main content section */
+}
+
+
+/* ── Project detail modal ── */
+.projectModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  padding: 20px;
+}
+
+body.lightMode .projectModalOverlay {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.projectModal {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: var(--glass-radius);
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: projectModalIn 0.2s ease;
+}
+
+@keyframes projectModalIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.projectModalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  opacity: 0.55;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border-width: 1px;
+
+  svg { width: 14px; height: 14px; }
+
+  &:hover { opacity: 1; background: transparent; }
+}
+
+.darkModeComponent .projectModalClose {
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.lightModeComponent .projectModalClose {
+  color: rgba(20, 30, 50, 0.85);
+  border-color: rgba(20, 30, 50, 0.85);
+}
+
+
+.projectModalHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-right: 28px;
+}
+
+.projectModalTitle {
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.projectModalDate {
+  font-size: 1.1rem;
+  opacity: 0.55;
+  margin: 0;
+  text-align: left;
+}
+
+.projectModalInfo {
+  font-size: 1.2rem;
+  line-height: 1.6em;
+  opacity: 0.85;
+  margin: 0;
+  text-align: justify;
+}
+
+.projectModalLinks {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  justify-content: flex-end;
+}
+
+.projectModalLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 18px;
+  border-radius: var(--glass-radius);
+  font-family: var(--mainFont);
+  font-size: 1.1rem;
+  text-decoration: none;
+  opacity: 0.80;
+  transition: opacity 0.15s ease;
+
+  svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  &:hover { opacity: 1; }
+}
+
+/* disable glass hover effect on the modal container */
+.darkModeComponent.projectModal:hover {
+  background: var(--glass-dark-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-dark-shadow);
+  transition: none;
+}
+.lightModeComponent.projectModal:hover {
+  background: var(--glass-light-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-light-shadow);
+  transition: none;
+}
+
+/* badge inside the modal uses the same .projectTypeBadge rules, just reset position */
+.projectModal .projectTypeBadge {
+  position: static;
+  transform: none;
+  pointer-events: auto;
+}
+
+.lightModeComponent.projectModal .projectTypeBadge {
+  background: rgb(240, 242, 244);
+}
+
+.darkModeComponent.projectModal .projectTypeBadge {
+  background: rgb(20, 24, 28);
 }

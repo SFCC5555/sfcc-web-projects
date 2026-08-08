@@ -6,14 +6,13 @@
   width: 100%;
   justify-content: space-between;
   font-weight: bold;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
   position: fixed;
   top: 0px;
-  padding: 0px 15px;
+  padding: 0px 20px;
   font-size: 1.4rem;
   gap: 5px;
-  z-index: 10;
+  z-index: 100;
+  border-radius: 0 0 var(--glass-radius) var(--glass-radius);
 }
 
 /* Styles for various icons and images */
@@ -95,6 +94,48 @@ span {
 
 .sFernando {
   text-decoration: none;
+}
+
+.sFernandoAdmin {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .sFernandoAdmin {
+    display: unset;
+  }
+}
+
+.navBarRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navAdminLink {
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.09);
+  opacity: 0.8;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+
+.navAdminLink:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+body.lightMode .navAdminLink {
+  border-color: rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+body.lightMode .navAdminLink:hover {
+  background: rgba(0, 0, 0, 0.11);
 }
 
 @each $mode in light, dark {

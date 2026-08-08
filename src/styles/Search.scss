@@ -3,7 +3,7 @@
   width: 40px;
   height: 30px;
   padding: 10px;
-  border-radius: 2px 6px 0px 0px;
+  border-radius: 0 var(--glass-radius) 0 0;
   font-family: var(--mainFont);
   font-size: 0rem;
   opacity: 75%;
@@ -48,15 +48,21 @@
 @each $mode in light, dark {
   /* Background and text color for the input */
   .#{$mode}ModeInput {
-    background-color: hsl(var(--#{$mode}Color));
+    background: var(--glass-#{$mode}-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: hsl(var(--#{$mode}InverseColor));
-    border: 2px solid hsl(var(--#{$mode}InverseColor), 40%);
-    border-bottom: none;
+    border: 1px solid var(--glass-#{$mode}-border);
+    transition: background 0.15s ease;
+  }
+
+  .#{$mode}ModeInput:hover {
+    background: var(--glass-#{$mode}-hover-bg);
   }
 
   /* Placeholder color for the input */
   .#{$mode}ModeInput::placeholder {
-    color: hsl(var(--#{$mode}InverseColor));
+    color: hsl(var(--#{$mode}InverseColor), 65%);
   }
 
   /* Background image for the search icon */
@@ -77,5 +83,20 @@
   .searchInput:hover,
   .searchInput:valid {
     width: 240px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .searchInput {
+    width: 240px;
+    font-size: 1.6rem;
+    opacity: 100%;
+  }
+
+  .searchInput:hover,
+  .searchInput:focus,
+  .searchInput:valid {
+    width: 240px;
+    transition-duration: 0s;
   }
 }

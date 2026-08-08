@@ -1,0 +1,53 @@
+.adminToast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 28px;
+  font-family: var(--mainFont);
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  border-radius: 8px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 1000;
+  animation: adminToastIn 0.3s ease;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.90);
+}
+
+.adminToast--success {
+  border-color: rgba(80, 200, 120, 0.50);
+  box-shadow: 0 4px 24px rgba(80, 200, 120, 0.18);
+}
+
+.adminToast--error {
+  border-color: rgba(220, 60, 60, 0.50);
+  box-shadow: 0 4px 24px rgba(220, 60, 60, 0.18);
+}
+
+body.lightMode .adminToast {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.10);
+  color: rgba(20, 30, 50, 0.90);
+}
+
+body.lightMode .adminToast--success {
+  border-color: rgba(40, 160, 80, 0.50);
+  box-shadow: 0 4px 24px rgba(40, 160, 80, 0.14);
+}
+
+body.lightMode .adminToast--error {
+  border-color: rgba(200, 50, 50, 0.50);
+  box-shadow: 0 4px 24px rgba(200, 50, 50, 0.14);
+}
+
+@keyframes adminToastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}

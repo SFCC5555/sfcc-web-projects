@@ -15,109 +15,137 @@
 }
 
 @keyframes noWarpAnimation {
-  0% {
-    flex-wrap: nowrap;
-  }
-  100% {
-    flex-wrap: nowrap;
-  }
+  0%   { flex-wrap: nowrap; }
+  100% { flex-wrap: nowrap; }
 }
 
-/* Styles for skill icons */
+/* Wrapper for img icons — needed so ::after tooltip works (img doesn't support pseudo-elements) */
+.skillIconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: crosshair;
+}
+
+/* Styles for skill icons (now <img> tags from DB) */
 .skillIcon {
+  height: 22px;
+  width: 22px;
+  object-fit: contain;
   background-size: contain;
-  height: 32px;
-  width: 32px;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
   cursor: crosshair;
   animation-name: skillIconAnimation;
   animation-duration: 1s;
+  filter: grayscale(100%);
+  transition: transform 0.15s ease, filter 0.3s ease;
+}
+
+.skillIcon:hover {
+  transform: scale(1.14);
+  filter: grayscale(0%);
+}
+
+.skillIconFallback {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-family: var(--mainFont);
+  letter-spacing: 0;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.skillIconFallback:hover {
+  background: rgba(22, 28, 42, 0.90);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.lightMode .skillIconFallback {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(20, 30, 50, 0.14);
+}
+
+body.lightMode .skillIconFallback:hover {
+  background: rgba(235, 240, 245, 0.92);
+  border-color: rgba(255, 255, 255, 0.80);
+  color: rgba(20, 25, 38, 0.90);
+}
+
+.skillIcon[data-tooltip]::after {
+  bottom: calc(100% + 4px);
 }
 
 @keyframes skillIconAnimation {
-  0% {
-    opacity: 0%;
-    height: 20px;
-  }
-  100% {
-    opacity: 100%;
-    height: 32px;
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Active filter — show matching icon in color */
+.skillIcon--active {
+  filter: grayscale(0%) !important;
+}
+
+.skillIconFallback--active {
+  background: rgba(22, 28, 42, 0.90);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.lightMode .skillIconFallback--active {
+  background: rgba(235, 240, 245, 0.92);
+  border-color: rgba(255, 255, 255, 0.80);
+  color: rgba(20, 25, 38, 0.90);
+}
+
+/* React easter egg — spin on hover */
+.skillIconWrapper[data-skill="React"] .skillIcon:hover,
+.filterSkillIconWrapper:hover .filterSkillIcon[data-skill="React"] {
+  animation: reactSpin 25s linear infinite;
+  filter: grayscale(0%);
+  transform: none;
+}
+
+@keyframes reactSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@media screen and (min-width: 700px) {
+  .skillIcon {
+    height: 28px;
+    width: 28px;
   }
 }
 
 /* Styles for filter skill icons */
 .filterSkillIcon {
-  position: absolute;
-  top: -40px;
-  right: 3px;
-  background-size: contain;
-  height: 32px;
   width: 32px;
+  height: 32px;
+  object-fit: contain;
   cursor: crosshair;
   animation-name: filterSkillIconAnimation;
   animation-duration: 1s;
+  transition: transform 0.15s ease;
+}
+
+.filterSkillIcon:hover {
+  transform: scale(1.14);
 }
 
 @keyframes filterSkillIconAnimation {
-  0% {
-    opacity: 0%;
-    height: 10px;
-    top: 0;
-  }
-  100% {
-    opacity: 100%;
-    height: 32px;
-    top: -40px;
-  }
+  0%   { opacity: 0; height: 10px; }
+  100% { opacity: 1; height: 32px; }
 }
 
-/* React icon styles */
-.reactIcon {
-  background-image: url("../assets/icons/reactIconColor.png");
-}
-
-.reactIconLight:hover,
-.reactIconDark:hover,
-.reactIcon:hover {
-  background-image: url("../assets/icons/reactIconColor.png");
-  transition-duration: 300ms;
-  animation: reactIcon-spin infinite 25s linear;
-}
-
-@keyframes reactIcon-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.reactIconLight {
-  background-image: url("../assets/icons/reactIconLight.png");
-}
-
-.reactIconDark {
-  background-image: url("../assets/icons/reactIconDark.png");
-}
-
-.reactIconLight,
-.reactIconDark {
-  animation-name: reactIconAnimation;
-  animation-duration: 300ms;
-}
-
-@keyframes reactIconAnimation {
-  0% {
-    opacity: 5%;
-    width: 32px;
-  }
-  100% {
-    opacity: 100%;
-    width: 32px;
-  }
-}
-
-/* About icon styles for light and dark modes */
+/* About (info) icon — used in Info.tsx */
 .aboutIconLight {
   background-image: url("../assets/icons/aboutIconLight.png");
 }
@@ -126,57 +154,60 @@
   background-image: url("../assets/icons/aboutIconDark.png");
 }
 
-/* List of skills to generate styles for */
-$skills: (
-  "html",
-  "css",
-  "javaScript",
-  "git",
-  "gitHub",
-  "cv",
-  "linkedin",
-  "manfred",
-  "adobe-Illustrator",
-  "json",
-  "api",
-  "figma",
-  "autoCad",
-  "sketchUp",
-  "clip-Studio-Paint",
-  "tailwind",
-  "typeScript",
-  "react-Router-V6",
-  "redux",
-  "bootstrap",
-  "sass",
-  "nodeJS",
-  "express",
-  "mongoDB",
-  "mongoose",
-  "mySQL",
-  "graphQL",
-  "docker",
-  "postman",
-  "strapi"
-);
+/* Social link icons — used in AboutSection.tsx and project cards */
+.gitHubIconLight {
+  background-image: url("../assets/icons/gitHubIconLight.png");
+}
 
-/* Generate styles for each skill icon */
-@each $skill in $skills {
-  .#{$skill}Icon {
-    background-image: url("../assets/icons/#{$skill}IconColor.png");
-  }
+.gitHubIconDark {
+  background-image: url("../assets/icons/gitHubIconDark.png");
+}
 
-  .#{$skill}IconLight:hover,
-  .#{$skill}IconDark:hover {
-    background-image: url("../assets/icons/#{$skill}IconColor.png");
-    transition-duration: 300ms;
-  }
+.gitHubIconLight:hover,
+.gitHubIconDark:hover {
+  background-image: url("../assets/icons/gitHubIconColor.png");
+  transition-duration: 300ms;
+}
 
-  .#{$skill}IconLight {
-    background-image: url("../assets/icons/#{$skill}IconLight.png");
-  }
+a:hover .gitHubIconLight,
+a:hover .gitHubIconDark {
+  background-image: url("../assets/icons/gitHubIconColor.png");
+}
 
-  .#{$skill}IconDark {
-    background-image: url("../assets/icons/#{$skill}IconDark.png");
-  }
+.cvIconLight {
+  background-image: url("../assets/icons/cvIconLight.png");
+}
+
+.cvIconDark {
+  background-image: url("../assets/icons/cvIconDark.png");
+}
+
+.cvIconLight:hover,
+.cvIconDark:hover {
+  background-image: url("../assets/icons/cvIconColor.png");
+  transition-duration: 300ms;
+}
+
+a:hover .cvIconLight,
+a:hover .cvIconDark {
+  background-image: url("../assets/icons/cvIconColor.png");
+}
+
+.linkedinIconLight {
+  background-image: url("../assets/icons/linkedinIconLight.png");
+}
+
+.linkedinIconDark {
+  background-image: url("../assets/icons/linkedinIconDark.png");
+}
+
+.linkedinIconLight:hover,
+.linkedinIconDark:hover {
+  background-image: url("../assets/icons/linkedinIconColor.png");
+  transition-duration: 300ms;
+}
+
+a:hover .linkedinIconLight,
+a:hover .linkedinIconDark {
+  background-image: url("../assets/icons/linkedinIconColor.png");
 }
