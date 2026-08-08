@@ -174,7 +174,7 @@ function Projects({ mode }: ProjectsProps) {
         WEB PROJECTS & CONTRIBUTIONS
       </h2>
       <div className="typeFilterTabs">
-        {(["all", "project", "company", "learning"] as const).map((type) => (
+        {(["all", "project", "company", "learning", "technical-test"] as const).map((type) => (
           <button
             key={type}
             onClick={() => typeFilterFunction(type)}
@@ -188,7 +188,9 @@ function Projects({ mode }: ProjectsProps) {
               ? "Projects"
               : type === "company"
               ? "Companies"
-              : "Learning"}
+              : type === "learning"
+              ? "Learning"
+              : <><span className="tabLabelFull">Technical Tests</span><span className="tabLabelShort">Tech Test</span></>}
           </button>
         ))}
       </div>
@@ -234,7 +236,7 @@ function Projects({ mode }: ProjectsProps) {
                   )}
                 </a>
                 <span className={`projectTypeBadge projectTypeBadge--${project.type}`}>
-                  {project.type === "project" ? "Project" : project.type === "company" ? "Company" : "Learning"}
+                  {project.type === "project" ? "Project" : project.type === "company" ? "Company" : project.type === "learning" ? "Learning" : "Tech Test"}
                 </span>
               </div>
               <Skills skillList={project.skillList} mode={mode} techIcons={techIcons} activeSkill={activeFilterSkill} />
@@ -285,7 +287,7 @@ function Projects({ mode }: ProjectsProps) {
             <div className="projectModalHeader">
               <h3 className={`projectModalTitle ${lowerCaseMode}ModeElement`}>{selectedProject.name}</h3>
               <span className={`projectTypeBadge projectTypeBadge--${selectedProject.type}`}>
-                {selectedProject.type === "project" ? "Project" : selectedProject.type === "company" ? "Company" : "Learning"}
+                {selectedProject.type === "project" ? "Project" : selectedProject.type === "company" ? "Company" : selectedProject.type === "learning" ? "Learning" : "Tech Test"}
               </span>
             </div>
 

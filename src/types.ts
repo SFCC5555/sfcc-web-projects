@@ -1,6 +1,6 @@
 export type Mode = "Light" | "Dark";
 
-export type ProjectType = "project" | "company" | "learning";
+export type ProjectType = "project" | "company" | "learning" | "technical-test";
 
 export interface Project {
   id: string;

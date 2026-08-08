@@ -139,6 +139,11 @@
   color: rgba(200, 140, 80, 0.90);
 }
 
+.crudBadge--technical-test {
+  border-color: rgba(160, 100, 240, 0.35);
+  color: rgba(160, 100, 240, 0.90);
+}
+
 .crudActions {
   display: flex;
   gap: 6px;
@@ -576,6 +581,11 @@ body.lightMode {
   .crudBadge--learning {
     border-color: rgba(200, 140, 80, 0.35);
     color: rgba(180, 110, 40, 0.90);
+  }
+
+  .crudBadge--technical-test {
+    border-color: rgba(140, 80, 220, 0.35);
+    color: rgba(130, 70, 210, 0.90);
   }
 
   .crudBtn {

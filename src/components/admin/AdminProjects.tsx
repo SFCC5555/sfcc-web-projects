@@ -364,6 +364,7 @@ const AdminProjects = forwardRef<ProjectsHandle, AdminProjectsProps>(({ onToast 
                   <option value="project">project</option>
                   <option value="company">company</option>
                   <option value="learning">learning</option>
+                  <option value="technical-test">technical-test</option>
                 </select>
               </div>
 

@@ -98,6 +98,18 @@ main {
   border-color: rgba(225, 160, 80, 0.50);
 }
 
+.activeTypeTab.typeTab--technical-test {
+  color: rgb(180, 120, 255);
+  border-color: rgba(180, 120, 255, 0.50);
+}
+
+.tabLabelShort { display: none; }
+
+@media screen and (max-width: 699px) {
+  .tabLabelFull  { display: none; }
+  .tabLabelShort { display: inline; }
+}
+
 /* Groups Sort and Filter side by side */
 .sortFilterGroup {
   display: flex;
@@ -207,6 +219,11 @@ main {
   border-color: rgba(200, 140, 80, 0.35);
 }
 
+.projectTypeBadge--technical-test {
+  color: rgba(160, 100, 240, 0.90);
+  border-color: rgba(160, 100, 240, 0.35);
+}
+
 .projectImageWrapper:hover .projectTypeBadge--project {
   color: rgb(100, 180, 255);
   border-color: rgba(100, 180, 255, 0.70);
@@ -220,6 +237,11 @@ main {
 .projectImageWrapper:hover .projectTypeBadge--learning {
   color: rgb(225, 160, 80);
   border-color: rgba(225, 160, 80, 0.70);
+}
+
+.projectImageWrapper:hover .projectTypeBadge--technical-test {
+  color: rgb(180, 120, 255);
+  border-color: rgba(180, 120, 255, 0.70);
 }
 
 
