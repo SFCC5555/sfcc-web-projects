@@ -151,6 +151,9 @@
   }
 }
 
+/* ── Mobile menu (hidden on desktop) ── */
+.adminMobileMenu { display: none; }
+
 /* ── Mobile ── */
 @media (max-width: 560px) {
   .adminHeader {
@@ -179,29 +182,97 @@
     padding: 5px 10px;
   }
 
+  /* Tab bar becomes a single flex row: [dropdown] [+ Add] */
   .adminTabBar {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     height: auto;
-    padding: 6px 10px;
-    gap: 4px;
+    padding: 8px 12px;
+    gap: 8px;
   }
 
-  .adminTabs {
-    width: 100%;
-    gap: 2px;
-  }
+  /* Hide the desktop tab row */
+  .adminTabs { display: none; }
 
-  .adminTab {
+  /* Show the mobile dropdown */
+  .adminMobileMenu {
+    display: block;
+    position: relative;
     flex: 1;
-    text-align: center;
-    font-size: 1rem;
-    padding: 4px 2px;
+    min-width: 0;
   }
 
-  .adminAddBtn {
+  .adminMobileMenuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     width: 100%;
-    text-align: center;
-    padding: 7px 12px;
+    padding: 7px 14px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: var(--mainFont);
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s;
+
+    &:hover { background: rgba(255, 255, 255, 0.15); }
+  }
+
+  .adminMobileMenuChevron {
+    font-size: 1rem;
+    opacity: 0.55;
+    flex-shrink: 0;
+  }
+
+  .adminMobileMenuDropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 200;
+    min-width: 180px;
+    background: hsl(222, 22%, 14%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.40);
+  }
+
+  .adminMobileMenuOption {
+    width: 100%;
+    text-align: left;
+    padding: 9px 14px;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.60);
+    font-family: var(--mainFont);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.90);
+    }
+  }
+
+  .adminMobileMenuOption--active {
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.10);
+  }
+
+  /* Add button stays compact on the right */
+  .adminAddBtn {
+    width: auto;
+    flex-shrink: 0;
+    padding: 7px 14px;
+    font-size: 1.2rem;
   }
 }
 
@@ -265,4 +336,34 @@ body.lightMode .adminAddBtn {
   border-color: rgba(40, 160, 80, 0.50);
 
   &:hover { background: rgba(0, 0, 0, 0.11); }
+}
+
+@media (max-width: 560px) {
+  body.lightMode .adminMobileMenuBtn {
+    background: rgba(0, 0, 0, 0.07);
+    border-color: rgba(0, 0, 0, 0.14);
+    color: rgba(20, 30, 50, 0.90);
+
+    &:hover { background: rgba(0, 0, 0, 0.12); }
+  }
+
+  body.lightMode .adminMobileMenuDropdown {
+    background: hsl(210, 20%, 94%);
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  body.lightMode .adminMobileMenuOption {
+    color: rgba(20, 30, 50, 0.55);
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.06);
+      color: rgba(20, 30, 50, 0.90);
+    }
+  }
+
+  body.lightMode .adminMobileMenuOption--active {
+    background: rgba(0, 0, 0, 0.08);
+    color: rgba(20, 30, 50, 0.90);
+  }
 }

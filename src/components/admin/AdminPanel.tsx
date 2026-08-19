@@ -7,10 +7,11 @@ import { AdminCertifications, CertificationsHandle } from "./AdminCertifications
 import { AdminTechnologies, TechnologiesHandle } from "./AdminTechnologies";
 import { AdminAbout } from "./AdminAbout";
 import { AdminAnalytics } from "./AdminAnalytics";
+import { AdminTasks, TasksHandle } from "./AdminTasks";
 import "../../styles/admin/AdminPanel.scss";
 import "../../styles/admin/AdminToast.scss";
 
-type Tab = "projects" | "certifications" | "technologies" | "about" | "analytics";
+type Tab = "projects" | "certifications" | "technologies" | "about" | "tasks" | "analytics";
 type ToastType = "success" | "error";
 interface Toast { type: ToastType; message: string }
 
@@ -19,6 +20,7 @@ const TAB_LABELS: Record<Tab, string> = {
   certifications: "Certifications",
   technologies: "Technologies",
   about: "About",
+  tasks: "Tasks",
   analytics: "Analytics",
 };
 
@@ -27,15 +29,29 @@ function AdminPanel() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<Tab>("projects");
   const [toast, setToast] = useState<Toast | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const projectsRef = useRef<ProjectsHandle>(null);
   const certsRef = useRef<CertificationsHandle>(null);
   const techsRef = useRef<TechnologiesHandle>(null);
+  const tasksRef = useRef<TasksHandle>(null);
 
   function showToast(type: ToastType, message: string) {
     setToast({ type, message });
     setTimeout(() => setToast(null), 3500);
   }
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    function onClickOutside(e: MouseEvent) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target as Node)) {
+        setMobileMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     const pending = sessionStorage.getItem("sfcc_admin_toast");
@@ -59,6 +75,7 @@ function AdminPanel() {
     if (activeTab === "projects") projectsRef.current?.openAdd();
     else if (activeTab === "certifications") certsRef.current?.openAdd();
     else if (activeTab === "technologies") techsRef.current?.openAdd();
+    else if (activeTab === "tasks") tasksRef.current?.openAdd();
   }
 
   return (
@@ -75,8 +92,9 @@ function AdminPanel() {
       </header>
 
       <div className="adminTabBar">
+        {/* Desktop tab row */}
         <div className="adminTabs">
-          {(["projects", "certifications", "technologies", "about", "analytics"] as Tab[]).map(tab => (
+          {(["projects", "certifications", "technologies", "about", "tasks", "analytics"] as Tab[]).map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -86,6 +104,31 @@ function AdminPanel() {
             </button>
           ))}
         </div>
+
+        {/* Mobile dropdown menu */}
+        <div className="adminMobileMenu" ref={mobileMenuRef}>
+          <button
+            className="adminMobileMenuBtn"
+            onClick={() => setMobileMenuOpen(o => !o)}
+          >
+            <span>{TAB_LABELS[activeTab]}</span>
+            <span className="adminMobileMenuChevron">{mobileMenuOpen ? "▴" : "▾"}</span>
+          </button>
+          {mobileMenuOpen && (
+            <div className="adminMobileMenuDropdown">
+              {(["projects", "certifications", "technologies", "about", "tasks", "analytics"] as Tab[]).map(tab => (
+                <button
+                  key={tab}
+                  className={`adminMobileMenuOption${activeTab === tab ? " adminMobileMenuOption--active" : ""}`}
+                  onClick={() => { setActiveTab(tab); setMobileMenuOpen(false); }}
+                >
+                  {TAB_LABELS[tab]}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
         {activeTab !== "about" && activeTab !== "analytics" && (
           <button className="adminAddBtn" onClick={handleAdd}>
             + Add {TAB_LABELS[activeTab].replace(/ies$/, "y").replace(/s$/, "")}
@@ -98,6 +141,7 @@ function AdminPanel() {
         {activeTab === "certifications" && <AdminCertifications ref={certsRef} onToast={showToast} />}
         {activeTab === "technologies" && <AdminTechnologies ref={techsRef} onToast={showToast} />}
         {activeTab === "about" && <AdminAbout onToast={showToast} />}
+        {activeTab === "tasks" && <AdminTasks ref={tasksRef} />}
         {activeTab === "analytics" && <AdminAnalytics />}
       </div>
 
