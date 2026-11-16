@@ -168,6 +168,8 @@ const AdminDaily = forwardRef<DailyHandle, Props>(function AdminDaily({ onToast 
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState<DailyTask | null>(null);
+  const [chartFilter, setChartFilter] = useState<string[] | null>(null); // null = all tasks
+  const [chartMode, setChartMode] = useState<"daily" | "rolling">("daily");
   const pending = useRef(new Set<string>());
   const tableWrapRef = useRef<HTMLDivElement>(null);
 
@@ -237,14 +239,49 @@ const AdminDaily = forwardRef<DailyHandle, Props>(function AdminDaily({ onToast 
   const archivedTasks = tasks.filter(t => t.archived_at);
   const todayTasks = tasks.filter(t => !t.archived_at);
 
-  // Per-day completion for the selected month
-  const chartPoints: ChartPoint[] = days.map(day => {
-    if (day > today) return { day, pct: null };
-    const expected = monthTasks.filter(t => isExpected(t.id, day));
-    if (!expected.length) return { day, pct: null };
-    const done = expected.filter(t => doneSet.has(`${t.id}|${day}`)).length;
-    return { day, pct: done / expected.length };
-  });
+  // Chart only counts filtered tasks; fall back to all if none of them exist this month
+  const filteredIds = chartFilter?.filter(id => monthTasks.some(t => t.id === id)) ?? [];
+  const chartTasks = filteredIds.length ? monthTasks.filter(t => filteredIds.includes(t.id)) : monthTasks;
+  const isFiltered = filteredIds.length > 0;
+
+  // Completion ratio over a window of days ending at `day` (window 1 = that day only)
+  function windowPct(day: string, size: number): number | null {
+    let exp = 0, done = 0;
+    for (let k = 0; k < size; k++) {
+      const d = addDays(day, -k);
+      for (const t of chartTasks) {
+        if (!isExpected(t.id, d)) continue;
+        exp++;
+        if (doneSet.has(`${t.id}|${d}`)) done++;
+      }
+    }
+    return exp ? done / exp : null;
+  }
+
+  const windowSize = chartMode === "rolling" ? 7 : 1;
+  const chartPoints: ChartPoint[] = days.map(day => ({
+    day,
+    pct: day > today || !chartTasks.some(t => isExpected(t.id, day)) ? null : windowPct(day, windowSize),
+  }));
+
+  // Month average for the charted tasks
+  let avgExp = 0, avgDone = 0;
+  for (const day of days) {
+    for (const t of chartTasks) {
+      if (!isExpected(t.id, day)) continue;
+      avgExp++;
+      if (doneSet.has(`${t.id}|${day}`)) avgDone++;
+    }
+  }
+  const chartAverage = avgExp ? avgDone / avgExp : null;
+
+  function toggleChartTask(id: string) {
+    const base = isFiltered ? filteredIds : [];
+    const next = base.includes(id) ? base.filter(x => x !== id) : [...base, id];
+    setChartFilter(next.length ? next : null);
+    // A single task is binary per day, so the 7-day trend reads better
+    setChartMode(next.length === 1 ? "rolling" : "daily");
+  }
 
   const monthStats = (() => {
     let expected = 0, done = 0, perfect = 0, tracked = 0;
@@ -540,10 +577,40 @@ const AdminDaily = forwardRef<DailyHandle, Props>(function AdminDaily({ onToast 
           {/* Line chart */}
           <section className="dailyCard">
             <div className="dailyCardHead">
-              <h2 className="dailyCardTitle">Daily completion</h2>
-              <span className="dailyCardMeta">{MONTHS[month - 1]}</span>
+              <h2 className="dailyCardTitle">{chartMode === "rolling" ? "7-day trend" : "Daily completion"}</h2>
+              <div className="dailyModeToggle" role="group" aria-label="Chart mode">
+                {(["daily", "rolling"] as const).map(mode => (
+                  <button
+                    key={mode}
+                    className={`dailyChip${chartMode === mode ? " dailyChip--active" : ""}`}
+                    onClick={() => setChartMode(mode)}
+                  >
+                    {mode === "daily" ? "Daily" : "7 days"}
+                  </button>
+                ))}
+              </div>
             </div>
-            <DailyLineChart points={chartPoints} average={monthStats.pct} />
+            {monthTasks.length > 1 && (
+              <div className="dailyChipRow">
+                <button
+                  className={`dailyChip${!isFiltered ? " dailyChip--active" : ""}`}
+                  onClick={() => { setChartFilter(null); setChartMode("daily"); }}
+                >
+                  All
+                </button>
+                {monthTasks.map(t => (
+                  <button
+                    key={t.id}
+                    className={`dailyChip${filteredIds.includes(t.id) ? " dailyChip--active" : ""}`}
+                    onClick={() => toggleChartTask(t.id)}
+                    aria-pressed={filteredIds.includes(t.id)}
+                  >
+                    {t.title}
+                  </button>
+                ))}
+              </div>
+            )}
+            <DailyLineChart points={chartPoints} average={chartAverage} />
           </section>
 
           {/* Archived tasks */}
