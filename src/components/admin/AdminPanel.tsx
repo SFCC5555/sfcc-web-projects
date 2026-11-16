@@ -8,10 +8,11 @@ import { AdminTechnologies, TechnologiesHandle } from "./AdminTechnologies";
 import { AdminAbout } from "./AdminAbout";
 import { AdminAnalytics } from "./AdminAnalytics";
 import { AdminTasks, TasksHandle } from "./AdminTasks";
+import { AdminDaily, DailyHandle } from "./AdminDaily";
 import "../../styles/admin/AdminPanel.scss";
 import "../../styles/admin/AdminToast.scss";
 
-type Tab = "projects" | "certifications" | "technologies" | "about" | "tasks" | "analytics";
+type Tab = "projects" | "certifications" | "technologies" | "about" | "tasks" | "daily" | "analytics";
 type ToastType = "success" | "error";
 interface Toast { type: ToastType; message: string }
 
@@ -21,6 +22,7 @@ const TAB_LABELS: Record<Tab, string> = {
   technologies: "Technologies",
   about: "About",
   tasks: "Tasks",
+  daily: "Daily",
   analytics: "Analytics",
 };
 
@@ -36,6 +38,7 @@ function AdminPanel() {
   const certsRef = useRef<CertificationsHandle>(null);
   const techsRef = useRef<TechnologiesHandle>(null);
   const tasksRef = useRef<TasksHandle>(null);
+  const dailyRef = useRef<DailyHandle>(null);
 
   function showToast(type: ToastType, message: string) {
     setToast({ type, message });
@@ -76,6 +79,7 @@ function AdminPanel() {
     else if (activeTab === "certifications") certsRef.current?.openAdd();
     else if (activeTab === "technologies") techsRef.current?.openAdd();
     else if (activeTab === "tasks") tasksRef.current?.openAdd();
+    else if (activeTab === "daily") dailyRef.current?.openAdd();
   }
 
   return (
@@ -94,7 +98,7 @@ function AdminPanel() {
       <div className="adminTabBar">
         {/* Desktop tab row */}
         <div className="adminTabs">
-          {(["projects", "certifications", "technologies", "about", "tasks", "analytics"] as Tab[]).map(tab => (
+          {(["projects", "certifications", "technologies", "about", "tasks", "daily", "analytics"] as Tab[]).map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -116,7 +120,7 @@ function AdminPanel() {
           </button>
           {mobileMenuOpen && (
             <div className="adminMobileMenuDropdown">
-              {(["projects", "certifications", "technologies", "about", "tasks", "analytics"] as Tab[]).map(tab => (
+              {(["projects", "certifications", "technologies", "about", "tasks", "daily", "analytics"] as Tab[]).map(tab => (
                 <button
                   key={tab}
                   className={`adminMobileMenuOption${activeTab === tab ? " adminMobileMenuOption--active" : ""}`}
@@ -131,7 +135,7 @@ function AdminPanel() {
 
         {activeTab !== "about" && activeTab !== "analytics" && (
           <button className="adminAddBtn" onClick={handleAdd}>
-            + Add {TAB_LABELS[activeTab].replace(/ies$/, "y").replace(/s$/, "")}
+            + Add {activeTab === "daily" ? "Daily Task" : TAB_LABELS[activeTab].replace(/ies$/, "y").replace(/s$/, "")}
           </button>
         )}
       </div>
@@ -142,6 +146,7 @@ function AdminPanel() {
         {activeTab === "technologies" && <AdminTechnologies ref={techsRef} onToast={showToast} />}
         {activeTab === "about" && <AdminAbout onToast={showToast} />}
         {activeTab === "tasks" && <AdminTasks ref={tasksRef} />}
+        {activeTab === "daily" && <AdminDaily ref={dailyRef} onToast={showToast} />}
         {activeTab === "analytics" && <AdminAnalytics />}
       </div>
 

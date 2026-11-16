@@ -1,0 +1,367 @@
+/* ── Daily panel ── */
+.dailyPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1100px;
+  min-width: 0;
+}
+
+/* ── Cards ── */
+.dailyCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 16px 20px;
+  min-width: 0;
+}
+
+.dailyCard--flush { padding: 0; overflow: hidden; }
+
+.dailyCardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.dailyCardTitle {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+}
+
+.dailyCardMeta { font-size: 1.2rem; opacity: 0.55; }
+
+/* ── Today checklist ── */
+.dailyTodayList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 6px;
+}
+
+.dailyTodayItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 1.35rem;
+  cursor: pointer;
+  transition: background 0.12s;
+
+  &:hover { background: rgba(255, 255, 255, 0.05); }
+
+  input {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: rgb(80, 200, 120);
+    cursor: pointer;
+  }
+}
+
+.dailyTodayItem--done span { opacity: 0.5; text-decoration: line-through; }
+
+/* ── Month navigation ── */
+.dailyMonthNav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .crudBtn { font-size: 1.5rem; padding: 2px 12px; }
+}
+
+.dailyMonthLabel {
+  font-size: 1.5rem;
+  font-weight: 600;
+  min-width: 150px;
+  text-align: center;
+}
+
+/* ── Stats ── */
+.dailyStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.dailyStat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.dailyStatLabel {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
+}
+
+.dailyStatValue {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.1;
+
+  small { font-size: 1.3rem; opacity: 0.5; font-weight: 400; }
+}
+
+.dailyStatValue--sm { font-size: 1.8rem; }
+
+.dailyStatSub {
+  font-size: 1.1rem;
+  opacity: 0.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Grid table ── */
+.dailyTableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dailyTable {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.2rem;
+}
+
+.dailyTh,
+.dailyTd {
+  padding: 3px 2px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dailyTh {
+  font-weight: 500;
+  font-size: 1.05rem;
+  opacity: 0.75;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  min-width: 30px;
+
+  span { display: block; line-height: 1.3; }
+}
+
+.dailyThWd { font-size: 0.9rem; opacity: 0.6; }
+.dailyTh--weekend { opacity: 0.45; }
+
+.dailyTh--today {
+  opacity: 1;
+  color: rgb(110, 220, 145);
+}
+
+.dailyTd--today { background: rgba(80, 200, 120, 0.06); }
+
+/* Sticky first column (opaque so days scroll under it) */
+.dailyTh--task,
+.dailyTd--task {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  text-align: left;
+  background: hsl(222, 22%, 14%);
+  padding-left: 14px;
+  padding-right: 10px;
+  min-width: 140px;
+  max-width: 200px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dailyTh--stat,
+.dailyTd--stat {
+  min-width: 42px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.dailyTd--stat { opacity: 0.8; }
+
+.dailyTaskName {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  color: inherit;
+  font: inherit;
+  font-size: 1.25rem;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover { text-decoration: underline; }
+}
+
+.dailyRow--archived .dailyTaskName { opacity: 0.5; font-style: italic; }
+
+/* Cells */
+.dailyCell {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: inherit;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+
+  &:hover:not(:disabled) { border-color: rgba(255, 255, 255, 0.35); }
+  &:disabled { cursor: default; }
+}
+
+.dailyCell--done {
+  background: rgba(80, 200, 120, 0.75);
+  border-color: rgba(80, 200, 120, 0.9);
+  color: rgb(10, 30, 18);
+  font-weight: 700;
+}
+
+.dailyCell--missed {
+  background: rgba(200, 60, 60, 0.12);
+  border-color: rgba(200, 60, 60, 0.25);
+  color: rgba(255, 130, 130, 0.8);
+}
+
+.dailyCell--pending { border-color: rgba(80, 200, 120, 0.55); border-style: dashed; }
+.dailyCell--before { border-style: dotted; opacity: 0.45; }
+.dailyCell--off { border-color: rgba(255, 255, 255, 0.04); }
+
+/* ── Line chart ── */
+.dailyChart {
+  width: 100%;
+  overflow: hidden;
+
+  svg { display: block; }
+}
+
+.dailyChartGrid { stroke: rgba(255, 255, 255, 0.08); }
+.dailyChartAxis { fill: currentColor; opacity: 0.5; font-size: 11px; }
+.dailyChartAvg { stroke: rgba(255, 255, 255, 0.35); stroke-dasharray: 4 4; }
+.dailyChartArea { fill: rgba(80, 200, 120, 0.12); }
+.dailyChartLine { fill: none; stroke: rgb(80, 200, 120); stroke-width: 2; stroke-linejoin: round; }
+.dailyChartDot { fill: rgb(80, 200, 120); }
+
+.dailyChartLegend {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.1rem;
+  opacity: 0.55;
+}
+
+/* ── Archived list ── */
+.dailyArchivedList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dailyArchivedItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 1.3rem;
+
+  span { opacity: 0.7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+
+/* ── Modal ── */
+.dailyModalDanger {
+  display: flex;
+  gap: 8px;
+  margin-right: auto;
+}
+
+/* ── Mobile ── */
+@media (max-width: 560px) {
+  .dailyCard { padding: 14px; }
+  .dailyCard--flush { padding: 0; }
+  .dailyStats { grid-template-columns: 1fr 1fr; }
+  .dailyStatValue { font-size: 2rem; }
+  .dailyStatValue--sm { font-size: 1.6rem; }
+  .dailyTodayList { grid-template-columns: 1fr; }
+
+  .dailyTh--task,
+  .dailyTd--task {
+    min-width: 105px;
+    max-width: 120px;
+    padding-left: 10px;
+  }
+
+  .dailyModalFooter { flex-wrap: wrap; }
+}
+
+/* ── Light mode ── */
+body.lightMode {
+  .dailyCard,
+  .dailyStat {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.10);
+  }
+
+  .dailyTodayItem:hover { background: rgba(0, 0, 0, 0.05); }
+
+  .dailyTh,
+  .dailyTd { border-bottom-color: rgba(0, 0, 0, 0.06); }
+
+  .dailyTh--today { color: rgb(20, 130, 60); }
+  .dailyTd--today { background: rgba(20, 150, 70, 0.07); }
+
+  .dailyTh--task,
+  .dailyTd--task {
+    background: hsl(200, 22%, 92%);
+    border-right-color: rgba(0, 0, 0, 0.10);
+  }
+
+  .dailyCell {
+    border-color: rgba(0, 0, 0, 0.15);
+    &:hover:not(:disabled) { border-color: rgba(0, 0, 0, 0.40); }
+  }
+
+  .dailyCell--done {
+    background: rgba(30, 160, 80, 0.80);
+    border-color: rgba(30, 160, 80, 0.95);
+    color: #fff;
+  }
+
+  .dailyCell--missed {
+    background: rgba(200, 50, 50, 0.08);
+    border-color: rgba(180, 40, 40, 0.22);
+    color: rgba(160, 30, 30, 0.8);
+  }
+
+  .dailyCell--pending { border-color: rgba(30, 160, 80, 0.6); }
+  .dailyCell--off { border-color: rgba(0, 0, 0, 0.04); }
+
+  .dailyChartGrid { stroke: rgba(0, 0, 0, 0.08); }
+  .dailyChartAvg { stroke: rgba(0, 0, 0, 0.35); }
+  .dailyChartArea { fill: rgba(30, 160, 80, 0.12); }
+  .dailyChartLine { stroke: rgb(30, 150, 75); }
+  .dailyChartDot { fill: rgb(30, 150, 75); }
+}
